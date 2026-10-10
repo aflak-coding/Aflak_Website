@@ -1,0 +1,26 @@
+[
+  {
+    "nat": "n4",
+    "name": "Sofiya Awel Malsebo",
+    "ref": "E-101",
+    "job": "svc1",
+    "age": 27,
+    "rel": "m",
+    "st": "s",
+    "exp": "new",
+    "photo": "cvs/ethiopia/sofiya-awel-malsebo.jpg",
+    "file": "cvs/ethiopia/sofiya-awel-malsebo.pdf"
+  },
+  {
+    "nat": "n4",
+    "name": "Zinet Awol Seid",
+    "ref": "E-102",
+    "job": "svc1",
+    "age": 33,
+    "rel": "m",
+    "st": "s",
+    "exp": "new",
+    "photo": "cvs/ethiopia/zinet-awol-seid.jpg",
+    "file": "cvs/ethiopia/zinet-awol-seid.pdf"
+  }
+]
