@@ -1,0 +1,46 @@
+name: Process new CVs
+
+on:
+  push:
+    paths:
+      - 'cvs/*/*.pdf'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  process:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils tesseract-ocr
+          pip install pillow
+
+      - name: Add new CVs to data/cvs.json
+        run: python scripts/process_cvs.py
+
+      - name: Commit changes
+        id: commit
+        run: |
+          git config user.name "aflak-bot"
+          git config user.email "aflak-bot@users.noreply.github.com"
+          git add -A data cvs
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "Add new CVs automatically"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Redeploy the website
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run jekyll-gh-pages.yml --ref main
