@@ -22,5 +22,14 @@
     "exp": "new",
     "photo": "cvs/ethiopia/zinet-awol-seid.jpg",
     "file": "cvs/ethiopia/zinet-awol-seid.pdf"
+  },
+  {
+    "nat": "n1",
+    "name": "Eddahwalowekitolome Housemaidcv",
+    "ref": "K-101",
+    "job": "svc1",
+    "rel": "o",
+    "st": "s",
+    "file": "cvs/kenya/eddahwalowekitolome-housemaidcv.pdf"
   }
 ]
