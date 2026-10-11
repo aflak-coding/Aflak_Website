@@ -20,7 +20,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y poppler-utils tesseract-ocr
-          pip install pillow
+          pip install pillow numpy opencv-python-headless
 
       - name: Add new CVs to data/cvs.json
         run: python scripts/process_cvs.py
