@@ -6,7 +6,7 @@
 - الجنسية: من اسم المجلد (kenya, bangladesh, philippines, ethiopia, srilanka, uganda)
 - الاسم: من اسم الملف (Amina-Wanjiku.pdf  ->  Amina Wanjiku)
 - الرقم المرجعي: يُولَّد تلقائيًا (E-103 مثلًا)
-- الصورة: تُقص تلقائيًا من نموذج "Application for Employment" المعروف
+- الصورة: تُقص تلقائيًا (من نموذج "Application for Employment" المعروف، أو بكشف الوجه في أي نموذج آخر)
 - المهنة والديانة والحالة الاجتماعية: تُقرأ من الملف إن كانت الكلمة واضحة، وإلا تُترك فارغة
 لا يتم تخمين العمر أو الخبرة (القراءة الآلية للأرقام غير مضمونة). يمكن إضافتها يدويًا من لوحة Pages CMS.
 """
@@ -27,28 +27,38 @@ def norm(p):
     return str(p or "").lstrip("/").replace("\\", "/")
 
 
+NOISE = re.compile(r"^(?:housemaid|maid|driver|cook|cv|resume|application|form|copy|final|new|scan|file|img|image|pdf)+$", re.I)
+
+
 def title_name(stem):
-    s = re.sub(r"[-_]+", " ", stem).strip()
-    return " ".join(w.capitalize() for w in s.split())
+    s = re.sub(r"[-_.()]+", " ", stem).strip()
+    words = [w for w in s.split() if not NOISE.match(w) and not re.fullmatch(r"\d+", w)]
+    if not words:
+        words = s.split() or ["CV"]
+    return " ".join(w.capitalize() for w in words)
 
 
 def slug(stem):
     return re.sub(r"[^a-z0-9]+", "-", stem.lower()).strip("-") or "cv"
 
 
-def run_ocr(pdf, tmp):
-    """يرجع (نص, صورة الصفحة) أو (None, None) لو فشلت القراءة."""
+def render_and_ocr(pdf, tmp):
+    """يرجع (نص, مسار صورة الصفحة الأولى). النص فارغ لو فشلت القراءة، والصورة None لو فشل التحويل."""
+    base = os.path.join(tmp, "page")
     try:
-        base = os.path.join(tmp, "page")
         subprocess.run(["pdftoppm", "-r", "200", "-f", "1", "-l", "1", "-png", pdf, base],
                        check=True, capture_output=True, timeout=120)
         img = next(os.path.join(tmp, f) for f in sorted(os.listdir(tmp)) if f.startswith("page") and f.endswith(".png"))
+    except Exception as e:
+        print("   تعذّر تحويل الملف إلى صورة:", e)
+        return "", None
+    try:
         txt = subprocess.run(["tesseract", img, "-", "--psm", "11", "-l", "eng"],
                              capture_output=True, text=True, timeout=180).stdout
         return txt.upper(), img
     except Exception as e:
-        print("   تعذّرت قراءة الملف:", e)
-        return None, None
+        print("   تعذّرت قراءة النص:", e)
+        return "", img
 
 
 def detect(text):
@@ -78,6 +88,56 @@ def crop_photo(img_path, dest):
     im.crop(box).save(dest, "JPEG", quality=88)
 
 
+def crop_by_face(img_path, dest):
+    """يكشف أكبر وجه في الصفحة ويقص حوله صورة شخصية. يرجع True لو نجح."""
+    try:
+        import cv2
+    except Exception:
+        print("   (OpenCV غير مثبت: تخطي كشف الوجه)")
+        return False
+    im = cv2.imread(img_path)
+    if im is None:
+        return False
+    gray = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
+    cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
+    faces = cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=6, minSize=(70, 70))
+    if len(faces) == 0:
+        return False
+    x, y, w, h = max(faces, key=lambda f: int(f[2]) * int(f[3]))
+    H, W = gray.shape
+    cw = int(w * 2.2)
+    ch = int(h * 2.7)
+    x0 = max(0, int(x + w / 2 - cw / 2))
+    x1 = min(W, x0 + cw)
+    x0 = max(0, x1 - cw)
+    y0 = max(0, int(y - h * 0.55))
+    y1 = min(H, y0 + ch)
+    y0 = max(0, y1 - ch)
+    cv2.imwrite(dest, im[y0:y1, x0:x1], [cv2.IMWRITE_JPEG_QUALITY, 88])
+    return True
+
+
+def make_photo(text, img, stem):
+    """يرجع مسار الصورة النسبي أو None."""
+    if not img:
+        return None
+    os.makedirs(PHOTOS, exist_ok=True)
+    dest = os.path.join(PHOTOS, slug(stem) + ".jpg")
+    rel = "cvs/photos/" + os.path.basename(dest)
+    if text and "APPLICATION" in text and "EMPLOYMENT" in text:
+        try:
+            crop_photo(img, dest)
+            return rel
+        except Exception as e:
+            print("   تعذّر القص الثابت:", e)
+    try:
+        if crop_by_face(img, dest):
+            return rel
+    except Exception as e:
+        print("   تعذّر كشف الوجه:", e)
+    return None
+
+
 def main():
     data = []
     if os.path.exists(DATA):
@@ -91,6 +151,25 @@ def main():
         m = re.match(r"^([A-Z])-(\d+)$", str(w.get("ref", "")))
         if m:
             counters[m.group(1)] = max(counters.get(m.group(1), 100), int(m.group(2)))
+
+    # تعبئة الصور الناقصة للسير الموجودة
+    filled = 0
+    for w in data:
+        if w.get("photo") or not w.get("file"):
+            continue
+        pdf = os.path.join(ROOT, norm(w["file"]))
+        if not os.path.isfile(pdf):
+            continue
+        tmp = tempfile.mkdtemp()
+        try:
+            text, img = render_and_ocr(pdf, tmp)
+            photo = make_photo(text, img, os.path.splitext(os.path.basename(pdf))[0])
+            if photo:
+                w["photo"] = photo
+                filled += 1
+                print("صورة جديدة لـ", w.get("name"))
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
 
     added = 0
     for folder, (nat, letter) in FOLDERS.items():
@@ -110,17 +189,14 @@ def main():
             entry["ref"] = "%s-%d" % (letter, counters[letter])
             tmp = tempfile.mkdtemp()
             try:
-                text, img = run_ocr(os.path.join(d, fn), tmp)
+                text, img = render_and_ocr(os.path.join(d, fn), tmp)
                 if text:
                     entry.update(detect(text))
-                    if "APPLICATION" in text and "EMPLOYMENT" in text:
-                        os.makedirs(PHOTOS, exist_ok=True)
-                        dest = os.path.join(PHOTOS, slug(stem) + ".jpg")
-                        try:
-                            crop_photo(img, dest)
-                            entry["photo"] = "cvs/photos/" + os.path.basename(dest)
-                        except Exception as e:
-                            print("   تعذّر قص الصورة:", e)
+                photo = make_photo(text, img, stem)
+                if photo:
+                    entry["photo"] = photo
+                else:
+                    print("   لم يتم العثور على صورة للقص")
             finally:
                 shutil.rmtree(tmp, ignore_errors=True)
             entry["file"] = rel
@@ -128,12 +204,12 @@ def main():
             added += 1
             print("   ->", {k: v for k, v in entry.items() if k != "file"})
 
-    if added:
+    if added or filled:
         os.makedirs(os.path.dirname(DATA), exist_ok=True)
         with open(DATA, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
             f.write("\n")
-    print("تمت إضافة %d سيرة" % added)
+    print("تمت إضافة %d سيرة، وتعبئة %d صورة" % (added, filled))
 
 
 if __name__ == "__main__":
