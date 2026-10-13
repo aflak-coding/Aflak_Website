@@ -327,3 +327,29 @@ a.ft-ico:hover{background:rgba(255,255,255,.18)}
 .team-row .tm{flex:0 1 calc(25% - 12px);min-width:180px}
 .tm.lead{border:2px solid var(--gold);box-shadow:0 8px 22px rgba(185,166,58,.18)}
 @media (max-width:520px){.team-row{gap:12px}.team-row .tm{flex:0 1 calc(50% - 6px);min-width:0}}
+
+
+/* org chart (management) */
+.org{display:grid;width:min(640px,100%);margin-inline:auto}
+.org-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding-top:44px}
+.org-links{position:relative;height:30px}
+.org-links::before{content:"";position:absolute;left:50%;top:-4px;width:2px;height:20px;background:var(--teal);transform:translateX(-1px)}
+.org-links::after{content:"";position:absolute;left:25%;right:25%;top:16px;height:2px;background:var(--teal)}
+.org-links i{position:absolute;top:16px;width:2px;height:30px;background:var(--teal)}
+.org-links i.a{left:25%}.org-links i.b{left:75%}
+.org-box{--bx:#0A464C;position:relative;background:var(--bx);color:#fff;border-radius:22px;padding:52px 14px 20px;text-align:center;display:grid;gap:6px;justify-items:center;box-shadow:0 10px 26px rgba(10,70,76,.22)}
+.org-box.c1{--bx:#0A464C}.org-box.c2{--bx:#1B7F8C}.org-box.c3{--bx:#2E7D6E}.org-box.c4{--bx:#6A57A5}
+.org-ic{position:absolute;top:-40px;left:50%;transform:translateX(-50%);width:80px;height:80px;border-radius:50%;background:var(--bx);border:4px solid var(--bg);display:grid;place-items:center}
+.org-ic svg{width:44px;height:44px;fill:#fff}
+.org-ic svg .cut{fill:var(--bx)}
+.org-box h3{font-size:clamp(17px,2.6vw,22px);color:#fff;line-height:1.4}
+.org-num{color:#fff;text-decoration:none;font-weight:600;font-size:17px;letter-spacing:.3px}
+.org-num:hover{text-decoration:underline}
+.org-acts{display:flex;gap:10px;margin-top:6px}
+.org-btn{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1.5px solid rgba(255,255,255,.8);color:#fff;transition:transform .2s,background .2s}
+.org-btn:hover{transform:scale(1.08);background:rgba(255,255,255,.18)}
+.org-btn.wa{background:#fff}
+.org-btn.wa svg{fill:var(--wa)}
+.org-btn svg{width:22px;height:22px}
+.org-btn.call svg{fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:520px){.org-row{gap:12px}.org-box{padding:50px 8px 16px;border-radius:18px}.org-num{font-size:15px}.org-ic{width:72px;height:72px;top:-36px}.org-ic svg{width:40px;height:40px}}

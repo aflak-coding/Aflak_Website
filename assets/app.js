@@ -1,9 +1,8 @@
 (function(){
   var WA = "966554084322";
-  var ORDER_NUMS = ["966559091933","966554566335","966505538004","966502255955","966505538006","966554144889"];
   var D = {
     ar:{
-      brand:"أفلاك للاستقدام", nav_services:"الخدمات", nav_faq:"أسئلة شائعة", nav_contact:"تواصل معنا", nav_team:"فريقنا", nav_home:"الرئيسية", nav_nat:"الجنسيات", map_h:"موقعنا", ft_links:"روابط سريعة", ft_about:"أفلاك للاستقدام مكتب مرخّص من وزارة الموارد البشرية والتنمية الاجتماعية، يقدّم خدمات استقدام العمالة المنزلية في الرياض بخدمة احترافية ومتابعة مستمرة.", ft_rights:"جميع الحقوق محفوظة © 2026 أفلاك للاستقدام",
+      brand:"أفلاك للاستقدام", nav_services:"الخدمات", nav_faq:"أسئلة شائعة", nav_contact:"تواصل معنا", nav_team:"فريقنا", nav_home:"الرئيسية", nav_nat:"الجنسيات", map_h:"موقعنا", ft_links:"روابط سريعة", ft_about:"شركة أفلاك للاستقدام مرخّصة من وزارة الموارد البشرية والتنمية الاجتماعية، يقدّم خدمات استقدام العمالة المنزلية في الرياض بخدمة احترافية ومتابعة مستمرة.", ft_rights:"جميع الحقوق محفوظة © 2026 أفلاك للاستقدام",
       hero_h:"مع أفلاك الخدمة معاك",
       hero_p:"نسهّل لك رحلة استقدام العمالة المنزلية من خلال خدمة احترافية، خيارات موثوقة، ومتابعة مستمرة.",
       cta_start:"ابدأ طلبك", cta_svc:"تعرّف على خدماتنا",
@@ -15,26 +14,25 @@
       c_h:"املأ بياناتك ونتواصل معك", c_sub:"يصل طلبك إلينا على واتساب، ونرد عليك في ساعات العمل.",
       c_wa:"واتساب", c_phone:"اتصال", c_mail:"البريد الإلكتروني", c_addr:"العنوان",
       addr:"شارع خالد بن الوليد، حي قرطبة، الدور الأول فوق صيدلية كنوز، مكتب 34، الرياض",
-      c_hours:"ساعات العمل", hours:"يوميًا من 9 صباحًا حتى 11 مساءً", c_social:"حسابات التواصل", c_map:"فتح في خرائط جوجل", ct_h:"بيانات التواصل", ct_pin:"شركة أفلاك للاستقدام", team_h:"فريق العمل", team_sub:"تواصل مع أي فرد من فريقنا مباشرة عبر واتساب.", team_wa:"تواصل عبر واتساب", team_call:"اتصال", ft_support:"لمزيد من الدعم", msg_team:"السلام عليكم، أود التواصل بخصوص خدمات أفلاك للاستقدام.",
+      c_hours:"ساعات العمل", hours:"يوميًا من 9 صباحًا حتى 11 مساءً", c_social:"حسابات التواصل", c_map:"فتح في خرائط جوجل", ct_h:"بيانات التواصل", ct_pin:"شركة أفلاك للاستقدام", team_h:"فريق العمل", team_sub:"تواصل مباشرة مع إدارة الشركة عبر واتساب أو الاتصال.", team_wa:"تواصل عبر واتساب", team_call:"اتصال", ft_support:"لمزيد من الدعم", mail_subj:"استفسار عن خدمات الاستقدام", mail_body:"السلام عليكم،\n\nأرغب في الاستفسار عن خدمات الاستقدام لديكم.\n\nالخدمة المطلوبة:\nالجنسية المفضلة:\nالاسم:\nرقم الجوال:\n\nشكرًا لكم.", msg_team:"السلام عليكم، أود التواصل بخصوص خدمات أفلاك للاستقدام.",
       f_h:"طلب خدمة", f_type:"الخدمة المطلوبة", f_nat:"الجنسية المفضلة", f_name:"الاسم", f_phone:"رقم الجوال", f_note:"ملاحظات (اختياري)", f_send:"أرسل الطلب عبر واتساب", any:"أي جنسية",
       cv_newtab:"فتح في تبويب جديد", cv_close:"إغلاق", cv_back:"رجوع للجنسيات", cv_title:"السير الذاتية: ", cv_count:"{n} سيرة ذاتية متاحة", cv_view:"عرض السيرة الذاتية (PDF)", cv_pick:"اختيار وإرسال عبر واتساب",
       cv_empty:"سيتم إضافة السير الذاتية لهذه الجنسية قريبًا. تواصل معنا على واتساب لنرشّح لك الأنسب.",
       f_age:"العمر", f_rel:"الديانة", f_st:"الحالة", f_exp:"الخبرة", age_u:"{n} سنة", rel_m:"مسلم", rel_o:"غير مسلم", st_s:"غير متزوج", st_m:"متزوج", exp_new:"قادم جديد", exp_prev:"خبرة سابقة",
-      more_h:"أرسل الطلب لباقي أرقامنا", more_p:"فتحنا لك واتساب على الرقم الأول. اضغط على كل رقم بالترتيب لإرسال نفس الطلب.", more_done:"تم",
       msg_pick:"السلام عليكم، أرغب في اختيار: ", msg_cv:"رابط السيرة الذاتية: ", msg_ref:"الرقم المرجعي: ",
       faq_h:"أسئلة شائعة", faq_sub:"أجوبة سريعة قبل أن تتواصل معنا.",
       q6:"ما الخدمات المتاحة؟", a6:"استقدام عاملة منزلية وسائق شخصي، ويمكنك أيضًا طلب طباخ أو طباخة، أو ممرضة منزلية، أو مساعدة شخصية من نموذج الطلب.",
-      q1:"هل المكتب مرخّص؟", a1:"نعم. مكتب مرخّص من وزارة الموارد البشرية والتنمية الاجتماعية برقم 3801238، وسجلنا التجاري رقم 7004359431.",
+      q1:"هل الشركة مرخّصة؟", a1:"نعم. شركة مرخّصة من وزارة الموارد البشرية والتنمية الاجتماعية برقم 3801238، وسجلنا التجاري رقم 7004359431.",
       q3:"كم السعر؟", a3:"يختلف السعر حسب الخدمة والجنسية. راسلنا على واتساب ونرسل لك التفاصيل.",
       q4:"ما الجنسيات المتاحة؟", a4:"كينيا، بنغلاديش، الفلبين، إثيوبيا، سريلانكا، وأوغندا.",
-      q5:"أين المكتب ومتى يفتح؟", a5:"في الرياض، حي قرطبة، شارع خالد بن الوليد، الدور الأول فوق صيدلية كنوز، مكتب 34. نعمل يوميًا من 9 صباحًا حتى 11 مساءً.",
+      q5:"أين مقر الشركة ومتى تفتح؟", a5:"في الرياض، حي قرطبة، شارع خالد بن الوليد، الدور الأول فوق صيدلية كنوز، مكتب 34. نعمل يوميًا من 9 صباحًا حتى 11 مساءً.",
       foot1:"أفلاك للاستقدام | الرياض، المملكة العربية السعودية", foot2:"ترخيص 3801238 | سجل تجاري 7004359431",
       msg_hello:"السلام عليكم، أرغب في طلب: ", msg_nat:"الجنسية المفضلة: ", msg_name:"الاسم: ", msg_phone:"الجوال: ", msg_note:"ملاحظات: ",
       msg_gen:"السلام عليكم، أريد الاستفسار عن خدمات الاستقدام.",
-      svcs:{svc1:"عاملة منزلية",svc2:"سائق شخصي",svc3:"طباخ / طباخة",svc4:"ممرضة منزلية",svc5:"مساعدة شخصية"}, title:"أفلاك للاستقدام | مكتب استقدام مرخّص في الرياض", alt:"أفلاك للاستقدام"
+      svcs:{svc1:"عاملة منزلية",svc2:"سائق شخصي",svc3:"طباخ / طباخة",svc4:"ممرضة منزلية",svc5:"مساعدة شخصية"}, title:"شركة أفلاك للاستقدام | استقدام مرخّص في الرياض", alt:"أفلاك للاستقدام"
     },
     en:{
-      brand:"Aflaak Recruitment", nav_services:"Services", nav_faq:"FAQ", nav_contact:"Contact", nav_team:"Our team", nav_home:"Home", nav_nat:"Nationalities", map_h:"Our location", ft_links:"Quick links", ft_about:"Aflaak Recruitment is an office licensed by the Ministry of Human Resources and Social Development, providing household worker recruitment services in Riyadh with professional service and ongoing follow-up.", ft_rights:"\u00a9 2026 Aflaak Recruitment. All rights reserved.",
+      brand:"Aflaak Recruitment", nav_services:"Services", nav_faq:"FAQ", nav_contact:"Contact", nav_team:"Our team", nav_home:"Home", nav_nat:"Nationalities", map_h:"Our location", ft_links:"Quick links", ft_about:"Aflaak Recruitment is a company licensed by the Ministry of Human Resources and Social Development, providing household worker recruitment services in Riyadh with professional service and ongoing follow-up.", ft_rights:"\u00a9 2026 Aflaak Recruitment. All rights reserved.",
       hero_h:"With Aflaak, service is with you",
       hero_p:"We make your household recruitment journey easier with a professional service, trusted options, and ongoing follow-up.",
       cta_start:"Start your request", cta_svc:"See our services",
@@ -46,23 +44,22 @@
       c_h:"Fill in your details and we'll contact you", c_sub:"Your request reaches us on WhatsApp and we reply during working hours.",
       c_wa:"WhatsApp", c_phone:"Phone", c_mail:"Email", c_addr:"Address",
       addr:"Khalid Bin Al Waleed Street, Qurtubah, first floor above Kunooz Pharmacy, office 34, Riyadh",
-      c_hours:"Working hours", hours:"Daily, 9 AM to 11 PM", c_social:"Social accounts", c_map:"Open in Maps", ct_h:"Contact details", ct_pin:"Aflaak Recruitment Office", team_h:"Our team", team_sub:"Message any of our team directly on WhatsApp.", team_wa:"Message on WhatsApp", team_call:"Call", ft_support:"More support", msg_team:"Hello, I would like to ask about Aflaak Recruitment's services.",
+      c_hours:"Working hours", hours:"Daily, 9 AM to 11 PM", c_social:"Social accounts", c_map:"Open in Maps", ct_h:"Contact details", ct_pin:"Aflaak Recruitment Company", team_h:"Our team", team_sub:"Contact our management directly on WhatsApp or by phone.", team_wa:"Message on WhatsApp", team_call:"Call", ft_support:"More support", mail_subj:"Inquiry about recruitment services", mail_body:"Hello,\n\nI would like to ask about your recruitment services.\n\nService needed:\nPreferred nationality:\nName:\nMobile number:\n\nThank you.", msg_team:"Hello, I would like to ask about Aflaak Recruitment's services.",
       f_h:"Service request", f_type:"Service needed", f_nat:"Preferred nationality", f_name:"Name", f_phone:"Mobile number", f_note:"Notes (optional)", f_send:"Send request on WhatsApp", any:"Any nationality",
       cv_newtab:"Open in new tab", cv_close:"Close", cv_back:"Back to nationalities", cv_title:"CVs: ", cv_count:"{n} CVs available", cv_view:"View CV (PDF)", cv_pick:"Select & send on WhatsApp",
       cv_empty:"CVs for this nationality will be added soon. Message us on WhatsApp and we'll suggest the best match.",
       f_age:"Age", f_rel:"Religion", f_st:"Status", f_exp:"Experience", age_u:"{n} years", rel_m:"Muslim", rel_o:"Non-Muslim", st_s:"Single", st_m:"Married", exp_new:"New arrival", exp_prev:"Previous experience",
-      more_h:"Send the request to our other numbers", more_p:"WhatsApp opened for the first number. Tap each number in order to send the same request.", more_done:"Sent",
       msg_pick:"Hello, I would like to select: ", msg_cv:"CV link: ", msg_ref:"Reference no.: ",
       faq_h:"FAQ", faq_sub:"Quick answers before you get in touch.",
       q6:"Which services do you offer?", a6:"Recruiting a housemaid or a personal driver. You can also request a cook, a home nurse or a personal assistant through the request form.",
-      q1:"Is the office licensed?", a1:"Yes. We are licensed by the Ministry of Human Resources and Social Development (license 3801238), and our commercial registration is 7004359431.",
+      q1:"Is the company licensed?", a1:"Yes. We are licensed by the Ministry of Human Resources and Social Development (license 3801238), and our commercial registration is 7004359431.",
       q3:"How much does it cost?", a3:"Prices depend on the service and nationality. Message us on WhatsApp and we'll send the details.",
       q4:"Which nationalities are available?", a4:"Kenya, Bangladesh, the Philippines, Ethiopia, Sri Lanka and Uganda.",
-      q5:"Where is the office and when is it open?", a5:"In Riyadh, Qurtubah district, Khalid Bin Al Waleed Street, first floor above Kunooz Pharmacy, office 34. Open daily from 9 AM to 11 PM.",
+      q5:"Where is the company located and when is it open?", a5:"In Riyadh, Qurtubah district, Khalid Bin Al Waleed Street, first floor above Kunooz Pharmacy, office 34. Open daily from 9 AM to 11 PM.",
       foot1:"Aflaak Recruitment | Riyadh, Saudi Arabia", foot2:"License 3801238 | Commercial registration 7004359431",
       msg_hello:"Hello, I would like to request: ", msg_nat:"Preferred nationality: ", msg_name:"Name: ", msg_phone:"Mobile: ", msg_note:"Notes: ",
       msg_gen:"Hello, I would like to ask about your recruitment services.",
-      svcs:{svc1:"Housemaid",svc2:"Personal driver",svc3:"Cook",svc4:"Home nurse",svc5:"Personal assistant"}, title:"Aflaak Recruitment | Licensed recruitment office in Riyadh", alt:"Aflaak Recruitment Office"
+      svcs:{svc1:"Housemaid",svc2:"Personal driver",svc3:"Cook",svc4:"Home nurse",svc5:"Personal assistant"}, title:"Aflaak Recruitment Company | Licensed recruitment in Riyadh", alt:"Aflaak Recruitment Company"
     }
   };
   var lang="ar";
@@ -86,7 +83,20 @@
     document.querySelectorAll(".wa-gen").forEach(function(a){a.href=gen;});
     renderCVs();
     renderTeam();
-    renderMore();
+    setMail();
+  }
+  function setMail(){
+    var d=D[lang], to="aflak8785@gmail.com";
+    var mobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    document.querySelectorAll(".mail-gen").forEach(function(el){
+      if(mobile){
+        el.href="mailto:"+to+"?subject="+encodeURIComponent(d.mail_subj)+"&body="+encodeURIComponent(d.mail_body.replace(/\n/g,"\r\n"));
+        el.removeAttribute("target");
+      } else {
+        el.href="https://mail.google.com/mail/?view=cm&fs=1&to="+to+"&su="+encodeURIComponent(d.mail_subj)+"&body="+encodeURIComponent(d.mail_body);
+        el.target="_blank"; el.rel="noopener";
+      }
+    });
   }
 
   function goOrder(svc){
@@ -114,37 +124,10 @@
     var d=D[lang], nat=$("fNat").value;
     var msg=d.msg_hello+d.svcs[$("fType").value]+"\n"+d.msg_nat+(nat==="any"?d.any:d[nat])+"\n"+d.msg_name+$("fName").value.trim()+"\n"+d.msg_phone+$("fPhone").value.trim();
     var note=$("fNote").value.trim(); if(note) msg+="\n"+d.msg_note+note;
-    pend={msg:msg,done:ORDER_NUMS.map(function(_,i){return i===0;})};
-    window.open(waTo(ORDER_NUMS[0],msg),"_blank","noopener");
-    renderMore();
-    $("more").scrollIntoView({behavior:"smooth",block:"nearest"});
+    window.open(waTo(WA,msg),"_blank","noopener");
   });
 
-  var pend=null;
   function waTo(n,t){return "https://wa.me/"+n+"?text="+encodeURIComponent(t);}
-  function fmtNum(n){return "+"+n.slice(0,3)+" "+n.slice(3,5)+" "+n.slice(5,8)+" "+n.slice(8);}
-  function renderMore(){
-    var box=$("more");
-    if(!pend){box.hidden=true;return;}
-    var d=D[lang];
-    box.hidden=false; box.textContent="";
-    box.appendChild(mk("b","",d.more_h));
-    box.appendChild(mk("p","",d.more_p));
-    var nextI=pend.done.indexOf(false);
-    ORDER_NUMS.forEach(function(n,i){
-      var b=mk("button","btn btn-line more-btn"+(pend.done[i]?" done":"")+(i===nextI?" next":""));
-      b.type="button";
-      b.appendChild(mk("span","mi",String(i+1)));
-      b.appendChild(mk("span","ltr",fmtNum(n)));
-      if(pend.done[i]) b.appendChild(mk("span","ok","\u2713 "+d.more_done));
-      b.addEventListener("click",function(){
-        pend.done[i]=true;
-        window.open(waTo(n,pend.msg),"_blank","noopener");
-        renderMore();
-      });
-      box.appendChild(b);
-    });
-  }
 
   var CVS = window.CVS_DATA || {};
   function relPath(p){return String(p||"").replace(/^\/+/,"");}
@@ -176,12 +159,8 @@
       var url=new URL(w.file,location.href).href;
       var card=mk("div","cv-card");
       var top=mk("div","cv-top");
-      if(w.photo){
-        var im=mk("img","cv-photo"); im.src=w.photo; im.alt=w.name; im.width=72; im.height=88; im.loading="lazy"; top.appendChild(im);
-      } else {
-        var ic=mk("div","cv-ic"); ic.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>';
-        top.appendChild(ic);
-      }
+      var ic=mk("div","cv-ic"); ic.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>';
+      top.appendChild(ic);
       var tt=mk("div"); tt.appendChild(mk("h3","",w.name));
       var meta=[]; if(w.job&&d.svcs[w.job]) meta.push(d.svcs[w.job]); if(w.ref) meta.push(d.msg_ref+w.ref);
       if(meta.length) tt.appendChild(mk("p","cv-meta",meta.join(" | ")));
@@ -239,26 +218,32 @@
   var TEAM = window.TEAM_DATA || [];
   var WAI = '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.003 3C8.83 3 3 8.83 3 16c0 2.29.6 4.52 1.74 6.49L3 29l6.7-1.7A12.95 12.95 0 0 0 16 29c7.17 0 13-5.83 13-13S23.17 3 16.003 3zm0 23.7c-1.95 0-3.86-.53-5.53-1.52l-.4-.24-3.98 1.01 1.06-3.88-.26-.4A10.67 10.67 0 0 1 5.3 16c0-5.88 4.82-10.7 10.7-10.7S26.7 10.12 26.7 16s-4.82 10.7-10.7 10.7zm5.87-8c-.32-.16-1.9-.94-2.2-1.04-.3-.1-.5-.16-.72.16-.22.32-.83 1.04-1.02 1.26-.19.22-.38.24-.7.08-.32-.16-1.36-.5-2.59-1.6-.96-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.5.14-.66.15-.14.32-.38.48-.57.16-.19.22-.32.32-.54.1-.22.05-.4-.03-.57-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55h-.62c-.22 0-.57.08-.86.4-.3.32-1.13 1.1-1.13 2.69s1.16 3.12 1.32 3.34c.16.22 2.28 3.48 5.52 4.88.77.33 1.37.53 1.84.68.77.25 1.48.21 2.04.13.62-.09 1.9-.78 2.17-1.53.27-.75.27-1.4.19-1.53-.08-.14-.3-.22-.62-.38z"/></svg>';
   var CALLI = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>';
+  var ORG_ICONS={
+    person:'<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="16" r="8"/><path d="M8 42c0-9 7-14 16-14s16 5 16 14z"/></svg>',
+    calc:'<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="18" cy="16" r="7"/><path d="M3 42c0-8 6-13 15-13s15 5 15 13z"/><rect x="28" y="22" width="17" height="21" rx="3"/><g class="cut"><rect x="31" y="25" width="11" height="4" rx="1"/><circle cx="33" cy="33" r="1.6"/><circle cx="37" cy="33" r="1.6"/><circle cx="41" cy="33" r="1.6"/><circle cx="33" cy="38" r="1.6"/><circle cx="37" cy="38" r="1.6"/><circle cx="41" cy="38" r="1.6"/></g></svg>',
+    group:'<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="18" cy="15" r="7"/><path d="M3 41c0-8 6-13 15-13s15 5 15 13z"/><circle cx="35" cy="24" r="4.5"/><path d="M26 43c0-6 4-10 9-10s9 4 9 10z"/></svg>'
+  };
+  function localNum(p){return "0"+String(p).replace(/^(966|20)/,"");}
   function renderTeam(){
     var g=$("teamGrid"); if(!g) return;
     var d=D[lang]; g.textContent="";
     var rows={};
     TEAM.forEach(function(m){var r=m.row||1; (rows[r]=rows[r]||[]).push(m);});
-    Object.keys(rows).sort(function(x,y){return x-y;}).forEach(function(r){
-      var rowEl=mk("div","team-row"+(Number(r)===1?" apex":""));
+    Object.keys(rows).sort(function(x,y){return x-y;}).forEach(function(r,idx){
+      if(idx>0){var lk=mk("div","org-links"); lk.setAttribute("aria-hidden","true"); lk.appendChild(mk("i","a")); lk.appendChild(mk("i","b")); g.appendChild(lk);}
+      var rowEl=mk("div","org-row");
       rows[r].forEach(function(m){
-        var name=(lang==="en"&&m.en)?m.en:m.ar, role=(lang==="en"&&m.role_en)?m.role_en:m.role_ar;
-        var c=mk("div","tm"+(Number(r)===1?" lead":""));
-        if(m.photo){var im=mk("img","tm-ph"); im.src=m.photo; im.alt=name; im.width=96; im.height=96; im.loading="lazy"; c.appendChild(im);}
-        else c.appendChild(mk("div","tm-ph",name.charAt(0)));
-        c.appendChild(mk("h3","",name));
-        c.appendChild(mk("p","tm-role",role));
-        var b=mk("a","tm-wa"); b.href=waTo(m.phone,d.msg_team); b.target="_blank"; b.rel="noopener";
-        b.setAttribute("aria-label",d.team_wa+": "+name); b.title=d.team_wa; b.innerHTML=WAI;
-        var cl=mk("a","tm-call"); cl.href="tel:+"+m.phone;
-        cl.setAttribute("aria-label",d.team_call+": "+name); cl.title=d.team_call; cl.innerHTML=CALLI;
-        var acts=mk("div","tm-acts"); acts.appendChild(b); acts.appendChild(cl);
-        c.appendChild(acts); rowEl.appendChild(c);
+        var title=(lang==="en"&&m.en)?m.en:m.ar;
+        var c=mk("div","org-box "+(m.color||"c1"));
+        var ic=mk("div","org-ic"); ic.innerHTML=ORG_ICONS[m.icon]||ORG_ICONS.person; c.appendChild(ic);
+        c.appendChild(mk("h3","",title));
+        var num=mk("a","org-num ltr",localNum(m.phone)); num.href="tel:+"+m.phone; c.appendChild(num);
+        var acts=mk("div","org-acts");
+        var b=mk("a","org-btn wa"); b.href=waTo(m.phone,d.msg_team); b.target="_blank"; b.rel="noopener";
+        b.setAttribute("aria-label",d.team_wa+": "+title); b.title=d.team_wa; b.innerHTML=WAI;
+        var cl=mk("a","org-btn call"); cl.href="tel:+"+m.phone;
+        cl.setAttribute("aria-label",d.team_call+": "+title); cl.title=d.team_call; cl.innerHTML=CALLI;
+        acts.appendChild(b); acts.appendChild(cl); c.appendChild(acts); rowEl.appendChild(c);
       });
       g.appendChild(rowEl);
     });
