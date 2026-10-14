@@ -220,6 +220,8 @@
   var CALLI = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>';
   var ORG_ICONS={
     person:'<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="16" r="8"/><path d="M8 42c0-9 7-14 16-14s16 5 16 14z"/></svg>',
+    chair:'<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M15 12 14 4l6 4 4-6 4 6 6-4-1 8z"/><circle cx="24" cy="21" r="7"/><path d="M9 44c0-9 6-14 15-14s15 5 15 14z"/></svg>',
+    vice:'<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="19" cy="16" r="7"/><path d="M3 43c0-8 6-13 16-13s16 5 16 13z"/><path d="M38 23l8 3v6c0 5-4 8-8 10-4-2-8-5-8-10v-6z"/><path class="cutstroke" d="M34.5 33.5l2.5 2.5 4.5-5"/></svg>',
     calc:'<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="18" cy="16" r="7"/><path d="M3 42c0-8 6-13 15-13s15 5 15 13z"/><rect x="28" y="22" width="17" height="21" rx="3"/><g class="cut"><rect x="31" y="25" width="11" height="4" rx="1"/><circle cx="33" cy="33" r="1.6"/><circle cx="37" cy="33" r="1.6"/><circle cx="41" cy="33" r="1.6"/><circle cx="33" cy="38" r="1.6"/><circle cx="37" cy="38" r="1.6"/><circle cx="41" cy="38" r="1.6"/></g></svg>',
     group:'<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="18" cy="15" r="7"/><path d="M3 41c0-8 6-13 15-13s15 5 15 13z"/><circle cx="35" cy="24" r="4.5"/><path d="M26 43c0-6 4-10 9-10s9 4 9 10z"/></svg>'
   };
@@ -237,7 +239,6 @@
         var c=mk("div","org-box "+(m.color||"c1"));
         var ic=mk("div","org-ic"); ic.innerHTML=ORG_ICONS[m.icon]||ORG_ICONS.person; c.appendChild(ic);
         c.appendChild(mk("h3","",title));
-        var num=mk("a","org-num ltr",localNum(m.phone)); num.href="tel:+"+m.phone; c.appendChild(num);
         var acts=mk("div","org-acts");
         var b=mk("a","org-btn wa"); b.href=waTo(m.phone,d.msg_team); b.target="_blank"; b.rel="noopener";
         b.setAttribute("aria-label",d.team_wa+": "+title); b.title=d.team_wa; b.innerHTML=WAI;
@@ -248,6 +249,17 @@
       g.appendChild(rowEl);
     });
   }
+
+  // org chart entrance
+  (function(){
+    var org=$("teamGrid"); if(!org) return;
+    if("IntersectionObserver" in window){
+      var io2=new IntersectionObserver(function(es){
+        es.forEach(function(en){ if(en.isIntersecting){org.classList.add("in"); io2.disconnect();} });
+      },{threshold:0.3});
+      io2.observe(org);
+    } else { org.classList.add("in"); }
+  })();
 
   // scroll reveal
   var rows=document.querySelectorAll(".row");
