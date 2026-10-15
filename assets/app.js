@@ -10,11 +10,11 @@
       svc1:"استقدام عاملة منزلية", svc1d:"عاملة تتولى شؤون البيت من تنظيف وترتيب، ويمكنها العناية بالأطفال. أخبرنا بما يناسب أسرتك ونرشّح لك الأنسب.",
       svc2:"استقدام سائق خاص", svc2d:"سائق لتنقلات الأسرة اليومية. حدّد الجنسية التي تفضلها ونتابع معك الإجراءات.",
       ask:"اطلب هذه الخدمة",
-      nat_h:"الجنسيات المتاحة", nat_sub:"نستقدم من ست دول. اضغط على علم الدولة لتصفّح السير الذاتية.", n1:"كينيا", n2:"بنغلاديش", n3:"الفلبين", n4:"إثيوبيا", n5:"سريلانكا", n6:"أوغندا",
+      nat_h:"الجنسيات المتاحة", nat_sub:"نستقدم من أربع دول. اضغط على علم الدولة لتصفّح السير الذاتية.", n1:"كينيا", n2:"بنغلاديش", n3:"الفلبين", n4:"إثيوبيا", n5:"سريلانكا", n6:"أوغندا",
       c_h:"املأ بياناتك ونتواصل معك", c_sub:"يصل طلبك إلينا على واتساب، ونرد عليك في ساعات العمل.",
       c_wa:"واتساب", c_phone:"اتصال", c_mail:"البريد الإلكتروني", c_addr:"العنوان",
       addr:"شارع خالد بن الوليد، حي قرطبة، الدور الأول فوق صيدلية كنوز، مكتب 34، الرياض",
-      c_hours:"ساعات العمل", hours:"يوميًا من 9 صباحًا حتى 11 مساءً", c_social:"حسابات التواصل", c_map:"فتح في خرائط جوجل", ct_h:"بيانات التواصل", ct_pin:"شركة أفلاك للاستقدام", team_h:"فريق العمل", team_sub:"تواصل مباشرة مع إدارة الشركة عبر واتساب أو الاتصال.", team_wa:"تواصل عبر واتساب", team_call:"اتصال", ft_support:"لمزيد من الدعم", mail_subj:"استفسار عن خدمات الاستقدام", mail_body:"السلام عليكم،\n\nأرغب في الاستفسار عن خدمات الاستقدام لديكم.\n\nالخدمة المطلوبة:\nالجنسية المفضلة:\nالاسم:\nرقم الجوال:\n\nشكرًا لكم.", msg_team:"السلام عليكم، أود التواصل بخصوص خدمات أفلاك للاستقدام.",
+      c_hours:"ساعات العمل", hours:"يوميًا من 9 صباحًا حتى 11 مساءً", c_social:"حسابات التواصل", c_map:"فتح في خرائط جوجل", ct_h:"بيانات التواصل", ct_pin:"شركة أفلاك للاستقدام", team_h:"فريق العمل", team_sub:"اختر ما يناسبك وتواصل معنا مباشرة عبر واتساب أو الاتصال.", team_wa:"تواصل عبر واتساب", team_call:"اتصال", ft_support:"لمزيد من الدعم", mail_subj:"استفسار عن خدمات الاستقدام", mail_body:"السلام عليكم،\n\nأرغب في الاستفسار عن خدمات الاستقدام لديكم.\n\nالخدمة المطلوبة:\nالجنسية المفضلة:\nالاسم:\nرقم الجوال:\n\nشكرًا لكم.", msg_team:"السلام عليكم، أود التواصل بخصوص خدمات أفلاك للاستقدام.",
       f_h:"طلب خدمة", f_type:"الخدمة المطلوبة", f_nat:"الجنسية المفضلة", f_name:"الاسم", f_phone:"رقم الجوال", f_note:"ملاحظات (اختياري)", f_send:"أرسل الطلب عبر واتساب", any:"أي جنسية",
       cv_newtab:"فتح في تبويب جديد", cv_close:"إغلاق", cv_back:"رجوع للجنسيات", cv_title:"السير الذاتية: ", cv_count:"{n} سيرة ذاتية متاحة", cv_view:"عرض السيرة الذاتية (PDF)", cv_pick:"اختيار وإرسال عبر واتساب",
       cv_empty:"سيتم إضافة السير الذاتية لهذه الجنسية قريبًا. تواصل معنا على واتساب لنرشّح لك الأنسب.",
@@ -24,7 +24,7 @@
       q6:"ما الخدمات المتاحة؟", a6:"استقدام عاملة منزلية وسائق شخصي، ويمكنك أيضًا طلب طباخ أو طباخة، أو ممرضة منزلية، أو مساعدة شخصية من نموذج الطلب.",
       q1:"هل الشركة مرخّصة؟", a1:"نعم. شركة مرخّصة من وزارة الموارد البشرية والتنمية الاجتماعية برقم 3801238، وسجلنا التجاري رقم 7004359431.",
       q3:"كم السعر؟", a3:"يختلف السعر حسب الخدمة والجنسية. راسلنا على واتساب ونرسل لك التفاصيل.",
-      q4:"ما الجنسيات المتاحة؟", a4:"كينيا، بنغلاديش، الفلبين، إثيوبيا، سريلانكا، وأوغندا.",
+      q4:"ما الجنسيات المتاحة؟", a4:"كينيا، بنغلاديش، الفلبين، وسريلانكا.",
       q5:"أين مقر الشركة ومتى تفتح؟", a5:"في الرياض، حي قرطبة، شارع خالد بن الوليد، الدور الأول فوق صيدلية كنوز، مكتب 34. نعمل يوميًا من 9 صباحًا حتى 11 مساءً.",
       foot1:"أفلاك للاستقدام | الرياض، المملكة العربية السعودية", foot2:"ترخيص 3801238 | سجل تجاري 7004359431",
       msg_hello:"السلام عليكم، أرغب في طلب: ", msg_nat:"الجنسية المفضلة: ", msg_name:"الاسم: ", msg_phone:"الجوال: ", msg_note:"ملاحظات: ",
@@ -40,11 +40,11 @@
       svc1:"Recruit a housemaid", svc1d:"A housemaid who takes care of the home, from cleaning to tidying, and can also look after children. Tell us what suits your family and we'll suggest the best match.",
       svc2:"Recruit a private driver", svc2d:"A driver for your family's daily trips. Choose the nationality you prefer and we'll follow up on the paperwork with you.",
       ask:"Request this service",
-      nat_h:"Available nationalities", nat_sub:"We recruit from six countries. Tap a flag to browse CVs.", n1:"Kenya", n2:"Bangladesh", n3:"Philippines", n4:"Ethiopia", n5:"Sri Lanka", n6:"Uganda",
+      nat_h:"Available nationalities", nat_sub:"We recruit from four countries. Tap a flag to browse CVs.", n1:"Kenya", n2:"Bangladesh", n3:"Philippines", n4:"Ethiopia", n5:"Sri Lanka", n6:"Uganda",
       c_h:"Fill in your details and we'll contact you", c_sub:"Your request reaches us on WhatsApp and we reply during working hours.",
       c_wa:"WhatsApp", c_phone:"Phone", c_mail:"Email", c_addr:"Address",
       addr:"Khalid Bin Al Waleed Street, Qurtubah, first floor above Kunooz Pharmacy, office 34, Riyadh",
-      c_hours:"Working hours", hours:"Daily, 9 AM to 11 PM", c_social:"Social accounts", c_map:"Open in Maps", ct_h:"Contact details", ct_pin:"Aflaak Recruitment Company", team_h:"Our team", team_sub:"Contact our management directly on WhatsApp or by phone.", team_wa:"Message on WhatsApp", team_call:"Call", ft_support:"More support", mail_subj:"Inquiry about recruitment services", mail_body:"Hello,\n\nI would like to ask about your recruitment services.\n\nService needed:\nPreferred nationality:\nName:\nMobile number:\n\nThank you.", msg_team:"Hello, I would like to ask about Aflaak Recruitment's services.",
+      c_hours:"Working hours", hours:"Daily, 9 AM to 11 PM", c_social:"Social accounts", c_map:"Open in Maps", ct_h:"Contact details", ct_pin:"Aflaak Recruitment Company", team_h:"Our team", team_sub:"Choose what suits you and contact us directly on WhatsApp or by phone.", team_wa:"Message on WhatsApp", team_call:"Call", ft_support:"More support", mail_subj:"Inquiry about recruitment services", mail_body:"Hello,\n\nI would like to ask about your recruitment services.\n\nService needed:\nPreferred nationality:\nName:\nMobile number:\n\nThank you.", msg_team:"Hello, I would like to ask about Aflaak Recruitment's services.",
       f_h:"Service request", f_type:"Service needed", f_nat:"Preferred nationality", f_name:"Name", f_phone:"Mobile number", f_note:"Notes (optional)", f_send:"Send request on WhatsApp", any:"Any nationality",
       cv_newtab:"Open in new tab", cv_close:"Close", cv_back:"Back to nationalities", cv_title:"CVs: ", cv_count:"{n} CVs available", cv_view:"View CV (PDF)", cv_pick:"Select & send on WhatsApp",
       cv_empty:"CVs for this nationality will be added soon. Message us on WhatsApp and we'll suggest the best match.",
@@ -54,7 +54,7 @@
       q6:"Which services do you offer?", a6:"Recruiting a housemaid or a personal driver. You can also request a cook, a home nurse or a personal assistant through the request form.",
       q1:"Is the company licensed?", a1:"Yes. We are licensed by the Ministry of Human Resources and Social Development (license 3801238), and our commercial registration is 7004359431.",
       q3:"How much does it cost?", a3:"Prices depend on the service and nationality. Message us on WhatsApp and we'll send the details.",
-      q4:"Which nationalities are available?", a4:"Kenya, Bangladesh, the Philippines, Ethiopia, Sri Lanka and Uganda.",
+      q4:"Which nationalities are available?", a4:"Kenya, Bangladesh, the Philippines and Sri Lanka.",
       q5:"Where is the company located and when is it open?", a5:"In Riyadh, Qurtubah district, Khalid Bin Al Waleed Street, first floor above Kunooz Pharmacy, office 34. Open daily from 9 AM to 11 PM.",
       foot1:"Aflaak Recruitment | Riyadh, Saudi Arabia", foot2:"License 3801238 | Commercial registration 7004359431",
       msg_hello:"Hello, I would like to request: ", msg_nat:"Preferred nationality: ", msg_name:"Name: ", msg_phone:"Mobile: ", msg_note:"Notes: ",
@@ -232,15 +232,16 @@
     var rows={};
     TEAM.forEach(function(m){var r=m.row||1; (rows[r]=rows[r]||[]).push(m);});
     Object.keys(rows).sort(function(x,y){return x-y;}).forEach(function(r,idx){
-      if(idx>0){var lk=mk("div","org-links"); lk.setAttribute("aria-hidden","true"); lk.appendChild(mk("i","a")); lk.appendChild(mk("i","b")); g.appendChild(lk);}
-      var rowEl=mk("div","org-row");
+      var single=rows[r].length===1;
+      if(idx>0){var lk=mk("div","org-links"+(single?" single":"")); lk.setAttribute("aria-hidden","true"); lk.appendChild(mk("i","a")); lk.appendChild(mk("i","b")); g.appendChild(lk);}
+      var rowEl=mk("div","org-row"+(single?" single":""));
       rows[r].forEach(function(m){
         var title=(lang==="en"&&m.en)?m.en:m.ar;
         var c=mk("div","org-box "+(m.color||"c1"));
         var ic=mk("div","org-ic"); ic.innerHTML=ORG_ICONS[m.icon]||ORG_ICONS.person; c.appendChild(ic);
         c.appendChild(mk("h3","",title));
         var acts=mk("div","org-acts");
-        var b=mk("a","org-btn wa"); b.href=waTo(m.phone,d.msg_team); b.target="_blank"; b.rel="noopener";
+        var b=mk("a","org-btn wa"); b.href=waTo(m.phone,((lang==="en"?m.msg_en:m.msg_ar)||d.msg_team)); b.target="_blank"; b.rel="noopener";
         b.setAttribute("aria-label",d.team_wa+": "+title); b.title=d.team_wa; b.innerHTML=WAI;
         var cl=mk("a","org-btn call"); cl.href="tel:+"+m.phone;
         cl.setAttribute("aria-label",d.team_call+": "+title); cl.title=d.team_call; cl.innerHTML=CALLI;

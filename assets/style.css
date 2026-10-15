@@ -358,12 +358,14 @@ a.ft-ico:hover{background:rgba(255,255,255,.18)}
 /* ===== fixed, soft background that stays while scrolling ===== */
 html{background:var(--bg)}
 body{background:transparent}
-body::before{content:"";position:fixed;inset:0;z-index:-1;background:url("img/site-bg.svg") center/cover no-repeat;opacity:.6;pointer-events:none}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:url("img/site-bg.jpg") center top/cover no-repeat;opacity:.24;pointer-events:none}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) body::before{opacity:.10;filter:brightness(.55) saturate(.9)}}
+:root[data-theme="dark"] body::before{opacity:.10;filter:brightness(.55) saturate(.9)}
 .alt{background:color-mix(in srgb,var(--surface) 80%,transparent)}
 .top{background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:saturate(1.2) blur(8px)}
 
 /* ===== service photos ===== */
-.pane{position:relative;overflow:hidden;aspect-ratio:5/4;min-height:0;padding:0}
+.pane{position:relative;overflow:hidden;aspect-ratio:7/5;min-height:0;padding:0}
 .pane .svc-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 @media (max-width:760px){.row .pane,.row:nth-child(even) .pane{min-height:0}}
 
@@ -388,3 +390,18 @@ html.js .org:not(.in) .org-links i{transform:scaleY(0);transform-origin:top}
   html.js .org .org-links::before{transform:translateX(-1px);transition:none}
   html.js .org .org-links::after,html.js .org .org-links i{transform:none;transition:none}
 }
+
+
+/* ===== round 12 ===== */
+.flag[hidden],.flags li[hidden]{display:none !important}
+/* background photo with a veil (fixed while scrolling) */
+:root{--veil:rgba(243,248,248,.72)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--veil:rgba(10,26,29,.90)}}
+:root[data-theme="dark"]{--veil:rgba(10,26,29,.90)}
+body::before{background:linear-gradient(var(--veil),var(--veil)),url("img/site-bg.jpg") center/cover no-repeat;opacity:1}
+/* service photos aspect */
+.pane{aspect-ratio:1.42/1}
+/* single box row (centered) */
+.org-row.single{grid-template-columns:minmax(0,1fr);width:50%;margin-inline:auto}
+.org-links.single::after,.org-links.single i{display:none}
+.org-links.single::before{height:50px}
