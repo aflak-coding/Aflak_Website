@@ -1,4 +1,5 @@
 media:
+
   - name: pdf_kenya
     label: "رفع سيرة ذاتية - كينيا"
     input: cvs/kenya
@@ -117,3 +118,12 @@ content:
       - name: ref
         label: "الرقم المرجعي"
         type: string
+        
+      - name: status
+        label: "الحالة (متاحة / محجوزة / إخفاء مؤقتًا)"
+        type: select
+        options:
+          values:
+            - { name: available, label: "متاحة" }
+            - { name: reserved, label: "محجوزة" }
+            - { name: hidden, label: "إخفاء مؤقتًا" }
