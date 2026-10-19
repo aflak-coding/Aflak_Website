@@ -8,7 +8,6 @@
     "rel": "m",
     "st": "s",
     "exp": "new",
-    "photo": "cvs/ethiopia/sofiya-awel-malsebo.jpg",
     "file": "cvs/ethiopia/sofiya-awel-malsebo.pdf"
   },
   {
@@ -20,7 +19,6 @@
     "rel": "m",
     "st": "s",
     "exp": "new",
-    "photo": "cvs/ethiopia/zinet-awol-seid.jpg",
     "file": "cvs/ethiopia/zinet-awol-seid.pdf"
   },
   {
@@ -30,7 +28,8 @@
     "job": "svc1",
     "rel": "o",
     "st": "s",
-    "file": "cvs/kenya/eddahwalowekitolome-housemaidcv.pdf"
+    "file": "cvs/kenya/eddahwalowekitolome-housemaidcv.pdf",
+    "age": 26
   },
   {
     "nat": "n1",
@@ -39,7 +38,8 @@
     "job": "svc1",
     "rel": "o",
     "st": "m",
-    "file": "cvs/kenya/masaba-marione.pdf"
+    "file": "cvs/kenya/masaba-marione.pdf",
+    "age": 25
   },
   {
     "nat": "n2",
@@ -47,8 +47,10 @@
     "ref": "B-101",
     "job": "svc1",
     "st": "m",
-    "photo": "cvs/photos/a12484894-a-995.jpg",
-    "file": "cvs/bangladesh/a12484894-a-995.pdf"
+    "file": "cvs/bangladesh/a12484894-a-995.pdf",
+    "rel": "m",
+    "age": 44,
+    "exp": "prev"
   },
   {
     "nat": "n3",
@@ -56,7 +58,30 @@
     "ref": "P-101",
     "rel": "o",
     "st": "m",
-    "photo": "cvs/photos/waniwan-monaliza-romero-cv-aflaak.jpg",
-    "file": "cvs/philippines/waniwan-monaliza-romero-cv-aflaak.pdf"
+    "file": "cvs/philippines/waniwan-monaliza-romero-cv-aflaak.pdf",
+    "age": 49,
+    "job": "svc1",
+    "exp": "prev"
+  },
+  {
+    "nat": "n2",
+    "name": "Mst Khadija A21256341",
+    "ref": "B-102",
+    "rel": "m",
+    "st": "m",
+    "age": 39,
+    "status": "available",
+    "file": "cvs/bangladesh/mst-khadija-a21256341.pdf"
+  },
+  {
+    "nat": "n2",
+    "name": "Rikta Khatun A08043296",
+    "ref": "B-103",
+    "job": "svc1",
+    "rel": "m",
+    "st": "m",
+    "age": 28,
+    "status": "available",
+    "file": "cvs/bangladesh/rikta-khatun-new-a08043296.pdf"
   }
 ]
