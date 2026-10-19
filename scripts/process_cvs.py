@@ -248,6 +248,7 @@ def main():
                         entry[k] = info[k]
             finally:
                 shutil.rmtree(tmp, ignore_errors=True)
+            entry["status"] = "available"
             entry["file"] = rel
             data.append(entry)
             known.add(rel)

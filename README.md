@@ -85,3 +85,7 @@
 
 ## إعادة إظهار إثيوبيا وأوغندا
 في `index.html` احذف كلمة `hidden` من عنصري العلم (`data-nat="n4"` و `data-nat="n6"`) ومن الخيارين `<option value="n4" ...>` و`<option value="n6" ...>`، وأعد قائمة الدول في الأسئلة الشائعة وعبارة "أربع دول" في `index.html` و`assets/app.js`.
+
+## صفحات جديدة (v13)
+- `services/*.html` (5 خدمات) و`nationalities/*.html` (4 جنسيات) و`privacy.html` (سياسة الخصوصية) و`sitemap.xml`. مولّدة بـ `scripts/build_pages.py`.
+- فلتر السير الذاتية وحالة العاملة (متاحة / محجوزة / إخفاء مؤقتًا)، وتسجيل الطلبات في Google Sheets، وQR، وBing وUptimeRobot: راجع `docs/setup-extras-ar.md`.
