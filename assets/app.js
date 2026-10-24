@@ -14,9 +14,9 @@
       c_h:"املأ بياناتك ونتواصل معك", c_sub:"يصل طلبك إلينا على واتساب، ونرد عليك في ساعات العمل.",
       c_wa:"واتساب", c_phone:"اتصال", c_mail:"البريد الإلكتروني", c_addr:"العنوان",
       addr:"شارع خالد بن الوليد، حي قرطبة، الدور الأول فوق صيدلية كنوز، مكتب 34، الرياض",
-      c_hours:"ساعات العمل", hours:"يوميًا من 9 صباحًا حتى 11 مساءً", c_social:"حسابات التواصل", c_map:"فتح في خرائط جوجل", ct_h:"بيانات التواصل", ct_pin:"شركة أفلاك للاستقدام", team_h:"فريق العمل", team_sub:"اختر ما يناسبك وتواصل معنا مباشرة عبر واتساب أو الاتصال.", team_wa:"تواصل عبر واتساب", team_call:"اتصال", ft_support:"لمزيد من الدعم", mail_subj:"استفسار عن خدمات الاستقدام", mail_body:"السلام عليكم،\n\nأرغب في الاستفسار عن خدمات الاستقدام لديكم.\n\nالخدمة المطلوبة:\nالجنسية المفضلة:\nالاسم:\nرقم الجوال:\n\nشكرًا لكم.", msg_team:"السلام عليكم، أود التواصل بخصوص خدمات أفلاك للاستقدام.",
+      c_hours:"ساعات العمل", hours:"يوميًا من 9 صباحًا حتى 5 مساءً", c_social:"حسابات التواصل", c_map:"فتح في خرائط جوجل", ct_h:"بيانات التواصل", ct_pin:"شركة أفلاك للاستقدام", team_h:"فريق العمل", team_sub:"اختر ما يناسبك وتواصل معنا مباشرة عبر واتساب أو الاتصال.", team_wa:"تواصل عبر واتساب", team_call:"اتصال", ft_support:"لمزيد من الدعم", mail_subj:"استفسار عن خدمات الاستقدام", mail_body:"السلام عليكم،\n\nأرغب في الاستفسار عن خدمات الاستقدام لديكم.\n\nالخدمة المطلوبة:\nالجنسية المفضلة:\nالاسم:\nرقم الجوال:\n\nشكرًا لكم.", msg_team:"السلام عليكم، أود التواصل بخصوص خدمات أفلاك للاستقدام.",
       f_h:"طلب خدمة", f_type:"الخدمة المطلوبة", f_nat:"الجنسية المفضلة", f_name:"الاسم", f_phone:"رقم الجوال", f_note:"ملاحظات (اختياري)", f_send:"أرسل الطلب عبر واتساب", any:"أي جنسية",
-      cv_newtab:"فتح في تبويب جديد", cv_close:"إغلاق", cv_back:"رجوع للجنسيات", cv_title:"السير الذاتية: ", cv_count:"{n} سيرة ذاتية متاحة", cv_view:"عرض السيرة الذاتية (PDF)", cv_pick:"اختيار وإرسال عبر واتساب", flt_job:"المهنة", flt_avl:"التوفر", flt_all:"الكل", flt_reset:"إعادة ضبط", flt_none:"لا توجد سير ذاتية مطابقة. جرّب تغيير التصفية أو تواصل معنا.", flt_of:"من", avl_available:"متاحة", avl_reserved:"محجوزة", cv_reserved_btn:"محجوزة حاليًا", age_r1:"18–25", age_r2:"26–35", age_r3:"36–45", age_r4:"46 فأكثر", f_priv_a:"بإرسال الطلب فإنك توافق على", ft_privacy:"سياسة الخصوصية", ft_srv:"خدماتنا:", ft_nats:"الجنسيات:", fl_svc1:"عاملة منزلية", fl_svc2:"سائق خاص", fl_svc3:"طباخ / طباخة", fl_svc4:"ممرضة منزلية", fl_svc5:"مساعدة شخصية",
+      cv_newtab:"فتح في تبويب جديد", cv_close:"إغلاق", cv_back:"رجوع للجنسيات", cv_title:"السير الذاتية: ", cv_count:"{n} سيرة ذاتية متاحة", cv_view:"عرض السيرة الذاتية (PDF)", cv_pick:"اختيار وإرسال عبر واتساب", rev_h:"آراء عملائنا", rev_sub:"بعض ما كتبه عملاؤنا عنا على خرائط جوجل.", rev_src:"خرائط جوجل", flt_job:"المهنة", flt_avl:"التوفر", flt_all:"الكل", flt_reset:"إعادة ضبط", flt_none:"لا توجد سير ذاتية مطابقة. جرّب تغيير التصفية أو تواصل معنا.", flt_of:"من", avl_available:"متاحة", avl_reserved:"محجوزة", cv_reserved_btn:"محجوزة حاليًا", age_r1:"18–25", age_r2:"26–35", age_r3:"36–45", age_r4:"46 فأكثر", f_priv_a:"بإرسال الطلب فإنك توافق على", ft_privacy:"سياسة الخصوصية", ft_srv:"خدماتنا:", ft_nats:"الجنسيات:", fl_svc1:"عاملة منزلية", fl_svc2:"سائق خاص", fl_svc3:"طباخ / طباخة", fl_svc4:"ممرضة منزلية", fl_svc5:"مساعدة شخصية",
       cv_empty:"سيتم إضافة السير الذاتية لهذه الجنسية قريبًا. تواصل معنا على واتساب لنرشّح لك الأنسب.",
       f_age:"العمر", f_rel:"الديانة", f_st:"الحالة", f_exp:"الخبرة", age_u:"{n} سنة", rel_m:"مسلم", rel_o:"غير مسلم", st_s:"غير متزوج", st_m:"متزوج", exp_new:"قادم جديد", exp_prev:"خبرة سابقة",
       msg_pick:"السلام عليكم، أرغب في اختيار: ", msg_cv:"رابط السيرة الذاتية: ", msg_ref:"الرقم المرجعي: ",
@@ -25,7 +25,7 @@
       q1:"هل الشركة مرخّصة؟", a1:"نعم. شركة مرخّصة من وزارة الموارد البشرية والتنمية الاجتماعية برقم 3801238، وسجلنا التجاري رقم 7004359431.",
       q3:"كم السعر؟", a3:"يختلف السعر حسب الخدمة والجنسية. راسلنا على واتساب ونرسل لك التفاصيل.",
       q4:"ما الجنسيات المتاحة؟", a4:"كينيا، بنغلاديش، الفلبين، وسريلانكا.",
-      q5:"أين مقر الشركة ومتى تفتح؟", a5:"في الرياض، حي قرطبة، شارع خالد بن الوليد، الدور الأول فوق صيدلية كنوز، مكتب 34. نعمل يوميًا من 9 صباحًا حتى 11 مساءً.",
+      q5:"أين مقر الشركة ومتى تفتح؟", a5:"في الرياض، حي قرطبة، شارع خالد بن الوليد، الدور الأول فوق صيدلية كنوز، مكتب 34. نعمل يوميًا من 9 صباحًا حتى 5 مساءً.",
       foot1:"أفلاك للاستقدام | الرياض، المملكة العربية السعودية", foot2:"ترخيص 3801238 | سجل تجاري 7004359431",
       msg_hello:"السلام عليكم، أرغب في طلب: ", msg_nat:"الجنسية المفضلة: ", msg_name:"الاسم: ", msg_phone:"الجوال: ", msg_note:"ملاحظات: ",
       msg_gen:"السلام عليكم، أريد الاستفسار عن خدمات الاستقدام.",
@@ -44,9 +44,9 @@
       c_h:"Fill in your details and we'll contact you", c_sub:"Your request reaches us on WhatsApp and we reply during working hours.",
       c_wa:"WhatsApp", c_phone:"Phone", c_mail:"Email", c_addr:"Address",
       addr:"Khalid Bin Al Waleed Street, Qurtubah, first floor above Kunooz Pharmacy, office 34, Riyadh",
-      c_hours:"Working hours", hours:"Daily, 9 AM to 11 PM", c_social:"Social accounts", c_map:"Open in Maps", ct_h:"Contact details", ct_pin:"Aflaak Recruitment Company", team_h:"Our team", team_sub:"Choose what suits you and contact us directly on WhatsApp or by phone.", team_wa:"Message on WhatsApp", team_call:"Call", ft_support:"More support", mail_subj:"Inquiry about recruitment services", mail_body:"Hello,\n\nI would like to ask about your recruitment services.\n\nService needed:\nPreferred nationality:\nName:\nMobile number:\n\nThank you.", msg_team:"Hello, I would like to ask about Aflaak Recruitment's services.",
+      c_hours:"Working hours", hours:"Daily, 9 AM to 5 PM", c_social:"Social accounts", c_map:"Open in Maps", ct_h:"Contact details", ct_pin:"Aflaak Recruitment Company", team_h:"Our team", team_sub:"Choose what suits you and contact us directly on WhatsApp or by phone.", team_wa:"Message on WhatsApp", team_call:"Call", ft_support:"More support", mail_subj:"Inquiry about recruitment services", mail_body:"Hello,\n\nI would like to ask about your recruitment services.\n\nService needed:\nPreferred nationality:\nName:\nMobile number:\n\nThank you.", msg_team:"Hello, I would like to ask about Aflaak Recruitment's services.",
       f_h:"Service request", f_type:"Service needed", f_nat:"Preferred nationality", f_name:"Name", f_phone:"Mobile number", f_note:"Notes (optional)", f_send:"Send request on WhatsApp", any:"Any nationality",
-      cv_newtab:"Open in new tab", cv_close:"Close", cv_back:"Back to nationalities", cv_title:"CVs: ", cv_count:"{n} CVs available", cv_view:"View CV (PDF)", cv_pick:"Select & send on WhatsApp", flt_job:"Job", flt_avl:"Availability", flt_all:"All", flt_reset:"Reset", flt_none:"No matching CVs. Try changing the filters or contact us.", flt_of:"of", avl_available:"Available", avl_reserved:"Reserved", cv_reserved_btn:"Currently reserved", age_r1:"18–25", age_r2:"26–35", age_r3:"36–45", age_r4:"46+", f_priv_a:"By sending this request you agree to our", ft_privacy:"Privacy policy", ft_srv:"Our services:", ft_nats:"Nationalities:", fl_svc1:"Housemaid", fl_svc2:"Private driver", fl_svc3:"Cook", fl_svc4:"Home nurse", fl_svc5:"Personal assistant",
+      cv_newtab:"Open in new tab", cv_close:"Close", cv_back:"Back to nationalities", cv_title:"CVs: ", cv_count:"{n} CVs available", cv_view:"View CV (PDF)", cv_pick:"Select & send on WhatsApp", rev_h:"What our clients say", rev_sub:"Some of what our clients wrote about us on Google Maps.", rev_src:"Google Maps", flt_job:"Job", flt_avl:"Availability", flt_all:"All", flt_reset:"Reset", flt_none:"No matching CVs. Try changing the filters or contact us.", flt_of:"of", avl_available:"Available", avl_reserved:"Reserved", cv_reserved_btn:"Currently reserved", age_r1:"18–25", age_r2:"26–35", age_r3:"36–45", age_r4:"46+", f_priv_a:"By sending this request you agree to our", ft_privacy:"Privacy policy", ft_srv:"Our services:", ft_nats:"Nationalities:", fl_svc1:"Housemaid", fl_svc2:"Private driver", fl_svc3:"Cook", fl_svc4:"Home nurse", fl_svc5:"Personal assistant",
       cv_empty:"CVs for this nationality will be added soon. Message us on WhatsApp and we'll suggest the best match.",
       f_age:"Age", f_rel:"Religion", f_st:"Status", f_exp:"Experience", age_u:"{n} years", rel_m:"Muslim", rel_o:"Non-Muslim", st_s:"Single", st_m:"Married", exp_new:"New arrival", exp_prev:"Previous experience",
       msg_pick:"Hello, I would like to select: ", msg_cv:"CV link: ", msg_ref:"Reference no.: ",
@@ -55,7 +55,7 @@
       q1:"Is the company licensed?", a1:"Yes. We are licensed by the Ministry of Human Resources and Social Development (license 3801238), and our commercial registration is 7004359431.",
       q3:"How much does it cost?", a3:"Prices depend on the service and nationality. Message us on WhatsApp and we'll send the details.",
       q4:"Which nationalities are available?", a4:"Kenya, Bangladesh, the Philippines and Sri Lanka.",
-      q5:"Where is the company located and when is it open?", a5:"In Riyadh, Qurtubah district, Khalid Bin Al Waleed Street, first floor above Kunooz Pharmacy, office 34. Open daily from 9 AM to 11 PM.",
+      q5:"Where is the company located and when is it open?", a5:"In Riyadh, Qurtubah district, Khalid Bin Al Waleed Street, first floor above Kunooz Pharmacy, office 34. Open daily from 9 AM to 5 PM.",
       foot1:"Aflaak Recruitment | Riyadh, Saudi Arabia", foot2:"License 3801238 | Commercial registration 7004359431",
       msg_hello:"Hello, I would like to request: ", msg_nat:"Preferred nationality: ", msg_name:"Name: ", msg_phone:"Mobile: ", msg_note:"Notes: ",
       msg_gen:"Hello, I would like to ask about your recruitment services.",
@@ -68,6 +68,7 @@
   function wa(t){return "https://wa.me/"+WA+"?text="+encodeURIComponent(t);}
 
   function apply(){
+    if(!revBuilt){revBuilt=true; renderReviews();}
     var d=D[lang];
     document.documentElement.lang=lang;
     document.documentElement.dir=lang==="ar"?"rtl":"ltr";
@@ -312,6 +313,34 @@
       });
       g.appendChild(rowEl);
     });
+  }
+
+  // ---- reviews ticker (moves left to right, never stops) ----
+  var revBuilt=false;
+  function renderReviews(){
+    var sec=$("reviews"); if(!sec) return;
+    var list=(window.REVIEWS_DATA||[]).filter(function(r){return r&&Number(r.stars)>=4&&String(r.text||"").trim().length>=15;});
+    if(!list.length){sec.hidden=true; return;}
+    sec.hidden=false;
+    var track=$("revTrack"); track.textContent="";
+    function card(r){
+      var c=mk("div","rev-card");
+      var st=mk("div","rev-stars"), n=Math.min(5,Math.round(Number(r.stars)));
+      st.setAttribute("role","img"); st.setAttribute("aria-label",n+"/5");
+      for(var i=0;i<5;i++) st.appendChild(mk("span",i<n?"on":"off","\u2605"));
+      c.appendChild(st);
+      var tx=mk("p","rev-text",String(r.text).trim()); tx.setAttribute("dir","auto"); c.appendChild(tx);
+      var meta=mk("div","rev-meta"); meta.appendChild(mk("b","",r.name||""));
+      var src=mk("span",""); src.setAttribute("data-i18n","rev_src"); meta.appendChild(src);
+      c.appendChild(meta);
+      return c;
+    }
+    var CARD=326, vw=Math.max(window.innerWidth,(window.screen&&window.screen.width)||0,1280)+40;
+    var reps=Math.max(1,Math.ceil(vw/(CARD*list.length)));
+    function buildSet(){var s=mk("div","rev-set"); for(var k=0;k<reps;k++) list.forEach(function(r){s.appendChild(card(r));}); return s;}
+    var s1=buildSet(), s2=buildSet(); s2.setAttribute("aria-hidden","true");
+    track.appendChild(s1); track.appendChild(s2);
+    track.style.setProperty("--rev-dur",Math.max(24,Math.round(reps*list.length*CARD/55))+"s");
   }
 
   // org chart entrance

@@ -12,7 +12,7 @@ WA = "966554084322"
 LICENSE = "3801238"
 CR = "7004359431"
 EMAIL = "aflak8785@gmail.com"
-UPDATED = "2026-10-17"
+UPDATED = "2026-10-22"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 V = "13"
 
@@ -199,7 +199,7 @@ for n in NATIONALITIES:
 # ---------------- privacy page (Arabic + English) ----------------
 PRIVACY_AR = [
     ("من نحن", f"<p>شركة أفلاك للاستقدام، مرخّصة من وزارة الموارد البشرية والتنمية الاجتماعية برقم {LICENSE}، وسجل تجاري رقم {CR}، ومقرها الرياض، حي قرطبة، شارع خالد بن الوليد. هذه السياسة توضح كيف نجمع بياناتك الشخصية ونستخدمها ونحميها عند استخدامك هذا الموقع.</p>"),
-    ("البيانات التي نجمعها", "<ul><li><b>عند إرسال نموذج الطلب:</b> الاسم، ورقم الجوال، والخدمة والجنسية المفضلة، والملاحظات (اختيارية).</li><li><b>عند التواصل معنا</b> عبر واتساب أو الهاتف أو البريد الإلكتروني: ما ترسله إلينا من معلومات.</li><li><b>بيانات الاستخدام</b> (عند تفعيل الإحصائيات): الصفحات التي تزورها، ونوع الجهاز والمتصفح، والموقع التقريبي، ومعرّف ملف تعريف الارتباط.</li><li><b>بيانات السير الذاتية المنشورة للعمالة:</b> الاسم، والجنسية، والمهنة، والعمر، والديانة، والحالة الاجتماعية، والخبرة، والرقم المرجعي، وملف السيرة الذاتية. تُنشر بموافقة صاحب السيرة ولغرض الاستقدام فقط.</li></ul>"),
+    ("البيانات التي نجمعها", "<ul><li><b>عند إرسال نموذج الطلب:</b> الاسم، ورقم الجوال، والخدمة والجنسية المفضلة، والملاحظات (اختيارية).</li><li><b>عند التواصل معنا</b> عبر واتساب أو الهاتف أو البريد الإلكتروني: ما ترسله إلينا من معلومات.</li><li><b>بيانات الاستخدام</b> (عند تفعيل الإحصائيات): الصفحات التي تزورها، ونوع الجهاز والمتصفح، والموقع التقريبي، ومعرّف ملف تعريف الارتباط.</li><li><b>تقييمات العملاء:</b> نعرض بعض التقييمات المنشورة علنًا على خرائط جوجل (الاسم والنص). يمكنك طلب إزالة تقييمك بالتواصل معنا.</li><li><b>بيانات السير الذاتية المنشورة للعمالة:</b> الاسم، والجنسية، والمهنة، والعمر، والديانة، والحالة الاجتماعية، والخبرة، والرقم المرجعي، وملف السيرة الذاتية. تُنشر بموافقة صاحب السيرة ولغرض الاستقدام فقط.</li></ul>"),
     ("لماذا نستخدم بياناتك", "<ul><li>الرد على استفساراتك وطلباتك ومتابعتها.</li><li>ترشيح الخيارات المناسبة لك.</li><li>تحسين الموقع وفهم كيفية استخدامه.</li><li>الالتزام بالأنظمة المعمول بها.</li></ul>"),
     ("موافقتك", "<p>بإرسالك نموذج الطلب أو تواصلك معنا فإنك توافق على معالجة بياناتك وفق هذه السياسة. يمكنك سحب موافقتك في أي وقت بالتواصل معنا.</p>"),
     ("مشاركة البيانات ومزوّدو الخدمة", "<p>لا نبيع بياناتك. قد تُعالج بياناتك عبر مزوّدي خدمات نستخدمهم لتشغيل الموقع والتواصل معك، ومنهم: واتساب (Meta)، وGoogle (البريد، والجداول، والإحصائيات، والخرائط)، وGitHub (استضافة الموقع). وقد تتم المعالجة على خوادم خارج المملكة. ونتخذ ما يلزم لحماية بياناتك وفق الأنظمة.</p>"),
@@ -212,7 +212,7 @@ PRIVACY_AR = [
 ]
 PRIVACY_EN = [
     ("Who we are", f"<p>Aflaak Recruitment Company is licensed by the Ministry of Human Resources and Social Development (license {LICENSE}, commercial registration {CR}) and is based in Riyadh. This policy explains how we collect, use and protect your personal data when you use this website.</p>"),
-    ("Data we collect", "<ul><li><b>Request form:</b> name, mobile number, preferred service and nationality, and optional notes.</li><li><b>Contacting us</b> by WhatsApp, phone or email: the information you send us.</li><li><b>Usage data</b> (when analytics is enabled): pages visited, device and browser type, approximate location, and a cookie identifier.</li><li><b>Published worker CVs:</b> name, nationality, job, age, religion, marital status, experience, reference number and the CV file. Published with the CV owner's consent and for recruitment purposes only.</li></ul>"),
+    ("Data we collect", "<ul><li><b>Request form:</b> name, mobile number, preferred service and nationality, and optional notes.</li><li><b>Contacting us</b> by WhatsApp, phone or email: the information you send us.</li><li><b>Usage data</b> (when analytics is enabled): pages visited, device and browser type, approximate location, and a cookie identifier.</li><li><b>Client reviews:</b> we display some reviews that were published publicly on Google Maps (name and text). You may ask us to remove your review.</li><li><b>Published worker CVs:</b> name, nationality, job, age, religion, marital status, experience, reference number and the CV file. Published with the CV owner's consent and for recruitment purposes only.</li></ul>"),
     ("Why we use your data", "<ul><li>To answer and follow up on your inquiries and requests.</li><li>To suggest suitable options.</li><li>To improve the website.</li><li>To comply with applicable regulations.</li></ul>"),
     ("Your consent", "<p>By sending the request form or contacting us you agree to the processing of your data under this policy. You may withdraw your consent at any time by contacting us.</p>"),
     ("Sharing and service providers", "<p>We do not sell your data. Your data may be processed by service providers we use to run the site and communicate with you, including WhatsApp (Meta), Google (email, sheets, analytics, maps) and GitHub (website hosting). Processing may take place on servers outside the Kingdom. We take the steps required by law to protect your data.</p>"),
