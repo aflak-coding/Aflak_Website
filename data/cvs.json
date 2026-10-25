@@ -1,87 +1,56 @@
 [
   {
-    "nat": "n4",
     "name": "Sofiya Awel Malsebo",
-    "ref": "E-101",
+    "nat": "n4",
+    "file": "cvs/ethiopia/sofiya-awel-malsebo.pdf",
     "job": "svc1",
     "age": 27,
     "rel": "m",
     "st": "s",
     "exp": "new",
-    "file": "cvs/ethiopia/sofiya-awel-malsebo.pdf"
+    "ref": "E-101"
   },
   {
-    "nat": "n4",
     "name": "Zinet Awol Seid",
-    "ref": "E-102",
+    "nat": "n4",
+    "file": "cvs/ethiopia/zinet-awol-seid.pdf",
     "job": "svc1",
     "age": 33,
     "rel": "m",
     "st": "s",
     "exp": "new",
-    "file": "cvs/ethiopia/zinet-awol-seid.pdf"
+    "ref": "E-102"
   },
   {
-    "nat": "n1",
-    "name": "Eddahwalowekitolome Housemaidcv",
-    "ref": "K-101",
-    "job": "svc1",
-    "rel": "o",
-    "st": "s",
-    "file": "cvs/kenya/eddahwalowekitolome-housemaidcv.pdf",
-    "age": 26
-  },
-  {
-    "nat": "n1",
-    "name": "Masaba Marione",
-    "ref": "K-102",
-    "job": "svc1",
-    "rel": "o",
-    "st": "m",
-    "file": "cvs/kenya/masaba-marione.pdf",
-    "age": 25
-  },
-  {
-    "nat": "n2",
-    "name": "A12484894 A",
-    "ref": "B-101",
-    "job": "svc1",
-    "st": "m",
-    "file": "cvs/bangladesh/a12484894-a-995.pdf",
-    "rel": "m",
-    "age": 44,
-    "exp": "prev"
-  },
-  {
-    "nat": "n3",
     "name": "Waniwan Monaliza Romero Aflaak",
-    "ref": "P-101",
+    "nat": "n3",
+    "file": "cvs/philippines/waniwan-monaliza-romero-cv-aflaak.pdf",
+    "job": "svc1",
+    "age": 49,
     "rel": "o",
     "st": "m",
-    "file": "cvs/philippines/waniwan-monaliza-romero-cv-aflaak.pdf",
-    "age": 49,
-    "job": "svc1",
-    "exp": "prev"
+    "exp": "prev",
+    "ref": "P-101"
   },
   {
-    "nat": "n2",
     "name": "Mst Khadija A21256341",
-    "ref": "B-102",
+    "nat": "n2",
+    "file": "cvs/bangladesh/mst-khadija-a21256341.pdf",
+    "age": 39,
     "rel": "m",
     "st": "m",
-    "age": 39,
-    "status": "available",
-    "file": "cvs/bangladesh/mst-khadija-a21256341.pdf"
+    "ref": "B-102",
+    "status": "available"
   },
   {
-    "nat": "n2",
     "name": "Rikta Khatun A08043296",
-    "ref": "B-103",
+    "nat": "n2",
+    "file": "cvs/bangladesh/rikta-khatun-new-a08043296.pdf",
     "job": "svc1",
+    "age": 28,
     "rel": "m",
     "st": "m",
-    "age": 28,
-    "status": "available",
-    "file": "cvs/bangladesh/rikta-khatun-new-a08043296.pdf"
+    "ref": "B-103",
+    "status": "available"
   }
 ]
