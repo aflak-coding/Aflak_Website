@@ -335,7 +335,7 @@
       c.appendChild(meta);
       return c;
     }
-    var CARD=326, vw=Math.max(window.innerWidth,(window.screen&&window.screen.width)||0,1280)+40;
+    var CARD=356, vw=Math.max(window.innerWidth,(window.screen&&window.screen.width)||0,1280)+40;
     var reps=Math.max(1,Math.ceil(vw/(CARD*list.length)));
     function buildSet(){var s=mk("div","rev-set"); for(var k=0;k<reps;k++) list.forEach(function(r){s.appendChild(card(r));}); return s;}
     var s1=buildSet(), s2=buildSet(); s2.setAttribute("aria-hidden","true");
