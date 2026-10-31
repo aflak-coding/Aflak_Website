@@ -9,7 +9,7 @@
 وبيكمل أي بيانات ناقصة للسير الموجودة (بدون ما يغيّر الموجود).
 لا تُستخرج أي صور للعاملات، ولا يُقرأ رقم الجواز أو الجوال: لا يُحفظ أي منها في data/cvs.json.
 """
-import datetime, json, os, re, shutil, subprocess, sys, tempfile
+import datetime, hashlib, json, os, re, shutil, subprocess, sys, tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data", "cvs.json")
@@ -24,6 +24,14 @@ NAT_MAP = {"KENYA": "n1", "KENYAN": "n1", "BANGLADESH": "n2", "BANGLADESHI": "n2
 COUNTRIES = r"OMAN|UAE|KSA|SAUDI|KUWAIT|QATAR|BAHRAIN|LEBANON|JORDAN|SINGAPORE|MALAYSIA|HONG ?KONG|DUBAI|EMIRATES|TAIWAN|CYPRUS"
 FIELDS = ("job", "rel", "st", "age", "exp")
 NOISE = re.compile(r"^(?:housemaid|maid|driver|cook|cv|resume|application|form|copy|final|new|scan|file|img|image|pdf|aflaak|aflak)+$", re.I)
+
+
+def sha(path):
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
 
 
 def norm(p):
@@ -211,7 +219,14 @@ def main():
                 filled += 1
 
     # ---- السير الجديدة
+    # بصمة محتوى كل ملف موجود، لمنع إضافة نفس الملف مرة ثانية حتى لو اتغير اسمه
+    seen = {}
+    for w in data:
+        f = os.path.join(ROOT, norm(w.get("file"))) if w.get("file") else None
+        if f and os.path.isfile(f):
+            seen.setdefault(sha(f), w)
     added = 0
+    removed = 0
     for folder, (nat, letter) in FOLDERS.items():
         d = os.path.join(ROOT, "cvs", folder)
         if not os.path.isdir(d):
@@ -223,8 +238,14 @@ def main():
             if rel in known:
                 continue
             stem = os.path.splitext(fn)[0]
-            print("جديد:", rel)
             pdf = os.path.join(d, fn)
+            digest = sha(pdf)
+            if digest in seen:
+                print("مكرر (نفس الملف موجود سابقًا باسم %s): تم حذف النسخة الزائدة %s" % (seen[digest].get("file"), rel))
+                os.remove(pdf)
+                removed += 1
+                continue
+            print("جديد:", rel)
             tmp = tempfile.mkdtemp()
             try:
                 layer = read_text_layer(pdf)
@@ -252,6 +273,7 @@ def main():
             entry["file"] = rel
             data.append(entry)
             known.add(rel)
+            seen[digest] = entry
             added += 1
             print("   ->", {k: v for k, v in entry.items() if k != "file"})
 
@@ -260,7 +282,7 @@ def main():
         with open(DATA, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
             f.write("\n")
-    print("تمت إضافة %d سيرة، واستكمال %d سيرة" % (added, filled))
+    print("تمت إضافة %d سيرة، واستكمال %d سيرة، وحذف %d ملف مكرر" % (added, filled, removed))
 
 
 if __name__ == "__main__":
