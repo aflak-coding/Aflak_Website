@@ -1,0 +1,73 @@
+[
+  {
+    "name": "EDDAH_WALOWE_KITOLOME",
+    "nat": "n1",
+    "file": "wwwww",
+    "job": "svc1",
+    "age": 26,
+    "rel": "o",
+    "st": "s",
+    "exp": "prev",
+    "ref": "K-1",
+    "status": "available"
+  },
+  {
+    "name": "STELLA SADA",
+    "nat": "n1",
+    "file": "wwew",
+    "job": "svc1",
+    "age": 34,
+    "rel": "o",
+    "st": "s",
+    "exp": "prev",
+    "ref": "K-2",
+    "status": "available"
+  },
+  {
+    "name": "JANET SHIDHAN KAZUNGU",
+    "nat": "n1",
+    "file": "asdasd",
+    "job": "svc1",
+    "age": 49,
+    "rel": "o",
+    "st": "m",
+    "exp": "prev",
+    "ref": "K-3",
+    "status": "reserved"
+  },
+  {
+    "name": "MWANAKOMBO JUMA KIDATO",
+    "nat": "n1",
+    "file": "asd",
+    "job": "svc1",
+    "age": 39,
+    "rel": "m",
+    "st": "s",
+    "exp": "prev",
+    "ref": "K-4",
+    "status": "available"
+  },
+  {
+    "name": "MARGARET MURUGI",
+    "nat": "n1",
+    "file": "asd",
+    "job": "svc1",
+    "age": 39,
+    "rel": "o",
+    "st": "s",
+    "exp": "prev",
+    "ref": "K-6"
+  },
+  {
+    "name": "ELIZABETH KEMUNTO TIRIMBA",
+    "nat": "n1",
+    "file": "asd",
+    "job": "svc1",
+    "age": 28,
+    "rel": "o",
+    "st": "s",
+    "exp": "prev",
+    "ref": "K-7",
+    "status": "reserved"
+  }
+]
