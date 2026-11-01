@@ -2,6 +2,13 @@
   {
     "name": "TESTING",
     "nat": "n1",
-    "file": "TESTING"
+    "file": "TESTING",
+    "job": "svc1",
+    "age": 20,
+    "rel": "m",
+    "st": "s",
+    "exp": "new",
+    "ref": "E-101",
+    "status": "reserved"
   }
 ]
