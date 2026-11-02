@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-يضيف السير الذاتية الجديدة تلقائيًا إلى data/cvs.json
+يضيف السير الذاتية الجديدة تلقائيًا إلى data/cvs-<الدولة>.json (ملف لكل جنسية)
 
 يمر على كل ملف PDF داخل cvs/<الدولة>/ لا يوجد له إدخال في data/cvs.json، ثم:
 1) لو الـ PDF فيه نص (مثل نموذج الفلبين وبنغلاديش): يقرأ الاسم والجنسية والعمر والديانة والحالة
@@ -12,11 +12,50 @@
 import datetime, hashlib, json, os, re, shutil, subprocess, sys, tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA = os.path.join(ROOT, "data", "cvs.json")
+DATA = os.path.join(ROOT, "data", "cvs.json")  # الملف القديم الموحّد (يتم نقله تلقائيًا للملفات الجديدة)
+DATA_DIR = os.path.join(ROOT, "data")
 
 FOLDERS = {"kenya": ("n1", "K"), "bangladesh": ("n2", "B"), "philippines": ("n3", "P"),
            "ethiopia": ("n4", "E"), "srilanka": ("n5", "S"), "uganda": ("n6", "U")}
 NAT_LETTER = {v[0]: v[1] for v in FOLDERS.values()}
+NAT_FILE = {v[0]: os.path.join(DATA_DIR, "cvs-%s.json" % k) for k, v in FOLDERS.items()}  # ملف لكل جنسية
+
+
+def _read_list(path):
+    """يقرأ ملف سير: إما {"cvs": [...]} (الشكل الجديد) أو [...] (القديم). الفاضي = قائمة فاضية."""
+    if not os.path.exists(path):
+        return []
+    with open(path, encoding="utf-8") as f:
+        raw = f.read().strip()
+    obj = json.loads(raw) if raw else []
+    if isinstance(obj, dict):
+        obj = obj.get("cvs", [])
+    if not isinstance(obj, list):
+        sys.exit("%s لازم يحتوي على قائمة سير" % os.path.basename(path))
+    return obj
+
+
+def load_all():
+    data = _read_list(DATA)  # القديم أولًا (لو موجود)
+    for nat, path in NAT_FILE.items():
+        data.extend(_read_list(path))
+    return data
+
+
+def save_all(data):
+    """يحفظ كل جنسية في ملفها (data/cvs-<الدولة>.json)، ويحذف الملف القديم الموحّد."""
+    groups = {n: [] for n in NAT_FILE}
+    for w in data:
+        groups.setdefault(w.get("nat"), []).append(w)
+    os.makedirs(DATA_DIR, exist_ok=True)
+    for nat, path in NAT_FILE.items():
+        text = json.dumps({"cvs": groups.get(nat, [])}, ensure_ascii=False, indent=2) + "\n"
+        old = open(path, encoding="utf-8").read() if os.path.exists(path) else None
+        if old != text:
+            with open(path, "w", encoding="utf-8") as f:
+                f.write(text)
+    if os.path.exists(DATA):
+        os.remove(DATA)
 NAT_MAP = {"KENYA": "n1", "KENYAN": "n1", "BANGLADESH": "n2", "BANGLADESHI": "n2",
            "PHILIPPINES": "n3", "PHILIPPINE": "n3", "FILIPINO": "n3", "FILIPINA": "n3",
            "ETHIOPIA": "n4", "ETHIOPIAN": "n4", "SRI LANKA": "n5", "SRILANKA": "n5",
@@ -53,7 +92,7 @@ def slug(stem):
 # ---------------------------------------------------------------- قراءة النص (PDF فيه نص)
 def read_text_layer(pdf):
     try:
-        out = subprocess.run(["pdftotext", "-layout", "-f", "1", "-l", "1", pdf, "-"],
+        out = subprocess.run(["pdftotext", "-layout", "-f", "1", "-l", "2", pdf, "-"],
                              capture_output=True, text=True, timeout=60).stdout
     except Exception:
         return ""
@@ -63,6 +102,72 @@ def read_text_layer(pdf):
 def _first(pattern, text, flags=re.M):
     m = re.search(pattern, text, flags)
     return m.group(1).strip() if m else None
+
+
+MONTHS = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
+
+
+def _age_from_date(y, m, d):
+    try:
+        b = datetime.date(int(y), int(m), int(d))
+    except Exception:
+        return None
+    today = datetime.date.today()
+    a = today.year - b.year - ((today.month, today.day) < (b.month, b.day))
+    return a if 16 <= a <= 70 else None
+
+
+def age_from_text(t):
+    """العمر المكتوب صراحة (AGE 34YEARS / 49 Y/O / 28 YEARS OLD) ثم تاريخ الميلاد بكل صيغه."""
+    m = re.search(r"\bAGE\b[\s:\-]*(\d{2})(?!\d)", t)
+    if m and 16 <= int(m.group(1)) <= 70:
+        return int(m.group(1))
+    m = re.search(r"(?<!\d)(\d{2})\s*(?:YEARS?\s*OLD|YRS?\s*OLD|Y/O|YO\b)", t)
+    if m and 16 <= int(m.group(1)) <= 70:
+        return int(m.group(1))
+    lab = r"(?:DATE\s+OF\s+BIRTH|BIRTH\s*DATE|BIRTHDAY|D\.?O\.?B\.?)[\s:\-]*"
+    mon = "|".join(MONTHS)
+    # 11 MAR 1998 / 19 FEBRUARY 1982
+    m = re.search(lab + r"(\d{1,2})[\s\-/.]*(" + mon + r")[A-Z]*[\s\-/.,]*(\d{4})", t)
+    if m:
+        return _age_from_date(m.group(3), MONTHS.index(m.group(2)) + 1, m.group(1))
+    # NOVEMBER 14 1977 / NOV 14, 1977
+    m = re.search(lab + r"(" + mon + r")[A-Z]*[\s\-/.]*(\d{1,2})[\s\-/.,]*(\d{4})", t)
+    if m:
+        return _age_from_date(m.group(3), MONTHS.index(m.group(1)) + 1, m.group(2))
+    # 01/07/1992 أو 28.02.1999 (اليوم أولًا)
+    m = re.search(lab + r"(\d{1,2})[/.\-](\d{1,2})[/.\-](\d{4})", t)
+    if m:
+        d, mo = int(m.group(1)), int(m.group(2))
+        if mo > 12 and d <= 12:
+            d, mo = mo, d
+        return _age_from_date(m.group(3), mo, d)
+    return None
+
+
+def exp_from_text(t):
+    """prev = عندها خبرة خارجية، new = أول مرة. يرجع None لو غير واضح."""
+    if re.search(r"EX[\s\-]*ABROAD", t):
+        return "prev"
+    if re.search(r"FIRST[\s\-]?TIMER|FIRSTIMER|FRESH\s+(?:FROM|ARRIVAL|CANDIDATE)|NEW\s+ARRIVAL", t):
+        return "new"
+    i = t.find("PREVIOUS EMPLOYMENT")
+    if i >= 0:
+        sec = t[i + 19:i + 360]
+        # أولًا: كلمات صريحة بأن لا خبرة (NO / NIL / NONE / N/A / FRESH)
+        if re.search(r"(?:COUNTRY|PERIOD)[ \t:\-]*(?:NIL|NONE|NO|N/A|NA|FRESH)(?![A-Z])", sec):
+            return "new"
+        if re.search(r"\b(19|20)\d{2}\b|\d\s*YEARS?|\d\s*YRS|\d\s*MONTHS?|" + COUNTRIES, sec):
+            return "prev"
+    # جدول من نوع: COUNTRY  POSITION  YEARS ثم صف فيه سنوات
+    m = re.search(r"COUNTRY\s+POSITION\s+YEARS?[^\n]*\n([^\n]*)", t)
+    if m:
+        row = m.group(1)
+        if re.search(r"\d", row) or re.search(COUNTRIES, row):
+            return "prev"
+        if re.search(r"\b(NIL|NONE|NO|N/A)\b", row):
+            return "new"
+    return None
 
 
 def job_from_words(t):
@@ -87,7 +192,11 @@ def parse_text(raw):
     out = {}
     stop = r"(?=\s{2,}|\s+PHONE|\s*$|\s[^\x00-\x7F])"
 
-    name = _first(r"FULL\s+NAME[\s:\-]*([A-Z][A-Z .'\-]{2,60}?)" + stop, t)
+    name = _first(r"FULL\s*NAME[\s:\-]*([A-Z][A-Z .'\-]{2,60}?)" + stop, t)
+    if not name:
+        mm = re.search(r"FIRST\s+NAME\s+MIDDLE\s+NAME\s+LAST\s+NAME[^\n]*\n\s*([A-Z][A-Z .'\-]+)", t)
+        if mm:
+            name = " ".join(mm.group(1).split())
     if name:
         name = re.sub(r"[\s\-.:]+$", "", name)
         if 1 <= len(name.split()) <= 6:
@@ -107,21 +216,9 @@ def parse_text(raw):
     elif st == "MARRIED":
         out["st"] = "m"
 
-    age = _first(r"\bAGE\b[\s:]+(\d{2})\b", t)
-    if age and 16 <= int(age) <= 70:
-        out["age"] = int(age)
-    else:
-        m = re.search(r"DATE\s+OF\s+BIRTH[\s:]+(\d{1,2})\s+([A-Z]{3})[A-Z]*\s+(\d{4})", t)
-        if m:
-            try:
-                mon = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"].index(m.group(2)) + 1
-                b = datetime.date(int(m.group(3)), mon, int(m.group(1)))
-                today = datetime.date.today()
-                a = today.year - b.year - ((today.month, today.day) < (b.month, b.day))
-                if 16 <= a <= 70:
-                    out["age"] = a
-            except Exception:
-                pass
+    age = age_from_text(t)
+    if age:
+        out["age"] = age
 
     pos = _first(r"(?:POST\s+APPLIED\s+FOR|POSITION)[\s:]+([A-Z][A-Z ]{2,30}?)" + stop, t)
     if pos:
@@ -145,16 +242,9 @@ def parse_text(raw):
     if ref:
         out["ref"] = ref
 
-    if "EX-ABROAD" in t or "EX ABROAD" in t:
-        out["exp"] = "prev"
-    else:
-        i = t.find("PREVIOUS EMPLOYMENT")
-        if i >= 0:
-            sec = t[i + 19:i + 320]
-            if re.search(r"\b(19|20)\d{2}\b|YEARS?|YRS|MONTHS?|" + COUNTRIES, sec):
-                out["exp"] = "prev"
-            elif re.search(r"\b(NIL|NONE|N/A|FRESH|FIRST\s+TIME)\b", sec):
-                out["exp"] = "new"
+    e = exp_from_text(t)
+    if e:
+        out["exp"] = e
     return out
 
 
@@ -162,7 +252,7 @@ def parse_text(raw):
 def render_page(pdf, tmp):
     base = os.path.join(tmp, "page")
     try:
-        subprocess.run(["pdftoppm", "-r", "200", "-f", "1", "-l", "1", "-png", pdf, base],
+        subprocess.run(["pdftoppm", "-r", "300", "-f", "1", "-l", "1", "-png", pdf, base],
                        check=True, capture_output=True, timeout=120)
         return next(os.path.join(tmp, f) for f in sorted(os.listdir(tmp)) if f.startswith("page") and f.endswith(".png"))
     except Exception as e:
@@ -171,38 +261,90 @@ def render_page(pdf, tmp):
 
 
 def ocr_text(img):
-    try:
-        return subprocess.run(["tesseract", img, "-", "--psm", "11", "-l", "eng"],
-                              capture_output=True, text=True, timeout=180).stdout.upper()
-    except Exception as e:
-        print("   تعذّرت قراءة النص:", e)
-        return ""
+    """قراءة الصورة بطريقتين (الأولى تحافظ على ترتيب الصفوف) وندمج النتيجة."""
+    parts = []
+    for psm in ("6", "11"):
+        try:
+            parts.append(subprocess.run(["tesseract", img, "-", "--psm", psm, "-l", "eng"],
+                                        capture_output=True, text=True, timeout=240).stdout.upper())
+        except Exception as e:
+            print("   تعذّرت قراءة النص (psm %s): %s" % (psm, e))
+    return "\n=====\n".join(parts)
+
+
+def _job_from_position(txt):
+    m = re.search(r"POSITION(?:\s+APPLIED)?[\s:]+([A-Z][A-Z ]{2,30})", txt)
+    if not m:
+        return None
+    pos = m.group(1)
+    if "DRIVER" in pos:
+        return "svc2"
+    if re.search(r"MAID|HOUSEHOLD|DOMESTIC|HOUSE\s?KEEPER|NANNY", pos):
+        return "svc1"
+    if re.search(r"COOK|CHEF", pos):
+        return "svc3"
+    if "NURSE" in pos:
+        return "svc4"
+    if "ASSISTANT" in pos:
+        return "svc5"
+    return None
+
+
+def _age_from_ocr_dob(txt):
+    """تاريخ الميلاد في نص OCR: التسمية غالبًا مشوّهة، فندوّر على التاريخ نفسه (سنة 1950-2008)."""
+    mon = "|".join(MONTHS)
+    yr = r"(19[5-9]\d|200[0-8])"
+    m = re.search(r"(\d{1,2})\s*(" + mon + r")[A-Z]*[\s,./-]*" + yr, txt)
+    if m:
+        return _age_from_date(m.group(3), MONTHS.index(m.group(2)) + 1, m.group(1))
+    m = re.search(r"(" + mon + r")[A-Z]*\s*(\d{1,2})[\s,./-]*" + yr, txt)
+    if m:
+        return _age_from_date(m.group(3), MONTHS.index(m.group(1)) + 1, m.group(2))
+    m = re.search(r"(?<!\d)(" + mon + r")[A-Z]*[\s,./-]*" + yr, txt)  # شهر وسنة فقط
+    if m:
+        return _age_from_date(m.group(2), MONTHS.index(m.group(1)) + 1, 15)
+    return None
 
 
 def detect(text):
+    """يستخرج البيانات من نص OCR (فيه ضجيج): نطبّع الرموز ثم نبحث بتساهل."""
     out = {}
-    j = job_from_words(text)
+    mn = re.search(r"FULL\s*NAME[\s:|_\-]*([A-Z][A-Z .'\-]{2,40}?)(?=\s[^A-Z\s]|\s{2,}|\s*$)", text, re.M)
+    if mn:
+        words = [w for w in mn.group(1).split() if len(w) >= 2]
+        if 2 <= len(words) <= 5:
+            out["name"] = " ".join(w.capitalize() for w in words)
+    t = re.sub(r"[|_\u2014\u2013~\[\]{}()]", " ", text)
+    t = re.sub(r"[ \t]+", " ", t)
+    j = _job_from_position(t) or job_from_words(t)
     if j:
         out["job"] = j
-    if re.search(r"\bMUSLIM\b", text):
+    a = age_from_text(t) or _age_from_ocr_dob(t)
+    if a:
+        out["age"] = a
+    e = exp_from_text(t)
+    if e:
+        out["exp"] = e
+    if re.search(r"\b(?:MUSLIM|ISLAM|ISLAMIC)\b", t):
         out["rel"] = "m"
-    elif re.search(r"\bCHRISTIAN\b", text):
+    elif re.search(r"\b(?:CHRISTIAN|CRISTIAN|CATHOLIC|CATOLIC|PROTESTANT|BORN\s+AGAIN)\b", t):
         out["rel"] = "o"
-    if re.search(r"\bSINGLE\b", text) and not re.search(r"\bMARRIED\b", text):
+    mar = re.search(r"MARITAL\s*STATUS[^A-Z]{0,12}(SINGLE|UNMARRIED|MARRIED|WIDOW\w*|DIVORCED|SEPARATED)", t)
+    word = mar.group(1) if mar else None
+    if not word:
+        has_s = re.search(r"\b(?:SINGLE|UNMARRIED)\b", t)
+        has_m = re.search(r"\bMARRIED\b", t)
+        word = "SINGLE" if has_s and not has_m else ("MARRIED" if has_m and not has_s else None)
+    if word in ("SINGLE", "UNMARRIED"):
         out["st"] = "s"
-    elif re.search(r"\bMARRIED\b", text) and not re.search(r"\bSINGLE\b", text):
+    elif word == "MARRIED":
         out["st"] = "m"
     return out
 
 
 # ---------------------------------------------------------------- التشغيل
 def main():
-    data = []
-    if os.path.exists(DATA):
-        with open(DATA, encoding="utf-8") as f:
-            data = json.load(f)
-        if not isinstance(data, list):
-            sys.exit("data/cvs.json لازم يكون قائمة")
+    data = load_all()
     known = {norm(w.get("file")) for w in data}
     used_refs = {str(w.get("ref", "")) for w in data}
     counters = {}
@@ -293,6 +435,8 @@ def main():
                     ref = "%s-%d" % (letter2, counters[letter2])
                 used_refs.add(ref)
                 entry["ref"] = ref
+                if re.search(r"whatsapp|^img|^image|^photo|^[0-9a-f]{6,}\b", entry["name"], re.I):
+                    entry["name"] = "CV " + ref  # اسم الملف ما فيهوش اسم العاملة؛ عدّله من Pages CMS
                 for k in FIELDS:
                     if k in info:
                         entry[k] = info[k]
@@ -306,11 +450,7 @@ def main():
             added += 1
             print("   ->", {k: v for k, v in entry.items() if k != "file"})
 
-    if added or filled:
-        os.makedirs(os.path.dirname(DATA), exist_ok=True)
-        with open(DATA, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-            f.write("\n")
+    save_all(data)
     print("تمت إضافة %d سيرة، واستكمال %d سيرة، وحذف %d ملف مكرر" % (added, filled, removed))
 
 

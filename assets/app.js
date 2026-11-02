@@ -138,9 +138,16 @@
 
   var CVS = window.CVS_DATA || {};
   function relPath(p){return String(p||"").replace(/^\/+/,"");}
+  var CV_FILES=["kenya","bangladesh","philippines","ethiopia","srilanka","uganda"];
+  function fetchList(u){
+    return fetch(u+"?v="+Date.now()).then(function(r){return r.ok?r.json():[];}).then(function(o){
+      if(o&&!Array.isArray(o)) o=o.cvs; return Array.isArray(o)?o:[];
+    }).catch(function(){return [];});
+  }
   function loadCVJson(){
-    return fetch("data/cvs.json?v="+Date.now()).then(function(r){return r.ok?r.json():[];}).then(function(arr){
-      if(!Array.isArray(arr)) return;
+    var urls=CV_FILES.map(function(k){return "data/cvs-"+k+".json";}); urls.push("data/cvs.json");
+    return Promise.all(urls.map(fetchList)).then(function(parts){
+      var arr=[].concat.apply([],parts);
       var merged={n1:[],n2:[],n3:[],n4:[],n5:[],n6:[]};
       Object.keys(CVS).forEach(function(k){merged[k]=(CVS[k]||[]).slice();});
       arr.forEach(function(w){
@@ -149,7 +156,7 @@
         (merged[w.nat]=merged[w.nat]||[]).push(w);
       });
       CVS=merged; renderCVs();
-    }).catch(function(){});
+    });
   }
   var curNat=null;
   function mk(t,c,x){var e=document.createElement(t); if(c) e.className=c; if(x!==undefined) e.textContent=x; return e;}

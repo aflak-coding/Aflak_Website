@@ -1,5 +1,9 @@
+# إعدادات لوحة التحكم Pages CMS (https://app.pagescms.org)
+#
+# الطريقة الأساسية: ارفع ملف الـ PDF من قسم "رفع سيرة ذاتية - <الدولة>" في القائمة الجانبية.
+# بعد دقيقة أو اثنتين تُضاف السيرة تلقائيًا إلى الموقع (الاسم من اسم الملف، والجنسية من القسم).
+# قسم "السير الذاتية" اختياري: لتعديل بيانات سيرة (العمر، الخبرة، ...) أو تغيير صورتها.
 media:
-
   - name: pdf_kenya
     label: "رفع سيرة ذاتية - كينيا"
     input: cvs/kenya
@@ -44,86 +48,537 @@ media:
     rename: safe
 
 content:
-  - name: cvs
-    label: "السير الذاتية (تعديل البيانات)"
+  - name: cvs_kenya
+    label: "السير الذاتية - كينيا (تعديل البيانات)"
     type: file
-    path: data/cvs.json
+    path: data/cvs-kenya.json
     format: json
-    list: true
     operations:
       delete: false
     fields:
-      - name: name
-        label: "الاسم (بالإنجليزي)"
-        type: string
-        required: true
-      - name: nat
-        label: "الجنسية"
-        type: select
-        required: true
-        options:
-          values:
-            - { name: n1, label: "كينيا" }
-            - { name: n2, label: "بنغلاديش" }
-            - { name: n3, label: "الفلبين" }
-            - { name: n4, label: "إثيوبيا" }
-            - { name: n5, label: "سريلانكا" }
-            - { name: n6, label: "أوغندا" }
-      - name: file
-        label: "مسار ملف الـ PDF (لا تغيّره)"
-        type: string
-        required: true
-      - name: photo
-        label: "صورة العاملة (يمكن استبدالها)"
-        type: image
-        options:
-          media: photos
-      - name: job
-        label: "المهنة"
-        type: select
-        options:
-          values:
-            - { name: svc1, label: "عاملة منزلية" }
-            - { name: svc2, label: "سائق شخصي" }
-            - { name: svc3, label: "طباخ / طباخة" }
-            - { name: svc4, label: "ممرضة منزلية" }
-            - { name: svc5, label: "مساعدة شخصية" }
-      - name: age
-        label: "العمر"
-        type: number
-        options:
-          min: 18
-          max: 60
-      - name: rel
-        label: "الديانة"
-        type: select
-        options:
-          values:
-            - { name: m, label: "مسلم" }
-            - { name: o, label: "غير مسلم" }
-      - name: st
-        label: "الحالة الاجتماعية"
-        type: select
-        options:
-          values:
-            - { name: s, label: "غير متزوج" }
-            - { name: m, label: "متزوج" }
-      - name: exp
-        label: "الخبرة"
-        type: select
-        options:
-          values:
-            - { name: new, label: "قادم جديد" }
-            - { name: prev, label: "خبرة سابقة" }
-      - name: ref
-        label: "الرقم المرجعي"
-        type: string
-        
-      - name: status
-        label: "الحالة (متاحة / محجوزة / إخفاء مؤقتًا)"
-        type: select
-        options:
-          values:
-            - { name: available, label: "متاحة" }
-            - { name: reserved, label: "محجوزة" }
-            - { name: hidden, label: "إخفاء مؤقتًا" }
+      - name: cvs
+        label: "سير كينيا"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{ref} - {name}"
+        fields:
+          - name: name
+            label: "الاسم (بالإنجليزي)"
+            type: string
+            required: true
+          - name: nat
+            label: "الجنسية"
+            type: select
+            required: true
+            options:
+              values:
+                - { name: n1, label: "كينيا" }
+                - { name: n2, label: "بنغلاديش" }
+                - { name: n3, label: "الفلبين" }
+                - { name: n4, label: "إثيوبيا" }
+                - { name: n5, label: "سريلانكا" }
+                - { name: n6, label: "أوغندا" }
+          - name: file
+            label: "مسار ملف الـ PDF (لا تغيّره)"
+            type: string
+            required: true
+          - name: photo
+            label: "صورة العاملة (يمكن استبدالها)"
+            type: image
+            options:
+              media: photos
+          - name: job
+            label: "المهنة"
+            type: select
+            options:
+              values:
+                - { name: svc1, label: "عاملة منزلية" }
+                - { name: svc2, label: "سائق شخصي" }
+                - { name: svc3, label: "طباخ / طباخة" }
+                - { name: svc4, label: "ممرضة منزلية" }
+                - { name: svc5, label: "مساعدة شخصية" }
+          - name: age
+            label: "العمر"
+            type: number
+            options:
+              min: 18
+              max: 60
+          - name: rel
+            label: "الديانة"
+            type: select
+            options:
+              values:
+                - { name: m, label: "مسلم" }
+                - { name: o, label: "غير مسلم" }
+          - name: st
+            label: "الحالة الاجتماعية"
+            type: select
+            options:
+              values:
+                - { name: s, label: "غير متزوج" }
+                - { name: m, label: "متزوج" }
+          - name: exp
+            label: "الخبرة"
+            type: select
+            options:
+              values:
+                - { name: new, label: "قادم جديد" }
+                - { name: prev, label: "خبرة سابقة" }
+          - name: ref
+            label: "الرقم المرجعي"
+            type: string
+          - name: status
+            label: "الحالة (متاحة / محجوزة / إخفاء مؤقتًا)"
+            type: select
+            options:
+              values:
+                - { name: available, label: "متاحة" }
+                - { name: reserved, label: "محجوزة" }
+                - { name: hidden, label: "إخفاء مؤقتًا" }
+  - name: cvs_bangladesh
+    label: "السير الذاتية - بنغلاديش (تعديل البيانات)"
+    type: file
+    path: data/cvs-bangladesh.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: cvs
+        label: "سير بنغلاديش"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{ref} - {name}"
+        fields:
+          - name: name
+            label: "الاسم (بالإنجليزي)"
+            type: string
+            required: true
+          - name: nat
+            label: "الجنسية"
+            type: select
+            required: true
+            options:
+              values:
+                - { name: n1, label: "كينيا" }
+                - { name: n2, label: "بنغلاديش" }
+                - { name: n3, label: "الفلبين" }
+                - { name: n4, label: "إثيوبيا" }
+                - { name: n5, label: "سريلانكا" }
+                - { name: n6, label: "أوغندا" }
+          - name: file
+            label: "مسار ملف الـ PDF (لا تغيّره)"
+            type: string
+            required: true
+          - name: photo
+            label: "صورة العاملة (يمكن استبدالها)"
+            type: image
+            options:
+              media: photos
+          - name: job
+            label: "المهنة"
+            type: select
+            options:
+              values:
+                - { name: svc1, label: "عاملة منزلية" }
+                - { name: svc2, label: "سائق شخصي" }
+                - { name: svc3, label: "طباخ / طباخة" }
+                - { name: svc4, label: "ممرضة منزلية" }
+                - { name: svc5, label: "مساعدة شخصية" }
+          - name: age
+            label: "العمر"
+            type: number
+            options:
+              min: 18
+              max: 60
+          - name: rel
+            label: "الديانة"
+            type: select
+            options:
+              values:
+                - { name: m, label: "مسلم" }
+                - { name: o, label: "غير مسلم" }
+          - name: st
+            label: "الحالة الاجتماعية"
+            type: select
+            options:
+              values:
+                - { name: s, label: "غير متزوج" }
+                - { name: m, label: "متزوج" }
+          - name: exp
+            label: "الخبرة"
+            type: select
+            options:
+              values:
+                - { name: new, label: "قادم جديد" }
+                - { name: prev, label: "خبرة سابقة" }
+          - name: ref
+            label: "الرقم المرجعي"
+            type: string
+          - name: status
+            label: "الحالة (متاحة / محجوزة / إخفاء مؤقتًا)"
+            type: select
+            options:
+              values:
+                - { name: available, label: "متاحة" }
+                - { name: reserved, label: "محجوزة" }
+                - { name: hidden, label: "إخفاء مؤقتًا" }
+  - name: cvs_philippines
+    label: "السير الذاتية - الفلبين (تعديل البيانات)"
+    type: file
+    path: data/cvs-philippines.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: cvs
+        label: "سير الفلبين"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{ref} - {name}"
+        fields:
+          - name: name
+            label: "الاسم (بالإنجليزي)"
+            type: string
+            required: true
+          - name: nat
+            label: "الجنسية"
+            type: select
+            required: true
+            options:
+              values:
+                - { name: n1, label: "كينيا" }
+                - { name: n2, label: "بنغلاديش" }
+                - { name: n3, label: "الفلبين" }
+                - { name: n4, label: "إثيوبيا" }
+                - { name: n5, label: "سريلانكا" }
+                - { name: n6, label: "أوغندا" }
+          - name: file
+            label: "مسار ملف الـ PDF (لا تغيّره)"
+            type: string
+            required: true
+          - name: photo
+            label: "صورة العاملة (يمكن استبدالها)"
+            type: image
+            options:
+              media: photos
+          - name: job
+            label: "المهنة"
+            type: select
+            options:
+              values:
+                - { name: svc1, label: "عاملة منزلية" }
+                - { name: svc2, label: "سائق شخصي" }
+                - { name: svc3, label: "طباخ / طباخة" }
+                - { name: svc4, label: "ممرضة منزلية" }
+                - { name: svc5, label: "مساعدة شخصية" }
+          - name: age
+            label: "العمر"
+            type: number
+            options:
+              min: 18
+              max: 60
+          - name: rel
+            label: "الديانة"
+            type: select
+            options:
+              values:
+                - { name: m, label: "مسلم" }
+                - { name: o, label: "غير مسلم" }
+          - name: st
+            label: "الحالة الاجتماعية"
+            type: select
+            options:
+              values:
+                - { name: s, label: "غير متزوج" }
+                - { name: m, label: "متزوج" }
+          - name: exp
+            label: "الخبرة"
+            type: select
+            options:
+              values:
+                - { name: new, label: "قادم جديد" }
+                - { name: prev, label: "خبرة سابقة" }
+          - name: ref
+            label: "الرقم المرجعي"
+            type: string
+          - name: status
+            label: "الحالة (متاحة / محجوزة / إخفاء مؤقتًا)"
+            type: select
+            options:
+              values:
+                - { name: available, label: "متاحة" }
+                - { name: reserved, label: "محجوزة" }
+                - { name: hidden, label: "إخفاء مؤقتًا" }
+  - name: cvs_ethiopia
+    label: "السير الذاتية - إثيوبيا (تعديل البيانات)"
+    type: file
+    path: data/cvs-ethiopia.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: cvs
+        label: "سير إثيوبيا"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{ref} - {name}"
+        fields:
+          - name: name
+            label: "الاسم (بالإنجليزي)"
+            type: string
+            required: true
+          - name: nat
+            label: "الجنسية"
+            type: select
+            required: true
+            options:
+              values:
+                - { name: n1, label: "كينيا" }
+                - { name: n2, label: "بنغلاديش" }
+                - { name: n3, label: "الفلبين" }
+                - { name: n4, label: "إثيوبيا" }
+                - { name: n5, label: "سريلانكا" }
+                - { name: n6, label: "أوغندا" }
+          - name: file
+            label: "مسار ملف الـ PDF (لا تغيّره)"
+            type: string
+            required: true
+          - name: photo
+            label: "صورة العاملة (يمكن استبدالها)"
+            type: image
+            options:
+              media: photos
+          - name: job
+            label: "المهنة"
+            type: select
+            options:
+              values:
+                - { name: svc1, label: "عاملة منزلية" }
+                - { name: svc2, label: "سائق شخصي" }
+                - { name: svc3, label: "طباخ / طباخة" }
+                - { name: svc4, label: "ممرضة منزلية" }
+                - { name: svc5, label: "مساعدة شخصية" }
+          - name: age
+            label: "العمر"
+            type: number
+            options:
+              min: 18
+              max: 60
+          - name: rel
+            label: "الديانة"
+            type: select
+            options:
+              values:
+                - { name: m, label: "مسلم" }
+                - { name: o, label: "غير مسلم" }
+          - name: st
+            label: "الحالة الاجتماعية"
+            type: select
+            options:
+              values:
+                - { name: s, label: "غير متزوج" }
+                - { name: m, label: "متزوج" }
+          - name: exp
+            label: "الخبرة"
+            type: select
+            options:
+              values:
+                - { name: new, label: "قادم جديد" }
+                - { name: prev, label: "خبرة سابقة" }
+          - name: ref
+            label: "الرقم المرجعي"
+            type: string
+          - name: status
+            label: "الحالة (متاحة / محجوزة / إخفاء مؤقتًا)"
+            type: select
+            options:
+              values:
+                - { name: available, label: "متاحة" }
+                - { name: reserved, label: "محجوزة" }
+                - { name: hidden, label: "إخفاء مؤقتًا" }
+  - name: cvs_srilanka
+    label: "السير الذاتية - سريلانكا (تعديل البيانات)"
+    type: file
+    path: data/cvs-srilanka.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: cvs
+        label: "سير سريلانكا"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{ref} - {name}"
+        fields:
+          - name: name
+            label: "الاسم (بالإنجليزي)"
+            type: string
+            required: true
+          - name: nat
+            label: "الجنسية"
+            type: select
+            required: true
+            options:
+              values:
+                - { name: n1, label: "كينيا" }
+                - { name: n2, label: "بنغلاديش" }
+                - { name: n3, label: "الفلبين" }
+                - { name: n4, label: "إثيوبيا" }
+                - { name: n5, label: "سريلانكا" }
+                - { name: n6, label: "أوغندا" }
+          - name: file
+            label: "مسار ملف الـ PDF (لا تغيّره)"
+            type: string
+            required: true
+          - name: photo
+            label: "صورة العاملة (يمكن استبدالها)"
+            type: image
+            options:
+              media: photos
+          - name: job
+            label: "المهنة"
+            type: select
+            options:
+              values:
+                - { name: svc1, label: "عاملة منزلية" }
+                - { name: svc2, label: "سائق شخصي" }
+                - { name: svc3, label: "طباخ / طباخة" }
+                - { name: svc4, label: "ممرضة منزلية" }
+                - { name: svc5, label: "مساعدة شخصية" }
+          - name: age
+            label: "العمر"
+            type: number
+            options:
+              min: 18
+              max: 60
+          - name: rel
+            label: "الديانة"
+            type: select
+            options:
+              values:
+                - { name: m, label: "مسلم" }
+                - { name: o, label: "غير مسلم" }
+          - name: st
+            label: "الحالة الاجتماعية"
+            type: select
+            options:
+              values:
+                - { name: s, label: "غير متزوج" }
+                - { name: m, label: "متزوج" }
+          - name: exp
+            label: "الخبرة"
+            type: select
+            options:
+              values:
+                - { name: new, label: "قادم جديد" }
+                - { name: prev, label: "خبرة سابقة" }
+          - name: ref
+            label: "الرقم المرجعي"
+            type: string
+          - name: status
+            label: "الحالة (متاحة / محجوزة / إخفاء مؤقتًا)"
+            type: select
+            options:
+              values:
+                - { name: available, label: "متاحة" }
+                - { name: reserved, label: "محجوزة" }
+                - { name: hidden, label: "إخفاء مؤقتًا" }
+  - name: cvs_uganda
+    label: "السير الذاتية - أوغندا (تعديل البيانات)"
+    type: file
+    path: data/cvs-uganda.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: cvs
+        label: "سير أوغندا"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{ref} - {name}"
+        fields:
+          - name: name
+            label: "الاسم (بالإنجليزي)"
+            type: string
+            required: true
+          - name: nat
+            label: "الجنسية"
+            type: select
+            required: true
+            options:
+              values:
+                - { name: n1, label: "كينيا" }
+                - { name: n2, label: "بنغلاديش" }
+                - { name: n3, label: "الفلبين" }
+                - { name: n4, label: "إثيوبيا" }
+                - { name: n5, label: "سريلانكا" }
+                - { name: n6, label: "أوغندا" }
+          - name: file
+            label: "مسار ملف الـ PDF (لا تغيّره)"
+            type: string
+            required: true
+          - name: photo
+            label: "صورة العاملة (يمكن استبدالها)"
+            type: image
+            options:
+              media: photos
+          - name: job
+            label: "المهنة"
+            type: select
+            options:
+              values:
+                - { name: svc1, label: "عاملة منزلية" }
+                - { name: svc2, label: "سائق شخصي" }
+                - { name: svc3, label: "طباخ / طباخة" }
+                - { name: svc4, label: "ممرضة منزلية" }
+                - { name: svc5, label: "مساعدة شخصية" }
+          - name: age
+            label: "العمر"
+            type: number
+            options:
+              min: 18
+              max: 60
+          - name: rel
+            label: "الديانة"
+            type: select
+            options:
+              values:
+                - { name: m, label: "مسلم" }
+                - { name: o, label: "غير مسلم" }
+          - name: st
+            label: "الحالة الاجتماعية"
+            type: select
+            options:
+              values:
+                - { name: s, label: "غير متزوج" }
+                - { name: m, label: "متزوج" }
+          - name: exp
+            label: "الخبرة"
+            type: select
+            options:
+              values:
+                - { name: new, label: "قادم جديد" }
+                - { name: prev, label: "خبرة سابقة" }
+          - name: ref
+            label: "الرقم المرجعي"
+            type: string
+          - name: status
+            label: "الحالة (متاحة / محجوزة / إخفاء مؤقتًا)"
+            type: select
+            options:
+              values:
+                - { name: available, label: "متاحة" }
+                - { name: reserved, label: "محجوزة" }
+                - { name: hidden, label: "إخفاء مؤقتًا" }
