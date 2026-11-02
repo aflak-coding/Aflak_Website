@@ -53,7 +53,7 @@ def slug(stem):
 # ---------------------------------------------------------------- قراءة النص (PDF فيه نص)
 def read_text_layer(pdf):
     try:
-        out = subprocess.run(["pdftotext", "-layout", "-f", "1", "-l", "1", pdf, "-"],
+        out = subprocess.run(["pdftotext", "-layout", "-f", "1", "-l", "2", pdf, "-"],
                              capture_output=True, text=True, timeout=60).stdout
     except Exception:
         return ""
@@ -63,6 +63,72 @@ def read_text_layer(pdf):
 def _first(pattern, text, flags=re.M):
     m = re.search(pattern, text, flags)
     return m.group(1).strip() if m else None
+
+
+MONTHS = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
+
+
+def _age_from_date(y, m, d):
+    try:
+        b = datetime.date(int(y), int(m), int(d))
+    except Exception:
+        return None
+    today = datetime.date.today()
+    a = today.year - b.year - ((today.month, today.day) < (b.month, b.day))
+    return a if 16 <= a <= 70 else None
+
+
+def age_from_text(t):
+    """العمر المكتوب صراحة (AGE 34YEARS / 49 Y/O / 28 YEARS OLD) ثم تاريخ الميلاد بكل صيغه."""
+    m = re.search(r"\bAGE\b[\s:\-]*(\d{2})(?!\d)", t)
+    if m and 16 <= int(m.group(1)) <= 70:
+        return int(m.group(1))
+    m = re.search(r"(?<!\d)(\d{2})\s*(?:YEARS?\s*OLD|YRS?\s*OLD|Y/O|YO\b)", t)
+    if m and 16 <= int(m.group(1)) <= 70:
+        return int(m.group(1))
+    lab = r"(?:DATE\s+OF\s+BIRTH|BIRTH\s*DATE|BIRTHDAY|D\.?O\.?B\.?)[\s:\-]*"
+    mon = "|".join(MONTHS)
+    # 11 MAR 1998 / 19 FEBRUARY 1982
+    m = re.search(lab + r"(\d{1,2})[\s\-/.]*(" + mon + r")[A-Z]*[\s\-/.,]*(\d{4})", t)
+    if m:
+        return _age_from_date(m.group(3), MONTHS.index(m.group(2)) + 1, m.group(1))
+    # NOVEMBER 14 1977 / NOV 14, 1977
+    m = re.search(lab + r"(" + mon + r")[A-Z]*[\s\-/.]*(\d{1,2})[\s\-/.,]*(\d{4})", t)
+    if m:
+        return _age_from_date(m.group(3), MONTHS.index(m.group(1)) + 1, m.group(2))
+    # 01/07/1992 أو 28.02.1999 (اليوم أولًا)
+    m = re.search(lab + r"(\d{1,2})[/.\-](\d{1,2})[/.\-](\d{4})", t)
+    if m:
+        d, mo = int(m.group(1)), int(m.group(2))
+        if mo > 12 and d <= 12:
+            d, mo = mo, d
+        return _age_from_date(m.group(3), mo, d)
+    return None
+
+
+def exp_from_text(t):
+    """prev = عندها خبرة خارجية، new = أول مرة. يرجع None لو غير واضح."""
+    if re.search(r"EX[\s\-]?ABROAD", t):
+        return "prev"
+    if re.search(r"FIRST[\s\-]?TIMER|FIRSTIMER|FRESH\s+(?:FROM|ARRIVAL|CANDIDATE)|NEW\s+ARRIVAL", t):
+        return "new"
+    i = t.find("PREVIOUS EMPLOYMENT")
+    if i >= 0:
+        sec = t[i + 19:i + 360]
+        # أولًا: كلمات صريحة بأن لا خبرة (NO / NIL / NONE / N/A / FRESH)
+        if re.search(r"(?:COUNTRY|PERIOD)[ \t:\-]*(?:NIL|NONE|NO|N/A|NA|FRESH)(?![A-Z])", sec):
+            return "new"
+        if re.search(r"\b(19|20)\d{2}\b|\d\s*YEARS?|\d\s*YRS|\d\s*MONTHS?|" + COUNTRIES, sec):
+            return "prev"
+    # جدول من نوع: COUNTRY  POSITION  YEARS ثم صف فيه سنوات
+    m = re.search(r"COUNTRY\s+POSITION\s+YEARS?[^\n]*\n([^\n]*)", t)
+    if m:
+        row = m.group(1)
+        if re.search(r"\d", row) or re.search(COUNTRIES, row):
+            return "prev"
+        if re.search(r"\b(NIL|NONE|NO|N/A)\b", row):
+            return "new"
+    return None
 
 
 def job_from_words(t):
@@ -87,7 +153,11 @@ def parse_text(raw):
     out = {}
     stop = r"(?=\s{2,}|\s+PHONE|\s*$|\s[^\x00-\x7F])"
 
-    name = _first(r"FULL\s+NAME[\s:\-]*([A-Z][A-Z .'\-]{2,60}?)" + stop, t)
+    name = _first(r"FULL\s*NAME[\s:\-]*([A-Z][A-Z .'\-]{2,60}?)" + stop, t)
+    if not name:
+        mm = re.search(r"FIRST\s+NAME\s+MIDDLE\s+NAME\s+LAST\s+NAME[^\n]*\n\s*([A-Z][A-Z .'\-]+)", t)
+        if mm:
+            name = " ".join(mm.group(1).split())
     if name:
         name = re.sub(r"[\s\-.:]+$", "", name)
         if 1 <= len(name.split()) <= 6:
@@ -107,21 +177,9 @@ def parse_text(raw):
     elif st == "MARRIED":
         out["st"] = "m"
 
-    age = _first(r"\bAGE\b[\s:]+(\d{2})\b", t)
-    if age and 16 <= int(age) <= 70:
-        out["age"] = int(age)
-    else:
-        m = re.search(r"DATE\s+OF\s+BIRTH[\s:]+(\d{1,2})\s+([A-Z]{3})[A-Z]*\s+(\d{4})", t)
-        if m:
-            try:
-                mon = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"].index(m.group(2)) + 1
-                b = datetime.date(int(m.group(3)), mon, int(m.group(1)))
-                today = datetime.date.today()
-                a = today.year - b.year - ((today.month, today.day) < (b.month, b.day))
-                if 16 <= a <= 70:
-                    out["age"] = a
-            except Exception:
-                pass
+    age = age_from_text(t)
+    if age:
+        out["age"] = age
 
     pos = _first(r"(?:POST\s+APPLIED\s+FOR|POSITION)[\s:]+([A-Z][A-Z ]{2,30}?)" + stop, t)
     if pos:
@@ -145,16 +203,9 @@ def parse_text(raw):
     if ref:
         out["ref"] = ref
 
-    if "EX-ABROAD" in t or "EX ABROAD" in t:
-        out["exp"] = "prev"
-    else:
-        i = t.find("PREVIOUS EMPLOYMENT")
-        if i >= 0:
-            sec = t[i + 19:i + 320]
-            if re.search(r"\b(19|20)\d{2}\b|YEARS?|YRS|MONTHS?|" + COUNTRIES, sec):
-                out["exp"] = "prev"
-            elif re.search(r"\b(NIL|NONE|N/A|FRESH|FIRST\s+TIME)\b", sec):
-                out["exp"] = "new"
+    e = exp_from_text(t)
+    if e:
+        out["exp"] = e
     return out
 
 
@@ -184,6 +235,12 @@ def detect(text):
     j = job_from_words(text)
     if j:
         out["job"] = j
+    a = age_from_text(text)
+    if a:
+        out["age"] = a
+    e = exp_from_text(text)
+    if e:
+        out["exp"] = e
     if re.search(r"\bMUSLIM\b", text):
         out["rel"] = "m"
     elif re.search(r"\bCHRISTIAN\b", text):
