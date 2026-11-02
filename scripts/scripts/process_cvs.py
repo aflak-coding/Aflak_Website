@@ -108,7 +108,7 @@ def age_from_text(t):
 
 def exp_from_text(t):
     """prev = عندها خبرة خارجية، new = أول مرة. يرجع None لو غير واضح."""
-    if re.search(r"EX[\s\-]?ABROAD", t):
+    if re.search(r"EX[\s\-]*ABROAD", t):
         return "prev"
     if re.search(r"FIRST[\s\-]?TIMER|FIRSTIMER|FRESH\s+(?:FROM|ARRIVAL|CANDIDATE)|NEW\s+ARRIVAL", t):
         return "new"
@@ -213,7 +213,7 @@ def parse_text(raw):
 def render_page(pdf, tmp):
     base = os.path.join(tmp, "page")
     try:
-        subprocess.run(["pdftoppm", "-r", "200", "-f", "1", "-l", "1", "-png", pdf, base],
+        subprocess.run(["pdftoppm", "-r", "300", "-f", "1", "-l", "1", "-png", pdf, base],
                        check=True, capture_output=True, timeout=120)
         return next(os.path.join(tmp, f) for f in sorted(os.listdir(tmp)) if f.startswith("page") and f.endswith(".png"))
     except Exception as e:
@@ -222,32 +222,83 @@ def render_page(pdf, tmp):
 
 
 def ocr_text(img):
-    try:
-        return subprocess.run(["tesseract", img, "-", "--psm", "11", "-l", "eng"],
-                              capture_output=True, text=True, timeout=180).stdout.upper()
-    except Exception as e:
-        print("   تعذّرت قراءة النص:", e)
-        return ""
+    """قراءة الصورة بطريقتين (الأولى تحافظ على ترتيب الصفوف) وندمج النتيجة."""
+    parts = []
+    for psm in ("6", "11"):
+        try:
+            parts.append(subprocess.run(["tesseract", img, "-", "--psm", psm, "-l", "eng"],
+                                        capture_output=True, text=True, timeout=240).stdout.upper())
+        except Exception as e:
+            print("   تعذّرت قراءة النص (psm %s): %s" % (psm, e))
+    return "\n=====\n".join(parts)
+
+
+def _job_from_position(txt):
+    m = re.search(r"POSITION(?:\s+APPLIED)?[\s:]+([A-Z][A-Z ]{2,30})", txt)
+    if not m:
+        return None
+    pos = m.group(1)
+    if "DRIVER" in pos:
+        return "svc2"
+    if re.search(r"MAID|HOUSEHOLD|DOMESTIC|HOUSE\s?KEEPER|NANNY", pos):
+        return "svc1"
+    if re.search(r"COOK|CHEF", pos):
+        return "svc3"
+    if "NURSE" in pos:
+        return "svc4"
+    if "ASSISTANT" in pos:
+        return "svc5"
+    return None
+
+
+def _age_from_ocr_dob(txt):
+    """تاريخ الميلاد في نص OCR: التسمية غالبًا مشوّهة، فندوّر على التاريخ نفسه (سنة 1950-2008)."""
+    mon = "|".join(MONTHS)
+    yr = r"(19[5-9]\d|200[0-8])"
+    m = re.search(r"(\d{1,2})\s*(" + mon + r")[A-Z]*[\s,./-]*" + yr, txt)
+    if m:
+        return _age_from_date(m.group(3), MONTHS.index(m.group(2)) + 1, m.group(1))
+    m = re.search(r"(" + mon + r")[A-Z]*\s*(\d{1,2})[\s,./-]*" + yr, txt)
+    if m:
+        return _age_from_date(m.group(3), MONTHS.index(m.group(1)) + 1, m.group(2))
+    m = re.search(r"(?<!\d)(" + mon + r")[A-Z]*[\s,./-]*" + yr, txt)  # شهر وسنة فقط
+    if m:
+        return _age_from_date(m.group(2), MONTHS.index(m.group(1)) + 1, 15)
+    return None
 
 
 def detect(text):
+    """يستخرج البيانات من نص OCR (فيه ضجيج): نطبّع الرموز ثم نبحث بتساهل."""
     out = {}
-    j = job_from_words(text)
+    mn = re.search(r"FULL\s*NAME[\s:|_\-]*([A-Z][A-Z .'\-]{2,40}?)(?=\s[^A-Z\s]|\s{2,}|\s*$)", text, re.M)
+    if mn:
+        words = [w for w in mn.group(1).split() if len(w) >= 2]
+        if 2 <= len(words) <= 5:
+            out["name"] = " ".join(w.capitalize() for w in words)
+    t = re.sub(r"[|_\u2014\u2013~\[\]{}()]", " ", text)
+    t = re.sub(r"[ \t]+", " ", t)
+    j = _job_from_position(t) or job_from_words(t)
     if j:
         out["job"] = j
-    a = age_from_text(text)
+    a = age_from_text(t) or _age_from_ocr_dob(t)
     if a:
         out["age"] = a
-    e = exp_from_text(text)
+    e = exp_from_text(t)
     if e:
         out["exp"] = e
-    if re.search(r"\bMUSLIM\b", text):
+    if re.search(r"\b(?:MUSLIM|ISLAM|ISLAMIC)\b", t):
         out["rel"] = "m"
-    elif re.search(r"\bCHRISTIAN\b", text):
+    elif re.search(r"\b(?:CHRISTIAN|CRISTIAN|CATHOLIC|CATOLIC|PROTESTANT|BORN\s+AGAIN)\b", t):
         out["rel"] = "o"
-    if re.search(r"\bSINGLE\b", text) and not re.search(r"\bMARRIED\b", text):
+    mar = re.search(r"MARITAL\s*STATUS[^A-Z]{0,12}(SINGLE|UNMARRIED|MARRIED|WIDOW\w*|DIVORCED|SEPARATED)", t)
+    word = mar.group(1) if mar else None
+    if not word:
+        has_s = re.search(r"\b(?:SINGLE|UNMARRIED)\b", t)
+        has_m = re.search(r"\bMARRIED\b", t)
+        word = "SINGLE" if has_s and not has_m else ("MARRIED" if has_m and not has_s else None)
+    if word in ("SINGLE", "UNMARRIED"):
         out["st"] = "s"
-    elif re.search(r"\bMARRIED\b", text) and not re.search(r"\bSINGLE\b", text):
+    elif word == "MARRIED":
         out["st"] = "m"
     return out
 
@@ -351,6 +402,8 @@ def main():
                     ref = "%s-%d" % (letter2, counters[letter2])
                 used_refs.add(ref)
                 entry["ref"] = ref
+                if re.search(r"whatsapp|^img|^image|^photo|^[0-9a-f]{6,}\b", entry["name"], re.I):
+                    entry["name"] = "CV " + ref  # اسم الملف ما فيهوش اسم العاملة؛ عدّله من Pages CMS
                 for k in FIELDS:
                     if k in info:
                         entry[k] = info[k]
