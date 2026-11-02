@@ -65,6 +65,22 @@ def _first(pattern, text, flags=re.M):
     return m.group(1).strip() if m else None
 
 
+def job_from_words(t):
+    """يبحث عن كلمة المهنة في أي مكان بالنص (للسير ذات التنسيقات المختلفة)."""
+    if re.search(r"HOUSE\s?MAID|HOUSEHOLD|DOMESTIC|\bMAID\b|HOUSE\s?KEEPER|NANNY|BABY\s?SITTER|عاملة", t):
+        return "svc1"
+    if re.search(r"\bDRIVER\b|سائق", t):
+        return "svc2"
+    if re.search(r"\bCOOK\b|\bCHEF\b|طباخ", t):
+        return "svc3"
+    if re.search(r"\bNURSE\b|ممرض", t):
+        return "svc4"
+    return None
+
+
+DEFAULT_JOB = "svc1"  # لو ما اتعرفت المهنة نهائيًا: عاملة منزلية (يمكن تعديلها من Pages CMS)
+
+
 def parse_text(raw):
     """يستخرج البيانات من نص الصفحة الأولى. يرجع dict بالمفاتيح المعروفة فقط."""
     t = raw.upper()
@@ -120,6 +136,11 @@ def parse_text(raw):
         elif "ASSISTANT" in pos:
             out["job"] = "svc5"
 
+    if "job" not in out:
+        j = job_from_words(t)
+        if j:
+            out["job"] = j
+
     ref = _first(r"REF\.?\s*NO\.?[\s:]+([A-Z]{1,3}-?\d{2,6})\b", t)
     if ref:
         out["ref"] = ref
@@ -160,12 +181,9 @@ def ocr_text(img):
 
 def detect(text):
     out = {}
-    if re.search(r"\bHOUSE\s?MAID\b", text) or re.search(r"\bMAID\b", text):
-        out["job"] = "svc1"
-    elif re.search(r"\bDRIVER\b", text):
-        out["job"] = "svc2"
-    elif re.search(r"\bNURSE\b", text):
-        out["job"] = "svc4"
+    j = job_from_words(text)
+    if j:
+        out["job"] = j
     if re.search(r"\bMUSLIM\b", text):
         out["rel"] = "m"
     elif re.search(r"\bCHRISTIAN\b", text):
@@ -208,6 +226,15 @@ def main():
                     if k in FIELDS and k not in w:
                         w[k] = v
                         changed = True
+        if "job" not in w and pdf and os.path.isfile(pdf):
+            tmp2 = tempfile.mkdtemp()
+            try:
+                img2 = render_page(pdf, tmp2)
+                j = detect(ocr_text(img2)).get("job") if img2 else None
+            finally:
+                shutil.rmtree(tmp2, ignore_errors=True)
+            w["job"] = j or DEFAULT_JOB
+            changed = True
         if changed:
             filled += 1
             print("تم تحديث:", w.get("name"))
@@ -251,8 +278,10 @@ def main():
                 layer = read_text_layer(pdf)
                 info = parse_text(layer) if layer else {}
                 img = render_page(pdf, tmp)
-                if not layer and img:
-                    info.update(detect(ocr_text(img)))
+                if img and (not layer or "job" not in info):
+                    for k, v in detect(ocr_text(img)).items():
+                        info.setdefault(k, v)
+                info.setdefault("job", DEFAULT_JOB)
                 final_nat = info.get("nat") or nat
                 if final_nat != nat:
                     print("   تنبيه: الجنسية في الملف تختلف عن المجلد، تم اعتماد جنسية الملف")
