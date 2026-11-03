@@ -24,7 +24,7 @@
       "exp": "new",
       "ref": "K-102",
       "status": "available",
-      "photo": "cvs/photos/kenya-callen-bosibori-cv.jpg"
+      "photo": "cvs/photos/kenya-callen-bosibori-cv-b.jpg"
     },
     {
       "name": "Eddahwalowekitolome",
@@ -37,7 +37,7 @@
       "exp": "prev",
       "ref": "K-103",
       "status": "available",
-      "photo": "cvs/photos/kenya-eddahwalowekitolome-housemaidcv.jpg"
+      "photo": "cvs/photos/kenya-eddahwalowekitolome-housemaidcv-b.jpg"
     },
     {
       "name": "Elizabeth Kemunto Tirimba",
@@ -50,7 +50,7 @@
       "exp": "prev",
       "ref": "K-104",
       "status": "available",
-      "photo": "cvs/photos/kenya-elizabeth-kemunto-tirimba.jpg"
+      "photo": "cvs/photos/kenya-elizabeth-kemunto-tirimba-b.jpg"
     },
     {
       "name": "Esther Nanjalabarasa",
@@ -63,7 +63,7 @@
       "exp": "new",
       "ref": "K-105",
       "status": "available",
-      "photo": "cvs/photos/kenya-esther-nanjalabarasa-cv.jpg"
+      "photo": "cvs/photos/kenya-esther-nanjalabarasa-cv-b.jpg"
     },
     {
       "name": "Janet Shidhan Kazungu",
@@ -89,7 +89,7 @@
       "exp": "new",
       "ref": "K-107",
       "status": "available",
-      "photo": "cvs/photos/kenya-khaira-swalehe-kodi-cv.jpg"
+      "photo": "cvs/photos/kenya-khaira-swalehe-kodi-cv-b.jpg"
     },
     {
       "name": "Margaret Murugi",
@@ -102,7 +102,7 @@
       "exp": "prev",
       "ref": "K-108",
       "status": "available",
-      "photo": "cvs/photos/kenya-margaret-murugi-2.jpg"
+      "photo": "cvs/photos/kenya-margaret-murugi-2-b.jpg"
     },
     {
       "name": "Mesalimu Mwinyi",
@@ -115,7 +115,7 @@
       "exp": "prev",
       "ref": "K-109",
       "status": "available",
-      "photo": "cvs/photos/kenya-mesalimu-mwinyi.jpg"
+      "photo": "cvs/photos/kenya-mesalimu-mwinyi-b.jpg"
     },
     {
       "name": "Monyenye Lydiah",
@@ -128,7 +128,7 @@
       "exp": "prev",
       "ref": "K-110",
       "status": "available",
-      "photo": "cvs/photos/kenya-monyenye-lydiah.jpg"
+      "photo": "cvs/photos/kenya-monyenye-lydiah-b.jpg"
     },
     {
       "name": "Mwanakombo Juma Kidato",
@@ -154,7 +154,7 @@
       "exp": "prev",
       "ref": "K-112",
       "status": "available",
-      "photo": "cvs/photos/kenya-stella-sada.jpg"
+      "photo": "cvs/photos/kenya-stella-sada-b.jpg"
     }
   ]
 }
