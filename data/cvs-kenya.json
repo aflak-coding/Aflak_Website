@@ -4,157 +4,157 @@
       "name": "Agnes Nyaboke",
       "nat": "n1",
       "file": "cvs/kenya/agnes-nyaboke-cv.pdf",
+      "photo": "/cvs/photos/agnes.png",
       "job": "svc1",
       "age": 34,
       "rel": "o",
       "st": "s",
       "exp": "new",
       "ref": "K-101",
-      "status": "available",
-      "photo": ""
+      "status": "available"
     },
     {
       "name": "Callen Bosibori",
       "nat": "n1",
       "file": "cvs/kenya/callen-bosibori-cv.pdf",
+      "photo": "/cvs/photos/kenya-callen-bosibori-cv-b.jpg",
       "job": "svc1",
       "age": 24,
       "rel": "o",
       "st": "s",
       "exp": "new",
       "ref": "K-102",
-      "status": "available",
-      "photo": "cvs/photos/kenya-callen-bosibori-cv-b.jpg"
+      "status": "available"
     },
     {
       "name": "Eddahwalowekitolome",
       "nat": "n1",
       "file": "cvs/kenya/eddahwalowekitolome-housemaidcv.pdf",
+      "photo": "/cvs/photos/kenya-eddahwalowekitolome-housemaidcv-b.jpg",
       "job": "svc1",
       "age": 26,
       "rel": "o",
       "st": "s",
       "exp": "prev",
       "ref": "K-103",
-      "status": "available",
-      "photo": "cvs/photos/kenya-eddahwalowekitolome-housemaidcv-b.jpg"
+      "status": "available"
     },
     {
       "name": "Elizabeth Kemunto Tirimba",
       "nat": "n1",
       "file": "cvs/kenya/elizabeth-kemunto-tirimba.pdf",
+      "photo": "/cvs/photos/kenya-elizabeth-kemunto-tirimba-b.jpg",
       "job": "svc1",
       "age": 28,
       "rel": "o",
       "st": "s",
       "exp": "prev",
       "ref": "K-104",
-      "status": "available",
-      "photo": "cvs/photos/kenya-elizabeth-kemunto-tirimba-b.jpg"
+      "status": "available"
     },
     {
       "name": "Esther Nanjalabarasa",
       "nat": "n1",
       "file": "cvs/kenya/esther-nanjalabarasa-cv.pdf",
+      "photo": "/cvs/photos/kenya-esther-nanjalabarasa-cv-b.jpg",
       "job": "svc1",
       "age": 24,
       "rel": "o",
       "st": "s",
       "exp": "new",
       "ref": "K-105",
-      "status": "available",
-      "photo": "cvs/photos/kenya-esther-nanjalabarasa-cv-b.jpg"
+      "status": "available"
     },
     {
       "name": "Janet Shidhan Kazungu",
       "nat": "n1",
       "file": "cvs/kenya/janet-shidhan-kazungu-cv.pdf",
+      "photo": "/cvs/photos/image-2.png",
       "job": "svc1",
       "age": 49,
       "rel": "o",
       "st": "m",
       "exp": "prev",
       "ref": "K-106",
-      "status": "available",
-      "photo": ""
+      "status": "available"
     },
     {
       "name": "Khaira Swalehe Kodi",
       "nat": "n1",
       "file": "cvs/kenya/khaira-swalehe-kodi-cv.pdf",
+      "photo": "/cvs/photos/kenya-khaira-swalehe-kodi-cv-b.jpg",
       "job": "svc1",
       "age": 29,
       "rel": "m",
       "st": "s",
       "exp": "new",
       "ref": "K-107",
-      "status": "available",
-      "photo": "cvs/photos/kenya-khaira-swalehe-kodi-cv-b.jpg"
+      "status": "available"
     },
     {
       "name": "Margaret Murugi",
       "nat": "n1",
       "file": "cvs/kenya/margaret-murugi-2.pdf",
+      "photo": "/cvs/photos/kenya-margaret-murugi-2-b.jpg",
       "job": "svc1",
       "age": 29,
       "rel": "o",
       "st": "s",
       "exp": "prev",
       "ref": "K-108",
-      "status": "available",
-      "photo": "cvs/photos/kenya-margaret-murugi-2-b.jpg"
+      "status": "available"
     },
     {
       "name": "Mesalimu Mwinyi",
       "nat": "n1",
       "file": "cvs/kenya/mesalimu-mwinyi.pdf",
+      "photo": "/cvs/photos/kenya-mesalimu-mwinyi-b.jpg",
       "job": "svc1",
       "age": 29,
       "rel": "m",
       "st": "s",
       "exp": "prev",
       "ref": "K-109",
-      "status": "available",
-      "photo": "cvs/photos/kenya-mesalimu-mwinyi-b.jpg"
+      "status": "available"
     },
     {
       "name": "Monyenye Lydiah",
       "nat": "n1",
       "file": "cvs/kenya/monyenye-lydiah.pdf",
+      "photo": "/cvs/photos/kenya-monyenye-lydiah-b.jpg",
       "job": "svc1",
       "age": 34,
       "rel": "o",
       "st": "m",
       "exp": "prev",
       "ref": "K-110",
-      "status": "available",
-      "photo": "cvs/photos/kenya-monyenye-lydiah-b.jpg"
+      "status": "available"
     },
     {
       "name": "Mwanakombo Juma Kidato",
       "nat": "n1",
       "file": "cvs/kenya/mwanakombo-juma-kidato-cv.pdf",
+      "photo": "/cvs/photos/mwanakombo.png",
       "job": "svc1",
       "age": 39,
       "rel": "m",
       "st": "s",
       "exp": "prev",
       "ref": "K-111",
-      "status": "available",
-      "photo": ""
+      "status": "available"
     },
     {
       "name": "Stella Sada",
       "nat": "n1",
       "file": "cvs/kenya/stella-sada.pdf",
+      "photo": "/cvs/photos/kenya-stella-sada-b.jpg",
       "job": "svc1",
       "age": 36,
       "rel": "o",
       "st": "s",
       "exp": "prev",
       "ref": "K-112",
-      "status": "available",
-      "photo": "cvs/photos/kenya-stella-sada-b.jpg"
+      "status": "available"
     }
   ]
 }
