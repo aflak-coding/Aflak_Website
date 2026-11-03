@@ -16,7 +16,7 @@
       addr:"شارع خالد بن الوليد، حي قرطبة، الدور الأول فوق صيدلية كنوز، مكتب 34، الرياض",
       c_hours:"ساعات العمل", hours:"يوميًا من 9 صباحًا حتى 5 مساءً", c_social:"حسابات التواصل", c_map:"فتح في خرائط جوجل", ct_h:"بيانات التواصل", ct_pin:"شركة أفلاك للاستقدام", team_h:"فريق العمل", team_sub:"اختر ما يناسبك وتواصل معنا مباشرة عبر واتساب أو الاتصال.", team_wa:"تواصل عبر واتساب", team_call:"اتصال", ft_support:"لمزيد من الدعم", mail_subj:"استفسار عن خدمات الاستقدام", mail_body:"السلام عليكم،\n\nأرغب في الاستفسار عن خدمات الاستقدام لديكم.\n\nالخدمة المطلوبة:\nالجنسية المفضلة:\nالاسم:\nرقم الجوال:\n\nشكرًا لكم.", msg_team:"السلام عليكم، أود التواصل بخصوص خدمات أفلاك للاستقدام.",
       f_h:"طلب خدمة", f_type:"الخدمة المطلوبة", f_nat:"الجنسية المفضلة", f_name:"الاسم", f_phone:"رقم الجوال", f_note:"ملاحظات (اختياري)", f_send:"أرسل الطلب عبر واتساب", any:"أي جنسية",
-      cv_newtab:"فتح في تبويب جديد", cv_close:"إغلاق", cv_back:"رجوع للجنسيات", cv_title:"السير الذاتية: ", cv_count:"{n} سيرة ذاتية متاحة", cv_view:"عرض السيرة الذاتية (PDF)", cv_pick:"اختيار وإرسال عبر واتساب", rev_h:"آراء عملائنا", rev_sub:"بعض ما كتبه عملاؤنا عنا على خرائط جوجل.", rev_src:"خرائط جوجل", flt_job:"المهنة", flt_avl:"التوفر", flt_all:"الكل", flt_reset:"إعادة ضبط", flt_none:"لا توجد سير ذاتية مطابقة. جرّب تغيير التصفية أو تواصل معنا.", flt_of:"من", avl_available:"متاحة", avl_reserved:"محجوزة", cv_reserved_btn:"محجوزة حاليًا", age_r1:"18–25", age_r2:"26–30", age_r3:"31–35", age_r4:"36–40", age_r5:"41–45", age_r6:"46 فأكثر", job_svc1:"عاملة منزلية", job_svc2:"سائق شخصي", job_svc3:"طباخ / طباخة", job_svc4:"ممرضة منزلية", job_svc5:"مساعدة شخصية", cv_nojob:"سيرة ذاتية", f_priv_a:"بإرسال الطلب فإنك توافق على", ft_privacy:"سياسة الخصوصية", ft_srv:"خدماتنا:", ft_nats:"الجنسيات:", fl_svc1:"عاملة منزلية", fl_svc2:"سائق خاص", fl_svc3:"طباخ / طباخة", fl_svc4:"ممرضة منزلية", fl_svc5:"مساعدة شخصية",
+      cv_newtab:"فتح في تبويب جديد", cv_close:"إغلاق", cv_back:"رجوع للجنسيات", cv_title:"السير الذاتية: ", cv_count:"{n} سيرة ذاتية متاحة", cv_view:"عرض السيرة الذاتية (PDF)", cv_pick:"اختيار وإرسال عبر واتساب", rev_h:"آراء عملائنا", rev_sub:"بعض ما كتبه عملاؤنا عنا على خرائط جوجل.", rev_src:"خرائط جوجل", flt_job:"المهنة", flt_avl:"التوفر", flt_all:"الكل", flt_reset:"إعادة ضبط", flt_none:"لا توجد سير ذاتية مطابقة. جرّب تغيير التصفية أو تواصل معنا.", flt_of:"من", avl_available:"متاحة", avl_reserved:"محجوزة", cv_reserved_btn:"محجوزة حاليًا", age_r1:"18–25", age_r2:"26–30", age_r3:"31–35", age_r4:"36–40", age_r5:"41–45", age_r6:"46 فأكثر", job_svc1:"عاملة منزلية", job_svc2:"سائق شخصي", job_svc3:"طباخ / طباخة", job_svc4:"ممرضة منزلية", job_svc5:"مساعدة شخصية", cv_nojob:"سيرة ذاتية", cv_flipback:"رجوع", f_priv_a:"بإرسال الطلب فإنك توافق على", ft_privacy:"سياسة الخصوصية", ft_srv:"خدماتنا:", ft_nats:"الجنسيات:", fl_svc1:"عاملة منزلية", fl_svc2:"سائق خاص", fl_svc3:"طباخ / طباخة", fl_svc4:"ممرضة منزلية", fl_svc5:"مساعدة شخصية",
       cv_empty:"سيتم إضافة السير الذاتية لهذه الجنسية قريبًا. تواصل معنا على واتساب لنرشّح لك الأنسب.",
       f_age:"العمر", f_rel:"الديانة", f_st:"الحالة", f_exp:"الخبرة", age_u:"{n} سنة", rel_m:"مسلم", rel_o:"غير مسلم", st_s:"غير متزوج", st_m:"متزوج", exp_new:"قادم جديد", exp_prev:"خبرة سابقة",
       msg_pick:"السلام عليكم، أرغب في اختيار: ", msg_cv:"رابط السيرة الذاتية: ", msg_ref:"الرقم المرجعي: ",
@@ -46,7 +46,7 @@
       addr:"Khalid Bin Al Waleed Street, Qurtubah, first floor above Kunooz Pharmacy, office 34, Riyadh",
       c_hours:"Working hours", hours:"Daily, 9 AM to 5 PM", c_social:"Social accounts", c_map:"Open in Maps", ct_h:"Contact details", ct_pin:"Aflaak Recruitment Company", team_h:"Our team", team_sub:"Choose what suits you and contact us directly on WhatsApp or by phone.", team_wa:"Message on WhatsApp", team_call:"Call", ft_support:"More support", mail_subj:"Inquiry about recruitment services", mail_body:"Hello,\n\nI would like to ask about your recruitment services.\n\nService needed:\nPreferred nationality:\nName:\nMobile number:\n\nThank you.", msg_team:"Hello, I would like to ask about Aflaak Recruitment's services.",
       f_h:"Service request", f_type:"Service needed", f_nat:"Preferred nationality", f_name:"Name", f_phone:"Mobile number", f_note:"Notes (optional)", f_send:"Send request on WhatsApp", any:"Any nationality",
-      cv_newtab:"Open in new tab", cv_close:"Close", cv_back:"Back to nationalities", cv_title:"CVs: ", cv_count:"{n} CVs available", cv_view:"View CV (PDF)", cv_pick:"Select & send on WhatsApp", rev_h:"What our clients say", rev_sub:"Some of what our clients wrote about us on Google Maps.", rev_src:"Google Maps", flt_job:"Job", flt_avl:"Availability", flt_all:"All", flt_reset:"Reset", flt_none:"No matching CVs. Try changing the filters or contact us.", flt_of:"of", avl_available:"Available", avl_reserved:"Reserved", cv_reserved_btn:"Currently reserved", age_r1:"18–25", age_r2:"26–30", age_r3:"31–35", age_r4:"36–40", age_r5:"41–45", age_r6:"46+", job_svc1:"Housemaid", job_svc2:"Private driver", job_svc3:"Cook", job_svc4:"Home nurse", job_svc5:"Personal assistant", cv_nojob:"CV", f_priv_a:"By sending this request you agree to our", ft_privacy:"Privacy policy", ft_srv:"Our services:", ft_nats:"Nationalities:", fl_svc1:"Housemaid", fl_svc2:"Private driver", fl_svc3:"Cook", fl_svc4:"Home nurse", fl_svc5:"Personal assistant",
+      cv_newtab:"Open in new tab", cv_close:"Close", cv_back:"Back to nationalities", cv_title:"CVs: ", cv_count:"{n} CVs available", cv_view:"View CV (PDF)", cv_pick:"Select & send on WhatsApp", rev_h:"What our clients say", rev_sub:"Some of what our clients wrote about us on Google Maps.", rev_src:"Google Maps", flt_job:"Job", flt_avl:"Availability", flt_all:"All", flt_reset:"Reset", flt_none:"No matching CVs. Try changing the filters or contact us.", flt_of:"of", avl_available:"Available", avl_reserved:"Reserved", cv_reserved_btn:"Currently reserved", age_r1:"18–25", age_r2:"26–30", age_r3:"31–35", age_r4:"36–40", age_r5:"41–45", age_r6:"46+", job_svc1:"Housemaid", job_svc2:"Private driver", job_svc3:"Cook", job_svc4:"Home nurse", job_svc5:"Personal assistant", cv_nojob:"CV", cv_flipback:"Back", f_priv_a:"By sending this request you agree to our", ft_privacy:"Privacy policy", ft_srv:"Our services:", ft_nats:"Nationalities:", fl_svc1:"Housemaid", fl_svc2:"Private driver", fl_svc3:"Cook", fl_svc4:"Home nurse", fl_svc5:"Personal assistant",
       cv_empty:"CVs for this nationality will be added soon. Message us on WhatsApp and we'll suggest the best match.",
       f_age:"Age", f_rel:"Religion", f_st:"Status", f_exp:"Experience", age_u:"{n} years", rel_m:"Muslim", rel_o:"Non-Muslim", st_s:"Single", st_m:"Married", exp_new:"New arrival", exp_prev:"Previous experience",
       msg_pick:"Hello, I would like to select: ", msg_cv:"CV link: ", msg_ref:"Reference no.: ",
@@ -205,6 +205,14 @@
     if(flt.age){var r=AGE_R[flt.age], n=Number(w.age); if(!n||n<r[0]||n>r[1]) return false;}
     return true;
   }
+  var JOB_ICONS={
+    svc1:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.2"/><path d="M8.3 7.2a4 4 0 0 1 7.4 0"/><path d="M5.5 21v-1.4A5.6 5.6 0 0 1 11.1 14h1.8a5.6 5.6 0 0 1 5.6 5.6V21"/><path d="M9.6 21v-4.2h4.8V21"/></svg>',
+    svc2:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.4"/><path d="M3.3 11h6.3M14.4 11h6.3M12 14.4V21"/></svg>',
+    svc3:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 14.2A3.6 3.6 0 0 1 6.4 7.1a4.7 4.7 0 0 1 11.2 0A3.6 3.6 0 0 1 17 14.2V20H7z"/><path d="M7 17.2h10"/></svg>',
+    svc4:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7.5" r="3.2"/><path d="M5.5 21v-1.4A5.6 5.6 0 0 1 11.1 14h1.8a5.6 5.6 0 0 1 5.6 5.6V21"/><path d="M12 15.8v3.4M10.3 17.5h3.4"/></svg>',
+    svc5:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="8" r="3.2"/><path d="M3.5 21v-1.4A5.6 5.6 0 0 1 9.1 14h1.8a5.6 5.6 0 0 1 5.6 5.6V21"/><path d="M18.5 4.2l.7 1.5 1.6.2-1.2 1.1.3 1.6-1.4-.8-1.4.8.3-1.6-1.2-1.1 1.6-.2z"/></svg>',
+    none:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>'
+  };
   function renderList(){
     if(!curNat) return;
     var d=D[lang], all=visibleList(), grid=$("cvGrid");
@@ -217,15 +225,21 @@
       var url=new URL(w.file,location.href).href;
       var reserved=w.status==="reserved";
       var jobName=(w.job&&d["job_"+w.job])||"";
-      var card=mk("div","cv-card"+(reserved?" reserved":""));
+      var hasPhoto=!!w.photo;
+      var card=mk("div","cv-card"+(reserved?" reserved":"")+(hasPhoto?" has-photo":""));
+      card.tabIndex=0;
+      var inner=mk("div","cv-inner"), front=mk("div","cv-face cv-front"), back=mk("div","cv-face cv-back");
+      var dash="—";
+      // ---- الوجه الأمامي
       var top=mk("div","cv-top");
-      var ic=mk("div","cv-ic"); ic.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>';
+      var ic=mk("div","cv-ic"); ic.innerHTML=JOB_ICONS[w.job]||JOB_ICONS.none;
       top.appendChild(ic);
-      var tt=mk("div"); tt.appendChild(mk("h3","",jobName||d.cv_nojob));
+      var tt=mk("div","cv-tt");
+      tt.appendChild(mk("h3","",jobName||d.cv_nojob));
+      if(w.name) tt.appendChild(mk("p","cv-name",w.name));
       if(w.ref) tt.appendChild(mk("p","cv-meta",d.msg_ref+w.ref));
       var slot=mk("span","cv-slot"); if(w.status==="available"||reserved) slot.appendChild(mk("span","cv-badge "+w.status,d["avl_"+w.status])); tt.appendChild(slot);
-      top.appendChild(tt); card.appendChild(top);
-      var dash="\u2014";
+      top.appendChild(tt); front.appendChild(top);
       var facts=[
         [d.f_age, w.age?d.age_u.replace("{n}",w.age):dash],
         [d.f_rel, w.rel?d["rel_"+w.rel]:dash],
@@ -234,22 +248,50 @@
       ];
       var dl=mk("dl","cv-facts");
       facts.forEach(function(f){var r=mk("div"); r.appendChild(mk("dt","",f[0])); r.appendChild(mk("dd","",f[1])); dl.appendChild(r);});
-      card.appendChild(dl);
-      var acts=mk("div","cv-actions");
-      var p;
-      var v=mk("button","btn btn-line",d.cv_view); v.type="button";
-      v.addEventListener("click",function(){openViewer(w,url,function(){p.click();});});
-      if(reserved){
-        p=mk("button","btn btn-line cv-off",d.cv_reserved_btn); p.type="button"; p.disabled=true;
-      } else {
-        p=mk("button","btn btn-wa",d.cv_pick); p.type="button";
-        p.addEventListener("click",function(){
-          var who=jobName+(w.ref?" ("+w.ref+")":""); if(!who.trim()) who=w.name||"";
-          var m=d.msg_pick+who.trim()+"\n"+d.msg_nat+d[curNat]+"\n"+d.msg_cv+url;
-          window.open(wa(m),"_blank","noopener");
-        });
+      front.appendChild(dl);
+      var pickFn=function(){
+        var who=jobName+(w.ref?" ("+w.ref+")":""); if(!who.trim()) who=w.name||"";
+        var m=d.msg_pick+who.trim()+"\n"+d.msg_nat+d[curNat]+"\n"+d.msg_cv+url;
+        window.open(wa(m),"_blank","noopener");
+      };
+      var openFn=function(){openViewer(w,url,pickFn);};
+      function actions(cls){
+        var acts=mk("div","cv-actions "+cls);
+        var v=mk("button","btn btn-line",d.cv_view); v.type="button";
+        v.addEventListener("click",function(e){e.stopPropagation(); openFn();});
+        var p;
+        if(reserved){
+          p=mk("button","btn btn-line cv-off",d.cv_reserved_btn); p.type="button"; p.disabled=true;
+        } else {
+          p=mk("button","btn btn-wa",d.cv_pick); p.type="button";
+          p.addEventListener("click",function(e){e.stopPropagation(); pickFn();});
+        }
+        acts.appendChild(v); acts.appendChild(p); return acts;
       }
-      acts.appendChild(v); acts.appendChild(p); card.appendChild(acts);
+      front.appendChild(actions("front-acts"));
+      inner.appendChild(front);
+      // ---- الوجه الخلفي (صورة العاملة)
+      if(hasPhoto){
+        var img=mk("img","cv-pic"); img.src=relPath(w.photo); img.alt=w.name||jobName; img.loading="lazy"; img.decoding="async";
+        img.addEventListener("error",function(){card.classList.remove("has-photo"); card.classList.remove("flipped");});
+        back.appendChild(img);
+        var ov=mk("div","cv-ov");
+        var nm=mk("p","cv-ov-name",w.name||jobName); ov.appendChild(nm);
+        if(w.ref||jobName) ov.appendChild(mk("p","cv-ov-meta",[jobName,w.ref].filter(Boolean).join(" · ")));
+        ov.appendChild(actions("back-acts"));
+        back.appendChild(ov);
+        var fb=mk("button","cv-flipback","↺"); fb.type="button"; fb.setAttribute("aria-label",d.cv_flipback||"Back");
+        fb.addEventListener("click",function(e){e.stopPropagation(); card.classList.remove("flipped");});
+        back.appendChild(fb);
+        inner.appendChild(back);
+      }
+      card.appendChild(inner);
+      var touch=window.matchMedia("(hover:none)");
+      card.addEventListener("click",function(){
+        if(hasPhoto&&touch.matches&&!card.classList.contains("flipped")){card.classList.add("flipped"); return;}
+        openFn();
+      });
+      card.addEventListener("keydown",function(e){ if((e.key==="Enter"||e.key===" ")&&e.target===card){e.preventDefault(); openFn();} });
       grid.appendChild(card);
     });
   }

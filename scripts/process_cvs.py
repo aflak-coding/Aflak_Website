@@ -7,9 +7,15 @@
    الاجتماعية والمهنة والخبرة والرقم المرجعي مباشرة من النص (دقيق).
 2) لو الـ PDF صورة مصوّرة (Scan): يقرأ بـ OCR الكلمات الواضحة فقط (المهنة/الديانة/الحالة).
 وبيكمل أي بيانات ناقصة للسير الموجودة (بدون ما يغيّر الموجود).
-لا تُستخرج أي صور للعاملات، ولا يُقرأ رقم الجواز أو الجوال: لا يُحفظ أي منها في data/cvs.json.
+تُستخرج صورة العاملة (وجه فقط) لتظهر خلف الكرت، ولا يُقرأ رقم الجواز أو الجوال: لا يُحفظ أي منها.
 """
 import datetime, hashlib, json, os, re, shutil, subprocess, sys, tempfile
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+try:
+    import cvphoto  # استخراج صورة العاملة من الـ PDF (يحتاج pillow و numpy)
+except Exception:
+    cvphoto = None
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data", "cvs.json")  # الملف القديم الموحّد (يتم نقله تلقائيًا للملفات الجديدة)
@@ -83,6 +89,16 @@ def title_name(stem):
     if not words:
         words = s.split() or ["CV"]
     return " ".join(w.capitalize() for w in words)
+
+
+def make_photo(pdf, rel_pdf):
+    """يستخرج صورة العاملة لـ cvs/photos/<الدولة>-<اسم الملف>.jpg ويرجع مسارها (أو "" لو ما لقى صورة)."""
+    if cvphoto is None:
+        return None  # المكتبات غير مثبتة: نحاول في تشغيلة لاحقة
+    parts = rel_pdf.split("/")
+    name = "%s-%s.jpg" % (parts[1] if len(parts) > 2 else "cv", slug(os.path.splitext(parts[-1])[0]))
+    out = os.path.join(ROOT, "cvs", "photos", name)
+    return "cvs/photos/" + name if cvphoto.extract_photo(pdf, out) else ""
 
 
 def slug(stem):
@@ -357,9 +373,6 @@ def main():
     filled = 0
     for w in data:
         changed = False
-        if "photo" in w:
-            w.pop("photo")
-            changed = True
         pdf = os.path.join(ROOT, norm(w.get("file"))) if w.get("file") else None
         if pdf and os.path.isfile(pdf) and any(k not in w for k in FIELDS):
             layer = read_text_layer(pdf)
@@ -368,6 +381,11 @@ def main():
                     if k in FIELDS and k not in w:
                         w[k] = v
                         changed = True
+        if "photo" not in w and pdf and os.path.isfile(pdf):
+            ph = make_photo(pdf, norm(w.get("file")))
+            if ph is not None:
+                w["photo"] = ph
+                changed = True
         if "job" not in w and pdf and os.path.isfile(pdf):
             tmp2 = tempfile.mkdtemp()
             try:
@@ -380,13 +398,6 @@ def main():
         if changed:
             filled += 1
             print("تم تحديث:", w.get("name"))
-    old_photos = os.path.join(ROOT, "cvs", "photos")
-    if os.path.isdir(old_photos):
-        for f in os.listdir(old_photos):
-            if f.lower().endswith((".jpg", ".jpeg", ".png")):
-                os.remove(os.path.join(old_photos, f))
-                filled += 1
-
     # ---- السير الجديدة
     # بصمة محتوى كل ملف موجود، لمنع إضافة نفس الملف مرة ثانية حتى لو اتغير اسمه
     seen = {}
@@ -444,6 +455,9 @@ def main():
                 shutil.rmtree(tmp, ignore_errors=True)
             entry["status"] = "available"
             entry["file"] = rel
+            ph = make_photo(pdf, rel)
+            if ph is not None:
+                entry["photo"] = ph
             data.append(entry)
             known.add(rel)
             seen[digest] = entry

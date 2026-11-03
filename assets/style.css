@@ -487,3 +487,48 @@ html[lang="en"] .rev-card{direction:ltr}
 
 .cv-slot{display:block;min-height:32px}
 .cv-actions .btn{height:60px;min-height:60px;padding:6px 12px;line-height:1.3;text-align:center}
+
+/* ===== v20: بطاقة السيرة تنقلب لتعرض صورة العاملة + أعلام بتأثير احترافي ===== */
+.cv-card{padding:0;background:none;border:0;border-radius:16px;display:block;height:100%;perspective:1100px;cursor:pointer;outline:none}
+.cv-card:focus-visible{box-shadow:0 0 0 3px var(--gold)}
+.cv-inner{display:grid;height:100%;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.2,.7,.2,1)}
+.cv-face{grid-area:1/1;display:flex;flex-direction:column;gap:10px;padding:18px;border:1px solid var(--line);border-radius:16px;background:var(--surface);backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.cv-back{transform:rotateY(180deg);padding:0;overflow:hidden;position:relative;background:#0B2A2E;border-color:transparent}
+.cv-pic{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block}
+.cv-ov{position:absolute;inset-inline:0;bottom:0;display:grid;gap:8px;padding:56px 12px 12px;background:linear-gradient(to top,rgba(5,22,25,.92) 0%,rgba(5,22,25,.78) 55%,rgba(5,22,25,0) 100%);color:#fff}
+.cv-ov-name{margin:0;font-weight:700;font-size:17px;line-height:1.35;text-shadow:0 1px 3px rgba(0,0,0,.5);overflow-wrap:anywhere}
+.cv-ov-meta{margin:-4px 0 2px;font-size:13px;opacity:.88}
+.cv-card .back-acts{padding-top:2px;gap:8px}
+.cv-card .back-acts .btn{height:44px;min-height:44px;font-size:14px;padding:4px 10px}
+.cv-card .back-acts .btn-line{color:#fff;border-color:rgba(255,255,255,.75);background:rgba(255,255,255,.1)}
+.cv-card .back-acts .btn-line:hover{background:rgba(255,255,255,.22)}
+.cv-flipback{display:none;position:absolute;top:10px;inset-inline-start:10px;width:38px;height:38px;border-radius:50%;border:0;background:rgba(0,0,0,.5);color:#fff;font-size:20px;line-height:1;place-items:center;cursor:pointer}
+.cv-tt{min-width:0;flex:1}
+.cv-name{margin:1px 0 2px;font-weight:700;font-size:15.5px;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cv-card.flipped .cv-inner{transform:rotateY(180deg)}
+@media (hover:hover){
+  .cv-card.has-photo:hover .cv-inner{transform:rotateY(180deg)}
+  .cv-card:not(.has-photo):hover .cv-face{border-color:var(--teal)}
+}
+@media (hover:none){.cv-card.has-photo.flipped .cv-flipback{display:grid}}
+.cv-card.has-photo:focus-visible .cv-inner{transform:rotateY(180deg)}
+@media (prefers-reduced-motion:reduce){.cv-inner{transition:none}}
+.cv-card .cv-ic{flex:none}
+
+/* الأعلام: تكبير الصورة + ظل متدرّج + لمعة + اللافتة تتحوّل للذهبي وتظهر عبارة "عرض السير" */
+.flag{isolation:isolate;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
+.flag svg,.flag-img{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.flag::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(to top,rgba(6,28,31,.78) 0%,rgba(6,28,31,0) 62%);opacity:0;transition:opacity .35s}
+.flag::after{content:"";position:absolute;top:-10%;bottom:-10%;left:-70%;width:45%;z-index:3;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,255,255,.38),transparent);transform:skewX(-18deg);transition:left .8s ease}
+.flag .nm,.flag-img + .nm{z-index:4;transition:background .3s,color .3s,bottom .3s,box-shadow .3s}
+.flag .nm::after{display:block;max-height:0;opacity:0;overflow:hidden;font-size:12.5px;font-weight:500;line-height:1.5;content:"عرض السير الذاتية \2190";transition:max-height .3s,opacity .3s}
+html[lang="en"] .flag .nm::after{content:"View CVs \2192"}
+.flag[data-nat]:hover,.flag[data-nat]:focus-visible{transform:translateY(-6px);box-shadow:0 14px 28px rgba(0,0,0,.28)}
+.flag[data-nat]:hover svg,.flag[data-nat]:hover .flag-img,.flag[data-nat]:focus-visible .flag-img{transform:scale(1.09)}
+.flag[data-nat]:hover::before,.flag[data-nat]:focus-visible::before{opacity:1}
+.flag[data-nat]:hover::after,.flag[data-nat]:focus-visible::after{left:130%}
+.flag[data-nat]:hover .nm,.flag[data-nat]:focus-visible .nm{background:var(--gold);color:#0B2A2E;bottom:12px;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.flag[data-nat]:hover .nm::after,.flag[data-nat]:focus-visible .nm::after{max-height:22px;opacity:1}
+@media (hover:none){.flag .nm::after{display:none}}
+.cv-card,.cv-face{min-width:0}
+.cv-inner{grid-template-columns:minmax(0,1fr)}
