@@ -10,7 +10,8 @@
       "st": "s",
       "exp": "new",
       "ref": "K-101",
-      "status": "available"
+      "status": "available",
+      "photo": ""
     },
     {
       "name": "Callen Bosibori",
@@ -22,7 +23,8 @@
       "st": "s",
       "exp": "new",
       "ref": "K-102",
-      "status": "available"
+      "status": "available",
+      "photo": "cvs/photos/kenya-callen-bosibori-cv.jpg"
     },
     {
       "name": "Eddahwalowekitolome",
@@ -34,7 +36,8 @@
       "st": "s",
       "exp": "prev",
       "ref": "K-103",
-      "status": "available"
+      "status": "available",
+      "photo": "cvs/photos/kenya-eddahwalowekitolome-housemaidcv.jpg"
     },
     {
       "name": "Elizabeth Kemunto Tirimba",
@@ -46,7 +49,8 @@
       "st": "s",
       "exp": "prev",
       "ref": "K-104",
-      "status": "available"
+      "status": "available",
+      "photo": "cvs/photos/kenya-elizabeth-kemunto-tirimba.jpg"
     },
     {
       "name": "Esther Nanjalabarasa",
@@ -58,7 +62,8 @@
       "st": "s",
       "exp": "new",
       "ref": "K-105",
-      "status": "available"
+      "status": "available",
+      "photo": "cvs/photos/kenya-esther-nanjalabarasa-cv.jpg"
     },
     {
       "name": "Janet Shidhan Kazungu",
@@ -70,7 +75,8 @@
       "st": "m",
       "exp": "prev",
       "ref": "K-106",
-      "status": "available"
+      "status": "available",
+      "photo": ""
     },
     {
       "name": "Khaira Swalehe Kodi",
@@ -82,7 +88,8 @@
       "st": "s",
       "exp": "new",
       "ref": "K-107",
-      "status": "available"
+      "status": "available",
+      "photo": "cvs/photos/kenya-khaira-swalehe-kodi-cv.jpg"
     },
     {
       "name": "Margaret Murugi",
@@ -94,7 +101,8 @@
       "st": "s",
       "exp": "prev",
       "ref": "K-108",
-      "status": "available"
+      "status": "available",
+      "photo": "cvs/photos/kenya-margaret-murugi-2.jpg"
     },
     {
       "name": "Mesalimu Mwinyi",
@@ -106,7 +114,8 @@
       "st": "s",
       "exp": "prev",
       "ref": "K-109",
-      "status": "available"
+      "status": "available",
+      "photo": "cvs/photos/kenya-mesalimu-mwinyi.jpg"
     },
     {
       "name": "Monyenye Lydiah",
@@ -118,7 +127,8 @@
       "st": "m",
       "exp": "prev",
       "ref": "K-110",
-      "status": "available"
+      "status": "available",
+      "photo": "cvs/photos/kenya-monyenye-lydiah.jpg"
     },
     {
       "name": "Mwanakombo Juma Kidato",
@@ -130,7 +140,8 @@
       "st": "s",
       "exp": "prev",
       "ref": "K-111",
-      "status": "available"
+      "status": "available",
+      "photo": ""
     },
     {
       "name": "Stella Sada",
@@ -142,7 +153,8 @@
       "st": "s",
       "exp": "prev",
       "ref": "K-112",
-      "status": "available"
+      "status": "available",
+      "photo": "cvs/photos/kenya-stella-sada.jpg"
     }
   ]
 }
