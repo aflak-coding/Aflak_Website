@@ -35,9 +35,9 @@ def _is_flat(arr):
     return g.std() < 12 or g.mean() < 22
 
 
-def _list_images(pdf):
+def _list_images(pdf, page=1):
     try:
-        out = subprocess.run(["pdfimages", "-list", "-f", "1", "-l", "1", pdf],
+        out = subprocess.run(["pdfimages", "-list", "-f", str(page), "-l", str(page), pdf],
                              capture_output=True, text=True, timeout=60).stdout.splitlines()
     except Exception:
         return []
@@ -63,44 +63,45 @@ def _page_size(pdf):
 
 
 def _from_embedded(pdf, tmp):
-    rows = _list_images(pdf)
-    if not rows:
-        return None
+    """الصفحة الأولى فقط. ممنوع الصفحة الثانية: في نماذج بنغلاديش هي صورة جواز السفر!"""
     pw, ph = _page_size(pdf)
-    prefix = os.path.join(tmp, "e")
-    try:
-        subprocess.run(["pdfimages", "-j", "-f", "1", "-l", "1", pdf, prefix], check=True,
-                       capture_output=True, timeout=120)
-    except Exception:
-        return None
-    files = {}
-    for f in os.listdir(tmp):
-        m = re.match(r"e-(\d+)\.", f)
-        if m:
-            files[int(m.group(1))] = os.path.join(tmp, f)
     heads, bodies = [], []
-    for r in rows:
-        if r["type"] != "image" or r["idx"] not in files:
+    for page in (1,):
+        rows = _list_images(pdf, page)
+        if not rows:
             continue
-        w, h = r["w"], r["h"]
-        if min(w, h) < 120:
-            continue
-        ratio = w / float(h)
-        if ratio > 1.7 or ratio < 0.45:
-            continue  # لافتة/شعار/شريط
-        cover = (w / max(r["xppi"], 1) * 72) / pw
-        if cover > 0.8:
-            continue  # صورة بعرض الصفحة = صفحة مصوّرة أو خلفية، مش صورة شخص
+        prefix = os.path.join(tmp, "e%d" % page)
         try:
-            im = Image.open(files[r["idx"]]).convert("RGB")
+            subprocess.run(["pdfimages", "-j", "-f", str(page), "-l", str(page), pdf, prefix], check=True,
+                           capture_output=True, timeout=120)
         except Exception:
             continue
-        arr = np.asarray(im.resize((max(1, w // 4), max(1, h // 4))))
-        if _is_flat(arr):
-            continue
-        skin = _skin_fraction(arr)
-        item = (skin, w * h, im)
-        (bodies if ratio < 0.78 else heads).append(item)
+        files = {}
+        for f in os.listdir(tmp):
+            m = re.match(r"e%d-(\d+)\." % page, f)
+            if m:
+                files[int(m.group(1))] = os.path.join(tmp, f)
+        for r in rows:
+            if r["type"] != "image" or r["idx"] not in files:
+                continue
+            w, h = r["w"], r["h"]
+            if min(w, h) < 120:
+                continue
+            ratio = w / float(h)
+            if ratio > 1.7 or ratio < 0.45:
+                continue  # لافتة/شعار/شريط
+            cover = (w / max(r["xppi"], 1) * 72) / pw
+            if cover > 0.8:
+                continue  # صورة بعرض الصفحة = صفحة مصوّرة أو خلفية، مش صورة شخص
+            try:
+                im = Image.open(files[r["idx"]]).convert("RGB")
+            except Exception:
+                continue
+            arr = np.asarray(im.resize((max(1, w // 4), max(1, h // 4))))
+            if _is_flat(arr):
+                continue
+            item = (_skin_fraction(arr), w * h, im)
+            (bodies if ratio < 0.78 else heads).append(item)
     pool = bodies if bodies else heads  # نفضّل صورة الجسم كاملة، ولو مش موجودة فصورة الوجه
     if not pool:
         return None

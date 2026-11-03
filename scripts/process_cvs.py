@@ -381,10 +381,19 @@ def main():
                     if k in FIELDS and k not in w:
                         w[k] = v
                         changed = True
+        # اسم مأخوذ من اسم الملف (رقم أو "CV ..") → نحاول قراءته من نص الـ PDF
+        stem = os.path.splitext(os.path.basename(str(w.get("file") or "")))[0]
+        nm = str(w.get("name") or "")
+        if pdf and os.path.isfile(pdf) and (nm == title_name(stem) or re.match(r"^(CV\b|\d+$)", nm)):
+            lay = read_text_layer(pdf)
+            real = parse_text(lay).get("name") if lay else None
+            if real and real != nm:
+                w["name"] = real
+                changed = True
         cur = str(w.get("photo") or "")
         # صور الإصدار القديم (وجه فقط) تُستبدل بصورة الجسم كاملة؛ الصور المرفوعة يدويًا (أسماء مختلفة) لا تُمس
         old_auto = bool(re.match(r"^cvs/photos/[a-z]+-.+\.jpg$", cur)) and not cur.endswith("-b.jpg")
-        if ("photo" not in w or old_auto) and pdf and os.path.isfile(pdf):
+        if ("photo" not in w or old_auto or cur == "") and pdf and os.path.isfile(pdf):
             ph = make_photo(pdf, norm(w.get("file")))
             if ph:
                 if old_auto and cur != ph:
