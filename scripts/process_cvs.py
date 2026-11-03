@@ -96,7 +96,7 @@ def make_photo(pdf, rel_pdf):
     if cvphoto is None:
         return None  # المكتبات غير مثبتة: نحاول في تشغيلة لاحقة
     parts = rel_pdf.split("/")
-    name = "%s-%s.jpg" % (parts[1] if len(parts) > 2 else "cv", slug(os.path.splitext(parts[-1])[0]))
+    name = "%s-%s-b.jpg" % (parts[1] if len(parts) > 2 else "cv", slug(os.path.splitext(parts[-1])[0]))
     out = os.path.join(ROOT, "cvs", "photos", name)
     return "cvs/photos/" + name if cvphoto.extract_photo(pdf, out) else ""
 
@@ -381,11 +381,24 @@ def main():
                     if k in FIELDS and k not in w:
                         w[k] = v
                         changed = True
-        if "photo" not in w and pdf and os.path.isfile(pdf):
+        cur = str(w.get("photo") or "")
+        # صور الإصدار القديم (وجه فقط) تُستبدل بصورة الجسم كاملة؛ الصور المرفوعة يدويًا (أسماء مختلفة) لا تُمس
+        old_auto = bool(re.match(r"^cvs/photos/[a-z]+-.+\.jpg$", cur)) and not cur.endswith("-b.jpg")
+        if ("photo" not in w or old_auto) and pdf and os.path.isfile(pdf):
             ph = make_photo(pdf, norm(w.get("file")))
-            if ph is not None:
+            if ph:
+                if old_auto and cur != ph:
+                    try:
+                        os.remove(os.path.join(ROOT, cur))
+                    except OSError:
+                        pass
                 w["photo"] = ph
                 changed = True
+            elif ph is not None and "photo" not in w:
+                w["photo"] = ""
+                changed = True
+            elif ph == "" and old_auto:
+                pass  # ما لقينا صورة أفضل: نحتفظ بالقديمة
         if "job" not in w and pdf and os.path.isfile(pdf):
             tmp2 = tempfile.mkdtemp()
             try:

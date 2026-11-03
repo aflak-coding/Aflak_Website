@@ -100,11 +100,11 @@ def _from_embedded(pdf, tmp):
             continue
         skin = _skin_fraction(arr)
         item = (skin, w * h, im)
-        (heads if 0.7 <= ratio <= 1.45 else bodies).append(item)
-    pool = heads if heads else bodies
+        (bodies if ratio < 0.78 else heads).append(item)
+    pool = bodies if bodies else heads  # نفضّل صورة الجسم كاملة، ولو مش موجودة فصورة الوجه
     if not pool:
         return None
-    pool.sort(key=lambda t: (t[0] < 0.04, -t[0], -t[1]))
+    pool.sort(key=lambda t: (-t[1], -t[0]))  # الأكبر حجمًا أولًا
     return pool[0][2]
 
 
@@ -169,12 +169,16 @@ def _pick(page, comps, head_only):
         w, h = x1 - x0, y1 - y0
         area = w * h / float(W * H)
         ratio = w / float(h)
-        if w > 0.4 * W or fill < 0.5 or not (0.006 <= area <= 0.35):
+        if w > 0.4 * W or fill < 0.5 or not (0.006 <= area <= 0.4):
             continue
         crop_arr = np.asarray(page.crop((x0, y0, x1, y1)))
         if not _photo_like(crop_arr):
             continue
-        if head_only:
+        if head_only == "body":
+            if not (0.3 <= ratio <= 0.78) or area < 0.03 or _skin_fraction(crop_arr) < 0.03:
+                continue
+            score = area
+        elif head_only:
             if not (0.6 <= ratio <= 1.5) or area > 0.08 or y0 > H * 0.42:
                 continue
             score = area
@@ -211,8 +215,11 @@ def _from_scan(pdf, tmp):
     if page is None:
         return None
     W, H = page.size
-    # 1) صورة شخصية في أعلى الصفحة (الأشهر في النماذج)
-    box = _pick(page, _components(page, 1.0, 0.6, 8, 2), True)
+    # 1) صورة الجسم كاملة (طويلة)
+    box = _pick(page, _components(page, 1.0, 0.7, 10, 2), "body")
+    # 2) وإلا صورة شخصية في أعلى الصفحة
+    if box is None:
+        box = _pick(page, _components(page, 1.0, 0.6, 8, 2), True)
     # 2) أي كتلة صورة في الصفحة
     if box is None:
         box = _pick(page, _components(page, 1.0, 0.82, 14, 2), False)
