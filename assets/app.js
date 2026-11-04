@@ -29,7 +29,7 @@
       foot1:"أفلاك للاستقدام | الرياض، المملكة العربية السعودية", foot2:"ترخيص 3801238 | سجل تجاري 7004359431",
       msg_hello:"السلام عليكم، أرغب في طلب: ", msg_nat:"الجنسية المفضلة: ", msg_name:"الاسم: ", msg_phone:"الجوال: ", msg_note:"ملاحظات: ",
       msg_gen:"السلام عليكم، أريد الاستفسار عن خدمات الاستقدام.",
-      svcs:{svc1:"عاملة منزلية",svc2:"سائق شخصي",svc3:"طباخ / طباخة",svc4:"ممرضة منزلية",svc5:"مساعدة شخصية"}, title:"شركة أفلاك للاستقدام | استقدام مرخّص في الرياض", alt:"أفلاك للاستقدام"
+      svcs:{svc1:"عاملة منزلية",svc2:"سائق شخصي",svc3:"طباخ / طباخة",svc4:"ممرضة منزلية",svc5:"مساعدة شخصية",svc6:"طلب تفويض"}, title:"شركة أفلاك للاستقدام | استقدام مرخّص في الرياض", alt:"أفلاك للاستقدام"
     },
     en:{
       brand:"Aflaak Recruitment", nav_services:"Services", nav_faq:"FAQ", nav_contact:"Contact", nav_team:"Our team", nav_home:"Home", nav_nat:"Nationalities", map_h:"Our location", ft_links:"Quick links", ft_about:"Aflaak Recruitment is a company licensed by the Ministry of Human Resources and Social Development, providing household worker recruitment services in Riyadh with professional service and ongoing follow-up.", ft_rights:"\u00a9 2026 Aflaak Recruitment. All rights reserved.",
@@ -59,7 +59,7 @@
       foot1:"Aflaak Recruitment | Riyadh, Saudi Arabia", foot2:"License 3801238 | Commercial registration 7004359431",
       msg_hello:"Hello, I would like to request: ", msg_nat:"Preferred nationality: ", msg_name:"Name: ", msg_phone:"Mobile: ", msg_note:"Notes: ",
       msg_gen:"Hello, I would like to ask about your recruitment services.",
-      svcs:{svc1:"Housemaid",svc2:"Personal driver",svc3:"Cook",svc4:"Home nurse",svc5:"Personal assistant"}, title:"Aflaak Recruitment Company | Licensed recruitment in Riyadh", alt:"Aflaak Recruitment Company"
+      svcs:{svc1:"Housemaid",svc2:"Personal driver",svc3:"Cook",svc4:"Home nurse",svc5:"Personal assistant",svc6:"Authorization request"}, title:"Aflaak Recruitment Company | Licensed recruitment in Riyadh", alt:"Aflaak Recruitment Company"
     }
   };
   var lang="ar";
@@ -228,27 +228,8 @@
       var hasPhoto=!!w.photo;
       var card=mk("div","cv-card"+(reserved?" reserved":"")+(hasPhoto?" has-photo":""));
       card.tabIndex=0;
-      var inner=mk("div","cv-inner"), front=mk("div","cv-face cv-front"), back=mk("div","cv-face cv-back");
+      var inner=mk("div","cv-inner");
       var dash="—";
-      // ---- الوجه الأمامي
-      var top=mk("div","cv-top");
-      var ic=mk("div","cv-ic"); ic.innerHTML=JOB_ICONS[w.job]||JOB_ICONS.none;
-      top.appendChild(ic);
-      var tt=mk("div","cv-tt");
-      tt.appendChild(mk("h3","",jobName||d.cv_nojob));
-      if(w.name) tt.appendChild(mk("p","cv-name",w.name));
-      if(w.ref) tt.appendChild(mk("p","cv-meta",d.msg_ref+w.ref));
-      var slot=mk("span","cv-slot"); if(w.status==="available"||reserved) slot.appendChild(mk("span","cv-badge "+w.status,d["avl_"+w.status])); tt.appendChild(slot);
-      top.appendChild(tt); front.appendChild(top);
-      var facts=[
-        [d.f_age, w.age?d.age_u.replace("{n}",w.age):dash],
-        [d.f_rel, w.rel?d["rel_"+w.rel]:dash],
-        [d.f_st,  w.st?d["st_"+w.st]:dash],
-        [d.f_exp, w.exp?d["exp_"+w.exp]:dash]
-      ];
-      var dl=mk("dl","cv-facts");
-      facts.forEach(function(f){var r=mk("div"); r.appendChild(mk("dt","",f[0])); r.appendChild(mk("dd","",f[1])); dl.appendChild(r);});
-      front.appendChild(dl);
       var pickFn=function(){
         var who=jobName+(w.ref?" ("+w.ref+")":""); if(!who.trim()) who=w.name||"";
         var m=d.msg_pick+who.trim()+"\n"+d.msg_nat+d[curNat]+"\n"+d.msg_cv+url;
@@ -268,15 +249,38 @@
         }
         acts.appendChild(v); acts.appendChild(p); return acts;
       }
-      front.appendChild(actions("front-acts"));
-      inner.appendChild(front);
-      // ---- الوجه الخلفي (صورة العاملة)
+      // الوجه الأمامي (نبنيه مرتين لو فيه صورة: نصف يمين ونصف يسار ينفتحان)
+      function mkFront(cls){
+        var front=mk("div","cv-face cv-front "+cls);
+        var top=mk("div","cv-top");
+        var ic=mk("div","cv-ic"); ic.innerHTML=JOB_ICONS[w.job]||JOB_ICONS.none;
+        top.appendChild(ic);
+        var tt=mk("div","cv-tt");
+        tt.appendChild(mk("h3","",jobName||d.cv_nojob));
+        if(w.name) tt.appendChild(mk("p","cv-name",w.name));
+        if(w.ref) tt.appendChild(mk("p","cv-meta",d.msg_ref+w.ref));
+        var slot=mk("span","cv-slot"); if(w.status==="available"||reserved) slot.appendChild(mk("span","cv-badge "+w.status,d["avl_"+w.status])); tt.appendChild(slot);
+        top.appendChild(tt); front.appendChild(top);
+        var facts=[
+          [d.f_age, w.age?d.age_u.replace("{n}",w.age):dash],
+          [d.f_rel, w.rel?d["rel_"+w.rel]:dash],
+          [d.f_st,  w.st?d["st_"+w.st]:dash],
+          [d.f_exp, w.exp?d["exp_"+w.exp]:dash]
+        ];
+        var dl=mk("dl","cv-facts");
+        facts.forEach(function(f){var r=mk("div"); r.appendChild(mk("dt","",f[0])); r.appendChild(mk("dd","",f[1])); dl.appendChild(r);});
+        front.appendChild(dl);
+        front.appendChild(actions("front-acts"));
+        return front;
+      }
       if(hasPhoto){
+        // الخلف: صورة العاملة تظهر كأنها تخرج من الشاشة
+        var back=mk("div","cv-face cv-back");
         var img=mk("img","cv-pic"); img.src=relPath(w.photo); img.alt=w.name||jobName; img.loading="lazy"; img.decoding="async";
-        img.addEventListener("error",function(){card.classList.remove("has-photo"); card.classList.remove("flipped");});
+        img.addEventListener("error",function(){card.classList.remove("has-photo"); card.classList.remove("flipped"); [].forEach.call(inner.querySelectorAll(".cv-back,.cv-r"),function(n){n.remove();}); var l=inner.querySelector(".cv-l"); if(l) l.classList.remove("cv-l");});
         back.appendChild(img);
         var ov=mk("div","cv-ov");
-        var nm=mk("p","cv-ov-name",w.name||jobName); ov.appendChild(nm);
+        ov.appendChild(mk("p","cv-ov-name",w.name||jobName));
         if(w.ref||jobName) ov.appendChild(mk("p","cv-ov-meta",[jobName,w.ref].filter(Boolean).join(" · ")));
         ov.appendChild(actions("back-acts"));
         back.appendChild(ov);
@@ -284,6 +288,12 @@
         fb.addEventListener("click",function(e){e.stopPropagation(); card.classList.remove("flipped");});
         back.appendChild(fb);
         inner.appendChild(back);
+        var L=mkFront("cv-l"), R=mkFront("cv-r");
+        R.setAttribute("aria-hidden","true");
+        [].forEach.call(R.querySelectorAll("button"),function(b){b.tabIndex=-1;});
+        inner.appendChild(L); inner.appendChild(R);
+      } else {
+        inner.appendChild(mkFront(""));
       }
       card.appendChild(inner);
       var touch=window.matchMedia("(hover:none)");
