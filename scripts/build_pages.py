@@ -12,7 +12,7 @@ WA = "966554084322"
 LICENSE = "3801238"
 CR = "7004359431"
 EMAIL = "aflak8785@gmail.com"
-UPDATED = "2026-10-22"
+UPDATED = "2026-11-04"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 V = "13"
 
@@ -54,6 +54,7 @@ NATIONALITIES = [
     dict(slug="philippines", nat="n3", name="الفلبين"),
     dict(slug="bangladesh", nat="n2", name="بنغلاديش"),
     dict(slug="kenya", nat="n1", name="كينيا"),
+    dict(slug="ethiopia", nat="n4", name="إثيوبيا"),
     dict(slug="srilanka", nat="n5", name="سريلانكا"),
 ]
 E = html.escape
@@ -172,7 +173,7 @@ urls = [BASE]
 for s in SERVICES:
     p = "../"
     body = f'<section class="s"><div class="wrap prose"><h2 class="title">{E(s["sec"])}</h2><p>{E(s["intro"])}</p><ul class="lp-list">' + "".join(f"<li>{E(i)}</li>" for i in s["items"]) + f'</ul><p class="lp-note">{E(s["note"])}</p></div></section>\n'
-    faqs = faq_items(("ما الجنسيات المتاحة؟", "كينيا، بنغلاديش، الفلبين، وسريلانكا."))
+    faqs = faq_items(("ما الجنسيات المتاحة؟", "كينيا، بنغلاديش، الفلبين، إثيوبيا، وسريلانكا."))
     write(f"services/{s['slug']}.html", page(
         p, f"services/{s['slug']}.html", f"{s['city']} | أفلاك للاستقدام", s["desc"], s["city"], s["lead"], s["name"], body,
         "اطلب عبر واتساب", f"{p}index.html?svc={s['svc']}#order", "اطلب من النموذج",
