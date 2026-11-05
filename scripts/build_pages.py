@@ -7,12 +7,12 @@
 """
 import html, json, os
 
-BASE = "https://aflak-coding.github.io/Aflak_Website/"
+BASE = "https://aflakrecruitment.com/"
 WA = "966554084322"
 LICENSE = "3801238"
 CR = "7004359431"
 EMAIL = "aflak8785@gmail.com"
-UPDATED = "2026-11-04"
+UPDATED = "2026-11-05"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 V = "13"
 

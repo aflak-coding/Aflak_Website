@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://aflakrecruitment.com/sitemap.xml
