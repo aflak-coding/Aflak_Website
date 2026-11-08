@@ -91,6 +91,43 @@ def title_name(stem):
     return " ".join(w.capitalize() for w in words)
 
 
+FN_JOB = {"maid": "svc1", "housemaid": "svc1", "domestic": "svc1", "driver": "svc2", "cook": "svc3", "chef": "svc3",
+          "nurse": "svc4", "caregiver": "svc4", "assistant": "svc5", "pa": "svc5"}
+FN_EXP = {"new": "new", "fresh": "new", "first": "new", "firsttimer": "new", "exp": "prev", "experienced": "prev",
+          "prev": "prev", "abroad": "prev"}
+FN_ST = {"single": "s", "married": "m"}
+FN_REL = {"muslim": "m", "islam": "m", "christian": "o", "chr": "o", "other": "o"}
+
+
+def parse_filename(stem):
+    """اسم الملف بصيغة  الاسم_العمر_المهنة_...  (مثال: Mulu Tadesse_28_cook_single_muslim.pdf).
+    يرجع القيم المفهومة فقط؛ وما ليس رقمًا ولا كلمة معروفة يُعتبر جزءًا من الاسم. لو الاسم عادي يرجع {}."""
+    s = re.sub(r"\s*\(\d+\)\s*$", "", stem).strip()
+    if re.search(r"whatsapp|^img|^image|^photo|^scan|^cv\b", s, re.I) or "_" not in s:
+        return {}
+    out, name = {}, []
+    for part in [p.strip() for p in s.split("_") if p.strip()]:
+        key = re.sub(r"[^a-z]", "", part.lower())
+        if re.fullmatch(r"\d{2}", part) and 18 <= int(part) <= 60:
+            out["age"] = int(part)
+        elif key in FN_JOB:
+            out["job"] = FN_JOB[key]
+        elif key in FN_EXP:
+            out["exp"] = FN_EXP[key]
+        elif key in FN_ST:
+            out["st"] = FN_ST[key]
+        elif key in FN_REL:
+            out["rel"] = FN_REL[key]
+        else:
+            name.append(part)
+    if not out:
+        return {}  # ما فيه أي معلومة مفهومة: نتركه للقراءة العادية
+    nm = " ".join(w.capitalize() for w in " ".join(name).split())
+    if nm and not re.fullmatch(r"[\d\s]+", nm):
+        out["name"] = nm
+    return out
+
+
 def make_photo(pdf, rel_pdf):
     """يستخرج صورة العاملة لـ cvs/photos/<الدولة>-<اسم الملف>.jpg ويرجع مسارها (أو "" لو ما لقى صورة)."""
     if cvphoto is None:
@@ -429,6 +466,7 @@ def main():
             seen.setdefault(sha(f), w)
     added = 0
     removed = 0
+    defaulted = set()  # سير اتحطت لها مهنة افتراضية (ما اتعرفتش)
     for folder, (nat, letter) in FOLDERS.items():
         d = os.path.join(ROOT, "cvs", folder)
         if not os.path.isdir(d):
@@ -456,6 +494,10 @@ def main():
                 if img and (not layer or "job" not in info):
                     for k, v in detect(ocr_text(img)).items():
                         info.setdefault(k, v)
+                fn_info = parse_filename(stem)  # بيانات مكتوبة في اسم الملف لها الأولوية
+                info.update(fn_info)
+                if "job" not in info:
+                    defaulted.add(rel)
                 info.setdefault("job", DEFAULT_JOB)
                 final_nat = info.get("nat") or nat
                 if final_nat != nat:
@@ -488,6 +530,47 @@ def main():
 
     save_all(data)
     print("تمت إضافة %d سيرة، واستكمال %d سيرة، وحذف %d ملف مكرر" % (added, filled, removed))
+    write_review(data, defaulted, added, removed)
+
+
+LABELS = {"age": "العمر", "exp": "الخبرة", "rel": "الديانة", "st": "الحالة الاجتماعية", "job": "المهنة"}
+
+
+def review_items(data, defaulted=()):
+    """السير اللي محتاجة مراجعة يدوية: [(الدولة, المرجع, الاسم, [الأسباب])]"""
+    rows = []
+    folder_of = {v[0]: k for k, v in FOLDERS.items()}
+    for w in data:
+        why = []
+        if re.match(r"^CV\b", str(w.get("name") or "")):
+            why.append("الاسم غير معروف")
+        why += [LABELS[k] + " ناقص" for k in ("age", "exp", "rel", "st") if k not in w]
+        if w.get("file") in defaulted:
+            why.append("المهنة افتراضية (عاملة منزلية)")
+        if w.get("photo") == "":
+            why.append("بدون صورة")
+        if why:
+            rows.append((folder_of.get(w.get("nat"), "?"), w.get("ref", ""), w.get("name", ""), why))
+    return sorted(rows)
+
+
+def write_review(data, defaulted, added, removed):
+    """تقرير يظهر في ملخص تشغيلة الـ Action (تبويب Actions) — مش بيتنشر على الموقع."""
+    rows = review_items(data, defaulted)
+    lines = ["## نتيجة المعالجة", "",
+             "- أُضيفت **%d** سيرة، وحُذف **%d** ملف مكرر" % (added, removed),
+             "- سير تحتاج مراجعة: **%d** من %d" % (len(rows), len(data)), ""]
+    if rows:
+        lines += ["| الدولة | المرجع | الاسم | المطلوب مراجعته |", "|---|---|---|---|"]
+        for c, ref, nm, why in rows:
+            lines.append("| %s | %s | %s | %s |" % (c, ref, nm, "، ".join(why)))
+        lines += ["", "عدّلها من Pages CMS ← السيرة المعنية ← ثم Save."]
+    text = "\n".join(lines) + "\n"
+    print("\n" + text)
+    path = os.environ.get("GITHUB_STEP_SUMMARY")
+    if path:
+        with open(path, "a", encoding="utf-8") as f:
+            f.write(text)
 
 
 if __name__ == "__main__":
