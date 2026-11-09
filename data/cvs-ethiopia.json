@@ -1172,6 +1172,55 @@
       "status": "available",
       "file": "cvs/ethiopia/ZINET AWOL  SEID.pdf",
       "photo": "cvs/photos/ethiopia-zinet-awol-seid-b.jpg"
+    },
+    {
+      "nat": "n4",
+      "name": "Seadi",
+      "ref": "E-199",
+      "job": "svc1",
+      "rel": "o",
+      "st": "s",
+      "age": 26,
+      "status": "available",
+      "file": "cvs/ethiopia/ENATYE  ALEMU  ESHETU.pdf",
+      "photo": "cvs/photos/ethiopia-enatye-alemu-eshetu-b.jpg"
+    },
+    {
+      "nat": "n4",
+      "name": "Hussen",
+      "ref": "E-200",
+      "job": "svc1",
+      "rel": "m",
+      "st": "s",
+      "age": 28,
+      "exp": "prev",
+      "status": "available",
+      "file": "cvs/ethiopia/HALIMET  MUHAMMED  ADEM.pdf",
+      "photo": "cvs/photos/ethiopia-halimet-muhammed-adem-b.jpg"
+    },
+    {
+      "nat": "n4",
+      "name": "Hussen",
+      "ref": "E-201",
+      "job": "svc1",
+      "rel": "m",
+      "st": "s",
+      "age": 23,
+      "status": "available",
+      "file": "cvs/ethiopia/KUBRA  MOHAMMED  AHMED.pdf",
+      "photo": "cvs/photos/ethiopia-kubra-mohammed-ahmed-b.jpg"
+    },
+    {
+      "nat": "n4",
+      "name": "Toyba Yimer Ali",
+      "ref": "E-202",
+      "job": "svc1",
+      "rel": "m",
+      "st": "s",
+      "age": 35,
+      "status": "available",
+      "file": "cvs/ethiopia/TOYBA  YIMER  ALI.pdf",
+      "photo": "cvs/photos/ethiopia-toyba-yimer-ali-b.jpg"
     }
   ]
 }
