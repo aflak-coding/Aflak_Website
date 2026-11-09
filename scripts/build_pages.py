@@ -99,7 +99,7 @@ def head(p, title, desc, url, ld):
 
 def header(p, wa):
     return f'''<header class="top"><div class="wrap">
-  <a class="brand" href="{p}index.html"><span class="chip"><img src="{p}assets/img/logo-1.jpg" alt="" width="114" height="38"></span><b>أفلاك للاستقدام</b></a>
+  <a class="brand" href="{p}index.html"><span class="chip"><img src="{p}assets/img/logo-1.png" alt="" width="114" height="38"></span><b>أفلاك للاستقدام</b></a>
   <nav aria-label="main"><a href="{p}index.html#services">الخدمات</a><a href="{p}index.html#nationalities">الجنسيات</a><a href="{p}index.html#faq">أسئلة شائعة</a><a href="{p}index.html#order">تواصل معنا</a></nav>
   <a class="btn btn-wa hdr-cta" href="{wa}" target="_blank" rel="noopener">اطلب الآن</a>
 </div></header>

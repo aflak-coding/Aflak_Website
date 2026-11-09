@@ -183,7 +183,7 @@ html[dir="rtl"] .doc dd{text-align:right}
 footer{background:var(--hero-2);color:var(--hero-muted);padding:30px 0 40px;font-size:15px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
 
-.fab{position:fixed;inset-inline-start:16px;bottom:calc(5cm + env(safe-area-inset-bottom,0px));z-index:30;width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.28)}
+.fab{position:fixed;inset-inline-start:16px;bottom:calc(2.2cm + env(safe-area-inset-bottom,0px));z-index:30;width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.28)}
 .fab svg{width:30px;height:30px;fill:#fff}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
@@ -488,13 +488,17 @@ html[lang="en"] .rev-card{direction:ltr}
 .cv-slot{display:block;min-height:32px}
 .cv-actions .btn{height:60px;min-height:60px;padding:6px 12px;line-height:1.3;text-align:center}
 
-/* ===== v20: بطاقة السيرة تنقلب لتعرض صورة العاملة + أعلام بتأثير احترافي ===== */
-.cv-card{padding:0;background:none;border:0;border-radius:16px;display:block;height:100%;perspective:1100px;cursor:pointer;outline:none}
+/* ===== v24: الكرت ينفتح من المنتصف (نصفين يمين وشمال) وصورة العاملة تخرج للأمام ===== */
+.cv-grid{overflow:visible}
+.cv-card{padding:0;background:none;border:0;border-radius:16px;display:block;height:100%;perspective:1200px;cursor:pointer;outline:none;position:relative;min-width:0}
 .cv-card:focus-visible{box-shadow:0 0 0 3px var(--gold)}
-.cv-inner{display:grid;height:100%;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.2,.7,.2,1)}
-.cv-face{grid-area:1/1;display:flex;flex-direction:column;gap:10px;padding:18px;border:1px solid var(--line);border-radius:16px;background:var(--surface);backface-visibility:hidden;-webkit-backface-visibility:hidden}
-.cv-back{transform:rotateY(180deg);padding:0;overflow:hidden;position:relative;background:#0B2A2E;border-color:transparent}
-.cv-pic{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block}
+.cv-inner{display:grid;grid-template-columns:minmax(0,1fr);height:100%;position:relative}
+.cv-face{grid-area:1/1;display:flex;flex-direction:column;gap:10px;padding:18px;border:1px solid var(--line);border-radius:16px;background:var(--surface);min-width:0}
+.cv-back{padding:0;overflow:hidden;position:relative;background:#0B2A2E;border-color:transparent;transform:scale(.9);opacity:0;pointer-events:none;box-shadow:0 0 0 rgba(0,0,0,0);transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .35s,box-shadow .6s}
+.cv-l,.cv-r{position:relative;z-index:2;transition:transform .6s cubic-bezier(.65,0,.25,1),opacity .45s .08s;will-change:transform}
+.cv-l{clip-path:inset(0 49.7% 0 0);transform-origin:left center}
+.cv-r{clip-path:inset(0 0 0 49.7%);transform-origin:right center}
+.cv-pic{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 12%;display:block}
 .cv-ov{position:absolute;inset-inline:0;bottom:0;display:grid;gap:8px;padding:56px 12px 12px;background:linear-gradient(to top,rgba(5,22,25,.92) 0%,rgba(5,22,25,.78) 55%,rgba(5,22,25,0) 100%);color:#fff}
 .cv-ov-name{margin:0;font-weight:700;font-size:17px;line-height:1.35;text-shadow:0 1px 3px rgba(0,0,0,.5);overflow-wrap:anywhere}
 .cv-ov-meta{margin:-4px 0 2px;font-size:13px;opacity:.88}
@@ -505,15 +509,26 @@ html[lang="en"] .rev-card{direction:ltr}
 .cv-flipback{display:none;position:absolute;top:10px;inset-inline-start:10px;width:38px;height:38px;border-radius:50%;border:0;background:rgba(0,0,0,.5);color:#fff;font-size:20px;line-height:1;place-items:center;cursor:pointer}
 .cv-tt{min-width:0;flex:1}
 .cv-name{margin:1px 0 2px;font-weight:700;font-size:15.5px;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.cv-card.flipped .cv-inner{transform:rotateY(180deg)}
+.cv-card .cv-ic{flex:none}
+/* حالة الفتح */
+.cv-card.flipped{z-index:6}
+.cv-card.flipped .cv-back{transform:scale(1.08);opacity:1;pointer-events:auto;box-shadow:0 26px 60px rgba(0,0,0,.5)}
+.cv-card.flipped .cv-l{transform:translateX(-62%) rotateY(-28deg);opacity:0}
+.cv-card.flipped .cv-r{transform:translateX(62%) rotateY(28deg);opacity:0}
+.cv-card.flipped .cv-l,.cv-card.flipped .cv-r{pointer-events:none}
 @media (hover:hover){
-  .cv-card.has-photo:hover .cv-inner{transform:rotateY(180deg)}
+  .cv-card.has-photo:hover{z-index:6}
+  .cv-card.has-photo:hover .cv-back{transform:scale(1.08);opacity:1;pointer-events:auto;box-shadow:0 26px 60px rgba(0,0,0,.5)}
+  .cv-card.has-photo:hover .cv-l{transform:translateX(-62%) rotateY(-28deg);opacity:0;pointer-events:none}
+  .cv-card.has-photo:hover .cv-r{transform:translateX(62%) rotateY(28deg);opacity:0;pointer-events:none}
   .cv-card:not(.has-photo):hover .cv-face{border-color:var(--teal)}
 }
 @media (hover:none){.cv-card.has-photo.flipped .cv-flipback{display:grid}}
-.cv-card.has-photo:focus-visible .cv-inner{transform:rotateY(180deg)}
-@media (prefers-reduced-motion:reduce){.cv-inner{transition:none}}
-.cv-card .cv-ic{flex:none}
+.cv-card.has-photo:focus-visible{z-index:6}
+.cv-card.has-photo:focus-visible .cv-back{transform:scale(1.08);opacity:1;pointer-events:auto}
+.cv-card.has-photo:focus-visible .cv-l{transform:translateX(-62%);opacity:0}
+.cv-card.has-photo:focus-visible .cv-r{transform:translateX(62%);opacity:0}
+@media (prefers-reduced-motion:reduce){.cv-back,.cv-l,.cv-r{transition:opacity .2s}.cv-card.has-photo:hover .cv-l,.cv-card.has-photo:hover .cv-r,.cv-card.flipped .cv-l,.cv-card.flipped .cv-r{transform:none}}
 
 /* الأعلام: تكبير الصورة + ظل متدرّج + لمعة + اللافتة تتحوّل للذهبي وتظهر عبارة "عرض السير" */
 .flag{isolation:isolate;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
@@ -532,3 +547,24 @@ html[lang="en"] .flag .nm::after{content:"View CVs \2192"}
 @media (hover:none){.flag .nm::after{display:none}}
 .cv-card,.cv-face{min-width:0}
 .cv-inner{grid-template-columns:minmax(0,1fr)}
+
+/* ===== v28: شعار شفاف + ترقيم صفحات السير ===== */
+.logo-card{background:transparent;border:0;box-shadow:none;padding:0;border-radius:0;overflow:visible;width:min(300px,80%)}
+.logo-card::after{display:none}
+.logo-card img{filter:drop-shadow(0 2px 10px rgba(255,255,255,.75))}
+.brand .chip{background:transparent;border:0;padding:0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .brand .chip{background:#fff;border:1px solid var(--line);padding:2px 8px}}
+:root[data-theme="dark"] .brand .chip{background:#fff;border:1px solid var(--line);padding:2px 8px}
+
+.cv-pager{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:8px;margin-top:26px}
+.cv-pager[hidden]{display:none}
+.cv-pager .pg{min-width:42px;height:42px;padding:0 12px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-weight:700;cursor:pointer;transition:background .2s,color .2s,transform .2s,border-color .2s}
+.cv-pager .pg:hover:not(:disabled){border-color:var(--hero);transform:translateY(-2px)}
+.cv-pager .pg.on{background:var(--hero);border-color:var(--hero);color:#fff;cursor:default}
+.cv-pager .pg:disabled:not(.on){opacity:.35;cursor:not-allowed}
+@keyframes pgInL{from{opacity:0;transform:translateX(-56px)}to{opacity:1;transform:none}}
+@keyframes pgInR{from{opacity:0;transform:translateX(56px)}to{opacity:1;transform:none}}
+.cv-grid.pg-l{animation:pgInL .45s cubic-bezier(.2,.8,.2,1) both}
+.cv-grid.pg-r{animation:pgInR .45s cubic-bezier(.2,.8,.2,1) both}
+@media (prefers-reduced-motion:reduce){.cv-grid.pg-l,.cv-grid.pg-r{animation:none}}
+@media (max-width:700px){.cv-pager{gap:6px}.cv-pager .pg{min-width:40px;height:40px;padding:0 8px}}
