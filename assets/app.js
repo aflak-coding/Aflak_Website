@@ -24,7 +24,7 @@
       q6:"ما الخدمات المتاحة؟", a6:"استقدام عاملة منزلية وسائق شخصي، ويمكنك أيضًا طلب طباخ أو طباخة، أو ممرضة منزلية، أو مساعدة شخصية من نموذج الطلب.",
       q1:"هل الشركة مرخّصة؟", a1:"نعم. شركة مرخّصة من وزارة الموارد البشرية والتنمية الاجتماعية برقم 3801238، وسجلنا التجاري رقم 7004359431.",
       q3:"كم السعر؟", a3:"يختلف السعر حسب الخدمة والجنسية. راسلنا على واتساب ونرسل لك التفاصيل.",
-      q4:"ما الجنسيات المتاحة؟", a4:"كينيا، بنغلاديش، الفلبين، إثيوبيا، وسريلانكا.",
+      q7:"كم تستغرق مدة الاستقدام؟", a7:"عادةً من 30 إلى 45 يومًا.", pk_h:"بيانات التواصل", pk_sub:"نكتب لك على نفس الرقم لتأكيد الطلب وإكمال الإجراءات.", pk_send:"متابعة إلى واتساب", pk_cancel:"إلغاء", pk_bad:"اكتب رقم جوال صحيح.", q4:"ما الجنسيات المتاحة؟", a4:"كينيا، بنغلاديش، الفلبين، إثيوبيا، وسريلانكا.",
       q5:"أين مقر الشركة ومتى تفتح؟", a5:"في الرياض، حي قرطبة، شارع خالد بن الوليد، الدور الأول فوق صيدلية كنوز، مكتب 34. نعمل يوميًا من 9 صباحًا حتى 5 مساءً.",
       foot1:"أفلاك للاستقدام | الرياض، المملكة العربية السعودية", foot2:"ترخيص 3801238 | سجل تجاري 7004359431",
       msg_hello:"السلام عليكم، أرغب في طلب: ", msg_nat:"الجنسية المفضلة: ", msg_name:"الاسم: ", msg_phone:"الجوال: ", msg_note:"ملاحظات: ",
@@ -54,7 +54,7 @@
       q6:"Which services do you offer?", a6:"Recruiting a housemaid or a personal driver. You can also request a cook, a home nurse or a personal assistant through the request form.",
       q1:"Is the company licensed?", a1:"Yes. We are licensed by the Ministry of Human Resources and Social Development (license 3801238), and our commercial registration is 7004359431.",
       q3:"How much does it cost?", a3:"Prices depend on the service and nationality. Message us on WhatsApp and we'll send the details.",
-      q4:"Which nationalities are available?", a4:"Kenya, Bangladesh, the Philippines, Ethiopia and Sri Lanka.",
+      q7:"How long does recruitment take?", a7:"Usually 30 to 45 days.", pk_h:"Your contact details", pk_sub:"We will contact you on this number to confirm the request.", pk_send:"Continue to WhatsApp", pk_cancel:"Cancel", pk_bad:"Please enter a valid mobile number.", q4:"Which nationalities are available?", a4:"Kenya, Bangladesh, the Philippines, Ethiopia and Sri Lanka.",
       q5:"Where is the company located and when is it open?", a5:"In Riyadh, Qurtubah district, Khalid Bin Al Waleed Street, first floor above Kunooz Pharmacy, office 34. Open daily from 9 AM to 5 PM.",
       foot1:"Aflaak Recruitment | Riyadh, Saudi Arabia", foot2:"License 3801238 | Commercial registration 7004359431",
       msg_hello:"Hello, I would like to request: ", msg_nat:"Preferred nationality: ", msg_name:"Name: ", msg_phone:"Mobile: ", msg_note:"Notes: ",
@@ -211,6 +211,23 @@
     svc5:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="8" r="3.2"/><path d="M3.5 21v-1.4A5.6 5.6 0 0 1 9.1 14h1.8a5.6 5.6 0 0 1 5.6 5.6V21"/><path d="M18.5 4.2l.7 1.5 1.6.2-1.2 1.1.3 1.6-1.4-.8-1.4.8.3-1.6-1.2-1.1 1.6-.2z"/></svg>',
     none:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>'
   };
+  // نافذة بيانات التواصل قبل فتح واتساب (عشان يوصلنا اسم ورقم العميل في الرسالة)
+  function askContact(done){
+    var dlg=$("pickDlg"), f=$("pkForm"), n=$("pkName"), ph=$("pkPhone"), err=$("pkErr");
+    var saved={}; try{saved=JSON.parse(localStorage.getItem("aflakContact")||"{}")||{};}catch(e){}
+    n.value=saved.n||""; ph.value=saved.p||""; err.hidden=true;
+    f.onsubmit=function(ev){
+      ev.preventDefault();
+      var p=ph.value.replace(/[\u0660-\u0669]/g,function(c){return c.charCodeAt(0)-1632;}).replace(/[^\d+]/g,"");
+      if(p.replace(/\D/g,"").length<8){err.hidden=false; ph.focus(); return;}
+      var nm=n.value.trim();
+      try{localStorage.setItem("aflakContact",JSON.stringify({n:nm,p:p}));}catch(e){}
+      dlg.close(); done(nm,p);
+    };
+    $("pkCancel").onclick=function(){dlg.close();};
+    if(dlg.showModal) dlg.showModal(); else dlg.setAttribute("open","");
+    setTimeout(function(){(n.value?ph:n).focus();},50);
+  }
   var mqSmall=window.matchMedia("(max-width:700px)");
   function perPage(){return mqSmall.matches?4:8;}
   function filtering(){return !!(flt.job||flt.rel||flt.st||flt.exp||flt.age);}
@@ -254,9 +271,11 @@
       var inner=mk("div","cv-inner");
       var dash="—";
       var pickFn=function(){
-        var who=jobName+(w.ref?" ("+w.ref+")":""); if(!who.trim()) who=w.name||"";
-        var m=d.msg_pick+who.trim()+"\n"+d.msg_nat+d[curNat]+"\n"+d.msg_cv+url;
-        window.open(wa(m),"_blank","noopener");
+        askContact(function(cn,cp){
+          var dd=D[lang], who=jobName+(w.ref?" ("+w.ref+")":""); if(!who.trim()) who=w.name||"";
+          var m=dd.msg_pick+who.trim()+"\n"+dd.msg_nat+dd[curNat]+"\n"+dd.msg_cv+url+"\n"+dd.msg_name+cn+"\n"+dd.msg_phone+cp;
+          window.open(wa(m),"_blank","noopener");
+        });
       };
       var openFn=function(){openViewer(w,url,pickFn);};
       function actions(cls){

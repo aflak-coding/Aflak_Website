@@ -568,3 +568,15 @@ html[lang="en"] .flag .nm::after{content:"View CVs \2192"}
 .cv-grid.pg-r{animation:pgInR .45s cubic-bezier(.2,.8,.2,1) both}
 @media (prefers-reduced-motion:reduce){.cv-grid.pg-l,.cv-grid.pg-r{animation:none}}
 @media (max-width:700px){.cv-pager{gap:6px}.cv-pager .pg{min-width:40px;height:40px;padding:0 8px}}
+
+/* ===== v29: نافذة بيانات التواصل ===== */
+.pickdlg{width:min(420px,100% - 24px);padding:22px;border:1px solid var(--line);border-radius:18px;background:var(--surface);color:var(--ink)}
+.pickdlg::backdrop{background:rgba(0,0,0,.55)}
+.pickdlg h3{margin:0 0 6px;font-size:1.2rem}
+.pk-sub{margin:0 0 14px;color:var(--muted);font-size:.95rem}
+.pk-l{display:block;margin-bottom:12px;font-weight:600;font-size:.95rem}
+.pk-l input{display:block;width:100%;margin-top:6px;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit}
+.pk-l input:focus{outline:2px solid var(--hero);outline-offset:1px}
+.pk-err{margin:0 0 10px;color:#c0392b;font-size:.9rem}
+.pk-act{display:flex;gap:10px;flex-wrap:wrap}
+.pk-act .btn{flex:1 1 auto}
