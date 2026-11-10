@@ -239,21 +239,94 @@ def job_from_words(t):
 DEFAULT_JOB = "svc1"  # لو ما اتعرفت المهنة نهائيًا: عاملة منزلية (يمكن تعديلها من Pages CMS)
 
 
+REL_MARK = r"EMERGENCY\s+CONTACT|NEXT\s+OF\s+KIN|RELATIVE|RELATION|GUARDIAN|REFEREE|CONTACT\s+PERSON"
+NOT_NAME = re.compile(r"^(DETAILS|PASSPORT|NATIONALITY|APPLICATION|DESTINATION|POST|MONTHLY|CONTRACT|PERSONAL|APPLICANT)\b")
+_NSTOP = r"(?=[ \t]{2,}|\s+PHONE|\s*$|\s[^\x00-\x7F])"
+
+
+def _clean_name(x, lo=1):
+    x = re.sub(r"^(?:APPLICANT'?S?\s*NAME|FULL\s*NAME)[\s:\-]*", "", (x or "").strip())
+    x = re.sub(r"[\s\-.:|_]+$", "", x)
+    w = [a for a in x.split() if len(a) >= 2 or lo == 1]
+    if lo <= len(w) <= 6 and not NOT_NAME.match(x) and re.fullmatch(r"[A-Z][A-Z .'\-]*", x):
+        return " ".join(a.capitalize() for a in x.split())
+    return None
+
+
+def _applicant_region(t):
+    """نص ما قبل خانة جهة الطوارئ / الأقارب، عشان ما ناخدش اسم القريب بدل اسم المتقدمة."""
+    m = re.search(REL_MARK, t)
+    return t[:m.start()] if m else t
+
+
+def extract_name(raw, lo=1):
+    """اسم المتقدمة: 1) خانة APPLICANT NAME  2) سطر الاسم فوق DETAILS OF APPLICATION  3) FULL NAME قبل خانة الأقارب."""
+    t = raw.upper()
+    reg = _applicant_region(t)
+    m = re.search(r"APPLICANT'?S?\s*NAME[\s:|\-]*([A-Z][A-Z .'\-]{2,60}?)" + _NSTOP, reg) or \
+        re.search(r"NAME\s+OF\s+APPLICANT[\s:|\-]*([A-Z][A-Z .'\-]{2,60}?)" + _NSTOP, reg)
+    if m:
+        n = _clean_name(m.group(1), lo)
+        if n:
+            return n
+    m = re.search(r"\n[ \t]*([A-Z][A-Z .'\-]{3,60}?)[ \t]*(?:[ \t]{2,}[^\n]*)?\n\s*DETAILS\s+OF\s+APPLICATION", reg)
+    if m:
+        n = _clean_name(m.group(1), lo)
+        if n:
+            return n
+    m = re.search(r"FULL\s*NAME[\s:\-|_]*([A-Z][A-Z .'\-]{2,60}?)" + _NSTOP, reg)
+    if m:
+        n = _clean_name(m.group(1), lo)
+        if n:
+            return n
+    m = re.search(r"FIRST\s+NAME\s+MIDDLE\s+NAME\s+LAST\s+NAME[^\n]*\n\s*([A-Z][A-Z .'\-]+)", reg)
+    return _clean_name(" ".join(m.group(1).split()), lo) if m else None
+
+
+def relative_name(raw):
+    """اسم شخص الطوارئ/القريب (للتصحيح لو اتسجّل بالغلط كاسم للمتقدمة)."""
+    t = raw.upper()
+    m = re.search(REL_MARK, t)
+    if not m:
+        return None
+    for line in t[m.end():].split("\n")[1:14]:
+        mm = re.match(r"^\s*(?:FULL\s*NAME\s*[:\-]?\s*)?([A-Z][A-Z .'\-]+?)\s*(?:\s{2,}.*|\s[^\x00-\x7F].*)?$", line)
+        if mm and not re.match(r"^(ADDRESS|CONTACT|PASSPORT|RELATION|PHONE|TEL|MOBILE)\b", mm.group(1).strip()):
+            return _clean_name(mm.group(1))
+    return None
+
+
+def passport_from_text(raw):
+    """رقم الجواز (للمقارنة فقط؛ ما بيتخزنش إلا كبصمة)."""
+    t = raw.upper()
+    m = re.search(r"PASSPORT\s+DETAILS.{0,900}?\bNUMBER\s*[:\-]?\s*([A-Z]{1,2}\d{6,9}[A-Z]?)\b", t, re.S) or \
+        re.search(r"PASSPORT\s*(?:NO|NUMBER|NUM|#)\.?\s*[:\-]?\s*([A-Z]{1,2}\d{6,9}[A-Z]?)\b", t)
+    return m.group(1) if m else None
+
+
+def pp_hash(num):
+    return hashlib.sha256(("aflak|" + num).encode()).hexdigest()[:16]
+
+
+def exp_from_section(t):
+    m = re.search(r"PREVIOUS\s+EMPLOYMENT\s+ABROAD(.*?)(?:EMERGENCY|PASSPORT|NEXT\s+OF\s+KIN|$)", t, re.S)
+    if not m:
+        return None
+    body = re.sub(r"\b(?:COUNTRY|PERIOD)\b", " ", m.group(1))
+    body = re.sub(r"[^\x00-\x7F]", " ", body)
+    body = re.sub(r"[^A-Z0-9]", " ", body).strip()
+    return "prev" if body else "new"
+
+
 def parse_text(raw):
     """يستخرج البيانات من نص الصفحة الأولى. يرجع dict بالمفاتيح المعروفة فقط."""
     t = raw.upper()
     out = {}
     stop = r"(?=\s{2,}|\s+PHONE|\s*$|\s[^\x00-\x7F])"
 
-    name = _first(r"FULL\s*NAME[\s:\-]*([A-Z][A-Z .'\-]{2,60}?)" + stop, t)
-    if not name:
-        mm = re.search(r"FIRST\s+NAME\s+MIDDLE\s+NAME\s+LAST\s+NAME[^\n]*\n\s*([A-Z][A-Z .'\-]+)", t)
-        if mm:
-            name = " ".join(mm.group(1).split())
+    name = extract_name(raw)
     if name:
-        name = re.sub(r"[\s\-.:]+$", "", name)
-        if 1 <= len(name.split()) <= 6:
-            out["name"] = " ".join(w.capitalize() for w in name.split())
+        out["name"] = name
 
     nat = _first(r"NATIONALITY[\s:]+([A-Z][A-Z ]{2,20}?)" + stop, t)
     if nat and nat.strip() in NAT_MAP:
@@ -298,6 +371,10 @@ def parse_text(raw):
     e = exp_from_text(t)
     if e:
         out["exp"] = e
+    if "exp" not in out:
+        e2 = exp_from_section(t)
+        if e2:
+            out["exp"] = e2
     return out
 
 
@@ -362,11 +439,9 @@ def _age_from_ocr_dob(txt):
 def detect(text):
     """يستخرج البيانات من نص OCR (فيه ضجيج): نطبّع الرموز ثم نبحث بتساهل."""
     out = {}
-    mn = re.search(r"FULL\s*NAME[\s:|_\-]*([A-Z][A-Z .'\-]{2,40}?)(?=\s[^A-Z\s]|\s{2,}|\s*$)", text, re.M)
-    if mn:
-        words = [w for w in mn.group(1).split() if len(w) >= 2]
-        if 2 <= len(words) <= 5:
-            out["name"] = " ".join(w.capitalize() for w in words)
+    nm = extract_name(text, 2)
+    if nm and 2 <= len(nm.split()) <= 5:
+        out["name"] = nm
     t = re.sub(r"[|_\u2014\u2013~\[\]{}()]", " ", text)
     t = re.sub(r"[ \t]+", " ", t)
     j = _job_from_position(t) or job_from_words(t)
@@ -418,6 +493,20 @@ def main():
                     if k in FIELDS and k not in w:
                         w[k] = v
                         changed = True
+        # بصمة رقم الجواز (للكشف عن التكرار) + تصحيح اسم اتسجّل بالغلط كاسم القريب
+        if pdf and os.path.isfile(pdf) and ("pp" not in w or str(w.get("name") or "").strip()):
+            lay0 = read_text_layer(pdf)
+            if lay0:
+                if "pp" not in w:
+                    pn0 = passport_from_text(lay0)
+                    if pn0:
+                        w["pp"] = pp_hash(pn0)
+                rn = relative_name(lay0)
+                an = extract_name(lay0)
+                if rn and an and an != rn and str(w.get("name") or "").strip().lower() == rn.lower():
+                    print("تصحيح الاسم (كان اسم القريب): %s -> %s" % (w["name"], an))
+                    w["name"] = an
+                    changed = True
         # اسم مأخوذ من اسم الملف (رقم أو "CV ..") → نحاول قراءته من نص الـ PDF
         stem = os.path.splitext(os.path.basename(str(w.get("file") or "")))[0]
         nm = str(w.get("name") or "")
@@ -464,6 +553,14 @@ def main():
         f = os.path.join(ROOT, norm(w.get("file"))) if w.get("file") else None
         if f and os.path.isfile(f):
             seen.setdefault(sha(f), w)
+    pp_seen, dups = {}, []
+    for w in data:
+        if w.get("pp"):
+            if w["pp"] in pp_seen:
+                o = pp_seen[w["pp"]]
+                dups.append((o.get("ref", ""), o.get("name", ""), w.get("ref", ""), w.get("name", "")))
+            else:
+                pp_seen[w["pp"]] = w
     added = 0
     removed = 0
     defaulted = set()  # سير اتحطت لها مهنة افتراضية (ما اتعرفتش)
@@ -491,9 +588,18 @@ def main():
                 layer = read_text_layer(pdf)
                 info = parse_text(layer) if layer else {}
                 img = render_page(pdf, tmp)
-                if img and (not layer or "job" not in info):
-                    for k, v in detect(ocr_text(img)).items():
+                otxt = ocr_text(img) if img and (not layer or "job" not in info or "name" not in info) else ""
+                if otxt:
+                    for k, v in detect(otxt).items():
                         info.setdefault(k, v)
+                pn = passport_from_text(layer or otxt or "")
+                pph = pp_hash(pn) if pn else None
+                if pph and pph in pp_seen:
+                    o = pp_seen[pph]
+                    print("مكرر (نفس رقم الجواز موجود سابقًا: %s - %s): تم حذف النسخة الزائدة %s" % (o.get("ref"), o.get("name"), rel))
+                    os.remove(pdf)
+                    removed += 1
+                    continue
                 fn_info = parse_filename(stem)  # بيانات مكتوبة في اسم الملف لها الأولوية
                 info.update(fn_info)
                 if "job" not in info:
@@ -518,6 +624,9 @@ def main():
             finally:
                 shutil.rmtree(tmp, ignore_errors=True)
             entry["status"] = "available"
+            if pph:
+                entry["pp"] = pph
+                pp_seen[pph] = entry
             entry["file"] = rel
             ph = make_photo(pdf, rel)
             if ph is not None:
@@ -530,7 +639,7 @@ def main():
 
     save_all(data)
     print("تمت إضافة %d سيرة، واستكمال %d سيرة، وحذف %d ملف مكرر" % (added, filled, removed))
-    write_review(data, defaulted, added, removed)
+    write_review(data, defaulted, added, removed, dups)
 
 
 LABELS = {"age": "العمر", "exp": "الخبرة", "rel": "الديانة", "st": "الحالة الاجتماعية", "job": "المهنة"}
@@ -554,10 +663,38 @@ def review_items(data, defaulted=()):
     return sorted(rows)
 
 
-def write_review(data, defaulted, added, removed):
+STATUS_AR = {"available": "متاحة", "reserved": "محجوزة", "hidden": "تم التعاقد / مخفية"}
+
+
+def status_report(data):
+    """جدول الحالات لكل دولة + قوائم المحجوزة والمخفية (متعاقد عليها)."""
+    folder_of = {v[0]: k for k, v in FOLDERS.items()}
+    by = {}
+    for w in data:
+        c = folder_of.get(w.get("nat"), "?")
+        st = w.get("status") or "available"
+        by.setdefault(c, {"available": 0, "reserved": 0, "hidden": 0})[st if st in STATUS_AR else "available"] += 1
+    lines = ["## حالة السير الذاتية", "", "| الدولة | متاحة | محجوزة | تم التعاقد / مخفية |", "|---|---|---|---|"]
+    tot = [0, 0, 0]
+    for c in sorted(by):
+        v = by[c]
+        lines.append("| %s | %d | %d | %d |" % (c, v["available"], v["reserved"], v["hidden"]))
+        tot = [tot[0] + v["available"], tot[1] + v["reserved"], tot[2] + v["hidden"]]
+    lines.append("| **المجموع** | **%d** | **%d** | **%d** |" % tuple(tot))
+    for key in ("reserved", "hidden"):
+        rows = [(folder_of.get(w.get("nat"), "?"), w.get("ref", ""), w.get("name", "")) for w in data if (w.get("status") or "available") == key]
+        if rows:
+            lines += ["", "**%s:** " % STATUS_AR[key] + "، ".join("%s %s (%s)" % (r, n, c) for c, r, n in sorted(rows))]
+    return lines + [""]
+
+
+def write_review(data, defaulted, added, removed, dups=()):
     """تقرير يظهر في ملخص تشغيلة الـ Action (تبويب Actions) — مش بيتنشر على الموقع."""
     rows = review_items(data, defaulted)
-    lines = ["## نتيجة المعالجة", "",
+    lines = status_report(data)
+    if dups:
+        lines += ["## مكرر محتمل (نفس رقم الجواز)", ""] + ["- %s %s  =  %s %s" % d for d in dups] + ["", "احذف الأقدم أو الأضعف يدويًا (الملف من GitHub والسطر من CMS).", ""]
+    lines += ["## نتيجة المعالجة", "",
              "- أُضيفت **%d** سيرة، وحُذف **%d** ملف مكرر" % (added, removed),
              "- سير تحتاج مراجعة: **%d** من %d" % (len(rows), len(data)), ""]
     if rows:

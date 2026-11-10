@@ -580,3 +580,12 @@ html[lang="en"] .flag .nm::after{content:"View CVs \2192"}
 .pk-err{margin:0 0 10px;color:#c0392b;font-size:.9rem}
 .pk-act{display:flex;gap:10px;flex-wrap:wrap}
 .pk-act .btn{flex:1 1 auto}
+
+/* ===== v30: لمعة الشعار الشفاف (تمر على شكل الشعار نفسه) ===== */
+.logo-card{position:relative}
+.logo-card::after{display:block;content:"";position:absolute;inset:0;width:auto;transform:none;
+  background:linear-gradient(105deg,transparent 38%,rgba(255,255,255,.95) 50%,transparent 62%);background-size:260% 100%;background-position:160% 0;
+  -webkit-mask:url(img/logo-2.png) center/contain no-repeat;mask:url(img/logo-2.png) center/contain no-repeat;
+  animation:logoShine 1.5s ease-in-out 1s both}
+@keyframes logoShine{from{background-position:160% 0}to{background-position:-60% 0}}
+@media (prefers-reduced-motion:reduce){.logo-card::after{animation:none;display:none}}

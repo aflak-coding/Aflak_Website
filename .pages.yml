@@ -62,7 +62,7 @@ content:
         list:
           collapsible:
             collapsed: true
-            summary: "{ref} - {name}"
+            summary: "{ref} - {name} · {status}"
         fields:
           - name: name
             label: "الاسم (بالإنجليزي)"
@@ -130,13 +130,17 @@ content:
             label: "الرقم المرجعي"
             type: string
           - name: status
-            label: "الحالة (متاحة / محجوزة / إخفاء مؤقتًا)"
+            label: "الحالة (متاحة / محجوزة / تم التعاقد)"
             type: select
             options:
               values:
                 - { name: available, label: "متاحة" }
                 - { name: reserved, label: "محجوزة" }
-                - { name: hidden, label: "إخفاء مؤقتًا" }
+                - { name: hidden, label: "تم التعاقد (مخفية من الموقع)" }
+          - name: pp
+            label: "بصمة الجواز (تلقائي، لا تعدّل)"
+            type: string
+            hidden: true
   - name: cvs_bangladesh
     label: "السير الذاتية - بنغلاديش (تعديل البيانات)"
     type: file
@@ -151,7 +155,7 @@ content:
         list:
           collapsible:
             collapsed: true
-            summary: "{ref} - {name}"
+            summary: "{ref} - {name} · {status}"
         fields:
           - name: name
             label: "الاسم (بالإنجليزي)"
@@ -219,13 +223,17 @@ content:
             label: "الرقم المرجعي"
             type: string
           - name: status
-            label: "الحالة (متاحة / محجوزة / إخفاء مؤقتًا)"
+            label: "الحالة (متاحة / محجوزة / تم التعاقد)"
             type: select
             options:
               values:
                 - { name: available, label: "متاحة" }
                 - { name: reserved, label: "محجوزة" }
-                - { name: hidden, label: "إخفاء مؤقتًا" }
+                - { name: hidden, label: "تم التعاقد (مخفية من الموقع)" }
+          - name: pp
+            label: "بصمة الجواز (تلقائي، لا تعدّل)"
+            type: string
+            hidden: true
   - name: cvs_philippines
     label: "السير الذاتية - الفلبين (تعديل البيانات)"
     type: file
@@ -240,7 +248,7 @@ content:
         list:
           collapsible:
             collapsed: true
-            summary: "{ref} - {name}"
+            summary: "{ref} - {name} · {status}"
         fields:
           - name: name
             label: "الاسم (بالإنجليزي)"
@@ -308,13 +316,17 @@ content:
             label: "الرقم المرجعي"
             type: string
           - name: status
-            label: "الحالة (متاحة / محجوزة / إخفاء مؤقتًا)"
+            label: "الحالة (متاحة / محجوزة / تم التعاقد)"
             type: select
             options:
               values:
                 - { name: available, label: "متاحة" }
                 - { name: reserved, label: "محجوزة" }
-                - { name: hidden, label: "إخفاء مؤقتًا" }
+                - { name: hidden, label: "تم التعاقد (مخفية من الموقع)" }
+          - name: pp
+            label: "بصمة الجواز (تلقائي، لا تعدّل)"
+            type: string
+            hidden: true
   - name: cvs_ethiopia
     label: "السير الذاتية - إثيوبيا (تعديل البيانات)"
     type: file
@@ -329,7 +341,7 @@ content:
         list:
           collapsible:
             collapsed: true
-            summary: "{ref} - {name}"
+            summary: "{ref} - {name} · {status}"
         fields:
           - name: name
             label: "الاسم (بالإنجليزي)"
@@ -397,13 +409,17 @@ content:
             label: "الرقم المرجعي"
             type: string
           - name: status
-            label: "الحالة (متاحة / محجوزة / إخفاء مؤقتًا)"
+            label: "الحالة (متاحة / محجوزة / تم التعاقد)"
             type: select
             options:
               values:
                 - { name: available, label: "متاحة" }
                 - { name: reserved, label: "محجوزة" }
-                - { name: hidden, label: "إخفاء مؤقتًا" }
+                - { name: hidden, label: "تم التعاقد (مخفية من الموقع)" }
+          - name: pp
+            label: "بصمة الجواز (تلقائي، لا تعدّل)"
+            type: string
+            hidden: true
   - name: cvs_srilanka
     label: "السير الذاتية - سريلانكا (تعديل البيانات)"
     type: file
@@ -418,7 +434,7 @@ content:
         list:
           collapsible:
             collapsed: true
-            summary: "{ref} - {name}"
+            summary: "{ref} - {name} · {status}"
         fields:
           - name: name
             label: "الاسم (بالإنجليزي)"
@@ -486,13 +502,17 @@ content:
             label: "الرقم المرجعي"
             type: string
           - name: status
-            label: "الحالة (متاحة / محجوزة / إخفاء مؤقتًا)"
+            label: "الحالة (متاحة / محجوزة / تم التعاقد)"
             type: select
             options:
               values:
                 - { name: available, label: "متاحة" }
                 - { name: reserved, label: "محجوزة" }
-                - { name: hidden, label: "إخفاء مؤقتًا" }
+                - { name: hidden, label: "تم التعاقد (مخفية من الموقع)" }
+          - name: pp
+            label: "بصمة الجواز (تلقائي، لا تعدّل)"
+            type: string
+            hidden: true
   - name: cvs_uganda
     label: "السير الذاتية - أوغندا (تعديل البيانات)"
     type: file
@@ -507,7 +527,7 @@ content:
         list:
           collapsible:
             collapsed: true
-            summary: "{ref} - {name}"
+            summary: "{ref} - {name} · {status}"
         fields:
           - name: name
             label: "الاسم (بالإنجليزي)"
@@ -575,10 +595,14 @@ content:
             label: "الرقم المرجعي"
             type: string
           - name: status
-            label: "الحالة (متاحة / محجوزة / إخفاء مؤقتًا)"
+            label: "الحالة (متاحة / محجوزة / تم التعاقد)"
             type: select
             options:
               values:
                 - { name: available, label: "متاحة" }
                 - { name: reserved, label: "محجوزة" }
-                - { name: hidden, label: "إخفاء مؤقتًا" }
+                - { name: hidden, label: "تم التعاقد (مخفية من الموقع)" }
+          - name: pp
+            label: "بصمة الجواز (تلقائي، لا تعدّل)"
+            type: string
+            hidden: true
