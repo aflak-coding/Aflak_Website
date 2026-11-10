@@ -95,7 +95,7 @@ FN_JOB = {"maid": "svc1", "housemaid": "svc1", "domestic": "svc1", "driver": "sv
           "nurse": "svc4", "caregiver": "svc4", "assistant": "svc5", "pa": "svc5"}
 FN_EXP = {"new": "new", "fresh": "new", "first": "new", "firsttimer": "new", "exp": "prev", "experienced": "prev",
           "prev": "prev", "abroad": "prev"}
-FN_ST = {"single": "s", "married": "m"}
+FN_ST = {"single": "s", "married": "m", "divorced": "s", "widowed": "s", "widow": "s", "marrid": "m", "maried": "m"}
 FN_REL = {"muslim": "m", "islam": "m", "christian": "o", "chr": "o", "other": "o"}
 
 
@@ -202,7 +202,7 @@ def exp_from_text(t):
     """prev = عندها خبرة خارجية، new = أول مرة. يرجع None لو غير واضح."""
     if re.search(r"EX[\s\-]*ABROAD", t):
         return "prev"
-    if re.search(r"FIRST[\s\-]?TIMER|FIRSTIMER|FRESH\s+(?:FROM|ARRIVAL|CANDIDATE)|NEW\s+ARRIVAL", t):
+    if re.search(r"\bF[IR]{1,2}ST[\s\-]*TIM\w*|FIRSTIM\w*|FRESH\s+(?:FROM|ARRIVAL|CANDIDATE)|NEW\s+ARRIVAL", t):
         return "new"
     i = t.find("PREVIOUS EMPLOYMENT")
     if i >= 0:
@@ -308,6 +308,32 @@ def pp_hash(num):
     return hashlib.sha256(("aflak|" + num).encode()).hexdigest()[:16]
 
 
+_SINGLE_W = ("SINGLE", "UNMARRIED", "DIVORCED", "DIVORCE", "DIVORCEE", "WIDOW", "WIDOWED", "SEPARATED", "SEPERATED")
+_MARRIED_W = ("MARRIED", "MARIED", "MARRID", "MARRIED")
+
+
+def st_from_word(w):
+    """الحالة الاجتماعية من كلمة (حتى لو متكتبة غلط): s = غير متزوجة (عزباء/مطلقة/أرملة)، m = متزوجة."""
+    import difflib
+    w = re.sub(r"[^A-Z]", "", (w or "").upper())
+    if len(w) < 3:
+        return None
+    if w.startswith(("UNMAR", "NOTMAR", "UNMER")):
+        return "s"
+    if w.startswith(("SIN", "SNG", "DIV", "DEV", "DIB", "WID", "SEP", "SEB")):
+        return "s"
+    if w.startswith(("MAR", "MER", "MRR", "MAA")):
+        return "m"
+    if difflib.get_close_matches(w, _SINGLE_W, 1, 0.7):
+        return "s"
+    if difflib.get_close_matches(w, _MARRIED_W, 1, 0.7):
+        return "m"
+    return None
+
+
+NEW_EXP = re.compile(r"\bF[IR]{1,2}ST[\s\-]*TIM\w*|FIRSTIM\w*|\bFRESH\w*|NEW\s+ARRIVAL|\bNIL\b|\bNONE\b|\bNO\b|\bN/?A\b|NOT\s+YET|\bNEVER\b|\bNEW\b")
+
+
 def exp_from_section(t):
     m = re.search(r"PREVIOUS\s+EMPLOYMENT\s+ABROAD(.*?)(?:EMERGENCY|PASSPORT|NEXT\s+OF\s+KIN|$)", t, re.S)
     if not m:
@@ -315,7 +341,9 @@ def exp_from_section(t):
     body = re.sub(r"\b(?:COUNTRY|PERIOD)\b", " ", m.group(1))
     body = re.sub(r"[^\x00-\x7F]", " ", body)
     body = re.sub(r"[^A-Z0-9]", " ", body).strip()
-    return "prev" if body else "new"
+    if not body or NEW_EXP.search(body):
+        return "new"
+    return "prev"
 
 
 def parse_text(raw):
@@ -336,11 +364,9 @@ def parse_text(raw):
     if rel:
         out["rel"] = "m" if rel in ("ISLAM", "MUSLIM", "ISLAMIC") else "o"
 
-    st = _first(r"MARITAL\s+STATUS[\s:]+([A-Z]+)", t)
-    if st in ("SINGLE", "UNMARRIED"):
-        out["st"] = "s"
-    elif st == "MARRIED":
-        out["st"] = "m"
+    stv = st_from_word(_first(r"MARITAL\s+STATUS[\s:\-|]*([A-Z]+)", t))
+    if stv:
+        out["st"] = stv
 
     age = age_from_text(t)
     if age:
@@ -457,16 +483,14 @@ def detect(text):
         out["rel"] = "m"
     elif re.search(r"\b(?:CHRISTIAN|CRISTIAN|CATHOLIC|CATOLIC|PROTESTANT|BORN\s+AGAIN)\b", t):
         out["rel"] = "o"
-    mar = re.search(r"MARITAL\s*STATUS[^A-Z]{0,12}(SINGLE|UNMARRIED|MARRIED|WIDOW\w*|DIVORCED|SEPARATED)", t)
-    word = mar.group(1) if mar else None
-    if not word:
-        has_s = re.search(r"\b(?:SINGLE|UNMARRIED)\b", t)
-        has_m = re.search(r"\bMARRIED\b", t)
-        word = "SINGLE" if has_s and not has_m else ("MARRIED" if has_m and not has_s else None)
-    if word in ("SINGLE", "UNMARRIED"):
-        out["st"] = "s"
-    elif word == "MARRIED":
-        out["st"] = "m"
+    mar = re.search(r"MARITAL\s*STATUS[^A-Z]{0,12}([A-Z]{3,12})", t)
+    stv = st_from_word(mar.group(1)) if mar else None
+    if not stv:
+        has_s = re.search(r"\b(?:SINGLE|UNMARRIED|DIVORC\w*|WIDOW\w*|SEPARATED)\b", t)
+        has_m = re.search(r"\b(?:MARRIED|MARIED|MARRID)\b", t)
+        stv = "s" if has_s and not has_m else ("m" if has_m and not has_s else None)
+    if stv:
+        out["st"] = stv
     return out
 
 
