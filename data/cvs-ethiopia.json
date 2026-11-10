@@ -1453,7 +1453,8 @@
       "status": "available",
       "pp": "e0c7b048843a18ad",
       "file": "cvs/ethiopia/ANSHA  ABDU  SANI.pdf",
-      "photo": "cvs/photos/ethiopia-ansha-abdu-sani-b.jpg"
+      "photo": "cvs/photos/ethiopia-ansha-abdu-sani-b.jpg",
+      "st": "m"
     },
     {
       "nat": "n4",
@@ -1536,7 +1537,8 @@
       "status": "available",
       "pp": "34a3ef85da5caf52",
       "file": "cvs/ethiopia/CHEKOLECH CV.pdf",
-      "photo": "cvs/photos/ethiopia-chekolech-cv-b.jpg"
+      "photo": "cvs/photos/ethiopia-chekolech-cv-b.jpg",
+      "st": "m"
     },
     {
       "nat": "n4",
@@ -1577,7 +1579,8 @@
       "status": "available",
       "pp": "9fcc0db81a10af2c",
       "file": "cvs/ethiopia/HALIMA  GEREMEW   ESHETE.pdf",
-      "photo": "cvs/photos/ethiopia-halima-geremew-eshete-b.jpg"
+      "photo": "cvs/photos/ethiopia-halima-geremew-eshete-b.jpg",
+      "st": "m"
     },
     {
       "nat": "n4",
@@ -1590,7 +1593,8 @@
       "status": "available",
       "pp": "319f3e0babadfda9",
       "file": "cvs/ethiopia/HAWA  ASEFA  AHMED.pdf",
-      "photo": "cvs/photos/ethiopia-hawa-asefa-ahmed-b.jpg"
+      "photo": "cvs/photos/ethiopia-hawa-asefa-ahmed-b.jpg",
+      "st": "m"
     },
     {
       "nat": "n4",
@@ -1673,7 +1677,8 @@
       "status": "available",
       "pp": "4bd488c223b9aecb",
       "file": "cvs/ethiopia/MEDINA CV.pdf",
-      "photo": "cvs/photos/ethiopia-medina-cv-b.jpg"
+      "photo": "cvs/photos/ethiopia-medina-cv-b.jpg",
+      "st": "s"
     },
     {
       "nat": "n4",
