@@ -16,7 +16,7 @@
       addr:"شارع خالد بن الوليد، حي قرطبة، الدور الأول فوق صيدلية كنوز، مكتب 34، الرياض",
       c_hours:"ساعات العمل", hours:"يوميًا من 9 صباحًا حتى 5 مساءً", c_social:"حسابات التواصل", c_map:"فتح في خرائط جوجل", ct_h:"بيانات التواصل", ct_pin:"شركة أفلاك للاستقدام", team_h:"فريق العمل", team_sub:"اختر ما يناسبك وتواصل معنا مباشرة عبر واتساب أو الاتصال.", team_wa:"تواصل عبر واتساب", team_call:"اتصال", ft_support:"لمزيد من الدعم", mail_subj:"استفسار عن خدمات الاستقدام", mail_body:"السلام عليكم،\n\nأرغب في الاستفسار عن خدمات الاستقدام لديكم.\n\nالخدمة المطلوبة:\nالجنسية المفضلة:\nالاسم:\nرقم الجوال:\n\nشكرًا لكم.", msg_team:"السلام عليكم، أود التواصل بخصوص خدمات أفلاك للاستقدام.",
       f_h:"طلب خدمة", f_type:"الخدمة المطلوبة", f_nat:"الجنسية المفضلة", f_name:"الاسم", f_phone:"رقم الجوال", f_note:"ملاحظات (اختياري)", f_send:"أرسل الطلب عبر واتساب", any:"أي جنسية",
-      cv_newtab:"فتح في تبويب جديد", cv_close:"إغلاق", cv_back:"رجوع للجنسيات", cv_title:"السير الذاتية: ", cv_count:"{n} سيرة ذاتية متاحة", cv_view:"عرض السيرة الذاتية (PDF)", cv_pick:"اختيار وإرسال عبر واتساب", rev_h:"آراء عملائنا", rev_sub:"بعض ما كتبه عملاؤنا عنا على خرائط جوجل.", rev_src:"خرائط جوجل", flt_job:"المهنة", flt_avl:"التوفر", flt_all:"الكل", flt_reset:"إعادة ضبط", flt_none:"لا توجد سير ذاتية مطابقة. جرّب تغيير التصفية أو تواصل معنا.", flt_of:"من", pg_prev:"السابق", pg_next:"التالي", pg_page:"صفحة {n}", pg_nav:"صفحات السير الذاتية", avl_available:"متاحة", avl_reserved:"محجوزة", cv_reserved_btn:"محجوزة حاليًا", age_r1:"18–25", age_r2:"26–30", age_r3:"31–35", age_r4:"36–40", age_r5:"41–45", age_r6:"46 فأكثر", job_svc1:"عاملة منزلية", job_svc2:"سائق شخصي", job_svc3:"طباخ / طباخة", job_svc4:"ممرضة منزلية", job_svc5:"مساعدة شخصية", cv_nojob:"سيرة ذاتية", cv_flipback:"رجوع", f_priv_a:"بإرسال الطلب فإنك توافق على", ft_privacy:"سياسة الخصوصية", ft_srv:"خدماتنا:", ft_nats:"الجنسيات:", fl_svc1:"عاملة منزلية", fl_svc2:"سائق خاص", fl_svc3:"طباخ / طباخة", fl_svc4:"ممرضة منزلية", fl_svc5:"مساعدة شخصية",
+      cv_newtab:"فتح في تبويب جديد", cv_close:"إغلاق", cv_back:"رجوع للجنسيات", cv_title:"السير الذاتية: ", cv_count:"{n} سيرة ذاتية متاحة", cv_view:"عرض السيرة الذاتية (PDF)", cv_pick:"اختيار وإرسال عبر واتساب", rev_h:"آراء عملائنا", rev_sub:"بعض ما كتبه عملاؤنا عنا على خرائط جوجل.", rev_src:"خرائط جوجل", flt_job:"المهنة", flt_avl:"التوفر", flt_all:"الكل", flt_reset:"إعادة ضبط", flt_none:"لا توجد سير ذاتية مطابقة. جرّب تغيير التصفية أو تواصل معنا.", flt_of:"من", nat_all:"كل الجنسيات", btn_all:"ابحث في كل الجنسيات", f_nat:"الجنسية", f_from:"من", f_to:"إلى", sh_copy:"نسخ القائمة", sh_wa:"إرسال عبر واتساب", sh_link:"نسخ رابط النتائج", sh_done:"تم النسخ ✓", sh_head:"السير الذاتية المناسبة ({n}):", sh_site:"كل النتائج على الموقع:", sh_long:"القائمة طويلة، تم نسخها. الصقها في المحادثة.", pg_prev:"السابق", pg_next:"التالي", pg_page:"صفحة {n}", pg_nav:"صفحات السير الذاتية", avl_available:"متاحة", avl_reserved:"محجوزة", cv_reserved_btn:"محجوزة حاليًا", age_r1:"18–25", age_r2:"26–30", age_r3:"31–35", age_r4:"36–40", age_r5:"41–45", age_r6:"46 فأكثر", job_svc1:"عاملة منزلية", job_svc2:"سائق شخصي", job_svc3:"طباخ / طباخة", job_svc4:"ممرضة منزلية", job_svc5:"مساعدة شخصية", cv_nojob:"سيرة ذاتية", cv_flipback:"رجوع", f_priv_a:"بإرسال الطلب فإنك توافق على", ft_privacy:"سياسة الخصوصية", ft_srv:"خدماتنا:", ft_nats:"الجنسيات:", fl_svc1:"عاملة منزلية", fl_svc2:"سائق خاص", fl_svc3:"طباخ / طباخة", fl_svc4:"ممرضة منزلية", fl_svc5:"مساعدة شخصية",
       cv_empty:"سيتم إضافة السير الذاتية لهذه الجنسية قريبًا. تواصل معنا على واتساب لنرشّح لك الأنسب.",
       f_age:"العمر", f_rel:"الديانة", f_st:"الحالة", f_exp:"الخبرة", age_u:"{n} سنة", rel_m:"مسلم", rel_o:"غير مسلم", st_s:"غير متزوج", st_m:"متزوج", exp_new:"قادم جديد", exp_prev:"خبرة سابقة",
       msg_pick:"السلام عليكم، أرغب في اختيار: ", msg_cv:"رابط السيرة الذاتية: ", msg_ref:"الرقم المرجعي: ",
@@ -46,7 +46,7 @@
       addr:"Khalid Bin Al Waleed Street, Qurtubah, first floor above Kunooz Pharmacy, office 34, Riyadh",
       c_hours:"Working hours", hours:"Daily, 9 AM to 5 PM", c_social:"Social accounts", c_map:"Open in Maps", ct_h:"Contact details", ct_pin:"Aflaak Recruitment Company", team_h:"Our team", team_sub:"Choose what suits you and contact us directly on WhatsApp or by phone.", team_wa:"Message on WhatsApp", team_call:"Call", ft_support:"More support", mail_subj:"Inquiry about recruitment services", mail_body:"Hello,\n\nI would like to ask about your recruitment services.\n\nService needed:\nPreferred nationality:\nName:\nMobile number:\n\nThank you.", msg_team:"Hello, I would like to ask about Aflaak Recruitment's services.",
       f_h:"Service request", f_type:"Service needed", f_nat:"Preferred nationality", f_name:"Name", f_phone:"Mobile number", f_note:"Notes (optional)", f_send:"Send request on WhatsApp", any:"Any nationality",
-      cv_newtab:"Open in new tab", cv_close:"Close", cv_back:"Back to nationalities", cv_title:"CVs: ", cv_count:"{n} CVs available", cv_view:"View CV (PDF)", cv_pick:"Select & send on WhatsApp", rev_h:"What our clients say", rev_sub:"Some of what our clients wrote about us on Google Maps.", rev_src:"Google Maps", flt_job:"Job", flt_avl:"Availability", flt_all:"All", flt_reset:"Reset", flt_none:"No matching CVs. Try changing the filters or contact us.", flt_of:"of", pg_prev:"Previous", pg_next:"Next", pg_page:"Page {n}", pg_nav:"CV pages", avl_available:"Available", avl_reserved:"Reserved", cv_reserved_btn:"Currently reserved", age_r1:"18–25", age_r2:"26–30", age_r3:"31–35", age_r4:"36–40", age_r5:"41–45", age_r6:"46+", job_svc1:"Housemaid", job_svc2:"Private driver", job_svc3:"Cook", job_svc4:"Home nurse", job_svc5:"Personal assistant", cv_nojob:"CV", cv_flipback:"Back", f_priv_a:"By sending this request you agree to our", ft_privacy:"Privacy policy", ft_srv:"Our services:", ft_nats:"Nationalities:", fl_svc1:"Housemaid", fl_svc2:"Private driver", fl_svc3:"Cook", fl_svc4:"Home nurse", fl_svc5:"Personal assistant",
+      cv_newtab:"Open in new tab", cv_close:"Close", cv_back:"Back to nationalities", cv_title:"CVs: ", cv_count:"{n} CVs available", cv_view:"View CV (PDF)", cv_pick:"Select & send on WhatsApp", rev_h:"What our clients say", rev_sub:"Some of what our clients wrote about us on Google Maps.", rev_src:"Google Maps", flt_job:"Job", flt_avl:"Availability", flt_all:"All", flt_reset:"Reset", flt_none:"No matching CVs. Try changing the filters or contact us.", flt_of:"of", nat_all:"All nationalities", btn_all:"Search all nationalities", f_nat:"Nationality", f_from:"From", f_to:"To", sh_copy:"Copy list", sh_wa:"Send via WhatsApp", sh_link:"Copy results link", sh_done:"Copied ✓", sh_head:"Matching CVs ({n}):", sh_site:"All results on the website:", sh_long:"The list is long, so it was copied. Paste it in the chat.", pg_prev:"Previous", pg_next:"Next", pg_page:"Page {n}", pg_nav:"CV pages", avl_available:"Available", avl_reserved:"Reserved", cv_reserved_btn:"Currently reserved", age_r1:"18–25", age_r2:"26–30", age_r3:"31–35", age_r4:"36–40", age_r5:"41–45", age_r6:"46+", job_svc1:"Housemaid", job_svc2:"Private driver", job_svc3:"Cook", job_svc4:"Home nurse", job_svc5:"Personal assistant", cv_nojob:"CV", cv_flipback:"Back", f_priv_a:"By sending this request you agree to our", ft_privacy:"Privacy policy", ft_srv:"Our services:", ft_nats:"Nationalities:", fl_svc1:"Housemaid", fl_svc2:"Private driver", fl_svc3:"Cook", fl_svc4:"Home nurse", fl_svc5:"Personal assistant",
       cv_empty:"CVs for this nationality will be added soon. Message us on WhatsApp and we'll suggest the best match.",
       f_age:"Age", f_rel:"Religion", f_st:"Status", f_exp:"Experience", age_u:"{n} years", rel_m:"Muslim", rel_o:"Non-Muslim", st_s:"Single", st_m:"Married", exp_new:"New arrival", exp_prev:"Previous experience",
       msg_pick:"Hello, I would like to select: ", msg_cv:"CV link: ", msg_ref:"Reference no.: ",
@@ -160,28 +160,42 @@
   }
   var curNat=null, page=0;
   function mk(t,c,x){var e=document.createElement(t); if(c) e.className=c; if(x!==undefined) e.textContent=x; return e;}
-  var flt={avl:"",job:"",rel:"",st:"",exp:"",age:""};
+  function newFlt(){return {job:"",rel:"",st:"",exp:"",nat:"",amin:"",amax:""};}
+  var flt=newFlt();
   var AGE_R={r1:[18,25],r2:[26,30],r3:[31,35],r4:[36,40],r5:[41,45],r6:[46,99]};
   var JOBS=["svc1","svc2","svc3","svc4","svc5"];
-  function visibleList(){return (CVS[curNat]||[]).filter(function(w){return w.status!=="hidden";});}
+  function visibleList(){
+    var out=[]; (curNat==="all"?Object.keys(CVS):[curNat]).forEach(function(k){(CVS[k]||[]).forEach(function(w){if(w.status!=="hidden"){if(!w.nat) w.nat=k; out.push(w);}});});
+    return out;
+  }
   function renderCVs(){
     var sec=$("cvs");
     if(!curNat){sec.hidden=true; return;}
     sec.hidden=false;
-    $("cvTitle").textContent=D[lang].cv_title+D[lang][curNat];
+    $("cvTitle").textContent=D[lang].cv_title+(curNat==="all"?D[lang].nat_all:D[lang][curNat]);
     renderFilters();
     renderList();
   }
   function renderFilters(){
     var box=$("cvFilters"), d=D[lang]; box.textContent="";
     if(!visibleList().length){box.hidden=true; return;}
-    var defs=[
+    var defs=[];
+    if(curNat==="all") defs.push(["nat",d.f_nat,["n1","n2","n3","n4","n5","n6"].filter(function(k){return (CVS[k]||[]).some(function(w){return w.status!=="hidden";});}).map(function(k){return [k,d[k]];})]);
+    defs=defs.concat([
       ["job",d.flt_job,JOBS.map(function(v){return [v,d["job_"+v]];})],
-      ["age",d.f_age,["r1","r2","r3","r4","r5","r6"].map(function(v){return [v,d["age_"+v]];})],
       ["rel",d.f_rel,[["m",d.rel_m],["o",d.rel_o]]],
       ["st",d.f_st,[["s",d.st_s],["m",d.st_m]]],
       ["exp",d.f_exp,[["new",d.exp_new],["prev",d.exp_prev]]]
-    ];
+    ]);
+    var la=mk("label","cv-f cv-age"); la.appendChild(mk("span","",d.f_age));
+    var aw=mk("div","cv-age-in"), tmr=null, ins={};
+    [["amin",d.f_from],["amax",d.f_to]].forEach(function(a){
+      var inp=document.createElement("input"); inp.type="number"; inp.min="16"; inp.max="70"; inp.inputMode="numeric"; inp.placeholder=a[1]; inp.setAttribute("aria-label",d.f_age+" "+a[1]); inp.value=flt[a[0]]||"";
+      ins[a[0]]=inp;
+      inp.addEventListener("input",function(){clearTimeout(tmr); tmr=setTimeout(function(){flt.amin=ins.amin.value; flt.amax=ins.amax.value; page=0; renderList();},250);});
+      aw.appendChild(inp);
+    });
+    la.appendChild(aw); box.appendChild(la);
     defs.forEach(function(df){
       var lab=mk("label","cv-f"); lab.appendChild(mk("span","",df[1]));
       var sel=document.createElement("select");
@@ -192,7 +206,7 @@
       lab.appendChild(sel); box.appendChild(lab);
     });
     var rs=mk("button","btn btn-line cv-reset",d.flt_reset); rs.type="button";
-    rs.addEventListener("click",function(){flt={avl:"",job:"",rel:"",st:"",exp:"",age:""}; page=0; renderFilters(); renderList();});
+    rs.addEventListener("click",function(){flt=newFlt(); page=0; renderFilters(); renderList();});
     box.appendChild(rs); box.hidden=false;
   }
   function matches(w){
@@ -200,7 +214,8 @@
     if(flt.rel&&w.rel!==flt.rel) return false;
     if(flt.st&&w.st!==flt.st) return false;
     if(flt.exp&&w.exp!==flt.exp) return false;
-    if(flt.age){var r=AGE_R[flt.age], n=Number(w.age); if(!n||n<r[0]||n>r[1]) return false;}
+    if(flt.nat&&w.nat!==flt.nat) return false;
+    if(flt.amin||flt.amax){var n=Number(w.age); if(!n||(flt.amin&&n<+flt.amin)||(flt.amax&&n>+flt.amax)) return false;}
     return true;
   }
   var JOB_ICONS={
@@ -228,9 +243,49 @@
     if(dlg.showModal) dlg.showModal(); else dlg.setAttribute("open","");
     setTimeout(function(){(n.value?ph:n).focus();},50);
   }
+  // ===== مشاركة النتائج: نسخ قائمة / واتساب / رابط يفتح نفس التصفية =====
+  function copyText(t){
+    if(navigator.clipboard&&navigator.clipboard.writeText) return navigator.clipboard.writeText(t).catch(function(){return legacyCopy(t);});
+    return Promise.resolve(legacyCopy(t));
+  }
+  function legacyCopy(t){var ta=document.createElement("textarea"); ta.value=t; ta.style.cssText="position:fixed;opacity:0"; document.body.appendChild(ta); ta.select(); try{document.execCommand("copy");}catch(e){} ta.remove();}
+  function shareLink(){
+    var q=new URLSearchParams(); q.set("nat",curNat);
+    ["nat","job","rel","st","exp","amin","amax"].forEach(function(k){if(flt[k]) q.set(k==="nat"?"nf":k,flt[k]);});
+    return location.origin+location.pathname+"?"+q.toString()+"#cvs";
+  }
+  function shareText(list){
+    var d=D[lang], items=list.filter(function(w){return w.status!=="reserved";});
+    var lines=[d.sh_head.replace("{n}",items.length),""];
+    items.forEach(function(w,i){
+      var jn=(w.job&&d["job_"+w.job])||"";
+      var info=[((w.name||"")+(w.ref?" ("+w.ref+")":"")).trim(),w.age&&d.age_u.replace("{n}",w.age),d[w.nat]].filter(Boolean).join(" - ");
+      lines.push((i+1)+") "+(jn?jn+": ":"")+info, new URL(w.file,location.href).href, "");
+    });
+    lines.push(d.sh_site, shareLink());
+    return lines.join("\n");
+  }
+  function renderShare(list){
+    var box=$("cvShare"), d=D[lang]; box.textContent="";
+    var items=list.filter(function(w){return w.status!=="reserved";});
+    if(!filtering()||!items.length){box.hidden=true; return;}
+    box.hidden=false;
+    function flash(b,txt,orig){b.textContent=txt; setTimeout(function(){b.textContent=orig;},2000);}
+    var bc=mk("button","btn btn-line",d.sh_copy); bc.type="button";
+    bc.addEventListener("click",function(){copyText(shareText(list)); flash(bc,d.sh_done,d.sh_copy);});
+    var bw=mk("button","btn btn-wa",d.sh_wa); bw.type="button";
+    bw.addEventListener("click",function(){
+      var t=shareText(list), u="https://wa.me/?text="+encodeURIComponent(t);
+      if(u.length>4000){copyText(t); flash(bw,d.sh_long,d.sh_wa); return;}
+      window.open(u,"_blank","noopener");
+    });
+    var bl=mk("button","btn btn-line",d.sh_link); bl.type="button";
+    bl.addEventListener("click",function(){copyText(shareLink()); flash(bl,d.sh_done,d.sh_link);});
+    [bc,bw,bl].forEach(function(b){box.appendChild(b);});
+  }
   var mqSmall=window.matchMedia("(max-width:700px)");
   function perPage(){return mqSmall.matches?4:8;}
-  function filtering(){return !!(flt.job||flt.rel||flt.st||flt.exp||flt.age);}
+  function filtering(){return !!(flt.job||flt.rel||flt.st||flt.exp||flt.nat||flt.amin||flt.amax);}
   function goPage(n,dir){page=n; renderList(dir); var s=$("cvs"); if(s) s.scrollIntoView({behavior:"smooth",block:"start"});}
   function renderPager(pages){
     var nav=$("cvPager"), d=D[lang]; nav.textContent="";
@@ -273,7 +328,7 @@
       var pickFn=function(){
         askContact(function(cn,cp){
           var dd=D[lang], who=jobName+(w.ref?" ("+w.ref+")":""); if(!who.trim()) who=w.name||"";
-          var m=dd.msg_pick+who.trim()+"\n"+dd.msg_nat+dd[curNat]+"\n"+dd.msg_cv+url+"\n"+dd.msg_name+cn+"\n"+dd.msg_phone+cp;
+          var m=dd.msg_pick+who.trim()+"\n"+dd.msg_nat+dd[w.nat||curNat]+"\n"+dd.msg_cv+url+"\n"+dd.msg_name+cn+"\n"+dd.msg_phone+cp;
           window.open(wa(m),"_blank","noopener");
         });
       };
@@ -301,6 +356,7 @@
         tt.appendChild(mk("h3","",jobName||d.cv_nojob));
         if(w.name) tt.appendChild(mk("p","cv-name",w.name));
         if(w.ref) tt.appendChild(mk("p","cv-meta",d.msg_ref+w.ref));
+        if(curNat==="all"&&d[w.nat]) tt.appendChild(mk("p","cv-meta cv-natl",d[w.nat]));
         var slot=mk("span","cv-slot"); if(w.status==="available"||reserved) slot.appendChild(mk("span","cv-badge "+w.status,d["avl_"+w.status])); tt.appendChild(slot);
         top.appendChild(tt); front.appendChild(top);
         var facts=[
@@ -347,6 +403,7 @@
       grid.appendChild(card);
     });
     renderPager(pages);
+    renderShare(list);
     if(dir){ // حركة الصفحة: تدخل من ناحية زرار الاتجاه
       var rtl=document.documentElement.dir==="rtl", from=(dir>0?1:-1)*(rtl?-1:1);
       grid.classList.remove("pg-l","pg-r"); void grid.offsetWidth; grid.classList.add(from<0?"pg-l":"pg-r");
@@ -365,8 +422,9 @@
   $("cvDlgClose").addEventListener("click",function(){$("cvDlg").close();});
   $("cvDlg").addEventListener("click",function(e){if(e.target===this) this.close();});
   $("cvDlg").addEventListener("close",function(){$("cvFrame").src="about:blank";});
+  var allBtn=$("allNatBtn"); if(allBtn) allBtn.addEventListener("click",function(){openNat("all");});
   function openNat(k){
-    if(curNat!==k){flt={avl:"",job:"",rel:"",st:"",exp:"",age:""}; page=0;}
+    if(curNat!==k){flt=newFlt(); page=0;}
     curNat=k;
     document.querySelectorAll(".flag[data-nat]").forEach(function(f){f.setAttribute("aria-pressed",f.getAttribute("data-nat")===k?"true":"false");});
     renderCVs();
@@ -470,6 +528,15 @@
   var _q=new URLSearchParams(location.search), _n=_q.get("nat"), _s=_q.get("svc");
   if(_s&&D.ar.svcs[_s]&&$("fType")) $("fType").value=_s;
   loadCVJson().then(function(){
-    if(_n&&/^n[1-6]$/.test(_n)&&!document.querySelector('.flag[data-nat="'+_n+'"][hidden]')) openNat(_n);
+    if(_n==="all"){
+      openNat("all");
+      ["job","rel","st","exp","amin","amax"].forEach(function(k){if(_q.get(k)) flt[k]=_q.get(k);});
+      if(_q.get("nf")) flt.nat=_q.get("nf");
+      renderFilters(); renderList();
+    } else if(_n&&/^n[1-6]$/.test(_n)&&!document.querySelector('.flag[data-nat="'+_n+'"][hidden]')){
+      openNat(_n);
+      ["job","rel","st","exp","amin","amax"].forEach(function(k){if(_q.get(k)) flt[k]=_q.get(k);});
+      renderFilters(); renderList();
+    }
   });
 })();
