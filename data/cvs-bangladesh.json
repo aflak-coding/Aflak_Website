@@ -89,7 +89,8 @@
       "st": "m",
       "exp": "prev",
       "ref": "B-107",
-      "status": "available"
+      "status": "available",
+      "xc": 1
     },
     {
       "name": "Mst Somi Begum",
@@ -102,7 +103,8 @@
       "st": "m",
       "exp": "prev",
       "ref": "B-108",
-      "status": "available"
+      "status": "available",
+      "xc": 1
     },
     {
       "name": "Jamela Khatun",
@@ -115,7 +117,8 @@
       "st": "m",
       "exp": "prev",
       "ref": "B-109",
-      "status": "available"
+      "status": "available",
+      "xc": 1
     },
     {
       "name": "Mosammad Himu Akter",
@@ -128,7 +131,8 @@
       "st": "m",
       "exp": "prev",
       "ref": "B-110",
-      "status": "available"
+      "status": "available",
+      "xc": 1
     },
     {
       "name": "Lipy Akter",
@@ -141,7 +145,8 @@
       "st": "m",
       "exp": "prev",
       "ref": "B-111",
-      "status": "available"
+      "status": "available",
+      "xc": 1
     },
     {
       "name": "Nusrat Arifin Papiya",
@@ -154,7 +159,8 @@
       "st": "m",
       "exp": "prev",
       "ref": "B-112",
-      "status": "available"
+      "status": "available",
+      "xc": 1
     },
     {
       "name": "Mst Amena Begum",
@@ -167,7 +173,8 @@
       "st": "m",
       "exp": "prev",
       "ref": "B-113",
-      "status": "available"
+      "status": "available",
+      "xc": 1
     },
     {
       "name": "Rabeya Begum",
@@ -180,7 +187,8 @@
       "st": "m",
       "exp": "prev",
       "ref": "S-1029",
-      "status": "available"
+      "status": "available",
+      "xc": 1
     },
     {
       "name": "Mst Lipi Khatun",
@@ -193,7 +201,8 @@
       "st": "m",
       "exp": "prev",
       "ref": "A-715",
-      "status": "available"
+      "status": "available",
+      "xc": 1
     },
     {
       "name": "Sultana Parvin",
@@ -206,7 +215,8 @@
       "st": "s",
       "exp": "prev",
       "ref": "S-1026",
-      "status": "available"
+      "status": "available",
+      "xc": 1
     },
     {
       "name": "Mst Monjila Akter Koli",
@@ -219,7 +229,8 @@
       "st": "m",
       "exp": "prev",
       "ref": "S-964",
-      "status": "available"
+      "status": "available",
+      "xc": 1
     },
     {
       "name": "Mst Marzina Akter",
@@ -232,7 +243,8 @@
       "st": "m",
       "exp": "prev",
       "ref": "S-1028",
-      "status": "available"
+      "status": "available",
+      "xc": 1
     },
     {
       "name": "Manjo Begum",
@@ -245,7 +257,8 @@
       "st": "m",
       "exp": "prev",
       "ref": "S-1038",
-      "status": "available"
+      "status": "available",
+      "xc": 1
     },
     {
       "name": "Asma Begum",
@@ -258,7 +271,8 @@
       "st": "m",
       "exp": "prev",
       "ref": "S-1034",
-      "status": "available"
+      "status": "available",
+      "xc": 1
     },
     {
       "name": "Mst Munni",
@@ -271,7 +285,8 @@
       "st": "s",
       "exp": "prev",
       "ref": "S-941",
-      "status": "available"
+      "status": "available",
+      "xc": 1
     },
     {
       "name": "Mst Ajama",
@@ -284,7 +299,8 @@
       "st": "s",
       "exp": "prev",
       "ref": "A-859",
-      "status": "available"
+      "status": "available",
+      "xc": 1
     },
     {
       "name": "Mst Rojina Begum",
@@ -323,7 +339,8 @@
       "st": "m",
       "exp": "prev",
       "ref": "A-699",
-      "status": "available"
+      "status": "available",
+      "xc": 1
     },
     {
       "name": "Mst Zolakha Begum",
@@ -336,7 +353,8 @@
       "st": "s",
       "exp": "prev",
       "ref": "A-895",
-      "status": "available"
+      "status": "available",
+      "xc": 1
     },
     {
       "name": "Paruma",
@@ -440,7 +458,8 @@
       "st": "m",
       "exp": "prev",
       "ref": "A-841",
-      "status": "available"
+      "status": "available",
+      "xc": 1
     },
     {
       "name": "Shafia",
@@ -453,7 +472,8 @@
       "st": "m",
       "exp": "prev",
       "ref": "S-938",
-      "status": "available"
+      "status": "available",
+      "xc": 1
     },
     {
       "name": "Most Popi Begum",
@@ -466,7 +486,8 @@
       "st": "m",
       "exp": "prev",
       "ref": "S-915",
-      "status": "available"
+      "status": "available",
+      "xc": 1
     }
   ]
 }

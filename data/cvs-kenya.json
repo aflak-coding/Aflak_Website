@@ -40,7 +40,8 @@
       "exp": "prev",
       "ref": "K-103",
       "status": "available",
-      "pp": "d473040917b377df"
+      "pp": "d473040917b377df",
+      "xc": 1
     },
     {
       "name": "Elizabeth Kemunto Tirimba",
@@ -54,7 +55,8 @@
       "exp": "prev",
       "ref": "K-104",
       "status": "available",
-      "pp": "4008aa6fb50b4d22"
+      "pp": "4008aa6fb50b4d22",
+      "xc": 1
     },
     {
       "name": "Esther Nanjala Barasa",
@@ -82,7 +84,8 @@
       "exp": "prev",
       "ref": "K-106",
       "status": "available",
-      "pp": "89bbbf24f6357018"
+      "pp": "89bbbf24f6357018",
+      "xc": 1
     },
     {
       "name": "Khaira Swalehe Kodi",
@@ -110,7 +113,8 @@
       "exp": "prev",
       "ref": "K-108",
       "status": "available",
-      "pp": "d7cf24368a75b178"
+      "pp": "d7cf24368a75b178",
+      "xc": 1
     },
     {
       "name": "Mesalimu Mwinyi Mwakileo",
@@ -124,7 +128,8 @@
       "exp": "prev",
       "ref": "K-109",
       "status": "available",
-      "pp": "a766611e93d2831b"
+      "pp": "a766611e93d2831b",
+      "xc": 1
     },
     {
       "name": "Lydiah Monyenye Omari",
@@ -138,7 +143,8 @@
       "exp": "prev",
       "ref": "K-110",
       "status": "available",
-      "pp": "30eff372d8400c23"
+      "pp": "30eff372d8400c23",
+      "xc": 1
     },
     {
       "name": "Mwanakombo Juma Kidato",
@@ -152,7 +158,8 @@
       "exp": "prev",
       "ref": "K-111",
       "status": "available",
-      "pp": "667c750698950dc9"
+      "pp": "667c750698950dc9",
+      "xc": 1
     },
     {
       "name": "Stella Sada Jackson",
@@ -166,7 +173,8 @@
       "exp": "prev",
       "ref": "K-112",
       "status": "available",
-      "pp": "d6aed780174e46b8"
+      "pp": "d6aed780174e46b8",
+      "xc": 1
     }
   ]
 }

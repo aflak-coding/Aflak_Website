@@ -25,7 +25,8 @@
       "st": "s",
       "exp": "prev",
       "ref": "P-102",
-      "status": "available"
+      "status": "available",
+      "xc": 1
     },
     {
       "name": "MARY LETT BOBILES BALUYOT",
@@ -51,7 +52,8 @@
       "st": "m",
       "exp": "prev",
       "ref": "P-105",
-      "status": "available"
+      "status": "available",
+      "xc": 1
     },
     {
       "name": "MARILOU ADANO VERDADERO",
@@ -103,7 +105,8 @@
       "st": "s",
       "exp": "prev",
       "ref": "P-109",
-      "status": "available"
+      "status": "available",
+      "xc": 1
     },
     {
       "name": "RODEL APANI GARCIA",
@@ -116,7 +119,8 @@
       "st": "s",
       "exp": "prev",
       "ref": "P-111",
-      "status": "available"
+      "status": "available",
+      "xc": 1
     },
     {
       "name": "FERRERAS ROLAND ESTEVES",
@@ -142,7 +146,8 @@
       "st": "s",
       "exp": "prev",
       "ref": "P-113",
-      "status": "available"
+      "status": "available",
+      "xc": 1
     },
     {
       "name": "ESMAIL A. AGUILAR",
@@ -168,7 +173,8 @@
       "st": "m",
       "exp": "prev",
       "ref": "P-115",
-      "status": "available"
+      "status": "available",
+      "xc": 1
     },
     {
       "nat": "n3",
