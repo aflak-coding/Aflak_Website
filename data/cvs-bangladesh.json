@@ -281,6 +281,7 @@
       "job": "svc1",
       "age": 44,
       "rel": "m",
+      "st": "s",
       "exp": "prev",
       "ref": "A-859",
       "status": "available"
@@ -332,6 +333,7 @@
       "job": "svc1",
       "age": 37,
       "rel": "m",
+      "st": "s",
       "exp": "prev",
       "ref": "A-895",
       "status": "available"
