@@ -16,7 +16,7 @@
       addr:"شارع خالد بن الوليد، حي قرطبة، الدور الأول فوق صيدلية كنوز، مكتب 34، الرياض",
       c_hours:"ساعات العمل", hours:"يوميًا من 9 صباحًا حتى 5 مساءً", c_social:"حسابات التواصل", c_map:"فتح في خرائط جوجل", ct_h:"بيانات التواصل", ct_pin:"شركة أفلاك للاستقدام", team_h:"فريق العمل", team_sub:"اختر ما يناسبك وتواصل معنا مباشرة عبر واتساب أو الاتصال.", team_wa:"تواصل عبر واتساب", team_call:"اتصال", ft_support:"لمزيد من الدعم", mail_subj:"استفسار عن خدمات الاستقدام", mail_body:"السلام عليكم،\n\nأرغب في الاستفسار عن خدمات الاستقدام لديكم.\n\nالخدمة المطلوبة:\nالجنسية المفضلة:\nالاسم:\nرقم الجوال:\n\nشكرًا لكم.", msg_team:"السلام عليكم، أود التواصل بخصوص خدمات أفلاك للاستقدام.",
       f_h:"طلب خدمة", f_type:"الخدمة المطلوبة", f_nat:"الجنسية المفضلة", f_name:"الاسم", f_phone:"رقم الجوال", f_note:"ملاحظات (اختياري)", f_send:"أرسل الطلب عبر واتساب", any:"أي جنسية",
-      cv_newtab:"فتح في تبويب جديد", cv_close:"إغلاق", cv_back:"رجوع للجنسيات", cv_title:"السير الذاتية: ", cv_count:"{n} سيرة ذاتية متاحة", cv_view:"عرض السيرة الذاتية (PDF)", cv_pick:"اختيار وإرسال عبر واتساب", rev_h:"آراء عملائنا", rev_sub:"بعض ما كتبه عملاؤنا عنا على خرائط جوجل.", rev_src:"خرائط جوجل", flt_job:"المهنة", flt_avl:"التوفر", flt_all:"الكل", flt_reset:"إعادة ضبط", flt_none:"لا توجد سير ذاتية مطابقة. جرّب تغيير التصفية أو تواصل معنا.", flt_of:"من", nat_all:"كل الجنسيات", btn_all:"ابحث في كل الجنسيات", f_nat:"الجنسية", f_from:"من", f_to:"إلى", sh_copy:"نسخ القائمة", sh_wa:"إرسال عبر واتساب", sh_link:"نسخ رابط النتائج", sh_done:"تم النسخ ✓", sh_head:"السير الذاتية المناسبة ({n}):", sh_site:"كل النتائج على الموقع:", sh_long:"القائمة طويلة، تم نسخها. الصقها في المحادثة.", pg_prev:"السابق", pg_next:"التالي", pg_page:"صفحة {n}", pg_nav:"صفحات السير الذاتية", avl_available:"متاحة", avl_reserved:"محجوزة", cv_reserved_btn:"محجوزة حاليًا", age_r1:"18–25", age_r2:"26–30", age_r3:"31–35", age_r4:"36–40", age_r5:"41–45", age_r6:"46 فأكثر", job_svc1:"عاملة منزلية", job_svc2:"سائق شخصي", job_svc3:"طباخ / طباخة", job_svc4:"ممرضة منزلية", job_svc5:"مساعدة شخصية", cv_nojob:"سيرة ذاتية", cv_flipback:"رجوع", f_priv_a:"بإرسال الطلب فإنك توافق على", ft_privacy:"سياسة الخصوصية", ft_srv:"خدماتنا:", ft_nats:"الجنسيات:", fl_svc1:"عاملة منزلية", fl_svc2:"سائق خاص", fl_svc3:"طباخ / طباخة", fl_svc4:"ممرضة منزلية", fl_svc5:"مساعدة شخصية",
+      cv_newtab:"فتح في تبويب جديد", cv_close:"إغلاق", cv_back:"رجوع للجنسيات", cv_title:"السير الذاتية: ", cv_count:"{n} سيرة ذاتية متاحة", cv_view:"عرض السيرة الذاتية (PDF)", cv_pick:"اختيار وإرسال عبر واتساب", rev_h:"آراء عملائنا", rev_sub:"بعض ما كتبه عملاؤنا عنا على خرائط جوجل.", rev_src:"خرائط جوجل", flt_job:"المهنة", flt_avl:"التوفر", flt_all:"الكل", flt_reset:"إعادة ضبط", flt_none:"لا توجد سير ذاتية مطابقة. جرّب تغيير التصفية أو تواصل معنا.", flt_of:"من", nat_all:"كل الجنسيات", btn_all:"ابحث في كل الجنسيات", f_nat:"الجنسية", f_from:"من", f_to:"إلى", sh_copy:"نسخ القائمة", sh_wa:"إرسال عبر واتساب", sh_link:"نسخ رابط النتائج", sh_zip:"تحميل الملفات (ZIP)", sh_zipping:"جاري التحميل {i}/{n}...", sh_zipfail:"تعذّر تحميل بعض الملفات", sh_done:"تم النسخ ✓", sh_head:"السير الذاتية المناسبة ({n}):", sh_site:"كل النتائج على الموقع:", sh_long:"القائمة طويلة، تم نسخها. الصقها في المحادثة.", pg_prev:"السابق", pg_next:"التالي", pg_page:"صفحة {n}", pg_nav:"صفحات السير الذاتية", avl_available:"متاحة", avl_reserved:"محجوزة", cv_reserved_btn:"محجوزة حاليًا", age_r1:"18–25", age_r2:"26–30", age_r3:"31–35", age_r4:"36–40", age_r5:"41–45", age_r6:"46 فأكثر", job_svc1:"عاملة منزلية", job_svc2:"سائق شخصي", job_svc3:"طباخ / طباخة", job_svc4:"ممرضة منزلية", job_svc5:"مساعدة شخصية", cv_nojob:"سيرة ذاتية", cv_flipback:"رجوع", f_priv_a:"بإرسال الطلب فإنك توافق على", ft_privacy:"سياسة الخصوصية", ft_srv:"خدماتنا:", ft_nats:"الجنسيات:", fl_svc1:"عاملة منزلية", fl_svc2:"سائق خاص", fl_svc3:"طباخ / طباخة", fl_svc4:"ممرضة منزلية", fl_svc5:"مساعدة شخصية",
       cv_empty:"سيتم إضافة السير الذاتية لهذه الجنسية قريبًا. تواصل معنا على واتساب لنرشّح لك الأنسب.",
       f_age:"العمر", f_rel:"الديانة", f_st:"الحالة", f_exp:"الخبرة", age_u:"{n} سنة", rel_m:"مسلم", rel_o:"غير مسلم", st_s:"غير متزوج", st_m:"متزوج", exp_new:"قادم جديد", exp_prev:"خبرة سابقة",
       msg_pick:"السلام عليكم، أرغب في اختيار: ", msg_cv:"رابط السيرة الذاتية: ", msg_ref:"الرقم المرجعي: ",
@@ -46,7 +46,7 @@
       addr:"Khalid Bin Al Waleed Street, Qurtubah, first floor above Kunooz Pharmacy, office 34, Riyadh",
       c_hours:"Working hours", hours:"Daily, 9 AM to 5 PM", c_social:"Social accounts", c_map:"Open in Maps", ct_h:"Contact details", ct_pin:"Aflaak Recruitment Company", team_h:"Our team", team_sub:"Choose what suits you and contact us directly on WhatsApp or by phone.", team_wa:"Message on WhatsApp", team_call:"Call", ft_support:"More support", mail_subj:"Inquiry about recruitment services", mail_body:"Hello,\n\nI would like to ask about your recruitment services.\n\nService needed:\nPreferred nationality:\nName:\nMobile number:\n\nThank you.", msg_team:"Hello, I would like to ask about Aflaak Recruitment's services.",
       f_h:"Service request", f_type:"Service needed", f_nat:"Preferred nationality", f_name:"Name", f_phone:"Mobile number", f_note:"Notes (optional)", f_send:"Send request on WhatsApp", any:"Any nationality",
-      cv_newtab:"Open in new tab", cv_close:"Close", cv_back:"Back to nationalities", cv_title:"CVs: ", cv_count:"{n} CVs available", cv_view:"View CV (PDF)", cv_pick:"Select & send on WhatsApp", rev_h:"What our clients say", rev_sub:"Some of what our clients wrote about us on Google Maps.", rev_src:"Google Maps", flt_job:"Job", flt_avl:"Availability", flt_all:"All", flt_reset:"Reset", flt_none:"No matching CVs. Try changing the filters or contact us.", flt_of:"of", nat_all:"All nationalities", btn_all:"Search all nationalities", f_nat:"Nationality", f_from:"From", f_to:"To", sh_copy:"Copy list", sh_wa:"Send via WhatsApp", sh_link:"Copy results link", sh_done:"Copied ✓", sh_head:"Matching CVs ({n}):", sh_site:"All results on the website:", sh_long:"The list is long, so it was copied. Paste it in the chat.", pg_prev:"Previous", pg_next:"Next", pg_page:"Page {n}", pg_nav:"CV pages", avl_available:"Available", avl_reserved:"Reserved", cv_reserved_btn:"Currently reserved", age_r1:"18–25", age_r2:"26–30", age_r3:"31–35", age_r4:"36–40", age_r5:"41–45", age_r6:"46+", job_svc1:"Housemaid", job_svc2:"Private driver", job_svc3:"Cook", job_svc4:"Home nurse", job_svc5:"Personal assistant", cv_nojob:"CV", cv_flipback:"Back", f_priv_a:"By sending this request you agree to our", ft_privacy:"Privacy policy", ft_srv:"Our services:", ft_nats:"Nationalities:", fl_svc1:"Housemaid", fl_svc2:"Private driver", fl_svc3:"Cook", fl_svc4:"Home nurse", fl_svc5:"Personal assistant",
+      cv_newtab:"Open in new tab", cv_close:"Close", cv_back:"Back to nationalities", cv_title:"CVs: ", cv_count:"{n} CVs available", cv_view:"View CV (PDF)", cv_pick:"Select & send on WhatsApp", rev_h:"What our clients say", rev_sub:"Some of what our clients wrote about us on Google Maps.", rev_src:"Google Maps", flt_job:"Job", flt_avl:"Availability", flt_all:"All", flt_reset:"Reset", flt_none:"No matching CVs. Try changing the filters or contact us.", flt_of:"of", nat_all:"All nationalities", btn_all:"Search all nationalities", f_nat:"Nationality", f_from:"From", f_to:"To", sh_copy:"Copy list", sh_wa:"Send via WhatsApp", sh_link:"Copy results link", sh_zip:"Download files (ZIP)", sh_zipping:"Downloading {i}/{n}...", sh_zipfail:"Some files could not be downloaded", sh_done:"Copied ✓", sh_head:"Matching CVs ({n}):", sh_site:"All results on the website:", sh_long:"The list is long, so it was copied. Paste it in the chat.", pg_prev:"Previous", pg_next:"Next", pg_page:"Page {n}", pg_nav:"CV pages", avl_available:"Available", avl_reserved:"Reserved", cv_reserved_btn:"Currently reserved", age_r1:"18–25", age_r2:"26–30", age_r3:"31–35", age_r4:"36–40", age_r5:"41–45", age_r6:"46+", job_svc1:"Housemaid", job_svc2:"Private driver", job_svc3:"Cook", job_svc4:"Home nurse", job_svc5:"Personal assistant", cv_nojob:"CV", cv_flipback:"Back", f_priv_a:"By sending this request you agree to our", ft_privacy:"Privacy policy", ft_srv:"Our services:", ft_nats:"Nationalities:", fl_svc1:"Housemaid", fl_svc2:"Private driver", fl_svc3:"Cook", fl_svc4:"Home nurse", fl_svc5:"Personal assistant",
       cv_empty:"CVs for this nationality will be added soon. Message us on WhatsApp and we'll suggest the best match.",
       f_age:"Age", f_rel:"Religion", f_st:"Status", f_exp:"Experience", age_u:"{n} years", rel_m:"Muslim", rel_o:"Non-Muslim", st_s:"Single", st_m:"Married", exp_new:"New arrival", exp_prev:"Previous experience",
       msg_pick:"Hello, I would like to select: ", msg_cv:"CV link: ", msg_ref:"Reference no.: ",
@@ -265,6 +265,46 @@
     lines.push(d.sh_site, shareLink());
     return lines.join("\n");
   }
+  // ZIP بدون ضغط (الـ PDF مضغوط أصلًا) — بدون مكتبات خارجية
+  var CRC_T=null;
+  function crc32(u8){
+    if(!CRC_T){CRC_T=new Uint32Array(256); for(var n=0;n<256;n++){var c=n; for(var k=0;k<8;k++) c=c&1?0xEDB88320^(c>>>1):c>>>1; CRC_T[n]=c>>>0;}}
+    var crc=0xFFFFFFFF; for(var i=0;i<u8.length;i++) crc=CRC_T[(crc^u8[i])&255]^(crc>>>8); return (crc^0xFFFFFFFF)>>>0;
+  }
+  function makeZip(files){ // files: [{name:string, data:Uint8Array}]
+    var enc=new TextEncoder(), parts=[], cd=[], off=0, now=new Date();
+    var dt=((now.getHours()<<11)|(now.getMinutes()<<5)|(now.getSeconds()>>1))&0xFFFF, dd=(((now.getFullYear()-1980)<<9)|((now.getMonth()+1)<<5)|now.getDate())&0xFFFF;
+    files.forEach(function(f){
+      var nm=enc.encode(f.name), crc=crc32(f.data), sz=f.data.length;
+      var lh=new DataView(new ArrayBuffer(30)); lh.setUint32(0,0x04034b50,true); lh.setUint16(4,20,true); lh.setUint16(6,0x0800,true); lh.setUint16(8,0,true); lh.setUint16(10,dt,true); lh.setUint16(12,dd,true); lh.setUint32(14,crc,true); lh.setUint32(18,sz,true); lh.setUint32(22,sz,true); lh.setUint16(26,nm.length,true); lh.setUint16(28,0,true);
+      parts.push(lh.buffer,nm,f.data);
+      var ch=new DataView(new ArrayBuffer(46)); ch.setUint32(0,0x02014b50,true); ch.setUint16(4,20,true); ch.setUint16(6,20,true); ch.setUint16(8,0x0800,true); ch.setUint16(10,0,true); ch.setUint16(12,dt,true); ch.setUint16(14,dd,true); ch.setUint32(16,crc,true); ch.setUint32(20,sz,true); ch.setUint32(24,sz,true); ch.setUint16(28,nm.length,true); ch.setUint32(42,off,true);
+      cd.push(ch.buffer,nm); off+=30+nm.length+sz;
+    });
+    var cdSize=cd.reduce(function(a,b){return a+(b.byteLength||b.length);},0);
+    var eo=new DataView(new ArrayBuffer(22)); eo.setUint32(0,0x06054b50,true); eo.setUint16(8,files.length,true); eo.setUint16(10,files.length,true); eo.setUint32(12,cdSize,true); eo.setUint32(16,off,true);
+    return new Blob(parts.concat(cd,[eo.buffer]),{type:"application/zip"});
+  }
+  function safeName(x){return String(x||"").replace(/[\\/:*?"<>|]+/g," ").replace(/\s+/g," ").trim().slice(0,80);}
+  function downloadZip(list,btn,label){
+    var d=D[lang], items=list.filter(function(w){return w.status!=="reserved";}), out=[], used={}, fails=0, i=0;
+    btn.disabled=true;
+    function next(){
+      if(i>=items.length){
+        out.unshift({name:"list.txt",data:new TextEncoder().encode(shareText(list))});
+        var a=document.createElement("a"), u=URL.createObjectURL(makeZip(out)), t=new Date().toISOString().slice(0,10);
+        a.href=u; a.download="aflak-cvs-"+t+".zip"; document.body.appendChild(a); a.click(); a.remove(); setTimeout(function(){URL.revokeObjectURL(u);},4000);
+        btn.disabled=false; btn.textContent=fails?d.sh_zipfail:d.sh_done; setTimeout(function(){btn.textContent=label;},2500); return;
+      }
+      var w=items[i++]; btn.textContent=d.sh_zipping.replace("{i}",i).replace("{n}",items.length);
+      fetch(w.file).then(function(r){if(!r.ok) throw 0; return r.arrayBuffer();}).then(function(buf){
+        var base=safeName((w.ref?w.ref+" - ":"")+(w.name||"CV"))||("cv-"+i), nm=base+".pdf", c=1;
+        while(used[nm.toLowerCase()]) nm=base+" ("+(++c)+").pdf"; used[nm.toLowerCase()]=1;
+        out.push({name:nm,data:new Uint8Array(buf)});
+      }).catch(function(){fails++;}).then(next);
+    }
+    next();
+  }
   function renderShare(list){
     var box=$("cvShare"), d=D[lang]; box.textContent="";
     var items=list.filter(function(w){return w.status!=="reserved";});
@@ -281,7 +321,9 @@
     });
     var bl=mk("button","btn btn-line",d.sh_link); bl.type="button";
     bl.addEventListener("click",function(){copyText(shareLink()); flash(bl,d.sh_done,d.sh_link);});
-    [bc,bw,bl].forEach(function(b){box.appendChild(b);});
+    var bz=mk("button","btn btn-line",d.sh_zip); bz.type="button";
+    bz.addEventListener("click",function(){downloadZip(list,bz,d.sh_zip);});
+    [bz,bc,bw,bl].forEach(function(b){box.appendChild(b);});
   }
   var mqSmall=window.matchMedia("(max-width:700px)");
   function perPage(){return mqSmall.matches?4:8;}
