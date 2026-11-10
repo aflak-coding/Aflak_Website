@@ -531,6 +531,23 @@ def main():
                     print("تصحيح الاسم (كان اسم القريب): %s -> %s" % (w["name"], an))
                     w["name"] = an
                     changed = True
+        # إعادة فحص الخبرة مرة واحدة: سيرة اتسجّلت "خبرة" بالغلط وهي في الأصل First timer أو فاضية → تتصحح
+        if pdf and os.path.isfile(pdf) and w.get("exp") == "prev" and not w.get("xc"):
+            lay1 = read_text_layer(pdf)
+            if lay1:
+                e1 = parse_text(lay1).get("exp")
+            else:
+                tmp3 = tempfile.mkdtemp()
+                try:
+                    img3 = render_page(pdf, tmp3)
+                    e1 = detect(ocr_text(img3)).get("exp") if img3 else None
+                finally:
+                    shutil.rmtree(tmp3, ignore_errors=True)
+            w["xc"] = 1
+            changed = True
+            if e1 == "new":
+                print("تصحيح الخبرة (First timer): %s" % w.get("name"))
+                w["exp"] = "new"
         # اسم مأخوذ من اسم الملف (رقم أو "CV ..") → نحاول قراءته من نص الـ PDF
         stem = os.path.splitext(os.path.basename(str(w.get("file") or "")))[0]
         nm = str(w.get("name") or "")

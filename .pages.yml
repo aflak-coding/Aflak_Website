@@ -141,6 +141,10 @@ content:
             label: "بصمة الجواز (تلقائي، لا تعدّل)"
             type: string
             hidden: true
+          - name: xc
+            label: "فحص الخبرة (تلقائي)"
+            type: number
+            hidden: true
   - name: cvs_bangladesh
     label: "السير الذاتية - بنغلاديش (تعديل البيانات)"
     type: file
@@ -233,6 +237,10 @@ content:
           - name: pp
             label: "بصمة الجواز (تلقائي، لا تعدّل)"
             type: string
+            hidden: true
+          - name: xc
+            label: "فحص الخبرة (تلقائي)"
+            type: number
             hidden: true
   - name: cvs_philippines
     label: "السير الذاتية - الفلبين (تعديل البيانات)"
@@ -327,6 +335,10 @@ content:
             label: "بصمة الجواز (تلقائي، لا تعدّل)"
             type: string
             hidden: true
+          - name: xc
+            label: "فحص الخبرة (تلقائي)"
+            type: number
+            hidden: true
   - name: cvs_ethiopia
     label: "السير الذاتية - إثيوبيا (تعديل البيانات)"
     type: file
@@ -419,6 +431,10 @@ content:
           - name: pp
             label: "بصمة الجواز (تلقائي، لا تعدّل)"
             type: string
+            hidden: true
+          - name: xc
+            label: "فحص الخبرة (تلقائي)"
+            type: number
             hidden: true
   - name: cvs_srilanka
     label: "السير الذاتية - سريلانكا (تعديل البيانات)"
@@ -513,6 +529,10 @@ content:
             label: "بصمة الجواز (تلقائي، لا تعدّل)"
             type: string
             hidden: true
+          - name: xc
+            label: "فحص الخبرة (تلقائي)"
+            type: number
+            hidden: true
   - name: cvs_uganda
     label: "السير الذاتية - أوغندا (تعديل البيانات)"
     type: file
@@ -605,4 +625,8 @@ content:
           - name: pp
             label: "بصمة الجواز (تلقائي، لا تعدّل)"
             type: string
+            hidden: true
+          - name: xc
+            label: "فحص الخبرة (تلقائي)"
+            type: number
             hidden: true
