@@ -1,10 +1,16 @@
 name: Process new CVs
 
+# يعمل تلقائيًا كلما رُفع ملف PDF جديد داخل مجلدات cvs/<الدولة>/
 on:
   push:
     paths:
       - 'cvs/*/*.pdf'
   workflow_dispatch:
+
+# تسلسل التشغيل: لو رُفعت دفعات متتالية تنتظر كل دفعة التي قبلها بدل التعارض
+concurrency:
+  group: process-cvs
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -19,10 +25,9 @@ jobs:
       - name: Install tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y poppler-utils tesseract-ocr
-          pip install pillow numpy opencv-python-headless
+          sudo apt-get install -y poppler-utils tesseract-ocr python3-pil python3-numpy
 
-      - name: Add new CVs to data/cvs.json
+      - name: Add new CVs (data/cvs-*.json)
         run: python scripts/process_cvs.py
 
       - name: Commit changes
@@ -35,7 +40,10 @@ jobs:
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "Add new CVs automatically"
-            git push
+            for i in 1 2 3 4 5; do
+              git pull --rebase -X theirs origin main && git push && break
+              sleep $((i*5))
+            done
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
