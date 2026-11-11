@@ -1,39 +1,54 @@
-name: Tidy repo (one-time)
+name: Process new CVs
 
-on: workflow_dispatch
+# يعمل تلقائيًا كلما رُفع ملف PDF جديد داخل مجلدات cvs/<الدولة>/
+on:
+  push:
+    paths:
+      - 'cvs/*/*.pdf'
+  workflow_dispatch:
+
+# تسلسل التشغيل: لو رُفعت دفعات متتالية تنتظر كل دفعة التي قبلها بدل التعارض
+concurrency:
+  group: process-cvs
+  cancel-in-progress: false
 
 permissions:
   contents: write
   actions: write
 
 jobs:
-  tidy:
+  process:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Move files into folders
+      - name: Install tools
         run: |
-          mkdir -p archive/old-pages docs
-          for f in assistant cook driver maid nurse bangladesh ethiopia kenya philippines srilanka uganda; do
-            if [ -f "$f.html" ]; then git mv "$f.html" "archive/old-pages/$f.html"; fi
-          done
-          if [ -f guide-for-colleagues-ar.md ]; then
-            if [ -e docs/guide-for-colleagues-ar.md ]; then git rm -q guide-for-colleagues-ar.md; else git mv guide-for-colleagues-ar.md docs/; fi
-          fi
-          if [ -d workflows ]; then git mv workflows archive/stray-workflows; fi
-          git status --short
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils tesseract-ocr python3-pil python3-numpy
 
-      - name: Commit and redeploy
-        env:
-          GH_TOKEN: ${{ github.token }}
+      - name: Add new CVs (data/cvs-*.json)
+        run: python scripts/process_cvs.py
+
+      - name: Commit changes
+        id: commit
         run: |
           git config user.name "aflak-bot"
           git config user.email "aflak-bot@users.noreply.github.com"
+          git add -A data cvs
           if git diff --cached --quiet; then
-            echo "Nothing to move."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
           else
-            git commit -m "Tidy repo: move old root pages and docs into folders"
-            git pull --rebase origin main && git push
-            gh workflow run jekyll-gh-pages.yml --ref main
+            git commit -m "Add new CVs automatically"
+            for i in 1 2 3 4 5; do
+              git pull --rebase -X theirs origin main && git push && break
+              sleep $((i*5))
+            done
+            echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Redeploy the website
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run jekyll-gh-pages.yml --ref main
