@@ -598,3 +598,8 @@ html[lang="en"] .flag .nm::after{content:"View CVs \2192"}
 .cv-share{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px;padding:12px;border:1px dashed var(--hero);border-radius:14px;background:color-mix(in srgb,var(--hero) 6%,transparent)}
 .cv-share[hidden]{display:none}
 .cv-natl{font-weight:700;color:var(--hero)}
+
+.cv-share .sh-n{display:flex;align-items:center;gap:8px;font-weight:600;font-size:.95rem}
+.cv-share .sh-n input{width:76px;padding:10px 8px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:inherit;text-align:center}
+.cv-share .sh-n input:focus{outline:2px solid var(--hero);outline-offset:1px}
+.cv-share .sh-of{color:var(--muted);font-weight:500}
