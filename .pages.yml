@@ -145,6 +145,10 @@ content:
             label: "فحص الخبرة (تلقائي)"
             type: number
             hidden: true
+          - name: xd
+            label: "فحص الخبرة (2) (تلقائي)"
+            type: number
+            hidden: true
   - name: cvs_bangladesh
     label: "السير الذاتية - بنغلاديش (تعديل البيانات)"
     type: file
@@ -240,6 +244,10 @@ content:
             hidden: true
           - name: xc
             label: "فحص الخبرة (تلقائي)"
+            type: number
+            hidden: true
+          - name: xd
+            label: "فحص الخبرة (2) (تلقائي)"
             type: number
             hidden: true
   - name: cvs_philippines
@@ -339,6 +347,10 @@ content:
             label: "فحص الخبرة (تلقائي)"
             type: number
             hidden: true
+          - name: xd
+            label: "فحص الخبرة (2) (تلقائي)"
+            type: number
+            hidden: true
   - name: cvs_ethiopia
     label: "السير الذاتية - إثيوبيا (تعديل البيانات)"
     type: file
@@ -434,6 +446,10 @@ content:
             hidden: true
           - name: xc
             label: "فحص الخبرة (تلقائي)"
+            type: number
+            hidden: true
+          - name: xd
+            label: "فحص الخبرة (2) (تلقائي)"
             type: number
             hidden: true
   - name: cvs_srilanka
@@ -533,6 +549,10 @@ content:
             label: "فحص الخبرة (تلقائي)"
             type: number
             hidden: true
+          - name: xd
+            label: "فحص الخبرة (2) (تلقائي)"
+            type: number
+            hidden: true
   - name: cvs_uganda
     label: "السير الذاتية - أوغندا (تعديل البيانات)"
     type: file
@@ -628,5 +648,9 @@ content:
             hidden: true
           - name: xc
             label: "فحص الخبرة (تلقائي)"
+            type: number
+            hidden: true
+          - name: xd
+            label: "فحص الخبرة (2) (تلقائي)"
             type: number
             hidden: true

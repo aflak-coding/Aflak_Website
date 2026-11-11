@@ -202,16 +202,26 @@ def exp_from_text(t):
     """prev = عندها خبرة خارجية، new = أول مرة. يرجع None لو غير واضح."""
     if re.search(r"EX[\s\-]*ABROAD", t):
         return "prev"
-    if re.search(r"\bF[IR]{1,2}ST[\s\-]*TIM\w*|FIRSTIM\w*|FRESH\s+(?:FROM|ARRIVAL|CANDIDATE)|NEW\s+ARRIVAL", t):
-        return "new"
+    # جدول "PREVIOUS EMPLOYMENT ABROAD" أقوى دليل — نفحصه قبل كلمة FIRST TIME
+    # (لأن FIRST TIME مكتوبة كعنوان صف في جدول اللغات بقالب السير الإثيوبية)
     i = t.find("PREVIOUS EMPLOYMENT")
     if i >= 0:
         sec = t[i + 19:i + 360]
-        # أولًا: كلمات صريحة بأن لا خبرة (NO / NIL / NONE / N/A / FRESH)
+        sec = re.split(r"EMERGENCY|NEXT\s+OF\s+KIN", sec)[0]
         if re.search(r"(?:COUNTRY|PERIOD)[ \t:\-]*(?:NIL|NONE|NO|N/A|NA|FRESH)(?![A-Z])", sec):
             return "new"
-        if re.search(r"\b(19|20)\d{2}\b|\d\s*YEARS?|\d\s*YRS|\d\s*MONTHS?|" + COUNTRIES, sec):
+        if re.search(r"\b(19|20)\d{2}\b|\d\s*YEARS?|\d\s*YRS|\d\s*MONTHS?|" + COUNTRIES +
+                     r"|\bS[AO]U?D[IY]A?\b|JEDDAH|JIDDAH|RIYADH|RIYAD\b|DAMMAM|MAKKAH|MECCA|MADINA|MEDINA|DOHA|MUSCAT|BEIRUT", sec):
             return "prev"
+        # قراءة OCR مشوشة لاسم الدولة (مثل COURY BERUTT): سطر أوله يشبه COUNTRY وبعده كلمة حقيقية
+        import difflib
+        for ln in sec.split("\n")[1:]:
+            toks = re.findall(r"[A-Z]+", ln)
+            if len(toks) >= 2 and difflib.SequenceMatcher(None, toks[0], "COUNTRY").ratio() >= 0.6 and \
+                    any(len(x) >= 4 and re.search(r"[AEIOU]", x) and x not in ("COUNTRY", "PERIOD") for x in toks[1:]):
+                return "prev"
+    if re.search(r"\bF[IR]{1,2}ST[\s\-]*TIM\w*|FIRSTIM\w*|FRESH\s+(?:FROM|ARRIVAL|CANDIDATE)|NEW\s+ARRIVAL", t):
+        return "new"
     # جدول من نوع: COUNTRY  POSITION  YEARS ثم صف فيه سنوات
     m = re.search(r"COUNTRY\s+POSITION\s+YEARS?[^\n]*\n([^\n]*)", t)
     if m:
@@ -507,6 +517,7 @@ def main():
 
     # ---- استكمال السير الموجودة (بيانات ناقصة من النص) + تنظيف الصور القديمة
     filled = 0
+    recheck_budget = [60]  # أقصى عدد سكانات يُعاد فحصها في التشغيلة الواحدة (الباقي في التشغيلة اللي بعدها)
     for w in data:
         changed = False
         pdf = os.path.join(ROOT, norm(w.get("file"))) if w.get("file") else None
@@ -548,6 +559,28 @@ def main():
             if e1 == "new":
                 print("تصحيح الخبرة (First timer): %s" % w.get("name"))
                 w["exp"] = "new"
+        # إعادة فحص ثانية (مرة واحدة): سيرة اتسجّلت "أول مرة" بالغلط (كلمة FIRST TIME في جدول اللغات)
+        # وهي ليها دولة/مدة في جدول الخبرة → تتصحح. اللي فيها نص بلا OCR، والسكانات بحد أقصى في التشغيلة.
+        if pdf and os.path.isfile(pdf) and w.get("exp") == "new" and not w.get("xd"):
+            lay2 = read_text_layer(pdf)
+            e2, checked = None, False
+            if lay2:
+                e2, checked = parse_text(lay2).get("exp"), True
+            elif recheck_budget[0] > 0:
+                recheck_budget[0] -= 1
+                checked = True
+                tmp4 = tempfile.mkdtemp()
+                try:
+                    img4 = render_page(pdf, tmp4)
+                    e2 = exp_from_text(ocr_text(img4)) if img4 else None
+                finally:
+                    shutil.rmtree(tmp4, ignore_errors=True)
+            if checked:
+                w["xd"] = 1
+                changed = True
+            if e2 == "prev":
+                print("تصحيح الخبرة (لها دولة/مدة في جدول الخبرة): %s" % w.get("name"))
+                w["exp"] = "prev"
         # اسم مأخوذ من اسم الملف (رقم أو "CV ..") → نحاول قراءته من نص الـ PDF
         stem = os.path.splitext(os.path.basename(str(w.get("file") or "")))[0]
         nm = str(w.get("name") or "")
