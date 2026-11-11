@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>الصفحة غير موجودة | أفلاك للاستقدام</title>
+<style>
+body{margin:0;min-height:100vh;display:grid;place-items:center;font-family:Tahoma,Arial,sans-serif;background:#f5f7f6;color:#12332e;text-align:center;padding:24px}
+h1{font-size:1.6rem;margin:12px 0 8px}p{color:#4a5f5b;margin:0 0 20px}
+a{display:inline-block;background:#0d5c4b;color:#fff;text-decoration:none;padding:12px 26px;border-radius:12px;font-weight:700}
+img{height:46px;width:auto}
+</style>
+</head>
+<body>
+<main>
+<img src="/assets/img/logo-1.png" alt="أفلاك للاستقدام">
+<h1>الصفحة غير موجودة</h1>
+<p>ممكن الرابط قديم أو فيه خطأ. تقدر ترجع للرئيسية.</p>
+<a href="/">الصفحة الرئيسية</a>
+</main>
+<script>
+// روابط قديمة كانت في الجذر ← مكانها الجديد
+(function(){
+  var p=location.pathname.replace(/^\/+/,"").replace(/\/$/,"");
+  var s={maid:1,driver:1,cook:1,nurse:1,assistant:1}, n={philippines:1,bangladesh:1,kenya:1,ethiopia:1,srilanka:1};
+  var m=p.match(/^([a-z]+)(?:\.html)?$/);
+  if(m){ var k=m[1];
+    if(s[k]) location.replace("/services/"+k+".html"+location.search+location.hash);
+    else if(n[k]) location.replace("/nationalities/"+k+".html"+location.search+location.hash); }
+})();
+</script>
+</body>
+</html>
