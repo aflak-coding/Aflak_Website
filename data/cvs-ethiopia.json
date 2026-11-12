@@ -2421,6 +2421,20 @@
       "status": "available",
       "pp": "b56445879ce62a22",
       "xd": 1
+    },
+    {
+      "nat": "n4",
+      "name": "Shewit Hailesilassie Gebretsadik",
+      "ref": "E-261",
+      "job": "svc1",
+      "rel": "o",
+      "st": "s",
+      "age": 24,
+      "exp": "prev",
+      "status": "available",
+      "pp": "d26465bc2ff26846",
+      "file": "cvs/ethiopia/SHEWIT HAILESILASSIE GEBRETSADIK.pdf",
+      "photo": "cvs/photos/ethiopia-shewit-hailesilassie-gebretsadik-b.jpg"
     }
   ]
 }
