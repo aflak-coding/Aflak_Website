@@ -127,7 +127,7 @@
       "st": "s",
       "exp": "prev",
       "ref": "K-109",
-      "status": "available",
+      "status": "hidden",
       "pp": "a766611e93d2831b",
       "xc": 1
     },
@@ -142,7 +142,7 @@
       "st": "m",
       "exp": "prev",
       "ref": "K-110",
-      "status": "available",
+      "status": "hidden",
       "pp": "30eff372d8400c23",
       "xc": 1
     },
