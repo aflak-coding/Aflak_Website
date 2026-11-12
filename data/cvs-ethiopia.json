@@ -43,7 +43,8 @@
       "ref": "E-103",
       "status": "available",
       "pp": "8b6d71991f1a63ad",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Alfiya Bulo Boru",
@@ -73,7 +74,8 @@
       "ref": "E-105",
       "status": "available",
       "pp": "059fc67964c8ae7a",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Alfiya Jemal Hebo",
@@ -88,7 +90,8 @@
       "ref": "E-106",
       "status": "available",
       "pp": "4b606f5269419020",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Arabe Kedir Shabe",
@@ -178,7 +181,8 @@
       "ref": "E-112",
       "status": "available",
       "pp": "5e3fe89518e06dd1",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Asnaku Betemariam Damissie",
@@ -208,7 +212,8 @@
       "ref": "E-114",
       "status": "available",
       "pp": "06594e47b52aceab",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Aynalem Tegegne Adem",
@@ -253,7 +258,8 @@
       "ref": "E-117",
       "status": "available",
       "pp": "e7992f13dfa748a3",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Bilkisa Usman Haseno",
@@ -313,7 +319,8 @@
       "ref": "E-121",
       "status": "available",
       "pp": "1a484a1ecdda04f4",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Ekram Endris Ali",
@@ -373,7 +380,8 @@
       "ref": "E-125",
       "status": "available",
       "pp": "a86c66d9c91ed939",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Fatuma Ayalew Aleka",
@@ -448,7 +456,8 @@
       "ref": "E-130",
       "status": "hidden",
       "pp": "e69775fa95d5722c",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Firdos Edris Wako",
@@ -508,7 +517,8 @@
       "ref": "E-134",
       "status": "available",
       "pp": "f6c106155e6922e2",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Hana Ayenew Tefera",
@@ -523,7 +533,8 @@
       "ref": "E-135",
       "status": "available",
       "pp": "43c977cfc310b789",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Hawa Mohammed Endris",
@@ -703,7 +714,8 @@
       "ref": "E-147",
       "status": "available",
       "pp": "38f0e12839eefd65",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Gebremeskel",
@@ -733,7 +745,8 @@
       "ref": "E-149",
       "status": "available",
       "pp": "0c43dc9ced4bfcdb",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Meseret Baye Feleke",
@@ -763,7 +776,8 @@
       "ref": "E-151",
       "status": "available",
       "pp": "5e5efa1696426aa1",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Misra Hasan Guracha",
@@ -778,7 +792,8 @@
       "ref": "E-152",
       "status": "available",
       "pp": "a8b031678a34bc39",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Neima Beshir Kassa",
@@ -838,7 +853,8 @@
       "ref": "E-156",
       "status": "available",
       "pp": "d01d9924c03d4011",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Rukya Mohammed Hussen",
@@ -898,7 +914,8 @@
       "ref": "E-160",
       "status": "available",
       "pp": "4ed1dd06fafd956f",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Sada Diba Lenjiso",
@@ -1003,7 +1020,8 @@
       "ref": "E-167",
       "status": "available",
       "pp": "b9ce33a5c5522486",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Sekina Musa Gelete",
@@ -1018,7 +1036,8 @@
       "ref": "E-168",
       "status": "available",
       "pp": "1732d2b341318719",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Semira Yimam Ahmed",
@@ -1048,7 +1067,8 @@
       "ref": "E-170",
       "status": "hidden",
       "pp": "8c3314da86d1de73",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Shibash Muhammed Ahmed",
@@ -1123,7 +1143,8 @@
       "ref": "E-175",
       "status": "available",
       "pp": "8c16e893d7b47277",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Tadelu Dedasa Golga",
@@ -1138,7 +1159,8 @@
       "ref": "E-176",
       "status": "available",
       "pp": "376286f91b041e04",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Tigist Desalegn Andarge",
@@ -1273,7 +1295,8 @@
       "ref": "E-185",
       "status": "hidden",
       "pp": "2cc5762fe80160a1",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Yetemegn Yeshu Mekonen",
@@ -1303,7 +1326,8 @@
       "ref": "E-187",
       "status": "available",
       "pp": "33cc78e6e3aa4724",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Zehab Seid Mohammed",
@@ -1423,7 +1447,8 @@
       "ref": "E-195",
       "status": "hidden",
       "pp": "4c249faa231b7b10",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Zeytuna Usman Haseno",
@@ -1453,7 +1478,8 @@
       "ref": "E-197",
       "status": "available",
       "pp": "a9629c4f76a54c96",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Zinet Awol Seid",
@@ -1573,7 +1599,8 @@
       "ref": "E-205",
       "status": "available",
       "pp": "a96a7858e68983b4",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Aziza Yesuf Indris",
@@ -1648,7 +1675,8 @@
       "ref": "E-210",
       "status": "available",
       "pp": "34a3ef85da5caf52",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Eman Endris Yimer",
@@ -1708,7 +1736,8 @@
       "ref": "E-214",
       "status": "hidden",
       "pp": "319f3e0babadfda9",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Hawa Yimam Abdela",
@@ -1798,7 +1827,8 @@
       "ref": "E-220",
       "status": "hidden",
       "pp": "4bd488c223b9aecb",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Meka Ali Hussen",
@@ -1813,7 +1843,8 @@
       "ref": "E-221",
       "status": "available",
       "pp": "39d56ea4e9bfdafa",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Meymuna Seid Ali",
@@ -1843,7 +1874,8 @@
       "ref": "E-223",
       "status": "available",
       "pp": "ca4468107c989e05",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Munira Mehamed Halo",
@@ -1858,7 +1890,8 @@
       "ref": "E-224",
       "status": "available",
       "pp": "db79ff853dfc9ba0",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Rahmet Trshome Kebede",
@@ -1978,7 +2011,8 @@
       "ref": "E-232",
       "status": "available",
       "pp": "41f45fc7faa30634",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Simegn Yimer Yeshaw",
@@ -2023,7 +2057,8 @@
       "ref": "E-236",
       "status": "hidden",
       "pp": "815eba4ed89be950",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Wdiye Assenu Ali",
@@ -2113,7 +2148,8 @@
       "ref": "E-242",
       "status": "hidden",
       "pp": "f195b6d01ff8781e",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Bereket Kassa Tegegn",
@@ -2143,7 +2179,8 @@
       "ref": "E-244",
       "status": "available",
       "pp": "f6d223854f64adda",
-      "xd": 1
+      "xd": 1,
+      "xc": 1
     },
     {
       "name": "Seada Seid Aragaw",
@@ -2202,7 +2239,8 @@
       "status": "available",
       "pp": "36a302967dffaf2a",
       "file": "cvs/ethiopia/ALIMET  SIRAJ  MUHAMMED.pdf",
-      "photo": "cvs/photos/ethiopia-alimet-siraj-muhammed-b.jpg"
+      "photo": "cvs/photos/ethiopia-alimet-siraj-muhammed-b.jpg",
+      "xc": 1
     },
     {
       "nat": "n4",
@@ -2216,7 +2254,8 @@
       "status": "available",
       "pp": "21ff1d7e17ef3186",
       "file": "cvs/ethiopia/AYAL   KEMAL  MUHAMMED.pdf",
-      "photo": "cvs/photos/ethiopia-ayal-kemal-muhammed-b.jpg"
+      "photo": "cvs/photos/ethiopia-ayal-kemal-muhammed-b.jpg",
+      "xc": 1
     },
     {
       "nat": "n4",
@@ -2230,7 +2269,8 @@
       "status": "available",
       "pp": "3fa2f08a180e3f70",
       "file": "cvs/ethiopia/HAYAT  SEID  ALI.pdf",
-      "photo": "cvs/photos/ethiopia-hayat-seid-ali-b.jpg"
+      "photo": "cvs/photos/ethiopia-hayat-seid-ali-b.jpg",
+      "xd": 1
     },
     {
       "nat": "n4",
@@ -2244,7 +2284,8 @@
       "status": "available",
       "pp": "76fdc52e8e976238",
       "file": "cvs/ethiopia/HIKMA  MUHAMMED  OUMER.pdf",
-      "photo": "cvs/photos/ethiopia-hikma-muhammed-oumer-b.jpg"
+      "photo": "cvs/photos/ethiopia-hikma-muhammed-oumer-b.jpg",
+      "xd": 1
     },
     {
       "nat": "n4",
@@ -2258,7 +2299,8 @@
       "status": "available",
       "pp": "d442ad042d09af8a",
       "file": "cvs/ethiopia/KEDIJA  MEHDI  ABEBE.pdf",
-      "photo": "cvs/photos/ethiopia-kedija-mehdi-abebe-b.jpg"
+      "photo": "cvs/photos/ethiopia-kedija-mehdi-abebe-b.jpg",
+      "xd": 1
     },
     {
       "nat": "n4",
@@ -2272,7 +2314,8 @@
       "status": "available",
       "pp": "f5b7f17a61c3e800",
       "file": "cvs/ethiopia/KUBRA  MUHAMMED  EBIRE.pdf",
-      "photo": "cvs/photos/ethiopia-kubra-muhammed-ebire-b.jpg"
+      "photo": "cvs/photos/ethiopia-kubra-muhammed-ebire-b.jpg",
+      "xd": 1
     },
     {
       "nat": "n4",
@@ -2286,7 +2329,8 @@
       "status": "available",
       "pp": "cd33cceac9ccea62",
       "file": "cvs/ethiopia/LUBABA  MEKONNEN  WUSSEN.pdf",
-      "photo": "cvs/photos/ethiopia-lubaba-mekonnen-wussen-b.jpg"
+      "photo": "cvs/photos/ethiopia-lubaba-mekonnen-wussen-b.jpg",
+      "xd": 1
     },
     {
       "nat": "n4",
@@ -2300,7 +2344,8 @@
       "status": "available",
       "pp": "6bd3ef0a41ba178d",
       "file": "cvs/ethiopia/MEDINA  MOHAMMED  DAMTE.pdf",
-      "photo": "cvs/photos/ethiopia-medina-mohammed-damte-b.jpg"
+      "photo": "cvs/photos/ethiopia-medina-mohammed-damte-b.jpg",
+      "xc": 1
     },
     {
       "nat": "n4",
@@ -2314,7 +2359,8 @@
       "status": "available",
       "pp": "9e1cca4f5fdbedfb",
       "file": "cvs/ethiopia/MEKA  AYALEW  ASSEN.pdf",
-      "photo": "cvs/photos/ethiopia-meka-ayalew-assen-b.jpg"
+      "photo": "cvs/photos/ethiopia-meka-ayalew-assen-b.jpg",
+      "xc": 1
     },
     {
       "nat": "n4",
@@ -2328,7 +2374,8 @@
       "status": "available",
       "pp": "176459c8aceda28b",
       "file": "cvs/ethiopia/MESERET DEMIS BIRHANE.pdf",
-      "photo": "cvs/photos/ethiopia-meseret-demis-birhane-b.jpg"
+      "photo": "cvs/photos/ethiopia-meseret-demis-birhane-b.jpg",
+      "xd": 1
     },
     {
       "nat": "n4",
@@ -2342,7 +2389,8 @@
       "status": "available",
       "pp": "09bd97e39e23a4d6",
       "file": "cvs/ethiopia/SEADA   ALYU  MUHAMMED.pdf",
-      "photo": "cvs/photos/ethiopia-seada-alyu-muhammed-b.jpg"
+      "photo": "cvs/photos/ethiopia-seada-alyu-muhammed-b.jpg",
+      "xd": 1
     },
     {
       "nat": "n4",
@@ -2356,7 +2404,8 @@
       "status": "available",
       "pp": "f11f450453b73b40",
       "file": "cvs/ethiopia/SEADA   MOHAMMED  SEID.pdf",
-      "photo": "cvs/photos/ethiopia-seada-mohammed-seid-b.jpg"
+      "photo": "cvs/photos/ethiopia-seada-mohammed-seid-b.jpg",
+      "xd": 1
     },
     {
       "nat": "n4",
@@ -2370,7 +2419,8 @@
       "status": "available",
       "pp": "b56445879ce62a22",
       "file": "cvs/ethiopia/SEMIRA  KEBEDE  MOLA.pdf",
-      "photo": "cvs/photos/ethiopia-semira-kebede-mola-b.jpg"
+      "photo": "cvs/photos/ethiopia-semira-kebede-mola-b.jpg",
+      "xd": 1
     }
   ]
 }
