@@ -11,7 +11,8 @@
       "st": "s",
       "exp": "new",
       "ref": "B-101",
-      "status": "available"
+      "status": "available",
+      "xd": 1
     },
     {
       "name": "Sagori Khanam",
@@ -24,7 +25,8 @@
       "st": "m",
       "exp": "new",
       "ref": "B-102",
-      "status": "available"
+      "status": "available",
+      "xd": 1
     },
     {
       "name": "Liza Akter",
@@ -37,7 +39,8 @@
       "st": "s",
       "exp": "new",
       "ref": "B-103",
-      "status": "available"
+      "status": "available",
+      "xd": 1
     },
     {
       "name": "Mst Sima Akter",
@@ -50,7 +53,8 @@
       "st": "m",
       "exp": "new",
       "ref": "B-104",
-      "status": "available"
+      "status": "available",
+      "xd": 1
     },
     {
       "name": "Bobita Akter Shathi",
@@ -63,7 +67,8 @@
       "st": "m",
       "exp": "new",
       "ref": "B-105",
-      "status": "available"
+      "status": "available",
+      "xd": 1
     },
     {
       "name": "Nahida Akter",
@@ -76,7 +81,8 @@
       "st": "m",
       "exp": "new",
       "ref": "B-106",
-      "status": "available"
+      "status": "available",
+      "xd": 1
     },
     {
       "name": "Sharmin Akter",
@@ -313,7 +319,8 @@
       "st": "m",
       "exp": "new",
       "ref": "S-978",
-      "status": "available"
+      "status": "available",
+      "xd": 1
     },
     {
       "name": "Shuly Begum",
@@ -326,7 +333,8 @@
       "st": "m",
       "exp": "new",
       "ref": "S-1024",
-      "status": "available"
+      "status": "available",
+      "xd": 1
     },
     {
       "name": "Mousumi Khatun",
@@ -367,7 +375,8 @@
       "st": "s",
       "exp": "new",
       "ref": "S-1023",
-      "status": "available"
+      "status": "available",
+      "xd": 1
     },
     {
       "name": "Mst Parvina Begum",
@@ -380,7 +389,8 @@
       "st": "m",
       "exp": "new",
       "ref": "A-676",
-      "status": "available"
+      "status": "available",
+      "xd": 1
     },
     {
       "name": "Lipi Akter",
@@ -393,7 +403,8 @@
       "st": "m",
       "exp": "new",
       "ref": "B-114",
-      "status": "available"
+      "status": "available",
+      "xd": 1
     },
     {
       "name": "Mst Zannati Begum",
@@ -406,7 +417,8 @@
       "st": "s",
       "exp": "new",
       "ref": "B-115",
-      "status": "available"
+      "status": "available",
+      "xd": 1
     },
     {
       "name": "Shahana",
@@ -419,7 +431,8 @@
       "st": "m",
       "exp": "new",
       "ref": "A-1029",
-      "status": "available"
+      "status": "available",
+      "xd": 1
     },
     {
       "name": "Lucky Akter",
@@ -432,7 +445,8 @@
       "st": "s",
       "exp": "new",
       "ref": "S-1036",
-      "status": "available"
+      "status": "available",
+      "xd": 1
     },
     {
       "name": "Mohna Khatun",
@@ -445,7 +459,8 @@
       "st": "m",
       "exp": "new",
       "ref": "S-1017",
-      "status": "available"
+      "status": "available",
+      "xd": 1
     },
     {
       "name": "Mst Lipy Khatun",

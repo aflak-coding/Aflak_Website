@@ -9,10 +9,11 @@
       "age": 34,
       "rel": "o",
       "st": "s",
-      "exp": "new",
+      "exp": "prev",
       "ref": "K-101",
       "status": "available",
-      "pp": "ee21b688296d6276"
+      "pp": "ee21b688296d6276",
+      "xd": 1
     },
     {
       "name": "Callen Bosibori Nyabuto",
@@ -23,10 +24,11 @@
       "age": 24,
       "rel": "o",
       "st": "s",
-      "exp": "new",
+      "exp": "prev",
       "ref": "K-102",
       "status": "available",
-      "pp": "48bf97d263f616d6"
+      "pp": "48bf97d263f616d6",
+      "xd": 1
     },
     {
       "name": "Eddah Walowe Kitolome",
@@ -67,10 +69,11 @@
       "age": 24,
       "rel": "o",
       "st": "s",
-      "exp": "new",
+      "exp": "prev",
       "ref": "K-105",
       "status": "available",
-      "pp": "720dceb12c9605b5"
+      "pp": "720dceb12c9605b5",
+      "xd": 1
     },
     {
       "name": "Janet Shidhan Kazungu",
@@ -96,10 +99,11 @@
       "age": 29,
       "rel": "m",
       "st": "s",
-      "exp": "new",
+      "exp": "prev",
       "ref": "K-107",
       "status": "available",
-      "pp": "d23b53e840baff88"
+      "pp": "d23b53e840baff88",
+      "xd": 1
     },
     {
       "name": "Margaret Murugi Njoki",
