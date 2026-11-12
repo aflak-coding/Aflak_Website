@@ -23,9 +23,9 @@
       "age": 34,
       "rel": "o",
       "st": "s",
-      "exp": "new",
+      "exp": "prev",
       "ref": "E-102",
-      "status": "reserved",
+      "status": "hidden",
       "pp": "9125ad4ae45a3441"
     },
     {
