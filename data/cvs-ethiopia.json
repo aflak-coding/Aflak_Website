@@ -1522,7 +1522,7 @@
       "st": "s",
       "exp": "prev",
       "ref": "E-200",
-      "status": "available",
+      "status": "hidden",
       "pp": "3e64bc14539d5aee",
       "xc": 1
     },
@@ -2238,7 +2238,7 @@
       "st": "s",
       "exp": "prev",
       "ref": "E-248",
-      "status": "available",
+      "status": "reserved",
       "pp": "36a302967dffaf2a",
       "xc": 1
     },
