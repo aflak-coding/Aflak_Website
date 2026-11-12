@@ -131,7 +131,7 @@
       "st": "m",
       "exp": "prev",
       "ref": "B-110",
-      "status": "available",
+      "status": "hidden",
       "xc": 1
     },
     {
@@ -159,7 +159,7 @@
       "st": "m",
       "exp": "prev",
       "ref": "B-112",
-      "status": "available",
+      "status": "hidden",
       "xc": 1
     },
     {
