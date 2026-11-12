@@ -6,16 +6,16 @@
       hero_h:"مع أفلاك الخدمة معاك",
       hero_p:"نسهّل لك رحلة استقدام العمالة المنزلية من خلال خدمة احترافية، خيارات موثوقة، ومتابعة مستمرة.",
       cta_start:"ابدأ طلبك", cta_svc:"تعرّف على خدماتنا",
-      svc_h:"خدماتنا", svc_sub:"اضغط على أي خدمة لننتقل مباشرة إلى نموذج الطلب.",
+      svc_h:"خدماتنا", svc_sub:"اضغط على الخدمة، ثم اختر الجنسية لتصفّح السير الذاتية.",
       svc1:"استقدام عاملة منزلية", svc1d:"عاملة تتولى شؤون البيت من تنظيف وترتيب، ويمكنها العناية بالأطفال. أخبرنا بما يناسب أسرتك ونرشّح لك الأنسب.",
       svc2:"استقدام سائق خاص", svc2d:"سائق لتنقلات الأسرة اليومية. حدّد الجنسية التي تفضلها ونتابع معك الإجراءات.",
       ask:"اطلب هذه الخدمة",
-      nat_h:"الجنسيات المتاحة", nat_sub:"نستقدم من خمس دول. اضغط على علم الدولة لتصفّح السير الذاتية.", n1:"كينيا", n2:"بنغلاديش", n3:"الفلبين", n4:"إثيوبيا", n5:"سريلانكا", n6:"أوغندا",
-      c_h:"املأ بياناتك ونتواصل معك", c_sub:"يصل طلبك إلينا على واتساب، ونرد عليك في ساعات العمل.",
+      nat_h:"الجنسيات المتاحة", nat_sub:"اضغط على علم الدولة لتصفّح السير الذاتية.", n1:"كينيا", n2:"بنغلاديش", n3:"الفلبين", n4:"إثيوبيا", n5:"سريلانكا", n6:"أوغندا",
+      c_h:"حابب تستفسر؟ املأ بياناتك ونتواصل معاك", c_sub:"يصلنا استفسارك على واتساب، ونرد عليك في ساعات العمل.",
       c_wa:"واتساب", c_phone:"اتصال", c_mail:"البريد الإلكتروني", c_addr:"العنوان",
       addr:"شارع خالد بن الوليد، حي قرطبة، الدور الأول فوق صيدلية كنوز، مكتب 34، الرياض",
       c_hours:"ساعات العمل", hours:"يوميًا من 9 صباحًا حتى 5 مساءً", c_social:"حسابات التواصل", c_map:"فتح في خرائط جوجل", ct_h:"بيانات التواصل", ct_pin:"شركة أفلاك للاستقدام", team_h:"فريق العمل", team_sub:"اختر ما يناسبك وتواصل معنا مباشرة عبر واتساب أو الاتصال.", team_wa:"تواصل عبر واتساب", team_call:"اتصال", ft_support:"لمزيد من الدعم", mail_subj:"استفسار عن خدمات الاستقدام", mail_body:"السلام عليكم،\n\nأرغب في الاستفسار عن خدمات الاستقدام لديكم.\n\nالخدمة المطلوبة:\nالجنسية المفضلة:\nالاسم:\nرقم الجوال:\n\nشكرًا لكم.", msg_team:"السلام عليكم، أود التواصل بخصوص خدمات أفلاك للاستقدام.",
-      f_h:"طلب خدمة", f_type:"الخدمة المطلوبة", f_nat:"الجنسية المفضلة", f_name:"الاسم", f_phone:"رقم الجوال", f_note:"ملاحظات (اختياري)", f_send:"أرسل الطلب عبر واتساب", any:"أي جنسية",
+      f_h:"استفسار", f_type:"الخدمة المطلوبة", f_nat:"الجنسية المفضلة", f_name:"الاسم", f_phone:"رقم الجوال", f_note:"استفسارك (اختياري)", f_send:"أرسل استفسارك عبر واتساب", any:"أي جنسية",
       cv_newtab:"فتح في تبويب جديد", cv_close:"إغلاق", cv_back:"رجوع للجنسيات", cv_title:"السير الذاتية: ", cv_count:"{n} سيرة ذاتية متاحة", cv_view:"عرض السيرة الذاتية (PDF)", cv_pick:"اختيار وإرسال عبر واتساب", rev_h:"آراء عملائنا", rev_sub:"بعض ما كتبه عملاؤنا عنا على خرائط جوجل.", rev_src:"خرائط جوجل", flt_job:"المهنة", flt_avl:"التوفر", flt_all:"الكل", flt_reset:"إعادة ضبط", flt_none:"لا توجد سير ذاتية مطابقة. جرّب تغيير التصفية أو تواصل معنا.", flt_of:"من", nat_all:"كل الجنسيات", btn_all:"ابحث في كل الجنسيات", f_nat:"الجنسية", f_from:"من", f_to:"إلى", sh_copy:"نسخ القائمة", sh_wa:"إرسال عبر واتساب", sh_link:"نسخ رابط النتائج", sh_zip:"تحميل الملفات (ZIP)", sh_n:"عدد السير", sh_ofn:"من {n}", sh_zipping:"جاري التحميل {i}/{n}...", sh_zipfail:"تعذّر تحميل بعض الملفات", sh_done:"تم النسخ ✓", sh_head:"السير الذاتية المناسبة ({n}):", sh_site:"كل النتائج على الموقع:", sh_long:"القائمة طويلة، تم نسخها. الصقها في المحادثة.", pg_prev:"السابق", pg_next:"التالي", pg_page:"صفحة {n}", pg_nav:"صفحات السير الذاتية", avl_available:"متاحة", avl_reserved:"محجوزة", cv_reserved_btn:"محجوزة حاليًا", age_r1:"18–25", age_r2:"26–30", age_r3:"31–35", age_r4:"36–40", age_r5:"41–45", age_r6:"46 فأكثر", job_svc1:"عاملة منزلية", job_svc2:"سائق شخصي", job_svc3:"طباخ / طباخة", job_svc4:"ممرضة منزلية", job_svc5:"مساعدة شخصية", cv_nojob:"سيرة ذاتية", cv_flipback:"رجوع", f_priv_a:"بإرسال الطلب فإنك توافق على", ft_privacy:"سياسة الخصوصية", ft_srv:"خدماتنا:", ft_nats:"الجنسيات:", fl_svc1:"عاملة منزلية", fl_svc2:"سائق خاص", fl_svc3:"طباخ / طباخة", fl_svc4:"ممرضة منزلية", fl_svc5:"مساعدة شخصية",
       cv_empty:"سيتم إضافة السير الذاتية لهذه الجنسية قريبًا. تواصل معنا على واتساب لنرشّح لك الأنسب.",
       f_age:"العمر", f_rel:"الديانة", f_st:"الحالة", f_exp:"الخبرة", age_u:"{n} سنة", rel_m:"مسلم", rel_o:"غير مسلم", st_s:"غير متزوج", st_m:"متزوج", exp_new:"قادم جديد", exp_prev:"خبرة سابقة",
@@ -27,7 +27,7 @@
       q7:"كم تستغرق مدة الاستقدام؟", a7:"عادةً من 30 إلى 45 يومًا.", pk_h:"بيانات التواصل", pk_sub:"نكتب لك على نفس الرقم لتأكيد الطلب وإكمال الإجراءات.", pk_send:"متابعة إلى واتساب", pk_cancel:"إلغاء", pk_bad:"اكتب رقم جوال صحيح.", q4:"ما الجنسيات المتاحة؟", a4:"كينيا، بنغلاديش، الفلبين، إثيوبيا، وسريلانكا.",
       q5:"أين مقر الشركة ومتى تفتح؟", a5:"في الرياض، حي قرطبة، شارع خالد بن الوليد، الدور الأول فوق صيدلية كنوز، مكتب 34. نعمل يوميًا من 9 صباحًا حتى 5 مساءً.",
       foot1:"أفلاك للاستقدام | الرياض، المملكة العربية السعودية", foot2:"ترخيص 3801238 | سجل تجاري 7004359431",
-      msg_hello:"السلام عليكم، أرغب في طلب: ", msg_nat:"الجنسية المفضلة: ", msg_name:"الاسم: ", msg_phone:"الجوال: ", msg_note:"ملاحظات: ",
+      msg_hello:"السلام عليكم، لدي استفسار بخصوص: ", msg_nat:"الجنسية المفضلة: ", msg_name:"الاسم: ", msg_phone:"الجوال: ", msg_note:"ملاحظات: ",
       msg_gen:"السلام عليكم، أريد الاستفسار عن خدمات الاستقدام.",
       svcs:{svc1:"عاملة منزلية",svc2:"سائق شخصي",svc3:"طباخ / طباخة",svc4:"ممرضة منزلية",svc5:"مساعدة شخصية",svc6:"طلب تفويض"}, title:"شركة أفلاك للاستقدام | استقدام مرخّص في الرياض", alt:"أفلاك للاستقدام"
     },
@@ -36,16 +36,16 @@
       hero_h:"With Aflaak, service is with you",
       hero_p:"We make your household recruitment journey easier with a professional service, trusted options, and ongoing follow-up.",
       cta_start:"Start your request", cta_svc:"See our services",
-      svc_h:"Our services", svc_sub:"Tap any service to jump straight to the request form.",
+      svc_h:"Our services", svc_sub:"Tap a service, then choose a nationality to browse CVs.",
       svc1:"Recruit a housemaid", svc1d:"A housemaid who takes care of the home, from cleaning to tidying, and can also look after children. Tell us what suits your family and we'll suggest the best match.",
       svc2:"Recruit a private driver", svc2d:"A driver for your family's daily trips. Choose the nationality you prefer and we'll follow up on the paperwork with you.",
       ask:"Request this service",
-      nat_h:"Available nationalities", nat_sub:"We recruit from five countries. Tap a flag to browse CVs.", n1:"Kenya", n2:"Bangladesh", n3:"Philippines", n4:"Ethiopia", n5:"Sri Lanka", n6:"Uganda",
-      c_h:"Fill in your details and we'll contact you", c_sub:"Your request reaches us on WhatsApp and we reply during working hours.",
+      nat_h:"Available nationalities", nat_sub:"Tap a flag to browse CVs.", n1:"Kenya", n2:"Bangladesh", n3:"Philippines", n4:"Ethiopia", n5:"Sri Lanka", n6:"Uganda",
+      c_h:"Have a question? Leave your details and we'll get back to you", c_sub:"Your inquiry reaches us on WhatsApp and we reply during working hours.",
       c_wa:"WhatsApp", c_phone:"Phone", c_mail:"Email", c_addr:"Address",
       addr:"Khalid Bin Al Waleed Street, Qurtubah, first floor above Kunooz Pharmacy, office 34, Riyadh",
       c_hours:"Working hours", hours:"Daily, 9 AM to 5 PM", c_social:"Social accounts", c_map:"Open in Maps", ct_h:"Contact details", ct_pin:"Aflaak Recruitment Company", team_h:"Our team", team_sub:"Choose what suits you and contact us directly on WhatsApp or by phone.", team_wa:"Message on WhatsApp", team_call:"Call", ft_support:"More support", mail_subj:"Inquiry about recruitment services", mail_body:"Hello,\n\nI would like to ask about your recruitment services.\n\nService needed:\nPreferred nationality:\nName:\nMobile number:\n\nThank you.", msg_team:"Hello, I would like to ask about Aflaak Recruitment's services.",
-      f_h:"Service request", f_type:"Service needed", f_nat:"Preferred nationality", f_name:"Name", f_phone:"Mobile number", f_note:"Notes (optional)", f_send:"Send request on WhatsApp", any:"Any nationality",
+      f_h:"Inquiry", f_type:"Service needed", f_nat:"Preferred nationality", f_name:"Name", f_phone:"Mobile number", f_note:"Your inquiry (optional)", f_send:"Send your inquiry on WhatsApp", any:"Any nationality",
       cv_newtab:"Open in new tab", cv_close:"Close", cv_back:"Back to nationalities", cv_title:"CVs: ", cv_count:"{n} CVs available", cv_view:"View CV (PDF)", cv_pick:"Select & send on WhatsApp", rev_h:"What our clients say", rev_sub:"Some of what our clients wrote about us on Google Maps.", rev_src:"Google Maps", flt_job:"Job", flt_avl:"Availability", flt_all:"All", flt_reset:"Reset", flt_none:"No matching CVs. Try changing the filters or contact us.", flt_of:"of", nat_all:"All nationalities", btn_all:"Search all nationalities", f_nat:"Nationality", f_from:"From", f_to:"To", sh_copy:"Copy list", sh_wa:"Send via WhatsApp", sh_link:"Copy results link", sh_zip:"Download files (ZIP)", sh_n:"Number of CVs", sh_ofn:"of {n}", sh_zipping:"Downloading {i}/{n}...", sh_zipfail:"Some files could not be downloaded", sh_done:"Copied ✓", sh_head:"Matching CVs ({n}):", sh_site:"All results on the website:", sh_long:"The list is long, so it was copied. Paste it in the chat.", pg_prev:"Previous", pg_next:"Next", pg_page:"Page {n}", pg_nav:"CV pages", avl_available:"Available", avl_reserved:"Reserved", cv_reserved_btn:"Currently reserved", age_r1:"18–25", age_r2:"26–30", age_r3:"31–35", age_r4:"36–40", age_r5:"41–45", age_r6:"46+", job_svc1:"Housemaid", job_svc2:"Private driver", job_svc3:"Cook", job_svc4:"Home nurse", job_svc5:"Personal assistant", cv_nojob:"CV", cv_flipback:"Back", f_priv_a:"By sending this request you agree to our", ft_privacy:"Privacy policy", ft_srv:"Our services:", ft_nats:"Nationalities:", fl_svc1:"Housemaid", fl_svc2:"Private driver", fl_svc3:"Cook", fl_svc4:"Home nurse", fl_svc5:"Personal assistant",
       cv_empty:"CVs for this nationality will be added soon. Message us on WhatsApp and we'll suggest the best match.",
       f_age:"Age", f_rel:"Religion", f_st:"Status", f_exp:"Experience", age_u:"{n} years", rel_m:"Muslim", rel_o:"Non-Muslim", st_s:"Single", st_m:"Married", exp_new:"New arrival", exp_prev:"Previous experience",
@@ -57,7 +57,7 @@
       q7:"How long does recruitment take?", a7:"Usually 30 to 45 days.", pk_h:"Your contact details", pk_sub:"We will contact you on this number to confirm the request.", pk_send:"Continue to WhatsApp", pk_cancel:"Cancel", pk_bad:"Please enter a valid mobile number.", q4:"Which nationalities are available?", a4:"Kenya, Bangladesh, the Philippines, Ethiopia and Sri Lanka.",
       q5:"Where is the company located and when is it open?", a5:"In Riyadh, Qurtubah district, Khalid Bin Al Waleed Street, first floor above Kunooz Pharmacy, office 34. Open daily from 9 AM to 5 PM.",
       foot1:"Aflaak Recruitment | Riyadh, Saudi Arabia", foot2:"License 3801238 | Commercial registration 7004359431",
-      msg_hello:"Hello, I would like to request: ", msg_nat:"Preferred nationality: ", msg_name:"Name: ", msg_phone:"Mobile: ", msg_note:"Notes: ",
+      msg_hello:"Hello, I have an inquiry about: ", msg_nat:"Preferred nationality: ", msg_name:"Name: ", msg_phone:"Mobile: ", msg_note:"Notes: ",
       msg_gen:"Hello, I would like to ask about your recruitment services.",
       svcs:{svc1:"Housemaid",svc2:"Personal driver",svc3:"Cook",svc4:"Home nurse",svc5:"Personal assistant",svc6:"Authorization request"}, title:"Aflaak Recruitment Company | Licensed recruitment in Riyadh", alt:"Aflaak Recruitment Company"
     }
@@ -100,6 +100,11 @@
     });
   }
 
+  var pendingJob="";
+  function goNat(svc){
+    pendingJob=(svc==="svc1"||svc==="svc2"||svc==="svc3"||svc==="svc4"||svc==="svc5")?svc:"";
+    $("nationalities").scrollIntoView({behavior:"smooth",block:"start"});
+  }
   function goOrder(svc){
     if(svc && $("fType").querySelector('option[value="'+svc+'"]')) $("fType").value=svc;
     var f=$("order");
@@ -115,10 +120,10 @@
     apply();
   });
   document.querySelectorAll(".row").forEach(function(r){
-    r.addEventListener("click",function(){goOrder(r.getAttribute("data-svc"));});
+    r.addEventListener("click",function(){goNat(r.getAttribute("data-svc"));});
   });
   document.querySelectorAll("[data-goorder]").forEach(function(a){
-    a.addEventListener("click",function(e){e.preventDefault();goOrder();});
+    a.addEventListener("click",function(e){e.preventDefault();goNat("");});
   });
   $("orderForm").addEventListener("submit",function(e){
     e.preventDefault();
@@ -480,6 +485,7 @@
   var allBtn=$("allNatBtn"); if(allBtn) allBtn.addEventListener("click",function(){openNat("all");});
   function openNat(k){
     if(curNat!==k){flt=newFlt(); page=0;}
+    if(pendingJob){flt.job=pendingJob; pendingJob=""; page=0;}
     curNat=k;
     document.querySelectorAll(".flag[data-nat]").forEach(function(f){f.setAttribute("aria-pressed",f.getAttribute("data-nat")===k?"true":"false");});
     renderCVs();

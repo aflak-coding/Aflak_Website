@@ -56,7 +56,7 @@ nav a:hover{color:var(--teal)}
 .btn-line:hover{background:var(--teal);color:var(--on-teal)}
 
 /* hero */
-.hero{--h-ink:#0B2A2E;--h-muted:#3F5E62;--h-base:#F9F6F1;position:relative;isolation:isolate;background:var(--h-base);color:var(--h-ink);min-height:min(80vh,660px);display:flex;align-items:center;padding:56px 0;overflow:hidden}
+.hero{--h-ink:#0B2A2E;--h-muted:#3F5E62;--h-base:#F9F6F1;position:relative;isolation:isolate;background:var(--h-base);color:var(--h-ink);min-height:calc(100vh - 65px);min-height:calc(100svh - 65px);display:flex;align-items:center;padding:56px 0;overflow:hidden}
 .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:url("img/hero-bg.jpg") left center/cover no-repeat}
 html[dir="ltr"] .hero::before{transform:scaleX(-1)}
 .hero .txt{width:min(480px,100%)}
