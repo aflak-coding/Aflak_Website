@@ -467,7 +467,10 @@
     if(!dlg.showModal||window.matchMedia("(pointer:coarse)").matches||window.innerWidth<700){window.open(url,"_blank","noopener");return;}
     $("cvDlgName").textContent=w.name;
     $("cvDlgOpen").href=url;
-    $("cvDlgPick").onclick=function(){dlg.close();pick();};
+    var pb=$("cvDlgPick"), dd=D[lang], res=w.status==="reserved";
+    pb.disabled=res; pb.classList.toggle("cv-off",res); pb.classList.toggle("btn-line",res); pb.classList.toggle("btn-wa",!res);
+    pb.textContent=res?dd.cv_reserved_btn:dd.cv_pick;
+    pb.onclick=res?null:function(){dlg.close();pick();};
     $("cvFrame").src=url;
     dlg.showModal();
   }

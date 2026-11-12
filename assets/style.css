@@ -603,3 +603,5 @@ html[lang="en"] .flag .nm::after{content:"View CVs \2192"}
 .cv-share .sh-n input{width:76px;padding:10px 8px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:inherit;text-align:center}
 .cv-share .sh-n input:focus{outline:2px solid var(--hero);outline-offset:1px}
 .cv-share .sh-of{color:var(--muted);font-weight:500}
+
+#cvDlgPick.cv-off,#cvDlgPick:disabled{opacity:.65;cursor:not-allowed;pointer-events:none}
