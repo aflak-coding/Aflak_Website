@@ -11,7 +11,7 @@
       "st": "s",
       "exp": "new",
       "ref": "E-101",
-      "status": "available",
+      "status": "hidden",
       "pp": "8db2f66058a93b0f",
       "xd": 1
     },
@@ -2423,18 +2423,18 @@
       "xd": 1
     },
     {
-      "nat": "n4",
       "name": "Shewit Hailesilassie Gebretsadik",
-      "ref": "E-261",
+      "nat": "n4",
+      "file": "cvs/ethiopia/SHEWIT HAILESILASSIE GEBRETSADIK.pdf",
+      "photo": "/cvs/photos/ethiopia-shewit-hailesilassie-gebretsadik-b.jpg",
       "job": "svc1",
+      "age": 24,
       "rel": "o",
       "st": "s",
-      "age": 24,
       "exp": "prev",
+      "ref": "E-261",
       "status": "available",
       "pp": "d26465bc2ff26846",
-      "file": "cvs/ethiopia/SHEWIT HAILESILASSIE GEBRETSADIK.pdf",
-      "photo": "cvs/photos/ethiopia-shewit-hailesilassie-gebretsadik-b.jpg",
       "xc": 1
     }
   ]
