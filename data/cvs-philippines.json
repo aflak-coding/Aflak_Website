@@ -97,8 +97,8 @@
       "exp": "prev",
       "ref": "P-108",
       "status": "available",
-      "xd": 1,
-      "xc": 1
+      "xc": 1,
+      "xd": 1
     },
     {
       "name": "SHERWIN RIVERA NAVALES",
@@ -185,31 +185,31 @@
       "xc": 1
     },
     {
-      "nat": "n3",
       "name": "CV P-116",
-      "ref": "P-116",
+      "nat": "n3",
+      "file": "cvs/philippines/whatsapp-image-2026-11-02-at-41331-pm.pdf",
+      "photo": "/cvs/photos/philippines-whatsapp-image-2026-11-02-at-41331-pm-b.jpg",
       "job": "svc1",
+      "age": 49,
       "rel": "o",
       "st": "m",
-      "age": 49,
       "exp": "new",
+      "ref": "P-116",
       "status": "available",
-      "file": "cvs/philippines/whatsapp-image-2026-11-02-at-41331-pm.pdf",
-      "photo": "cvs/photos/philippines-whatsapp-image-2026-11-02-at-41331-pm-b.jpg",
       "xd": 1
     },
     {
-      "nat": "n3",
       "name": "Mary Lett Bobiles Baluyot",
-      "ref": "P-117",
+      "nat": "n3",
+      "file": "cvs/philippines/MARY LETT BOBILES BALUYOT (1).pdf",
+      "photo": "/cvs/photos/lqth-shashh-2026-11-14-140323.png",
       "job": "svc1",
+      "age": 45,
       "rel": "o",
       "st": "s",
-      "age": 45,
       "exp": "new",
-      "status": "available",
-      "file": "cvs/philippines/MARY LETT BOBILES BALUYOT (1).pdf",
-      "photo": "cvs/photos/philippines-mary-lett-bobiles-baluyot-1-b.jpg"
+      "ref": "P-117",
+      "status": "available"
     }
   ]
 }
