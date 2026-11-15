@@ -569,7 +569,8 @@
       "exp": "new",
       "status": "available",
       "file": "cvs/bangladesh/1287.pdf",
-      "photo": "cvs/photos/bangladesh-1287-b.jpg"
+      "photo": "cvs/photos/bangladesh-1287-b.jpg",
+      "xd": 1
     },
     {
       "nat": "n2",
@@ -582,7 +583,8 @@
       "exp": "new",
       "status": "available",
       "file": "cvs/bangladesh/1360.pdf",
-      "photo": ""
+      "photo": "",
+      "xd": 1
     },
     {
       "nat": "n2",
@@ -594,6 +596,178 @@
       "status": "available",
       "file": "cvs/bangladesh/1383.pdf",
       "photo": "cvs/photos/bangladesh-1383-b.jpg"
+    },
+    {
+      "nat": "n2",
+      "name": "Date",
+      "ref": "B-121",
+      "job": "svc1",
+      "rel": "m",
+      "st": "m",
+      "age": 44,
+      "status": "available",
+      "file": "cvs/bangladesh/AKLIMA BEGUM - A00822913 (Skilled) CV.pdf",
+      "photo": ""
+    },
+    {
+      "nat": "n2",
+      "name": "Date",
+      "ref": "B-122",
+      "job": "svc1",
+      "rel": "m",
+      "st": "m",
+      "age": 44,
+      "status": "available",
+      "pp": "9f0e2c14b1c87ee4",
+      "file": "cvs/bangladesh/ASMA AKTER.pdf",
+      "photo": ""
+    },
+    {
+      "nat": "n2",
+      "name": "Date",
+      "ref": "B-123",
+      "job": "svc1",
+      "rel": "m",
+      "st": "s",
+      "age": 41,
+      "status": "available",
+      "pp": "83d8999cce357d92",
+      "file": "cvs/bangladesh/JANU=A14752150 CV.pdf",
+      "photo": "cvs/photos/bangladesh-janu-a14752150-cv-b.jpg"
+    },
+    {
+      "nat": "n2",
+      "name": "Date",
+      "ref": "B-124",
+      "job": "svc1",
+      "rel": "m",
+      "st": "m",
+      "age": 42,
+      "status": "available",
+      "file": "cvs/bangladesh/LUCKY AKTER - A02164523 (Skilled) CV.pdf",
+      "photo": ""
+    },
+    {
+      "nat": "n2",
+      "name": "Date",
+      "ref": "B-125",
+      "job": "svc1",
+      "rel": "o",
+      "st": "m",
+      "age": 39,
+      "status": "available",
+      "file": "cvs/bangladesh/MADABY RANI MANDOL - A15291360 (Skilled) CV.pdf",
+      "photo": ""
+    },
+    {
+      "nat": "n2",
+      "name": "Date",
+      "ref": "B-126",
+      "job": "svc1",
+      "rel": "m",
+      "st": "m",
+      "age": 41,
+      "status": "available",
+      "file": "cvs/bangladesh/MOSSA TASLIMA BEGUM - A19407781 (NEW).pdf",
+      "photo": ""
+    },
+    {
+      "nat": "n2",
+      "name": "Date",
+      "ref": "B-127",
+      "job": "svc1",
+      "rel": "m",
+      "st": "m",
+      "age": 39,
+      "status": "available",
+      "pp": "963bd0d1bccce1a8",
+      "file": "cvs/bangladesh/MST KHADIJA =A21256341.pdf",
+      "photo": "cvs/photos/bangladesh-mst-khadija-a21256341-b.jpg"
+    },
+    {
+      "nat": "n2",
+      "name": "Date",
+      "ref": "B-128",
+      "job": "svc1",
+      "rel": "m",
+      "st": "m",
+      "age": 35,
+      "status": "available",
+      "file": "cvs/bangladesh/MST MONJUARA BEGUM - A12772964 (Skilled) CV.pdf",
+      "photo": ""
+    },
+    {
+      "nat": "n2",
+      "name": "Date",
+      "ref": "B-129",
+      "job": "svc1",
+      "rel": "m",
+      "st": "m",
+      "age": 43,
+      "status": "available",
+      "file": "cvs/bangladesh/NAZMA BEGUM- EM 0454499 (Skilled) CV.pdf",
+      "photo": ""
+    },
+    {
+      "nat": "n2",
+      "name": "Date",
+      "ref": "B-130",
+      "job": "svc1",
+      "rel": "m",
+      "st": "m",
+      "age": 42,
+      "status": "available",
+      "file": "cvs/bangladesh/PARI BANU - A05476790 (Skilled) CV.pdf",
+      "photo": ""
+    },
+    {
+      "nat": "n2",
+      "name": "Date",
+      "ref": "B-131",
+      "job": "svc1",
+      "rel": "o",
+      "st": "m",
+      "age": 42,
+      "status": "available",
+      "file": "cvs/bangladesh/PURNIMA MALLICK - B00292350 (Skilled) CV.pdf",
+      "photo": ""
+    },
+    {
+      "nat": "n2",
+      "name": "Date",
+      "ref": "B-132",
+      "job": "svc1",
+      "rel": "m",
+      "st": "m",
+      "age": 36,
+      "status": "available",
+      "file": "cvs/bangladesh/REHENA - A22784679 (Skilled) CV.pdf",
+      "photo": ""
+    },
+    {
+      "nat": "n2",
+      "name": "Date",
+      "ref": "B-133",
+      "job": "svc1",
+      "rel": "o",
+      "st": "m",
+      "age": 38,
+      "status": "available",
+      "file": "cvs/bangladesh/RITA KARMAKAR - A08236593 (Skilled) CV.pdf",
+      "photo": "cvs/photos/bangladesh-rita-karmakar-a08236593-skilled-cv-b.jpg"
+    },
+    {
+      "nat": "n2",
+      "name": "Date",
+      "ref": "B-134",
+      "job": "svc1",
+      "rel": "m",
+      "st": "m",
+      "age": 31,
+      "status": "available",
+      "pp": "28123eed4bbd1849",
+      "file": "cvs/bangladesh/TANIA AKTER=A23259077.pdf",
+      "photo": ""
     }
   ]
 }
