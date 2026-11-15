@@ -208,7 +208,8 @@ def exp_from_text(t):
     if i >= 0:
         sec = t[i + 19:i + 360]
         sec = re.split(r"EMERGENCY|NEXT\s+OF\s+KIN", sec)[0]
-        if re.search(r"(?:COUNTRY|PERIOD)[ \t:\-]*(?:NIL|NONE|NO|N/A|NA|FRESH)(?![A-Z])", sec):
+        if re.search(r"(?:COUNTRY|PERIOD)[ \t:\-]*(?:NIL|NONE|NO|N/A|NA|FRESH)(?![A-Z])", sec) or \
+                re.search(r"\bF[IR]{1,2}ST[\s\-]*TIM\w*|FIRSTIM\w*|\bNEW\b|\bNIL\b|\bNONE\b", sec):
             return "new"
         if re.search(r"\b(19|20)\d{2}\b|\d\s*YEARS?|\d\s*YRS|\d\s*MONTHS?|" + COUNTRIES +
                      r"|\bS[AO]U?D[IY]A?\b|JEDDAH|JIDDAH|RIYADH|RIYAD\b|DAMMAM|MAKKAH|MECCA|MADINA|MEDINA|DOHA|MUSCAT|BEIRUT", sec):
@@ -218,7 +219,7 @@ def exp_from_text(t):
         for ln in sec.split("\n")[1:]:
             toks = re.findall(r"[A-Z]+", ln)
             if len(toks) >= 2 and difflib.SequenceMatcher(None, toks[0], "COUNTRY").ratio() >= 0.6 and \
-                    any(len(x) >= 4 and re.search(r"[AEIOU]", x) and x not in ("COUNTRY", "PERIOD") for x in toks[1:]):
+                    any(len(x) >= 4 and re.search(r"[AEIOU]", x) and x not in ("COUNTRY", "PERIOD", "FIRST", "TIMER", "TIME", "NEW", "NONE", "NIL", "WORKER") for x in toks[1:]):
                 return "prev"
     if re.search(r"\bF[IR]{1,2}ST[\s\-]*TIM\w*|FIRSTIM\w*|FRESH\s+(?:FROM|ARRIVAL|CANDIDATE)|NEW\s+ARRIVAL", t):
         return "new"
@@ -231,6 +232,18 @@ def exp_from_text(t):
         if re.search(r"\b(NIL|NONE|NO|N/A)\b", row):
             return "new"
     return None
+
+
+def exp_explicit_new(t):
+    """true لو جدول الخبرة مكتوب فيه صراحةً FIRST TIMER / NIL / NONE / NO (دليل قاطع على أول مرة)."""
+    i = t.upper().find("PREVIOUS EMPLOYMENT")
+    if i < 0:
+        return False
+    sec = re.split(r"EMERGENCY|NEXT\s+OF\s+KIN", t.upper()[i + 19:i + 360])[0]
+    if re.search(r"\b(19|20)\d{2}\b|\d\s*YEARS?|\d\s*YRS|\d\s*MONTHS?|" + COUNTRIES, sec):
+        return False
+    return bool(re.search(r"(?:COUNTRY|PERIOD)[ \t:\-]*(?:NIL|NONE|NO|N/A|NA|FRESH)(?![A-Z])|"
+                          r"\bF[IR]{1,2}ST[\s\-]*TIM\w*|FIRSTIM\w*|\bNIL\b|\bNONE\b", sec))
 
 
 def job_from_words(t):
@@ -581,6 +594,27 @@ def main():
             if e2 == "prev":
                 print("تصحيح الخبرة (لها دولة/مدة في جدول الخبرة): %s" % w.get("name"))
                 w["exp"] = "prev"
+        # تصحيح (مرة واحدة): سيرة اتسجّلت "خبرة" بالغلط وجدول الخبرة فيه صراحةً FIRST TIMER / NIL → تتصحح لـ "أول مرة"
+        if pdf and os.path.isfile(pdf) and w.get("exp") == "prev" and not w.get("xe"):
+            lay3 = read_text_layer(pdf)
+            ev, checked = False, False
+            if lay3:
+                ev, checked = exp_explicit_new(lay3), True
+            elif recheck_budget[0] > 0:
+                recheck_budget[0] -= 1
+                checked = True
+                tmp5 = tempfile.mkdtemp()
+                try:
+                    img5 = render_page(pdf, tmp5)
+                    ev = exp_explicit_new(ocr_text(img5)) if img5 else False
+                finally:
+                    shutil.rmtree(tmp5, ignore_errors=True)
+            if checked:
+                w["xe"] = 1
+                changed = True
+            if ev:
+                print("تصحيح الخبرة (مكتوب First timer): %s" % w.get("name"))
+                w["exp"] = "new"
         # اسم مأخوذ من اسم الملف (رقم أو "CV ..") → نحاول قراءته من نص الـ PDF
         stem = os.path.splitext(os.path.basename(str(w.get("file") or "")))[0]
         nm = str(w.get("name") or "")
