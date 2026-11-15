@@ -14,7 +14,8 @@
       "status": "available",
       "pp": "ee21b688296d6276",
       "xd": 1,
-      "xc": 1
+      "xc": 1,
+      "xe": 1
     },
     {
       "name": "Callen Bosibori Nyabuto",
@@ -30,7 +31,8 @@
       "status": "available",
       "pp": "48bf97d263f616d6",
       "xd": 1,
-      "xc": 1
+      "xc": 1,
+      "xe": 1
     },
     {
       "name": "Eddah Walowe Kitolome",
@@ -45,7 +47,8 @@
       "ref": "K-103",
       "status": "available",
       "pp": "d473040917b377df",
-      "xc": 1
+      "xc": 1,
+      "xe": 1
     },
     {
       "name": "Elizabeth Kemunto Tirimba",
@@ -60,7 +63,8 @@
       "ref": "K-104",
       "status": "available",
       "pp": "4008aa6fb50b4d22",
-      "xc": 1
+      "xc": 1,
+      "xe": 1
     },
     {
       "name": "Esther Nanjala Barasa",
@@ -76,7 +80,8 @@
       "status": "available",
       "pp": "720dceb12c9605b5",
       "xd": 1,
-      "xc": 1
+      "xc": 1,
+      "xe": 1
     },
     {
       "name": "Janet Shidhan Kazungu",
@@ -91,7 +96,8 @@
       "ref": "K-106",
       "status": "available",
       "pp": "89bbbf24f6357018",
-      "xc": 1
+      "xc": 1,
+      "xe": 1
     },
     {
       "name": "Khaira Swalehe Kodi",
@@ -107,7 +113,8 @@
       "status": "available",
       "pp": "d23b53e840baff88",
       "xd": 1,
-      "xc": 1
+      "xc": 1,
+      "xe": 1
     },
     {
       "name": "Margaret Murugi Njoki",
@@ -122,7 +129,8 @@
       "ref": "K-108",
       "status": "available",
       "pp": "d7cf24368a75b178",
-      "xc": 1
+      "xc": 1,
+      "xe": 1
     },
     {
       "name": "Mesalimu Mwinyi Mwakileo",
@@ -137,7 +145,8 @@
       "ref": "K-109",
       "status": "hidden",
       "pp": "a766611e93d2831b",
-      "xc": 1
+      "xc": 1,
+      "xe": 1
     },
     {
       "name": "Lydiah Monyenye Omari",
@@ -152,7 +161,8 @@
       "ref": "K-110",
       "status": "hidden",
       "pp": "30eff372d8400c23",
-      "xc": 1
+      "xc": 1,
+      "xe": 1
     },
     {
       "name": "Mwanakombo Juma Kidato",
@@ -167,7 +177,8 @@
       "ref": "K-111",
       "status": "available",
       "pp": "667c750698950dc9",
-      "xc": 1
+      "xc": 1,
+      "xe": 1
     },
     {
       "name": "Stella Sada Jackson",
@@ -182,7 +193,8 @@
       "ref": "K-112",
       "status": "available",
       "pp": "d6aed780174e46b8",
-      "xc": 1
+      "xc": 1,
+      "xe": 1
     }
   ]
 }

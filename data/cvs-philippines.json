@@ -27,7 +27,8 @@
       "exp": "prev",
       "ref": "P-102",
       "status": "available",
-      "xc": 1
+      "xc": 1,
+      "xe": 1
     },
     {
       "name": "MARY LETT BOBILES BALUYOT",
@@ -55,7 +56,8 @@
       "exp": "prev",
       "ref": "P-105",
       "status": "hidden",
-      "xc": 1
+      "xc": 1,
+      "xe": 1
     },
     {
       "name": "MARILOU ADANO VERDADERO",
@@ -98,7 +100,8 @@
       "ref": "P-108",
       "status": "available",
       "xc": 1,
-      "xd": 1
+      "xd": 1,
+      "xe": 1
     },
     {
       "name": "SHERWIN RIVERA NAVALES",
@@ -112,7 +115,8 @@
       "exp": "prev",
       "ref": "P-109",
       "status": "available",
-      "xc": 1
+      "xc": 1,
+      "xe": 1
     },
     {
       "name": "RODEL APANI GARCIA",
@@ -126,7 +130,8 @@
       "exp": "prev",
       "ref": "P-111",
       "status": "available",
-      "xc": 1
+      "xc": 1,
+      "xe": 1
     },
     {
       "name": "FERRERAS ROLAND ESTEVES",
@@ -154,7 +159,8 @@
       "exp": "prev",
       "ref": "P-113",
       "status": "available",
-      "xc": 1
+      "xc": 1,
+      "xe": 1
     },
     {
       "name": "ESMAIL A. AGUILAR",
@@ -182,7 +188,8 @@
       "exp": "prev",
       "ref": "P-115",
       "status": "hidden",
-      "xc": 1
+      "xc": 1,
+      "xe": 1
     },
     {
       "name": "CV P-116",
