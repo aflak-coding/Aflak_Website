@@ -2436,6 +2436,20 @@
       "status": "available",
       "pp": "d26465bc2ff26846",
       "xc": 1
+    },
+    {
+      "nat": "n4",
+      "name": "Aynalem Belayneh Bekele",
+      "ref": "E-262",
+      "job": "svc1",
+      "rel": "o",
+      "st": "s",
+      "age": 21,
+      "exp": "new",
+      "status": "available",
+      "pp": "182ffffbd92186f3",
+      "file": "cvs/ethiopia/aynalem-belayneh-bekele.pdf",
+      "photo": "cvs/photos/ethiopia-aynalem-belayneh-bekele-b.jpg"
     }
   ]
 }

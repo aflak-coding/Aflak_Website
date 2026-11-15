@@ -541,7 +541,8 @@
       "exp": "prev",
       "status": "available",
       "file": "cvs/bangladesh/1241.pdf",
-      "photo": ""
+      "photo": "",
+      "xc": 1
     },
     {
       "nat": "n2",
@@ -554,7 +555,8 @@
       "exp": "prev",
       "status": "available",
       "file": "cvs/bangladesh/1368.pdf",
-      "photo": "cvs/photos/bangladesh-1368-b.jpg"
+      "photo": "cvs/photos/bangladesh-1368-b.jpg",
+      "xc": 1
     }
   ]
 }
