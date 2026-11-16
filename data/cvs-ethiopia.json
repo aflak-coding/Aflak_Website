@@ -28,7 +28,8 @@
       "ref": "E-102",
       "status": "hidden",
       "pp": "9125ad4ae45a3441",
-      "xc": 1
+      "xc": 1,
+      "xe": 1
     },
     {
       "name": "Alemnesh Asefa Negese",
@@ -715,7 +716,8 @@
       "status": "available",
       "pp": "38f0e12839eefd65",
       "xc": 1,
-      "xd": 1
+      "xd": 1,
+      "xe": 1
     },
     {
       "name": "Gebremeskel",
@@ -1479,7 +1481,8 @@
       "status": "available",
       "pp": "a9629c4f76a54c96",
       "xc": 1,
-      "xd": 1
+      "xd": 1,
+      "xe": 1
     },
     {
       "name": "Zinet Awol Seid",
@@ -1524,7 +1527,8 @@
       "ref": "E-200",
       "status": "hidden",
       "pp": "3e64bc14539d5aee",
-      "xc": 1
+      "xc": 1,
+      "xe": 1
     },
     {
       "name": "Kubra Mohammed Ahmed",
@@ -1737,7 +1741,8 @@
       "status": "hidden",
       "pp": "319f3e0babadfda9",
       "xc": 1,
-      "xd": 1
+      "xd": 1,
+      "xe": 1
     },
     {
       "name": "Hawa Yimam Abdela",
@@ -1752,7 +1757,8 @@
       "ref": "E-215",
       "status": "hidden",
       "pp": "09677fca9328e2c2",
-      "xc": 1
+      "xc": 1,
+      "xe": 1
     },
     {
       "name": "Hikma Seid Ebrahim",
@@ -1828,7 +1834,8 @@
       "status": "hidden",
       "pp": "4bd488c223b9aecb",
       "xc": 1,
-      "xd": 1
+      "xd": 1,
+      "xe": 1
     },
     {
       "name": "Meka Ali Hussen",
@@ -1891,7 +1898,8 @@
       "status": "available",
       "pp": "db79ff853dfc9ba0",
       "xc": 1,
-      "xd": 1
+      "xd": 1,
+      "xe": 1
     },
     {
       "name": "Rahmet Trshome Kebede",
@@ -2058,7 +2066,8 @@
       "status": "hidden",
       "pp": "815eba4ed89be950",
       "xc": 1,
-      "xd": 1
+      "xd": 1,
+      "xe": 1
     },
     {
       "name": "Wdiye Assenu Ali",
@@ -2073,7 +2082,8 @@
       "ref": "E-237",
       "status": "hidden",
       "pp": "56e8eb974075724c",
-      "xc": 1
+      "xc": 1,
+      "xe": 1
     },
     {
       "name": "Yadeni Etefa Oljira",
@@ -2149,7 +2159,8 @@
       "status": "hidden",
       "pp": "f195b6d01ff8781e",
       "xc": 1,
-      "xd": 1
+      "xd": 1,
+      "xe": 1
     },
     {
       "name": "Bereket Kassa Tegegn",
@@ -2180,7 +2191,8 @@
       "status": "hidden",
       "pp": "f6d223854f64adda",
       "xc": 1,
-      "xd": 1
+      "xd": 1,
+      "xe": 1
     },
     {
       "name": "Seada Seid Aragaw",
@@ -2195,7 +2207,8 @@
       "ref": "E-245",
       "status": "hidden",
       "pp": "8499777e79f083e0",
-      "xc": 1
+      "xc": 1,
+      "xe": 1
     },
     {
       "name": "Suada Abadura Abamalka",
@@ -2210,7 +2223,8 @@
       "ref": "E-246",
       "status": "hidden",
       "pp": "6931bd9ff927a703",
-      "xc": 1
+      "xc": 1,
+      "xe": 1
     },
     {
       "name": "Zeytu Abdo Ahed",
@@ -2225,7 +2239,8 @@
       "ref": "E-247",
       "status": "available",
       "pp": "be15dc8f5c333b2a",
-      "xc": 1
+      "xc": 1,
+      "xe": 1
     },
     {
       "name": "Alimet Siraj Muhammed",
@@ -2240,7 +2255,8 @@
       "ref": "E-248",
       "status": "reserved",
       "pp": "36a302967dffaf2a",
-      "xc": 1
+      "xc": 1,
+      "xe": 1
     },
     {
       "name": "Ayal Kemal Muhammed",
@@ -2255,7 +2271,8 @@
       "ref": "E-249",
       "status": "available",
       "pp": "21ff1d7e17ef3186",
-      "xc": 1
+      "xc": 1,
+      "xd": 1
     },
     {
       "name": "Hayat Seid Ali",
@@ -2345,7 +2362,8 @@
       "ref": "E-255",
       "status": "available",
       "pp": "6bd3ef0a41ba178d",
-      "xc": 1
+      "xc": 1,
+      "xd": 1
     },
     {
       "name": "Meka Ayalew Assen",
@@ -2360,7 +2378,8 @@
       "ref": "E-256",
       "status": "available",
       "pp": "9e1cca4f5fdbedfb",
-      "xc": 1
+      "xc": 1,
+      "xd": 1
     },
     {
       "name": "Meseret Demis Birhane",
@@ -2435,7 +2454,8 @@
       "ref": "E-261",
       "status": "hidden",
       "pp": "d26465bc2ff26846",
-      "xc": 1
+      "xc": 1,
+      "xd": 1
     },
     {
       "name": "Aynalem Belayneh Bekele",
@@ -2451,6 +2471,131 @@
       "status": "available",
       "pp": "182ffffbd92186f3",
       "xd": 1
+    },
+    {
+      "nat": "n4",
+      "name": "Alayech Sileshi Atirsaw",
+      "ref": "E-263",
+      "job": "svc1",
+      "rel": "o",
+      "st": "s",
+      "age": 26,
+      "exp": "new",
+      "status": "available",
+      "pp": "55a1f18ba9e9c4fc",
+      "file": "cvs/ethiopia/ALAYECH   SILESHI   ATIRSAW.pdf",
+      "photo": "cvs/photos/ethiopia-alayech-sileshi-atirsaw-b.jpg"
+    },
+    {
+      "nat": "n4",
+      "name": "Aminat Ahmed Assen",
+      "ref": "E-264",
+      "job": "svc1",
+      "rel": "m",
+      "st": "s",
+      "age": 23,
+      "exp": "new",
+      "status": "available",
+      "pp": "4f07fd1c9adb2b06",
+      "file": "cvs/ethiopia/AMINAT  AHMED  ASSEN1.pdf",
+      "photo": "cvs/photos/ethiopia-aminat-ahmed-assen1-b.jpg"
+    },
+    {
+      "nat": "n4",
+      "name": "Fatuma Endris Wussen",
+      "ref": "E-265",
+      "job": "svc1",
+      "rel": "m",
+      "st": "s",
+      "exp": "new",
+      "status": "available",
+      "pp": "617393f091d5fe61",
+      "file": "cvs/ethiopia/FATUMA  ENDRIS  WUSSEN.pdf",
+      "photo": "cvs/photos/ethiopia-fatuma-endris-wussen-b.jpg"
+    },
+    {
+      "nat": "n4",
+      "name": "Hawa Abebe Hussen",
+      "ref": "E-266",
+      "job": "svc1",
+      "rel": "m",
+      "st": "s",
+      "age": 23,
+      "exp": "new",
+      "status": "available",
+      "pp": "46b3c0e30c734240",
+      "file": "cvs/ethiopia/HAWA  ABEBE  HUSSEN.pdf",
+      "photo": "cvs/photos/ethiopia-hawa-abebe-hussen-b.jpg"
+    },
+    {
+      "nat": "n4",
+      "name": "Lubaba Muhamed Yesuf",
+      "ref": "E-267",
+      "job": "svc1",
+      "rel": "m",
+      "st": "s",
+      "age": 28,
+      "exp": "new",
+      "status": "available",
+      "pp": "724b394cc188f2a0",
+      "file": "cvs/ethiopia/LUBABA  MUHAMED  YESUF.pdf",
+      "photo": "cvs/photos/ethiopia-lubaba-muhamed-yesuf-b.jpg"
+    },
+    {
+      "nat": "n4",
+      "name": "Meka Jemal Dawud",
+      "ref": "E-268",
+      "job": "svc1",
+      "rel": "m",
+      "st": "s",
+      "age": 26,
+      "exp": "new",
+      "status": "available",
+      "pp": "6ba554a4f4632480",
+      "file": "cvs/ethiopia/MEKA  JEMAL  DAWUD1.pdf",
+      "photo": "cvs/photos/ethiopia-meka-jemal-dawud1-b.jpg"
+    },
+    {
+      "nat": "n4",
+      "name": "Neima Yesuf Beshr",
+      "ref": "E-269",
+      "job": "svc1",
+      "rel": "m",
+      "st": "s",
+      "age": 23,
+      "exp": "new",
+      "status": "available",
+      "pp": "cf8347c289c8f52b",
+      "file": "cvs/ethiopia/NEIMA  YESUF  BESHR.pdf",
+      "photo": "cvs/photos/ethiopia-neima-yesuf-beshr-b.jpg"
+    },
+    {
+      "nat": "n4",
+      "name": "Zebiba Seyid Abera",
+      "ref": "E-270",
+      "job": "svc1",
+      "rel": "m",
+      "st": "s",
+      "age": 26,
+      "exp": "new",
+      "status": "available",
+      "pp": "573f3dfd22ebdd6e",
+      "file": "cvs/ethiopia/share-1794823174949-ZEBIBA-SEYID-ABERA.pdf",
+      "photo": "cvs/photos/ethiopia-share-1794823174949-zebiba-seyid-abera-b.jpg"
+    },
+    {
+      "nat": "n4",
+      "name": "Zehara Ali Mekonen",
+      "ref": "E-271",
+      "job": "svc1",
+      "rel": "m",
+      "st": "s",
+      "age": 25,
+      "exp": "new",
+      "status": "available",
+      "pp": "bb4c6cccaeddd5c3",
+      "file": "cvs/ethiopia/share-1794823371338-ZEHARA-ALI-MEKONEN.pdf",
+      "photo": "cvs/photos/ethiopia-share-1794823371338-zehara-ali-mekonen-b.jpg"
     }
   ]
 }
