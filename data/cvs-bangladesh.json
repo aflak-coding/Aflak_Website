@@ -845,7 +845,8 @@
       "exp": "new",
       "status": "available",
       "file": "cvs/bangladesh/1464.pdf",
-      "photo": "cvs/photos/bangladesh-1464-b.jpg"
+      "photo": "cvs/photos/bangladesh-1464-b.jpg",
+      "xd": 1
     },
     {
       "nat": "n2",
@@ -858,7 +859,9 @@
       "exp": "prev",
       "status": "available",
       "file": "cvs/bangladesh/A04082441 S-1036.pdf",
-      "photo": "cvs/photos/bangladesh-a04082441-s-1036-b.jpg"
+      "photo": "cvs/photos/bangladesh-a04082441-s-1036-b.jpg",
+      "xc": 1,
+      "xe": 1
     },
     {
       "nat": "n2",
@@ -871,7 +874,9 @@
       "exp": "prev",
       "status": "available",
       "file": "cvs/bangladesh/A05375556 A-966.pdf",
-      "photo": "cvs/photos/bangladesh-a05375556-a-966-b.jpg"
+      "photo": "cvs/photos/bangladesh-a05375556-a-966-b.jpg",
+      "xc": 1,
+      "xe": 1
     },
     {
       "nat": "n2",
@@ -884,7 +889,9 @@
       "exp": "prev",
       "status": "available",
       "file": "cvs/bangladesh/A05964141 A-1036.pdf",
-      "photo": "cvs/photos/bangladesh-a05964141-a-1036-b.jpg"
+      "photo": "cvs/photos/bangladesh-a05964141-a-1036-b.jpg",
+      "xc": 1,
+      "xe": 1
     },
     {
       "nat": "n2",
@@ -897,7 +904,9 @@
       "exp": "prev",
       "status": "available",
       "file": "cvs/bangladesh/A15120340 A-923.pdf",
-      "photo": "cvs/photos/bangladesh-a15120340-a-923-b.jpg"
+      "photo": "cvs/photos/bangladesh-a15120340-a-923-b.jpg",
+      "xc": 1,
+      "xe": 1
     },
     {
       "nat": "n2",
@@ -910,7 +919,9 @@
       "exp": "prev",
       "status": "available",
       "file": "cvs/bangladesh/A17578419 A-948.pdf",
-      "photo": "cvs/photos/bangladesh-a17578419-a-948-b.jpg"
+      "photo": "cvs/photos/bangladesh-a17578419-a-948-b.jpg",
+      "xc": 1,
+      "xe": 1
     },
     {
       "nat": "n2",
@@ -923,7 +934,9 @@
       "exp": "prev",
       "status": "available",
       "file": "cvs/bangladesh/A20169259 A-1038.pdf",
-      "photo": "cvs/photos/bangladesh-a20169259-a-1038-b.jpg"
+      "photo": "cvs/photos/bangladesh-a20169259-a-1038-b.jpg",
+      "xc": 1,
+      "xe": 1
     },
     {
       "nat": "n2",
@@ -936,7 +949,22 @@
       "exp": "prev",
       "status": "available",
       "file": "cvs/bangladesh/A23562497 S-1033.pdf",
-      "photo": "cvs/photos/bangladesh-a23562497-s-1033-b.jpg"
+      "photo": "cvs/photos/bangladesh-a23562497-s-1033-b.jpg",
+      "xc": 1,
+      "xe": 1
+    },
+    {
+      "nat": "n2",
+      "name": "Jahanara",
+      "ref": "B-139",
+      "job": "svc1",
+      "rel": "m",
+      "st": "s",
+      "age": 34,
+      "exp": "prev",
+      "status": "available",
+      "file": "cvs/bangladesh/a06624516-a.pdf",
+      "photo": "cvs/photos/bangladesh-a06624516-a-b.jpg"
     }
   ]
 }
