@@ -82,8 +82,7 @@
       "exp": "prev",
       "ref": "B-107",
       "status": "hidden",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "Mst Somi Begum",
@@ -97,8 +96,7 @@
       "exp": "prev",
       "ref": "B-108",
       "status": "hidden",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "Jamela Khatun",
@@ -112,8 +110,7 @@
       "exp": "prev",
       "ref": "B-109",
       "status": "available",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "Mosammad Himu Akter",
@@ -127,8 +124,7 @@
       "exp": "prev",
       "ref": "B-110",
       "status": "hidden",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "Lipy Akter",
@@ -142,8 +138,7 @@
       "exp": "prev",
       "ref": "B-111",
       "status": "available",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "Nusrat Arifin Papiya",
@@ -157,8 +152,7 @@
       "exp": "prev",
       "ref": "B-112",
       "status": "hidden",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "Mst Amena Begum",
@@ -172,8 +166,7 @@
       "exp": "prev",
       "ref": "B-113",
       "status": "available",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "Rabeya Begum",
@@ -187,8 +180,7 @@
       "exp": "prev",
       "ref": "S-1029",
       "status": "available",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "Mst Lipi Khatun",
@@ -202,8 +194,7 @@
       "exp": "prev",
       "ref": "A-715",
       "status": "available",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "Sultana Parvin",
@@ -217,8 +208,7 @@
       "exp": "prev",
       "ref": "S-1026",
       "status": "available",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "Mst Monjila Akter Koli",
@@ -232,8 +222,7 @@
       "exp": "prev",
       "ref": "S-964",
       "status": "available",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "Mst Marzina Akter",
@@ -247,8 +236,7 @@
       "exp": "prev",
       "ref": "S-1028",
       "status": "available",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "Manjo Begum",
@@ -262,8 +250,7 @@
       "exp": "prev",
       "ref": "S-1038",
       "status": "available",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "Asma Begum",
@@ -277,8 +264,7 @@
       "exp": "prev",
       "ref": "S-1034",
       "status": "hidden",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "Mst Munni",
@@ -292,8 +278,7 @@
       "exp": "prev",
       "ref": "S-941",
       "status": "available",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "Mst Ajama",
@@ -307,8 +292,7 @@
       "exp": "prev",
       "ref": "A-859",
       "status": "hidden",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "Mst Rojina Begum",
@@ -350,8 +334,7 @@
       "exp": "prev",
       "ref": "A-699",
       "status": "available",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "Mst Zolakha Begum",
@@ -365,8 +348,7 @@
       "exp": "prev",
       "ref": "A-895",
       "status": "available",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "Paruma",
@@ -478,8 +460,7 @@
       "exp": "prev",
       "ref": "A-841",
       "status": "available",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "Shafia",
@@ -493,8 +474,7 @@
       "exp": "prev",
       "ref": "S-938",
       "status": "available",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "Most Popi Begum",
@@ -508,8 +488,7 @@
       "exp": "prev",
       "ref": "S-915",
       "status": "available",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "Eyaran Nesa",
@@ -549,8 +528,7 @@
       "exp": "prev",
       "ref": "B-116",
       "status": "available",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "Shima Akter",
@@ -564,8 +542,7 @@
       "exp": "prev",
       "ref": "B-117",
       "status": "available",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "Mst Bith Akter",
@@ -585,6 +562,7 @@
       "name": "Mst Firoza Begum",
       "nat": "n2",
       "file": "cvs/bangladesh/1360.pdf",
+      "photo": "/cvs/photos/lqth-shashh-2026-11-18-103720.png",
       "job": "svc1",
       "age": 40,
       "rel": "m",
@@ -592,8 +570,7 @@
       "exp": "new",
       "ref": "B-119",
       "status": "available",
-      "xd": 1,
-      "photo": ""
+      "xd": 1
     },
     {
       "name": "Mstrokyeakharun",
@@ -618,8 +595,7 @@
       "exp": "prev",
       "ref": "B-121",
       "status": "available",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "ASMA AKTER",
@@ -634,8 +610,7 @@
       "ref": "B-122",
       "status": "available",
       "pp": "9f0e2c14b1c87ee4",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "JANU",
@@ -650,8 +625,7 @@
       "ref": "B-123",
       "status": "available",
       "pp": "83d8999cce357d92",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "LUCKY AKTER",
@@ -665,8 +639,7 @@
       "exp": "prev",
       "ref": "B-124",
       "status": "available",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "MADABY RANI MANDOL",
@@ -680,8 +653,7 @@
       "exp": "prev",
       "ref": "B-125",
       "status": "available",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "MOSSA TASLIMA BEGUM",
@@ -695,8 +667,7 @@
       "exp": "prev",
       "ref": "B-126",
       "status": "available",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "MST KHADIJA",
@@ -711,8 +682,7 @@
       "ref": "B-127",
       "status": "available",
       "pp": "963bd0d1bccce1a8",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "MST MONJUARA BEGUM",
@@ -726,8 +696,7 @@
       "exp": "prev",
       "ref": "B-128",
       "status": "available",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "NAZMA BEGUM",
@@ -741,8 +710,7 @@
       "exp": "prev",
       "ref": "B-129",
       "status": "available",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "PARI BANU",
@@ -756,8 +724,7 @@
       "exp": "prev",
       "ref": "B-130",
       "status": "available",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "PURNIMA MALLICK",
@@ -771,8 +738,7 @@
       "exp": "prev",
       "ref": "B-131",
       "status": "available",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "REHENA",
@@ -786,8 +752,7 @@
       "exp": "prev",
       "ref": "B-132",
       "status": "available",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "RITA KARMAKAR",
@@ -801,8 +766,7 @@
       "exp": "prev",
       "ref": "B-133",
       "status": "available",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
       "name": "TANIA AKTER",
@@ -817,21 +781,19 @@
       "ref": "B-134",
       "status": "available",
       "pp": "28123eed4bbd1849",
-      "xc": 1,
-      "xe": 1
+      "xc": 1
     },
     {
-      "nat": "n2",
       "name": "Mst Sima Akter",
-      "ref": "B-135",
+      "nat": "n2",
+      "file": "cvs/bangladesh/1446.pdf",
       "job": "svc1",
+      "age": 26,
       "rel": "m",
       "st": "m",
-      "age": 26,
       "exp": "new",
-      "status": "available",
-      "file": "cvs/bangladesh/1446.pdf",
-      "photo": ""
+      "ref": "B-135",
+      "status": "available"
     }
   ]
 }
