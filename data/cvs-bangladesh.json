@@ -964,7 +964,9 @@
       "exp": "prev",
       "status": "available",
       "file": "cvs/bangladesh/a06624516-a.pdf",
-      "photo": "cvs/photos/bangladesh-a06624516-a-b.jpg"
+      "photo": "cvs/photos/bangladesh-a06624516-a-b.jpg",
+      "xc": 1,
+      "xe": 1
     }
   ]
 }
