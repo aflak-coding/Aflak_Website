@@ -99,6 +99,7 @@ content:
                 - { name: svc3, label: "طباخ / طباخة" }
                 - { name: svc4, label: "ممرضة منزلية" }
                 - { name: svc5, label: "مساعدة شخصية" }
+                - { name: svc7, label: "خياطة" }
           - name: age
             label: "العمر"
             type: number
@@ -204,6 +205,7 @@ content:
                 - { name: svc3, label: "طباخ / طباخة" }
                 - { name: svc4, label: "ممرضة منزلية" }
                 - { name: svc5, label: "مساعدة شخصية" }
+                - { name: svc7, label: "خياطة" }
           - name: age
             label: "العمر"
             type: number
@@ -309,6 +311,7 @@ content:
                 - { name: svc3, label: "طباخ / طباخة" }
                 - { name: svc4, label: "ممرضة منزلية" }
                 - { name: svc5, label: "مساعدة شخصية" }
+                - { name: svc7, label: "خياطة" }
           - name: age
             label: "العمر"
             type: number
@@ -414,6 +417,7 @@ content:
                 - { name: svc3, label: "طباخ / طباخة" }
                 - { name: svc4, label: "ممرضة منزلية" }
                 - { name: svc5, label: "مساعدة شخصية" }
+                - { name: svc7, label: "خياطة" }
           - name: age
             label: "العمر"
             type: number
@@ -519,6 +523,7 @@ content:
                 - { name: svc3, label: "طباخ / طباخة" }
                 - { name: svc4, label: "ممرضة منزلية" }
                 - { name: svc5, label: "مساعدة شخصية" }
+                - { name: svc7, label: "خياطة" }
           - name: age
             label: "العمر"
             type: number
@@ -624,6 +629,7 @@ content:
                 - { name: svc3, label: "طباخ / طباخة" }
                 - { name: svc4, label: "ممرضة منزلية" }
                 - { name: svc5, label: "مساعدة شخصية" }
+                - { name: svc7, label: "خياطة" }
           - name: age
             label: "العمر"
             type: number

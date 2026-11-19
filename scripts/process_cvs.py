@@ -92,7 +92,8 @@ def title_name(stem):
 
 
 FN_JOB = {"maid": "svc1", "housemaid": "svc1", "domestic": "svc1", "driver": "svc2", "cook": "svc3", "chef": "svc3",
-          "nurse": "svc4", "caregiver": "svc4", "assistant": "svc5", "pa": "svc5"}
+          "nurse": "svc4", "caregiver": "svc4", "assistant": "svc5", "pa": "svc5",
+          "tailor": "svc7", "seamstress": "svc7", "sewing": "svc7", "tailoring": "svc7"}
 FN_EXP = {"new": "new", "fresh": "new", "first": "new", "firsttimer": "new", "exp": "prev", "experienced": "prev",
           "prev": "prev", "abroad": "prev"}
 FN_ST = {"single": "s", "married": "m", "divorced": "s", "widowed": "s", "widow": "s", "marrid": "m", "maried": "m"}
@@ -256,6 +257,8 @@ def job_from_words(t):
         return "svc3"
     if re.search(r"\bNURSE\b|ممرض", t):
         return "svc4"
+    if re.search(r"SEAMSTRESS|\bTAILOR(?:ING)?\b|\bSEWING\b|خياط", t):
+        return "svc7"
     return None
 
 
@@ -407,6 +410,8 @@ def parse_text(raw):
             out["job"] = "svc4"
         elif "ASSISTANT" in pos:
             out["job"] = "svc5"
+        elif re.search(r"SEAMSTRESS|TAILOR|SEWING", pos):
+            out["job"] = "svc7"
 
     if "job" not in out:
         j = job_from_words(t)
@@ -466,6 +471,8 @@ def _job_from_position(txt):
         return "svc4"
     if "ASSISTANT" in pos:
         return "svc5"
+    if re.search(r"SEAMSTRESS|TAILOR|SEWING", pos):
+        return "svc7"
     return None
 
 

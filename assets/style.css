@@ -591,7 +591,7 @@ html[lang="en"] .flag .nm::after{content:"View CVs \2192"}
 @media (prefers-reduced-motion:reduce){.logo-card::after{animation:none;display:none}}
 
 /* ===== v33: بحث كل الجنسيات + مشاركة النتائج + فلتر العمر من/إلى ===== */
-.all-nat{text-align:center;margin:18px 0 0}
+.all-nat{text-align:center;margin:18px 0 56px}
 .cv-age-in{display:flex;gap:6px}
 .cv-age-in input{width:72px;padding:10px 8px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:inherit;text-align:center}
 .cv-age-in input:focus{outline:2px solid var(--hero);outline-offset:1px}
@@ -605,3 +605,13 @@ html[lang="en"] .flag .nm::after{content:"View CVs \2192"}
 .cv-share .sh-of{color:var(--muted);font-weight:500}
 
 #cvDlgPick.cv-off,#cvDlgPick:disabled{opacity:.65;cursor:not-allowed;pointer-events:none}
+
+/* ===== v42: زر كل الجنسيات بخلفية الأعلام ===== */
+.btn-flags{position:relative;overflow:hidden;isolation:isolate;border:0;padding:0;min-width:min(100%,320px);min-height:52px;border-radius:14px;cursor:pointer;color:#fff;font:inherit;font-weight:800;box-shadow:0 6px 18px rgba(0,0,0,.18);transition:transform .15s,box-shadow .15s}
+.btn-flags:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.26)}
+.btn-flags:focus-visible{outline:3px solid var(--hero);outline-offset:3px}
+.btn-flags .bf-strip{position:absolute;inset:0;display:flex;direction:ltr;z-index:-2}
+.btn-flags .bf-strip svg{flex:1 1 0;min-width:0;height:100%;display:block}
+.btn-flags::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(10,20,30,.52)}
+.btn-flags .bf-t{display:block;padding:14px 28px;font-size:1.05rem;text-shadow:0 1px 4px rgba(0,0,0,.6)}
+@media (max-width:600px){.btn-flags{width:100%}.btn-flags .bf-t{padding:14px 16px}}
