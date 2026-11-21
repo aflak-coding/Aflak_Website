@@ -173,47 +173,6 @@
       "ref": "P-117",
       "status": "available",
       "xd": 1
-    },
-    {
-      "nat": "n3",
-      "name": "CV P-118",
-      "ref": "P-118",
-      "job": "svc1",
-      "rel": "m",
-      "st": "s",
-      "age": 28,
-      "exp": "prev",
-      "status": "available",
-      "pp": "7f20e6a89769779a",
-      "file": "cvs/philippines/whatsapp-image-2026-11-02-at-41331-pm-1.pdf",
-      "photo": "cvs/photos/philippines-whatsapp-image-2026-11-02-at-41331-pm-1-b.jpg"
-    },
-    {
-      "nat": "n3",
-      "name": "CV P-119",
-      "ref": "P-119",
-      "job": "svc1",
-      "rel": "o",
-      "st": "m",
-      "age": 49,
-      "exp": "new",
-      "status": "available",
-      "file": "cvs/philippines/whatsapp-image-2026-11-02-at-41331-pm.pdf",
-      "photo": "cvs/photos/philippines-whatsapp-image-2026-11-02-at-41331-pm-b.jpg",
-      "xd": 1
-    },
-    {
-      "nat": "n3",
-      "name": "CV P-120",
-      "ref": "P-120",
-      "job": "svc1",
-      "st": "s",
-      "age": 49,
-      "exp": "prev",
-      "status": "available",
-      "pp": "5b0c5112e2e95021",
-      "file": "cvs/philippines/whatsapp-image-2026-11-02-at-41335-pm-1.pdf",
-      "photo": "cvs/photos/philippines-whatsapp-image-2026-11-02-at-41335-pm-1-b.jpg"
     }
   ]
 }
