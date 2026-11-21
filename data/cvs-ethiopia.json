@@ -2607,43 +2607,43 @@
       "xd": 1
     },
     {
-      "nat": "n4",
       "name": "Kemeriya Jemal",
-      "ref": "E-272",
+      "nat": "n4",
+      "file": "cvs/ethiopia/kemeriya-jemal.pdf",
+      "photo": "/cvs/photos/lqth-shashh-2026-11-21-161233-1.png",
       "job": "svc1",
+      "age": 38,
       "rel": "m",
       "st": "m",
-      "age": 38,
       "exp": "prev",
-      "status": "available",
-      "file": "cvs/ethiopia/kemeriya-jemal.pdf",
-      "photo": ""
+      "ref": "E-272",
+      "status": "available"
     },
     {
-      "nat": "n4",
       "name": "Rahma Shiro",
-      "ref": "E-273",
+      "nat": "n4",
+      "file": "cvs/ethiopia/rahma-shiro.pdf",
+      "photo": "/cvs/photos/lqth-shashh-2026-11-21-161336.png",
       "job": "svc1",
+      "age": 38,
       "rel": "m",
       "st": "s",
-      "age": 38,
       "exp": "prev",
-      "status": "available",
-      "file": "cvs/ethiopia/rahma-shiro.pdf",
-      "photo": ""
+      "ref": "E-273",
+      "status": "available"
     },
     {
-      "nat": "n4",
       "name": "Zewde Akele",
-      "ref": "E-274",
+      "nat": "n4",
+      "file": "cvs/ethiopia/zewde-akele.pdf",
+      "photo": "/cvs/photos/lqth-shashh-2026-11-21-161421.png",
       "job": "svc1",
+      "age": 23,
       "rel": "o",
       "st": "s",
-      "age": 23,
       "exp": "new",
-      "status": "available",
-      "file": "cvs/ethiopia/zewde-akele.pdf",
-      "photo": ""
+      "ref": "E-274",
+      "status": "available"
     }
   ]
 }
