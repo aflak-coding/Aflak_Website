@@ -203,6 +203,11 @@ def exp_from_text(t):
     """prev = عندها خبرة خارجية، new = أول مرة. يرجع None لو غير واضح."""
     if re.search(r"EX[\s\-]*ABROAD", t):
         return "prev"
+    # قالب "توصّل": جدول COUNTRY / PROFESSION / FOR YEARS وتحته صف فيه دولة = خبرة سابقة
+    for m in re.finditer(r"COUNTRY\s+PROFESSION\s+FOR\s+YEARS?", t):
+        seg = t[m.end():m.end() + 160]
+        if re.search(COUNTRIES + r"|\bSAUDI\b|\bKSA\b|\bKUWAIT\b|\bQATAR\b|\bOMAN\b|\bUAE\b|\bDUBAI\b|\bBAHRAIN\b|\bLEBANON\b|\bJORDAN\b", seg):
+            return "prev"
     # جدول "PREVIOUS EMPLOYMENT ABROAD" أقوى دليل — نفحصه قبل كلمة FIRST TIME
     # (لأن FIRST TIME مكتوبة كعنوان صف في جدول اللغات بقالب السير الإثيوبية)
     i = t.find("PREVIOUS EMPLOYMENT")
@@ -509,7 +514,9 @@ def detect(text):
     e = exp_from_text(t)
     if e:
         out["exp"] = e
-    if re.search(r"\b(?:MUSLIM|ISLAM|ISLAMIC)\b", t):
+    if re.search(r"\bNON[\s\-]*MUSLIMS?\b|\bNOT\s+MUSLIM\b|غير\s*مسلم", t):
+        out["rel"] = "o"
+    elif re.search(r"\b(?:MUSLIM|ISLAM|ISLAMIC)\b", t):
         out["rel"] = "m"
     elif re.search(r"\b(?:CHRISTIAN|CRISTIAN|CATHOLIC|CATOLIC|PROTESTANT|BORN\s+AGAIN)\b", t):
         out["rel"] = "o"
