@@ -2605,6 +2605,19 @@
       "status": "available",
       "pp": "bb4c6cccaeddd5c3",
       "xd": 1
+    },
+    {
+      "nat": "n4",
+      "name": "Kemeriya Jemal",
+      "ref": "E-272",
+      "job": "svc1",
+      "rel": "m",
+      "st": "m",
+      "age": 38,
+      "exp": "prev",
+      "status": "available",
+      "file": "cvs/ethiopia/kemeriya-jemal.pdf",
+      "photo": ""
     }
   ]
 }
