@@ -2618,6 +2618,32 @@
       "status": "available",
       "file": "cvs/ethiopia/kemeriya-jemal.pdf",
       "photo": ""
+    },
+    {
+      "nat": "n4",
+      "name": "Rahma Shiro",
+      "ref": "E-273",
+      "job": "svc1",
+      "rel": "m",
+      "st": "s",
+      "age": 38,
+      "exp": "prev",
+      "status": "available",
+      "file": "cvs/ethiopia/rahma-shiro.pdf",
+      "photo": ""
+    },
+    {
+      "nat": "n4",
+      "name": "Zewde Akele",
+      "ref": "E-274",
+      "job": "svc1",
+      "rel": "o",
+      "st": "s",
+      "age": 23,
+      "exp": "new",
+      "status": "available",
+      "file": "cvs/ethiopia/zewde-akele.pdf",
+      "photo": ""
     }
   ]
 }
