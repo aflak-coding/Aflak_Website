@@ -234,6 +234,64 @@ def _from_scan(pdf, tmp):
     return _trim_rows(crop)
 
 
+def _from_tawasul(pdf, tmp):
+    """قالب توصّل: صورة الجسم كاملة داخل مستطيل ملوّن في العمود الأيمن (تحت جدول الخبرة).
+    نبحث عن أطول مقطع رأسي كثيف (غير أبيض) في العمود الأيمن، ثم نقصّه."""
+    page = _render(pdf, tmp, 110)
+    if page is None:
+        return None
+    W, H = page.size
+    a = np.asarray(page).astype(int)
+    nonwhite = a.min(axis=2) < 250
+    band = nonwhite[:, int(W * 0.56):int(W * 0.94)].mean(axis=1) > 0.4
+    best, y, lo = (0, 0), int(H * 0.26), int(H * 0.92)
+    while y < lo:
+        if band[y]:
+            z = y
+            while z < lo and band[z]:
+                z += 1
+            if z - y > best[1] - best[0]:
+                best = (y, z)
+            y = z
+        else:
+            y += 1
+    y0, y1 = best
+    if y1 - y0 >= H * 0.25:
+        colfrac = nonwhite[y0:y1, int(W * 0.45):].mean(axis=0) > 0.5
+        cols = np.where(colfrac)[0]
+        if len(cols) < W * 0.2:
+            return None
+        x0, x1 = int(W * 0.45) + int(cols.min()), int(W * 0.45) + int(cols.max()) + 1
+    else:
+        # صورة بخلفية بيضاء: نستند على نهاية جدول الخبرة (الأزرق) وأسفل آخر جزء كثيف، والعرض ثابت في القالب
+        runs, y = [], int(H * 0.2)
+        while y < int(H * 0.92):
+            if band[y]:
+                z = y
+                while z < int(H * 0.92) and band[z]:
+                    z += 1
+                if z - y > 20:
+                    runs.append((y, z))
+                y = z
+            else:
+                y += 1
+        tabs = [r for r in runs if r[1] <= H * 0.37]
+        rest = [r for r in runs if r[1] > H * 0.37]
+        if not tabs or not rest:
+            return None
+        y0 = tabs[-1][1] + int(H * 0.03)
+        y1 = max(r[1] for r in rest)
+        x0, x1 = int(W * 0.514), int(W * 0.966)
+    w, h = x1 - x0, y1 - y0
+    if not (1.05 <= h / float(w) <= 2.4):
+        return None
+    hi = _render(pdf, tmp, 220)
+    k = hi.size[0] / float(W) if hi is not None else 1.0
+    hi = hi or page
+    pad = 6
+    return hi.crop((int((x0 + pad) * k), int((y0 + pad) * k), int((x1 - pad) * k), int((y1 - pad) * k)))
+
+
 def extract_photo(pdf, out_path):
     """يحفظ صورة العاملة في out_path (jpg). يرجع True لو نجح."""
     if np is None or Image is None:
@@ -243,6 +301,8 @@ def extract_photo(pdf, out_path):
         im = _from_embedded(pdf, tmp)
         if im is None:
             im = _from_scan(pdf, tmp)
+        if im is None:
+            im = _from_tawasul(pdf, tmp)
         if im is None:
             return False
         im.thumbnail((MAX_SIDE, MAX_SIDE))
