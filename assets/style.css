@@ -509,6 +509,7 @@ html[lang="en"] .rev-card{direction:ltr}
 .cv-flipback{display:none;position:absolute;top:10px;inset-inline-start:10px;width:38px;height:38px;border-radius:50%;border:0;background:rgba(0,0,0,.5);color:#fff;font-size:20px;line-height:1;place-items:center;cursor:pointer}
 .cv-tt{min-width:0;flex:1}
 .cv-name{margin:1px 0 2px;font-weight:700;font-size:15.5px;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+[dir=rtl] .cv-name{direction:ltr;text-align:right}
 .cv-card .cv-ic{flex:none}
 /* حالة الفتح */
 .cv-card.flipped{z-index:6}

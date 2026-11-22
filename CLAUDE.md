@@ -26,7 +26,7 @@ Read this first. The owner (Medo / ميدو) is not a developer and is worried a
 ## Key files
 | File | Purpose |
 |---|---|
-| `index.html` | Main page. Asset links carry cache-busting `?v=N` (currently 35). **Bump N whenever `assets/app.js` or `assets/style.css` change**, otherwise visitors see old files. |
+| `index.html` | Main page. Asset links carry cache-busting `?v=N` (currently 36). **Bump N whenever `assets/app.js` or `assets/style.css` change**, otherwise visitors see old files. |
 | `assets/app.js` | All behaviour + i18n dictionary `D{ar,en}`, CV list/filters/pagination (8 per page desktop, 4 mobile), share bar, CV viewer dialog, order form. |
 | `assets/style.css` | All styling. |
 | `.pages.yml` | CMS config. Job/nationality select options exist in **six collections** — a new option must be added to all six. |
