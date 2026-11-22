@@ -2617,7 +2617,9 @@
       "st": "m",
       "exp": "prev",
       "ref": "E-272",
-      "status": "available"
+      "status": "available",
+      "xc": 1,
+      "xe": 1
     },
     {
       "name": "Rahma Shiro",
@@ -2630,7 +2632,9 @@
       "st": "s",
       "exp": "prev",
       "ref": "E-273",
-      "status": "available"
+      "status": "available",
+      "xc": 1,
+      "xe": 1
     },
     {
       "name": "Zewde Akele",
@@ -2643,7 +2647,8 @@
       "st": "s",
       "exp": "new",
       "ref": "E-274",
-      "status": "available"
+      "status": "available",
+      "xd": 1
     }
   ]
 }
