@@ -173,20 +173,6 @@
       "ref": "P-117",
       "status": "available",
       "xd": 1
-    },
-    {
-      "nat": "n3",
-      "name": "CV P-118",
-      "ref": "P-118",
-      "job": "svc1",
-      "rel": "o",
-      "st": "m",
-      "age": 49,
-      "exp": "new",
-      "status": "available",
-      "file": "cvs/philippines/whatsapp-image-2026-11-02-at-41331-pm.pdf",
-      "photo": "cvs/photos/philippines-whatsapp-image-2026-11-02-at-41331-pm-b.jpg",
-      "xd": 1
     }
   ]
 }
