@@ -136,7 +136,7 @@
       "nat": "n3",
       "file": "cvs/philippines/whatsapp-image-2026-11-02-at-41335-pm.pdf",
       "photo": "/cvs/photos/lqth-shashh-2026-11-03-145813.png",
-      "job": "svc1",
+      "job": "svc2",
       "age": 34,
       "rel": "m",
       "st": "s",
@@ -175,17 +175,17 @@
       "xd": 1
     },
     {
-      "nat": "n3",
       "name": "CV P-118",
-      "ref": "P-118",
+      "nat": "n3",
+      "file": "cvs/philippines/whatsapp-image-2026-11-02-at-41331-pm.pdf",
+      "photo": "/cvs/photos/philippines-whatsapp-image-2026-11-02-at-41331-pm-b.jpg",
       "job": "svc1",
+      "age": 49,
       "rel": "o",
       "st": "m",
-      "age": 49,
       "exp": "new",
-      "status": "available",
-      "file": "cvs/philippines/whatsapp-image-2026-11-02-at-41331-pm.pdf",
-      "photo": "cvs/photos/philippines-whatsapp-image-2026-11-02-at-41331-pm-b.jpg"
+      "ref": "P-118",
+      "status": "hidden"
     }
   ]
 }
