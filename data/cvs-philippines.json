@@ -171,7 +171,21 @@
       "st": "m",
       "exp": "new",
       "ref": "P-118",
-      "status": "hidden"
+      "status": "hidden",
+      "xd": 1
+    },
+    {
+      "nat": "n3",
+      "name": "CV P-119",
+      "ref": "P-119",
+      "job": "svc1",
+      "rel": "o",
+      "st": "s",
+      "age": 45,
+      "exp": "new",
+      "status": "available",
+      "file": "cvs/philippines/whatsapp-image-2026-11-02-at-41328-pm.pdf",
+      "photo": "cvs/photos/philippines-whatsapp-image-2026-11-02-at-41328-pm-b.jpg"
     }
   ]
 }
