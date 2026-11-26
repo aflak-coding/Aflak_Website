@@ -979,7 +979,9 @@
       "exp": "prev",
       "status": "available",
       "file": "cvs/bangladesh/A11608070 S-1101.pdf",
-      "photo": "cvs/photos/bangladesh-a11608070-s-1101-b.jpg"
+      "photo": "cvs/photos/bangladesh-a11608070-s-1101-b.jpg",
+      "xc": 1,
+      "xe": 1
     },
     {
       "nat": "n2",
@@ -992,7 +994,9 @@
       "exp": "prev",
       "status": "available",
       "file": "cvs/bangladesh/A11745906 S-1037.pdf",
-      "photo": "cvs/photos/bangladesh-a11745906-s-1037-b.jpg"
+      "photo": "cvs/photos/bangladesh-a11745906-s-1037-b.jpg",
+      "xc": 1,
+      "xe": 1
     },
     {
       "nat": "n2",
@@ -1005,7 +1009,9 @@
       "exp": "prev",
       "status": "available",
       "file": "cvs/bangladesh/A13933500 S-1100.pdf",
-      "photo": "cvs/photos/bangladesh-a13933500-s-1100-b.jpg"
+      "photo": "cvs/photos/bangladesh-a13933500-s-1100-b.jpg",
+      "xc": 1,
+      "xe": 1
     },
     {
       "nat": "n2",
@@ -1018,7 +1024,9 @@
       "exp": "prev",
       "status": "available",
       "file": "cvs/bangladesh/A17940519 A-1034.pdf",
-      "photo": "cvs/photos/bangladesh-a17940519-a-1034-b.jpg"
+      "photo": "cvs/photos/bangladesh-a17940519-a-1034-b.jpg",
+      "xc": 1,
+      "xe": 1
     },
     {
       "nat": "n2",
@@ -1031,7 +1039,217 @@
       "exp": "prev",
       "status": "available",
       "file": "cvs/bangladesh/A24334355 S-1102.pdf",
-      "photo": "cvs/photos/bangladesh-a24334355-s-1102-b.jpg"
+      "photo": "cvs/photos/bangladesh-a24334355-s-1102-b.jpg",
+      "xc": 1,
+      "xe": 1
+    },
+    {
+      "nat": "n2",
+      "name": "Bereket Zerihun",
+      "ref": "B-141",
+      "job": "svc1",
+      "rel": "o",
+      "st": "s",
+      "age": 22,
+      "exp": "new",
+      "status": "available",
+      "file": "cvs/bangladesh/BEREKET ZERIHUN.pdf",
+      "photo": "cvs/photos/bangladesh-bereket-zerihun-b.jpg"
+    },
+    {
+      "nat": "n2",
+      "name": "Birtukan Asfaw Mohammed",
+      "ref": "B-142",
+      "job": "svc1",
+      "rel": "o",
+      "st": "s",
+      "age": 22,
+      "exp": "new",
+      "status": "available",
+      "file": "cvs/bangladesh/BIRTUKAN ASFAW CV MOHAMMED.pdf",
+      "photo": "cvs/photos/bangladesh-birtukan-asfaw-cv-mohammed-b.jpg"
+    },
+    {
+      "nat": "n2",
+      "name": "Buzuayo Abi Yusuf",
+      "ref": "B-143",
+      "job": "svc1",
+      "rel": "o",
+      "st": "m",
+      "age": 32,
+      "exp": "new",
+      "status": "available",
+      "file": "cvs/bangladesh/BUZUAYO ABI CV YUSUF.pdf",
+      "photo": ""
+    },
+    {
+      "nat": "n2",
+      "name": "Chaltu Kebede Rabia",
+      "ref": "B-144",
+      "job": "svc1",
+      "rel": "o",
+      "st": "s",
+      "age": 24,
+      "exp": "new",
+      "status": "available",
+      "file": "cvs/bangladesh/CHALTU KEBEDE CV RABIA.pdf",
+      "photo": "cvs/photos/bangladesh-chaltu-kebede-cv-rabia-b.jpg"
+    },
+    {
+      "nat": "n2",
+      "name": "Ebise Beyene Rabia",
+      "ref": "B-145",
+      "job": "svc1",
+      "rel": "o",
+      "st": "s",
+      "age": 24,
+      "exp": "new",
+      "status": "available",
+      "file": "cvs/bangladesh/EBISE BEYENE CV RABIA.pdf",
+      "photo": ""
+    },
+    {
+      "nat": "n2",
+      "name": "Ekram Seid Yusuf",
+      "ref": "B-146",
+      "job": "svc1",
+      "rel": "m",
+      "st": "s",
+      "age": 24,
+      "exp": "new",
+      "status": "available",
+      "file": "cvs/bangladesh/EKRAM SEID CV YUSUF.pdf",
+      "photo": "cvs/photos/bangladesh-ekram-seid-cv-yusuf-b.jpg"
+    },
+    {
+      "nat": "n2",
+      "name": "Erahmet Eshetu Mohammed",
+      "ref": "B-147",
+      "job": "svc1",
+      "rel": "m",
+      "st": "m",
+      "age": 29,
+      "exp": "new",
+      "status": "available",
+      "file": "cvs/bangladesh/ERAHMET ESHETU CV MOHAMMED.pdf",
+      "photo": "cvs/photos/bangladesh-erahmet-eshetu-cv-mohammed-b.jpg"
+    },
+    {
+      "nat": "n2",
+      "name": "Fetehya Hussein Mohammed",
+      "ref": "B-148",
+      "job": "svc1",
+      "rel": "m",
+      "st": "m",
+      "age": 27,
+      "exp": "new",
+      "status": "available",
+      "file": "cvs/bangladesh/FETEHYA HUSSEIN CV MOHAMMED.pdf",
+      "photo": "cvs/photos/bangladesh-fetehya-hussein-cv-mohammed-b.jpg"
+    },
+    {
+      "nat": "n2",
+      "name": "Genet Birku Yusuf",
+      "ref": "B-149",
+      "job": "svc1",
+      "rel": "o",
+      "st": "m",
+      "age": 28,
+      "exp": "new",
+      "status": "available",
+      "file": "cvs/bangladesh/GENET BIRKU CV YUSUF.pdf",
+      "photo": "cvs/photos/bangladesh-genet-birku-cv-yusuf-b.jpg"
+    },
+    {
+      "nat": "n2",
+      "name": "Kedja Abate Yusuf",
+      "ref": "B-150",
+      "job": "svc1",
+      "rel": "m",
+      "st": "m",
+      "age": 30,
+      "exp": "new",
+      "status": "available",
+      "file": "cvs/bangladesh/KEDJA ABATE CV YUSUF.pdf",
+      "photo": "cvs/photos/bangladesh-kedja-abate-cv-yusuf-b.jpg"
+    },
+    {
+      "nat": "n2",
+      "name": "Konjit Basha",
+      "ref": "B-151",
+      "job": "svc1",
+      "rel": "o",
+      "st": "s",
+      "age": 24,
+      "exp": "new",
+      "status": "available",
+      "file": "cvs/bangladesh/KONJIT BASHA (1).pdf",
+      "photo": "cvs/photos/bangladesh-konjit-basha-1-b.jpg"
+    },
+    {
+      "nat": "n2",
+      "name": "Nigist Kemachew Yusuf",
+      "ref": "B-152",
+      "job": "svc1",
+      "rel": "o",
+      "st": "s",
+      "age": 23,
+      "exp": "new",
+      "status": "available",
+      "file": "cvs/bangladesh/NIGIST KEMACHEW CV YUSUF.pdf",
+      "photo": "cvs/photos/bangladesh-nigist-kemachew-cv-yusuf-b.jpg"
+    },
+    {
+      "nat": "n2",
+      "name": "Rabia Ali Mohammed",
+      "ref": "B-153",
+      "job": "svc1",
+      "rel": "m",
+      "st": "s",
+      "age": 27,
+      "exp": "new",
+      "status": "available",
+      "file": "cvs/bangladesh/RABIA ALI CV MOHAMMED.pdf",
+      "photo": "cvs/photos/bangladesh-rabia-ali-cv-mohammed-b.jpg"
+    },
+    {
+      "nat": "n2",
+      "name": "Seada Ali Mohammed",
+      "ref": "B-154",
+      "job": "svc1",
+      "rel": "m",
+      "st": "s",
+      "age": 23,
+      "exp": "new",
+      "status": "available",
+      "file": "cvs/bangladesh/SEADA ALI CV MOHAMMED.pdf",
+      "photo": "cvs/photos/bangladesh-seada-ali-cv-mohammed-b.jpg"
+    },
+    {
+      "nat": "n2",
+      "name": "Telile Tolosa Yusuf",
+      "ref": "B-155",
+      "job": "svc1",
+      "rel": "o",
+      "st": "s",
+      "age": 23,
+      "exp": "new",
+      "status": "available",
+      "file": "cvs/bangladesh/TELILE TOLOSA CV YUSUF.pdf",
+      "photo": "cvs/photos/bangladesh-telile-tolosa-cv-yusuf-b.jpg"
+    },
+    {
+      "nat": "n2",
+      "name": "Tiguaded Sisay Mohammed",
+      "ref": "B-156",
+      "job": "svc1",
+      "rel": "m",
+      "st": "s",
+      "age": 25,
+      "exp": "new",
+      "status": "available",
+      "file": "cvs/bangladesh/TIGUADED SISAY CV MOHAMMED.pdf",
+      "photo": "cvs/photos/bangladesh-tiguaded-sisay-cv-mohammed-b.jpg"
     }
   ]
 }
