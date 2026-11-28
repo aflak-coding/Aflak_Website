@@ -2422,7 +2422,7 @@
       "st": "s",
       "exp": "new",
       "ref": "E-259",
-      "status": "available",
+      "status": "hidden",
       "pp": "f11f450453b73b40",
       "xd": 1
     },
@@ -3215,8 +3215,7 @@
       "ref": "E-312",
       "status": "hidden",
       "xc": 1,
-      "xe": 1,
-      "photo": ""
+      "xe": 1
     },
     {
       "name": "Yegle Tadesse",
